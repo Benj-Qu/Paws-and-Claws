@@ -78,4 +78,5 @@ crashlytics-build.properties
 .devcontainer
 *.code-workspace
 *.zip
+.vsconfig
 
