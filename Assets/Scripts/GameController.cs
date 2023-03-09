@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;
-    private Camera camera;
+    private Camera camera_;
 
     private GameObject StartPoint;
     // public Vector3[] StartPoint;
@@ -27,11 +27,11 @@ public class GameController : MonoBehaviour
         Debug.Log("Level: "+ level);
 
         StartPoint = GameObject.Find("StartPoint");
-        player1 = GameObject.Find("Player1");
-        player2 = GameObject.Find("Player2");
+        player1 = GameObject.Find("player_1");
+        player2 = GameObject.Find("player_2");
         player1.transform.position = StartPoint.transform.position;
         player2.transform.position = StartPoint.transform.position;
-        camera = Camera.main;
+        camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
     }
