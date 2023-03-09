@@ -30,8 +30,11 @@ public class Card : MonoBehaviour
             block_id = 0;
         }
         
+        // set the block id
+        this.block_id = block_id;
+        
         // look for the corresponding image in the sprite folder
-        _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[block_id]);
+        _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[this.block_id]);
     }
 
     public void CardDisappear()
