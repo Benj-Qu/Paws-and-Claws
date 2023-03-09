@@ -23,7 +23,6 @@ public class flagTransformer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collide");
         if (other.name == player_1)
         {
             spriteRenderer.sprite = flag_UM;
