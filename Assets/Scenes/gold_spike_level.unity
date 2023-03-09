@@ -801,8 +801,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1016065690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,7 +1348,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> fb9cc8a93bbfc1497b2eebe1a0fccd3d68d01c43
 --- !u!1 &1476572265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,8 +1463,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1518848697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,7 +1559,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> fb9cc8a93bbfc1497b2eebe1a0fccd3d68d01c43
 --- !u!1 &1656988894
 GameObject:
   m_ObjectHideFlags: 0
