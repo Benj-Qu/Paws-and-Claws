@@ -18,5 +18,9 @@ public class AllCards : MonoBehaviour
         cards.Add(1, "flag_um");
         cards.Add(2, "IMG_1828");
         cards.Add(3, "IMG_1829");
+        cards.Add(4, "Bar");
+        cards.Add(5, "flag_Empty");
+        cards.Add(6, "6");
+        cards.Add(7, "7");
     }
 }

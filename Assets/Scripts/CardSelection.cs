@@ -13,24 +13,28 @@ public class CardSelection : MonoBehaviour
     public Inventory inventory1;
     public Inventory inventory2;
     public GameObject progressBar;
+    public bool roundUp = false;
+    public blockController BlockController;
 
     private GameObject _card1;
     private GameObject _card2;
-
     private Card _card1Script;
     private Card _card2Script;
-    
     private bool _cardAppear = false;
     private int _currentRound = 0;
     private bool _timeUp = false;
-    public bool roundUp = false;
     private bool _beginTimeUpSelection = false;
     
-    
-
     // Start is called before the first frame update
     void Start()
     {
+        if (BlockController == null)
+        {
+            Debug.LogWarning("no blockController !");
+            GameObject block = GameObject.Find("Block");
+            if (block) BlockController = block.GetComponent<blockController>();
+        }
+        
         foreach (Transform child in transform)
         {
             if (child.gameObject.name == "Choice1")
@@ -193,13 +197,30 @@ public class CardSelection : MonoBehaviour
         // TODO: adjust how the card is drawn from the card pool
         if (_currentRound == 1)
         {
-            _card1Script.SetCard(0);
-            _card2Script.SetCard(1);
+            if (whichPlayer == 1)
+            {
+                _card1Script.SetCard(0);
+                _card2Script.SetCard(1);
+            }
+            else
+            {
+                _card1Script.SetCard(4);
+                _card2Script.SetCard(5);
+            }
         }
         else if (_currentRound == 2)
         {
-            _card1Script.SetCard(2);
-            _card2Script.SetCard(3);
+            if (whichPlayer == 2)
+            {
+                _card1Script.SetCard(2);
+                _card2Script.SetCard(3);
+            }
+            else
+            {
+                _card1Script.SetCard(6);
+                _card2Script.SetCard(7);
+            }
+            
         }
         
         _card1Script.CardAppear();
@@ -216,6 +237,8 @@ public class CardSelection : MonoBehaviour
     {
         if (whichInventory == 1)
         {
+            if (BlockController) BlockController.Player1GetBlock(blockID);
+            
             if (atFront)
             {
                 inventory1.cards[inventory1.cardAddedFront].SetCard(blockID);
@@ -233,6 +256,8 @@ public class CardSelection : MonoBehaviour
         }
         else
         {
+            if (BlockController) BlockController.Player2GetBlock(blockID);
+            
             if (atFront)
             {
                 inventory2.cards[inventory2.cardAddedFront].SetCard(blockID);

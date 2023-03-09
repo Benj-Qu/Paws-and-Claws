@@ -14,7 +14,8 @@ public class blockMovement : MonoBehaviour
 
     void Start()
     {
-
+        // initially set to inactive 
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,44 +26,6 @@ public class blockMovement : MonoBehaviour
             if (block_side == false & selected)
             {
                 // player_1 selected blocks
-                if (Input.GetKeyDown(KeyCode.M))
-                {
-                    // press Z to fix the position of this block, can't move any more
-                    if (!collisionDetected)
-                    {
-                        set = true;
-                    }
-                }
-                Vector3 newPos = defaultPos;
-                bool checkPos = false;
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    newPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                    checkPos = true;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    newPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                    checkPos = true;
-                }
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    newPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                    checkPos = true;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    newPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-                    checkPos = true;
-                }
-                if (checkPos == true && validBlockPosition(newPos))
-                {
-                    transform.position = newPos;
-                }
-            }
-            if (block_side == true & selected)
-            {
-                //player_2 selected blocks
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
                     // press Z to fix the position of this block, can't move any more
@@ -89,6 +52,44 @@ public class blockMovement : MonoBehaviour
                     checkPos = true;
                 }
                 if (Input.GetKeyDown(KeyCode.S))
+                {
+                    newPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    checkPos = true;
+                }
+                if (checkPos == true && validBlockPosition(newPos))
+                {
+                    transform.position = newPos;
+                }
+            }
+            if (block_side == true & selected)
+            {
+                //player_2 selected blocks
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    // press Z to fix the position of this block, can't move any more
+                    if (!collisionDetected)
+                    {
+                        set = true;
+                    }
+                }
+                Vector3 newPos = defaultPos;
+                bool checkPos = false;
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    newPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                    checkPos = true;
+                }
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    newPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                    checkPos = true;
+                }
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    newPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    checkPos = true;
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     newPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
                     checkPos = true;
@@ -153,18 +154,22 @@ public class blockMovement : MonoBehaviour
     public void SelectBlock(int i)
     {
         // mark the block to be selected, now can move
-        if(i == block_id)
+        if (i == block_id)
         {
             selected = true;
+            // if are selected and not set then setActive true
+            if (!set) gameObject.SetActive(true); 
         }
     }
 
     public void UnSelectBlock(int i)
     {
         // mark the block to be unselected, can't move
-        if(i == block_id)
+        if (i == block_id)
         {
             selected = false;
+            // if are unselected and not set then setActive false
+            if (!set) gameObject.SetActive(false);
         }
     }
 }

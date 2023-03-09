@@ -10,7 +10,7 @@ public class Selection : MonoBehaviour
     private CardSelection _cardSelection1;
     private CardSelection _cardSelection2;
 
-    private bool _done = false;
+    public bool done = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +22,9 @@ public class Selection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_done && _cardSelection1.roundUp && _cardSelection2.roundUp)
+        if (!done && _cardSelection1.roundUp && _cardSelection2.roundUp)
         {
-            _done = true;
+            done = true;
             // TODO: send gameController that the battle can begins.
             Debug.Log("battle begin");
         }

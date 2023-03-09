@@ -39,10 +39,10 @@ RectTransform:
   m_Father: {fileID: 2440277720884465058}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 358.82, y: 0}
-  m_SizeDelta: {x: -717.6457, y: -148.7821}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -25, y: 0}
+  m_SizeDelta: {x: 50, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2440277719166202889
 CanvasRenderer:
@@ -122,8 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   amounts: 
+  texts: []
   cardAddedFront: 0
   cardAddedBack: 0
+  selection: {fileID: 2440277720884465061}
+  whichPlayer: 2
 --- !u!1 &2440277720525326089
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,10 +166,10 @@ RectTransform:
   m_Father: {fileID: 2440277720884465058}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -358.82, y: 0}
-  m_SizeDelta: {x: -717.6457, y: -148.7821}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 25, y: -0.0000019073}
+  m_SizeDelta: {x: 50, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2440277720525326093
 CanvasRenderer:
@@ -246,8 +249,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   amounts: 
+  texts: []
   cardAddedFront: 0
   cardAddedBack: 0
+  selection: {fileID: 2440277720884465061}
+  whichPlayer: 1
 --- !u!1 &2440277720884465118
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Choice1: {fileID: 2440277720461811773}
   Choice2: {fileID: 3811182452547316825}
+  done: 0
 --- !u!1001 &2440277719055307161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1666,7 +1673,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8993387465390337652, guid: 5aa664753fce04177869283fefb7091d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5aa664753fce04177869283fefb7091d, type: 3}
 --- !u!224 &672583217424200283 stripped
 RectTransform:

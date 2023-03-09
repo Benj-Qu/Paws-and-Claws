@@ -8,6 +8,8 @@ public class Card : MonoBehaviour
     public int block_id = -1;
 
     private Image _image;
+
+    // public int amount = -1;
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,7 @@ public class Card : MonoBehaviour
         {
             block_id = 0;
         }
-        
+
         // set the block id
         this.block_id = block_id;
         
@@ -48,6 +50,13 @@ public class Card : MonoBehaviour
     {
         Color c = _image.color;
         c.a = 1;
+        _image.color = c;
+    }
+
+    public void SetCardBrightness(float brightness)
+    {
+        Color c = _image.color;
+        c.a = brightness;
         _image.color = c;
     }
 }

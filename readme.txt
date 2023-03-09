@@ -11,6 +11,15 @@ Block:
 3. 每个block有自己的public block_id需要手动输入
 3. block must have box collider and rigidbody
 
+All Blocks:
+1. When implementing blocks: Add block image(sprite) to Resources/Sprites folder, and add block_id, sprite name pair into the dict reside in script AllCards.cs.
+
 TODO:
 1. Revise the border condition of block position according to different size of the block
 2. Combine two scene
+3. Amount of each block displayed and applied when player are placing blocks.
+4. Instantiate a new block when one block is set if this block amount > 0.
+5. Add image of each block (Like Clash Royale).
+
+Bugs:
+1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
