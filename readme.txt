@@ -11,6 +11,13 @@ Block:
 3. 每个block有自己的public block_id需要手动输入
 3. block must have box collider and rigidbody
 
+Control:
+1. player 1: WASD, left shift for switch block, z for place block on map.
+2. player 2: ArrowKey, right shift for switch block, m for palce block on map.
+3. During block selection:
+    1. Player1: A left choice, d right choice. Options on left side.
+    2. Player2: left arrow left choice, right arrow right choice. Options on right side.
+
 All Blocks:
 1. When implementing blocks: Add block image(sprite) to Resources/Sprites folder, and add block_id, sprite name pair into the dict reside in script AllCards.cs.
 
