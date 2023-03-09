@@ -5,25 +5,46 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    public string id;
+    public int block_id = -1;
 
     private Image _image;
     
     // Start is called before the first frame update
     void Start()
     {
-        if (id == null)
-        {
-            id = "card_example";
-        }
+        _image = GetComponent<Image>();
         
-        // look for the corresponding image in the sprite folder
-       
+        SetCard(block_id);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetCard(int block_id)
+    {
+        if (block_id == -1)
+        {
+            block_id = 0;
+        }
+        
+        // look for the corresponding image in the sprite folder
+        _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[block_id]);
+    }
+
+    public void CardDisappear()
+    {
+        Color c = _image.color;
+        c.a = 0;
+        _image.color = c;
+    }
+
+    public void CardAppear()
+    {
+        Color c = _image.color;
+        c.a = 1;
+        _image.color = c;
     }
 }

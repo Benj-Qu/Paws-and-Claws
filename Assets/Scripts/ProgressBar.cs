@@ -8,13 +8,16 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     public TextMeshProUGUI countTime;
+    public GameObject choice;
     
     private Slider _slider;
-    
+    private CardSelection _cardSelection;
+
     // Start is called before the first frame update
     void Start()
     {
         _slider = GetComponent<Slider>();
+        _cardSelection = choice.GetComponent<CardSelection>();
     }
 
     // Update is called once per frame
@@ -39,6 +42,6 @@ public class ProgressBar : MonoBehaviour
     private void OnDestroy()
     {
         // TODO: upon destroy, send a signal to the GameController
-        
+        _cardSelection.SetTimeUp();
     }
 }
