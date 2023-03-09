@@ -20,6 +20,7 @@ TODO:
 3. Amount of each block displayed and applied when player are placing blocks.
 4. Instantiate a new block when one block is set if this block amount > 0.
 5. Add image of each block (Like Clash Royale).
+6. Add block selection animation: block selected fly to the inventory bar.
 
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
