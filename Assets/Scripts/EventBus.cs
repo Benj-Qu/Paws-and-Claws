@@ -1,4 +1,4 @@
-/* EventBus.cs
+﻿/* EventBus.cs
  * 
  * This script implements an "Event Bus" -- a critical part of the Pub/Sub design pattern.
  * Developers should make heavy use of the Subscribe() and Publish() methods below to receive and send
