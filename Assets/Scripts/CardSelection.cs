@@ -30,9 +30,12 @@ public class CardSelection : MonoBehaviour
     {
         if (BlockController == null)
         {
-            Debug.LogWarning("no blockController !");
             GameObject block = GameObject.Find("Block");
             if (block) BlockController = block.GetComponent<blockController>();
+            else
+            {
+                Debug.LogWarning("no blockController !");
+            }
         }
         
         foreach (Transform child in transform)
