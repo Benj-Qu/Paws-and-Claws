@@ -165,9 +165,15 @@ public class PlayerController : MonoBehaviour
         int c1RightEdge = (int)collider1.bounds.max.x;
         int c1LeftEdge = (int)collider1.bounds.min.x;
 
+        int c1TopEdge = (int)collider1.bounds.max.y;
+        int c1BottomEdge = (int)collider1.bounds.min.y;
+
         int c2RightEdge = (int)collider2.bounds.max.x;
         int c2LeftEdge = (int)collider2.bounds.min.x;
 
-        return (c1RightEdge == c2LeftEdge) || (c1LeftEdge == c2RightEdge);
+        int c2TopEdge = (int)collider2.bounds.max.y;
+        int c2BottomEdge = (int)collider2.bounds.min.y;
+
+        return ((c1RightEdge == c2LeftEdge) || (c1LeftEdge == c2RightEdge)) && (c1BottomEdge != c2TopEdge) && (c1TopEdge != c2BottomEdge);
     }
 }
