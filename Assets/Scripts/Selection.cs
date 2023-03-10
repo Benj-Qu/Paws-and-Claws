@@ -9,6 +9,7 @@ public class Selection : MonoBehaviour
 
     private CardSelection _cardSelection1;
     private CardSelection _cardSelection2;
+    private GameController gameController;
 
     public bool done = false;
 
@@ -17,6 +18,7 @@ public class Selection : MonoBehaviour
     {
         _cardSelection1 = Choice1.GetComponent<CardSelection>();
         _cardSelection2 = Choice2.GetComponent<CardSelection>();
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -25,8 +27,12 @@ public class Selection : MonoBehaviour
         if (!done && _cardSelection1.roundUp && _cardSelection2.roundUp)
         {
             done = true;
-            // TODO: send gameController that the battle can begins.
             Debug.Log("battle begin");
+            // send gameController that the battle can begins.
+            if (gameController)
+            {
+                gameController.StartGame();
+            }
         }
     }
 }

@@ -18,6 +18,9 @@ Control:
     1. Player1: A left choice, d right choice. Options on left side.
     2. Player2: left arrow left choice, right arrow right choice. Options on right side.
 
+Exit Menu:
+1. Press ESC will activate the menu
+
 All Blocks:
 1. When implementing blocks: Add block image(sprite) to Resources/Sprites folder, and add block_id, sprite name pair into the dict reside in script AllCards.cs.
 
@@ -28,6 +31,7 @@ TODO:
 4. Instantiate a new block when one block is set if this block amount > 0.
 5. Add image of each block (Like Clash Royale).
 6. Add block selection animation: block selected fly to the inventory bar.
+7. Call GameController.Killed when a player is killed
 
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
