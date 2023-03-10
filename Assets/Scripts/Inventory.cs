@@ -23,9 +23,12 @@ public class Inventory : MonoBehaviour
     {
         if (BlockController == null)
         {
-            Debug.LogWarning("no blockController");
             GameObject block = GameObject.Find("Block");
             if (block) BlockController = block.GetComponent<blockController>();
+            else
+            {
+                Debug.LogWarning("no blockController");
+            }
         }
         
         cards = new List<Card>();
