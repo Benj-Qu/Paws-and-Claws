@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Block
   - Mountain
+  - Spike
+  - Bomb
   layers:
   - Default
   - TransparentFX
