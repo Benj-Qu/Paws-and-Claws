@@ -1,9 +1,7 @@
-Players & flags & blocks z position is -1
-
 Player:
 1. gold_spike_scene 里有gameobject player_1 and player_2
 2. player must have tag "Player"
-3. Player must have box collider and rigidbody
+3. Player must have box collider2D and rigidbody
 
 Block:
 1. Block switch: 选中某个block时要call blockController的SelectBlock(i)才能移动该block
@@ -26,12 +24,18 @@ All Blocks:
 
 TODO:
 1. Revise the border condition of block position according to different size of the block
-2. Combine two scene
-3. Amount of each block displayed and applied when player are placing blocks.
-4. Instantiate a new block when one block is set if this block amount > 0.
+2. Change all colliders to 2D
+3. (future) Amount of each block displayed and applied when player are placing blocks.
+4. (future) Instantiate a new block when one block is set if this block amount > 0.
 5. Add image of each block (Like Clash Royale).
 6. Add block selection animation: block selected fly to the inventory bar.
 7. Call GameController.Killed when a player is killed
+8. Add sprite with white background when choosing what to place
+9. Only start game after placing blocks
+10. Change to 2 blocks per player per round
+11. 60s count down for placing the blocks, and 60s count down for a play 
+round
+12
 
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
