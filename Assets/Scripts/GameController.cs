@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     private Vector3 StartPoint2;
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
+    public int stage = 0;
 
     public ProgressBar_Main progressBar;
     // Start is called before the first frame update
@@ -92,14 +93,20 @@ public class GameController : MonoBehaviour
         {
             player.transform.position = StartPoint2;
         }
-        
     }
 
     public void StartGame()
     {
         // Start time countdown
         progressBar.StartGame();
+        stage ++;
         // TODO: set player movement true
+        if (stage == 2)
+        {
+            player1.GetComponent<PlayerController>().activate();
+            player2.GetComponent<PlayerController>().activate();
+            GameObject.Find("SelectionPanel").SetActive(false);
+        }
     }
 
     private IEnumerator Lose()

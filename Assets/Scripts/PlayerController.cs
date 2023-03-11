@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private BoxCollider2D bc;
+
+    private GameController gc;
     /*private GameController gc;*/
 
     void Start()
     {
         alive = true;
-        active = true;
+        active = false;
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;
@@ -39,7 +41,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         bc = GetComponent<BoxCollider2D>();
-        /*gc = GameObject.Find("GameController").GetComponent<GameController>();*/
+        gc = GameObject.Find("GameController").GetComponent<GameController>();
+        if (gc.stage == 2)
+        {
+            active = true;
+        }
     }
 
     void Update()
@@ -164,7 +170,15 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         alive = false;
-        /*gc.Killed(gameObject);*/
+        StartCoroutine(KilledAnimation());
+    }
+
+    private IEnumerator KilledAnimation()
+    {
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(1f);
+        gc.Killed(gameObject);
+        alive = true;
     }
 
     private bool onWall()
@@ -216,6 +230,11 @@ public class PlayerController : MonoBehaviour
     {
         active = false;
     }
+
+    // public void SetAlive(bool state)
+    // {
+    //     alive = state;
+    // }
 
     // alpha
     public void flash()
