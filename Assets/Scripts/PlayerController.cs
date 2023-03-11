@@ -25,10 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
-    private BoxCollider2D bc;
-
     private GameController gc;
-    /*private GameController gc;*/
 
     void Start()
     {
@@ -40,7 +37,6 @@ public class PlayerController : MonoBehaviour
         jumpTimes = MaxJumpTimes;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        bc = GetComponent<BoxCollider2D>();
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         if (gc.stage == 2)
         {
@@ -65,37 +61,57 @@ public class PlayerController : MonoBehaviour
         // Jump Times
         if (isTerrain(collision))
         {
-            jumpTimes = MaxJumpTimes;
-        }
-        // Slide Wall
-        Collider2D collider = collision.collider;
-        Collider2D otherCollider = collision.otherCollider;
-        if (isRightCollision(collider, otherCollider))
-        {
-            onRightWall = true;
-        }
-        if (isLeftCollision(collider, otherCollider))
-        {
-            onLeftWall = true;
-        }
-        else
-        {
-            onFloor = true;
-            onRightWall = false;
-            onLeftWall = false;
+            ContactPoint2D hitpos = collision.GetContact(0);
+            if (hitpos.normal.y > 0)
+            {
+                Debug.Log("On Floor");
+                onFloor = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            else if (hitpos.normal.x > 0)
+            {
+                Debug.Log("On Left Wall");
+                onLeftWall = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            else if (hitpos.normal.x < 0)
+            {
+                Debug.Log("On Right Wall");
+                onRightWall = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            else
+            {
+                Debug.Log("Ouch!");
+            }
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+/*    private void OnCollisionStay2D(Collision2D collision)
     {
-        
-    }
+        ContactPoint2D hitpos = collision.GetContact(0);
+        if (isTerrain(collision) && hitpos.normal.y == 0 && rb.velocity.y < 0)
+        {
+            if (hitpos.normal.x > 0)
+            {
+                Debug.Log("On Left Wall");
+                onLeftWall = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            if (hitpos.normal.x < 0)
+            {
+                Debug.Log("On Right Wall");
+                onRightWall = true;
+                jumpTimes = MaxJumpTimes;
+            }
+        }
+    }*/
 
-    private void OnCollisionExit2D(Collision2D collision)
+/*    private void OnCollisionExit2D(Collision2D collision)
     {
         onLeftWall = false;
         onRightWall = false;
-    }
+    }*/
 
     private void UpdateVelocity()
     {
@@ -104,11 +120,19 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(-Speed, rb.velocity.y);
             sr.flipX = true;
+            if (onRightWall)
+            {
+                onRightWall = false;
+            }
         }
         else if (Input.GetKey(RightButton))
         {
             rb.velocity = new Vector2(Speed, rb.velocity.y);
             sr.flipX = false;
+            if (onLeftWall)
+            {
+                onLeftWall = false;
+            }
         }
         else
         {
@@ -120,8 +144,9 @@ public class PlayerController : MonoBehaviour
             jump();
         }
         // Wall Sliding
-        if (onWall())
+        if (onWall() && rb.velocity.y < 0)
         {
+            jumpTimes = MaxJumpTimes;
             rb.velocity = new Vector2(0f, -SlideSpeed);
         }
     }
@@ -134,12 +159,18 @@ public class PlayerController : MonoBehaviour
 
     private void jump()
     {
-        jumpTimes--;
-        if (onLeftWall)
+        if (onFloor)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+            jumpTimes--;
+            onFloor = false;
+        }
+        else if (onLeftWall)
         {
             onLeftWall = false;
             rb.velocity = new Vector2(Speed, JumpSpeed);
             sr.flipX = false;
+            jumpTimes--;
             StartCoroutine(JumpCoroutine());
         }
         else if (onRightWall)
@@ -147,12 +178,9 @@ public class PlayerController : MonoBehaviour
             onRightWall = false;
             rb.velocity = new Vector2(-Speed, JumpSpeed);
             sr.flipX = true;
+            jumpTimes--;
             StartCoroutine(JumpCoroutine());
-        }
-        else
-        {
-            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
-        }
+        }        
     }
 
     public IEnumerator JumpCoroutine()
@@ -183,37 +211,7 @@ public class PlayerController : MonoBehaviour
 
     private bool onWall()
     {
-        return (!onFloor) && (onLeftWall || onRightWall);
-    }
-
-    private bool isRightCollision(Collider2D collider1, Collider2D collider2)
-    {
-        int c1RightEdge = (int)collider1.bounds.max.x;
-
-        int c1TopEdge = (int)collider1.bounds.max.y;
-        int c1BottomEdge = (int)collider1.bounds.min.y;
-
-        int c2LeftEdge = (int)collider2.bounds.min.x;
-
-        int c2TopEdge = (int)collider2.bounds.max.y;
-        int c2BottomEdge = (int)collider2.bounds.min.y;
-
-        return (c1RightEdge == c2LeftEdge) && (c1BottomEdge != c2TopEdge) && (c1TopEdge != c2BottomEdge);
-    }
-
-    private bool isLeftCollision(Collider2D collider1, Collider2D collider2)
-    {
-        int c1LeftEdge = (int)collider1.bounds.min.x;
-
-        int c1TopEdge = (int)collider1.bounds.max.y;
-        int c1BottomEdge = (int)collider1.bounds.min.y;
-
-        int c2RightEdge = (int)collider2.bounds.max.x;
-
-        int c2TopEdge = (int)collider2.bounds.max.y;
-        int c2BottomEdge = (int)collider2.bounds.min.y;
-
-        return (c1LeftEdge == c2RightEdge) && (c1BottomEdge != c2TopEdge) && (c1TopEdge != c2BottomEdge);
+        return (!onFloor) && ((onLeftWall && sr.flipX) || (onRightWall && !sr.flipX));
     }
 
     public bool isActive()
