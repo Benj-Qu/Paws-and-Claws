@@ -13,9 +13,12 @@ public class GameController : MonoBehaviour
     private GameObject player2;
     private Camera camera_;
 
-    private GameObject StartPoint;
+    private Vector3 StartPoint1;
+    private Vector3 StartPoint2;
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
+
+    public ProgressBar_Main progressBar;
     // Start is called before the first frame update
     
     void Start()
@@ -26,11 +29,14 @@ public class GameController : MonoBehaviour
         // scene = 0;
         Debug.Log("Level: "+ level);
 
-        StartPoint = GameObject.Find("StartPoint");
+        StartPoint1 = GameObject.Find("StartPoint").transform.position;
+        StartPoint2 = StartPoint1;
+        StartPoint1.x -= 1;
+        StartPoint2.x += 1;
         player1 = GameObject.Find("player_1");
         player2 = GameObject.Find("player_2");
-        player1.transform.position = StartPoint.transform.position;
-        player2.transform.position = StartPoint.transform.position;
+        player1.transform.position = StartPoint1;
+        player2.transform.position = StartPoint2;
         camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
@@ -77,14 +83,31 @@ public class GameController : MonoBehaviour
 
     public void Killed(GameObject player)
     {
+        // TODO: Cool down time? how?
+        if (player.name == "player_1")
+        {
+            player.transform.position = StartPoint1;
+        }
+        else
+        {
+            player.transform.position = StartPoint2;
+        }
         
+    }
+
+    public void StartGame()
+    {
+        // Start time countdown
+        progressBar.StartGame();
+        // TODO: set player movement true
     }
 
     private IEnumerator Lose()
     {
         winText.text = "Try again!";
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("Level" + level);
+        // SceneManager.LoadScene("Level" + level);
+        SceneManager.LoadScene("gold_spike_level");
         // player.GetComponent<HasInventory>().Reset();
     }
 

@@ -14,7 +14,7 @@ public class CardSelection : MonoBehaviour
     public Inventory inventory2;
     public GameObject progressBar;
     public bool roundUp = false;
-    public blockController BlockController;
+    public blockController BlockController = null;
 
     private GameObject _card1;
     private GameObject _card2;
