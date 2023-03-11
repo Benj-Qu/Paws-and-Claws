@@ -32,9 +32,17 @@ public class ProgressBar_Main : MonoBehaviour
             if (_slider.value <= 0)
             {
                 _slider.value = 0;
-                gameController.GameOver();
-                // destroy itself
-                Destroy(gameObject);
+                if (gameController.stage == 2)
+                {
+                    gameController.GameOver();
+                    // destroy itself
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    gameController.StartGame();
+                    _slider.value = _slider.maxValue;
+                }
             }
         
             // decrement time
