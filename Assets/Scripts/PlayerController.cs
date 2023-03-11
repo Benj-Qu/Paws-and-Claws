@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private bool alive;
     private bool active;
+    private bool onFloor;
     private bool onLeftWall;
     private bool onRightWall;
     private int jumpTimes;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         alive = true;
         active = true;
+        onFloor = true;
         onLeftWall = false;
         onRightWall = false;
         jumpTimes = MaxJumpTimes;
@@ -54,21 +56,33 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Jump Times
         if (isTerrain(collision))
         {
             jumpTimes = MaxJumpTimes;
+        }
+        // Slide Wall
+        Collider2D collider = collision.collider;
+        Collider2D otherCollider = collision.otherCollider;
+        if (isRightCollision(collider, otherCollider))
+        {
+            onRightWall = true;
+        }
+        if (isLeftCollision(collider, otherCollider))
+        {
+            onLeftWall = true;
+        }
+        else
+        {
+            onFloor = true;
+            onRightWall = false;
+            onLeftWall = false;
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Collider2D collider = collision.collider;
-        Collider2D otherCollider = collision.otherCollider;
-        if (isHorizontalCollision(collider, otherCollider))
-        {
-            Debug.Log("Sliding");
-            rb.velocity = new Vector2(0f, -SlideSpeed);
-        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -99,6 +113,11 @@ public class PlayerController : MonoBehaviour
         {
             jump();
         }
+        // Wall Sliding
+        if (onWall())
+        {
+            rb.velocity = new Vector2(0f, -SlideSpeed);
+        }
     }
 
     private bool isTerrain(Collision2D collision)
@@ -112,12 +131,14 @@ public class PlayerController : MonoBehaviour
         jumpTimes--;
         if (onLeftWall)
         {
+            onLeftWall = false;
             rb.velocity = new Vector2(Speed, JumpSpeed);
             sr.flipX = false;
             StartCoroutine(JumpCoroutine());
         }
         else if (onRightWall)
         {
+            onRightWall = false;
             rb.velocity = new Vector2(-Speed, JumpSpeed);
             sr.flipX = true;
             StartCoroutine(JumpCoroutine());
@@ -140,19 +161,45 @@ public class PlayerController : MonoBehaviour
         return (jumpTimes > 0);
     }
 
-    private bool detectWall(Vector2 direction)
-    {
-        // Mask Player Layer
-        int layerMask = 1 << 3;
-        layerMask = ~layerMask;
-        // Does the ray intersect any objects excluding the player layer
-        return Physics.Raycast(transform.position, transform.TransformDirection(direction), bc.size.x/2, layerMask);
-    }
-
     public void Die()
     {
         alive = false;
         /*gc.Killed(gameObject);*/
+    }
+
+    private bool onWall()
+    {
+        return (!onFloor) && (onLeftWall || onRightWall);
+    }
+
+    private bool isRightCollision(Collider2D collider1, Collider2D collider2)
+    {
+        int c1RightEdge = (int)collider1.bounds.max.x;
+
+        int c1TopEdge = (int)collider1.bounds.max.y;
+        int c1BottomEdge = (int)collider1.bounds.min.y;
+
+        int c2LeftEdge = (int)collider2.bounds.min.x;
+
+        int c2TopEdge = (int)collider2.bounds.max.y;
+        int c2BottomEdge = (int)collider2.bounds.min.y;
+
+        return (c1RightEdge == c2LeftEdge) && (c1BottomEdge != c2TopEdge) && (c1TopEdge != c2BottomEdge);
+    }
+
+    private bool isLeftCollision(Collider2D collider1, Collider2D collider2)
+    {
+        int c1LeftEdge = (int)collider1.bounds.min.x;
+
+        int c1TopEdge = (int)collider1.bounds.max.y;
+        int c1BottomEdge = (int)collider1.bounds.min.y;
+
+        int c2RightEdge = (int)collider2.bounds.max.x;
+
+        int c2TopEdge = (int)collider2.bounds.max.y;
+        int c2BottomEdge = (int)collider2.bounds.min.y;
+
+        return (c1LeftEdge == c2RightEdge) && (c1BottomEdge != c2TopEdge) && (c1TopEdge != c2BottomEdge);
     }
 
     public bool isActive()
@@ -160,20 +207,19 @@ public class PlayerController : MonoBehaviour
         return alive && active;
     }
 
-    private bool isHorizontalCollision(Collider2D collider1, Collider2D collider2)
+    public void activate()
     {
-        int c1RightEdge = (int)collider1.bounds.max.x;
-        int c1LeftEdge = (int)collider1.bounds.min.x;
+        active = true;
+    }
 
-        int c1TopEdge = (int)collider1.bounds.max.y;
-        int c1BottomEdge = (int)collider1.bounds.min.y;
+    public void deactivate()
+    {
+        active = false;
+    }
 
-        int c2RightEdge = (int)collider2.bounds.max.x;
-        int c2LeftEdge = (int)collider2.bounds.min.x;
+    // alpha
+    public void flash()
+    {
 
-        int c2TopEdge = (int)collider2.bounds.max.y;
-        int c2BottomEdge = (int)collider2.bounds.min.y;
-
-        return ((c1RightEdge == c2LeftEdge) || (c1LeftEdge == c2RightEdge)) && (c1BottomEdge != c2TopEdge) && (c1TopEdge != c2BottomEdge);
     }
 }
