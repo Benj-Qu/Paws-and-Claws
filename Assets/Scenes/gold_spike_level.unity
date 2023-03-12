@@ -656,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2263978908040456401, guid: 192f9bdc7736c4046bc4154b6dbf2a92, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.01736538
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2263978908040456401, guid: 192f9bdc7736c4046bc4154b6dbf2a92, type: 3}
       propertyPath: m_LocalRotation.w
@@ -916,9 +916,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
-  player1_forbidden: {fileID: 0}
-  player2_forbidden: {fileID: 0}
-  correctPrefab: {fileID: 0}
 --- !u!212 &318143382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1361,9 +1358,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
-  player1_forbidden: {fileID: 0}
-  player2_forbidden: {fileID: 0}
-  correctPrefab: {fileID: 0}
 --- !u!212 &448602760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1751,7 +1745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.015357049
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2284,9 +2278,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
-  player1_forbidden: {fileID: 0}
-  player2_forbidden: {fileID: 0}
-  correctPrefab: {fileID: 0}
 --- !u!212 &712864933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3169,9 +3160,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
-  player1_forbidden: {fileID: 0}
-  player2_forbidden: {fileID: 0}
-  correctPrefab: {fileID: 0}
 --- !u!212 &1200224609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3497,7 +3485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.015357049
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3901,9 +3889,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
-  player1_forbidden: {fileID: 0}
-  player2_forbidden: {fileID: 0}
-  correctPrefab: {fileID: 0}
 --- !u!212 &1714080612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4134,9 +4119,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
-  player1_forbidden: {fileID: 0}
-  player2_forbidden: {fileID: 0}
-  correctPrefab: {fileID: 0}
 --- !u!212 &1862775935
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4413,7 +4395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8814977498323679292, guid: 2a48c301b5843461e95ce254ddeb4a11, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.014068579
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8814977498323679292, guid: 2a48c301b5843461e95ce254ddeb4a11, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4559,7 +4541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8814977498323679292, guid: 2a48c301b5843461e95ce254ddeb4a11, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.014068579
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8814977498323679292, guid: 2a48c301b5843461e95ce254ddeb4a11, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4686,9 +4668,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
-  player1_forbidden: {fileID: 0}
-  player2_forbidden: {fileID: 0}
-  correctPrefab: {fileID: 0}
 --- !u!212 &2014034884
 SpriteRenderer:
   m_ObjectHideFlags: 0
