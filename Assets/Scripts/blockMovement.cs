@@ -11,10 +11,12 @@ public class blockMovement : MonoBehaviour
     public bool collisionDetected = false;
 
     private Vector3 defaultPos = new Vector3(0, 0, (float)-0.15);
+    private BoxCollider2D boxCollider2d;
 
     void Start()
     {
-        // initially set to inactive 
+        // initially set to inactive
+        boxCollider2d = GetComponent<BoxCollider2D>();
         gameObject.SetActive(false);
     }
 
@@ -32,6 +34,7 @@ public class blockMovement : MonoBehaviour
                     if (!collisionDetected)
                     {
                         set = true;
+                        boxCollider2d.isTrigger = false;
                     }
                 }
                 Vector3 newPos = defaultPos;
@@ -117,6 +120,15 @@ public class blockMovement : MonoBehaviour
         return true;
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    // if collide with other blocks
+    //    if (collision.gameObject.CompareTag("Block"))
+    //    {
+    //        collisionDetected = true;
+    //    }
+    //}
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // if collide with other blocks
@@ -125,6 +137,14 @@ public class blockMovement : MonoBehaviour
             collisionDetected = true;
         }
     }
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Block"))
+    //    {
+    //        collisionDetected = false;
+    //    }
+    //}
 
     private void OnTriggerExit2D(Collider2D other)
     {

@@ -26,12 +26,11 @@ TODO:
 1. Revise the border condition of block position according to different size of the block
 2. Call GameController.Killed when a player is killed (collide with spike and the top of the 干草叉)
 3. in gold spike return to menu reenter cannot selection image appear.
-4. current selection in placement won't disappear when battle start (zy)
-5. pumpkin won't collide moutain (yb)
-6. Only start game after placing blocks, start when palcement is over. (xy)
-7. disable 60s coundown when selection. (xy)
-8. disable block movement when in placement stage. (yb)
-9. bomb cannot be placed on other block. (jyy)
+4. pumpkin won't collide moutain (yb)
+5. Only start game after placing blocks, start when palcement is over. (xy)
+6. disable 60s coundown when selection. (xy)
+7. disable block movement when in placement stage. (yb)
+8. bomb cannot be placed on other block. (jyy)
 
 Future:
 
