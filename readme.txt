@@ -31,15 +31,13 @@ TODO:
 6. Call GameController.Killed when a player is killed (collide with spike and the top of the 干草叉)
 7. in gold spike return to menu reenter cannot selection image appear.
 8. current selection in placement won't disappear when battle start (zy)
-9. Only start game after placing blocks
-10. Change to 2 blocks per player per round
-11. 60s count down for placing the blocks, and 60s count down for a play 
-    round
-    12
-12. disable 60s coundown when selection.
-13. disable block movement when in placement stage. (yb)
-14. bomb cannot be placed on other block.
+9. pumpkin won't collide moutain (yb)
+10. Only start game after placing blocks, start when palcement is over. (xy)
+11. disable 60s coundown when selection. (xy)
+12. disable block movement when in placement stage. (yb)
+13. bomb cannot be placed on other block. (jyy)
 
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
-1. bomb should be able to be put onto the block.
+
+   
