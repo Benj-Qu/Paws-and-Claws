@@ -2345,6 +2345,10 @@ PrefabInstance:
       propertyPath: block_id
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6235338384132814491, guid: cea1173dada05461eae4dc05266405bb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7146491419425396312, guid: cea1173dada05461eae4dc05266405bb, type: 3}
       propertyPath: m_RootOrder
       value: 2
