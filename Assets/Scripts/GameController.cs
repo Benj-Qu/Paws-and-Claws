@@ -8,6 +8,7 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject Grid;
     public static GameController instance;
     public GameObject explosionAes;
     private string level;
@@ -143,6 +144,7 @@ public class GameController : MonoBehaviour
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             GameObject.Find("SelectionPanel").GetComponent<Selection>().DoneWithPlacement();
+            Grid.SetActive(false);
         }
         else 
         {
