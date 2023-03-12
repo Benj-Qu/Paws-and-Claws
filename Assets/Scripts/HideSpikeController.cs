@@ -8,6 +8,7 @@ public class HideSpikeController : MonoBehaviour
     public float time=0.4f;
 
     private Animator anim;
+    private bool start;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,15 @@ public class HideSpikeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (start == false && GameController.instance.stage == 2)
+        {
+            start = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (start == true && collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(SpikeAttack());
         }
@@ -33,7 +37,10 @@ public class HideSpikeController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         anim.SetTrigger("attack");
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(SpikeBox, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1f);
+        //Instantiate(SpikeBox, transform.position, Quaternion.identity);
+        SpikeBox.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        SpikeBox.SetActive(false);
     }
 }
