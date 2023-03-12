@@ -87,31 +87,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-/*    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        ContactPoint2D hitpos = collision.GetContact(0);
-        if (isTerrain(collision) && hitpos.normal.y == 0 && rb.velocity.y < 0)
+        if (collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("Block"))
         {
-            if (hitpos.normal.x > 0)
-            {
-                Debug.Log("On Left Wall");
-                onLeftWall = true;
-                jumpTimes = MaxJumpTimes;
-            }
-            if (hitpos.normal.x < 0)
-            {
-                Debug.Log("On Right Wall");
-                onRightWall = true;
-                jumpTimes = MaxJumpTimes;
-            }
+            Die();
         }
-    }*/
-
-/*    private void OnCollisionExit2D(Collision2D collision)
-    {
-        onLeftWall = false;
-        onRightWall = false;
-    }*/
+    }
 
     private void UpdateVelocity()
     {
@@ -196,12 +178,12 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        alive = false;
         StartCoroutine(KilledAnimation());
     }
 
     private IEnumerator KilledAnimation()
     {
+        alive = false;
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(1f);
         gc.Killed(gameObject);
@@ -236,6 +218,6 @@ public class PlayerController : MonoBehaviour
     // alpha
     public void flash()
     {
-
+        
     }
 }
