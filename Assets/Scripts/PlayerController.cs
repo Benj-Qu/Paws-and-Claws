@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private bool alive;
     private bool active;
+    private bool invincible;
     private bool onFloor;
     private bool onLeftWall;
     private bool onRightWall;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         alive = true;
         active = false;
+        invincible = false;
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;
@@ -127,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Spike"))
+        if (!invincible && collision.gameObject.CompareTag("Spike"))
         {
             Die();
         }
@@ -223,13 +225,18 @@ public class PlayerController : MonoBehaviour
     {
         alive = false;
         rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(1f);
+        flash();
+        yield return new WaitForSeconds(0.2f);
         gc.Killed(gameObject);
+        invincible = true;
+        yield return new WaitForSeconds(0.3f);
         alive = true;
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;
         jumpTimes = MaxJumpTimes;
+        yield return new WaitForSeconds(0.5f);
+        invincible = false;
     }
 
     private bool onWall()
@@ -244,7 +251,13 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < 5; i++)
+        {
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
+            yield return new WaitForSeconds(0.1f);
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     public bool isActive()
