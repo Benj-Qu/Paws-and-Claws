@@ -18,7 +18,7 @@ public class BombController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("stage" + GameController.instance.stage);
+        // Debug.Log("stage" + GameController.instance.stage);
         if (start == false && GameController.instance.stage == 2)
         {
             start = true;
@@ -40,9 +40,9 @@ public class BombController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collide" + collision.gameObject);
+        //Debug.Log("collide" + collision.gameObject);
         
-        Debug.Log("start" + start);
+        //Debug.Log("start" + start);
         if (collision.gameObject.CompareTag("Block") && start)
         {
             
@@ -64,8 +64,8 @@ public class BombController : MonoBehaviour
     
     void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("collide1" + collision.gameObject);
-        Debug.Log("start1" + start);
+        //Debug.Log("collide1" + collision.gameObject);
+        //Debug.Log("start1" + start);
         if (collision.gameObject.CompareTag("Block") && start)
         {
             Debug.Log("collide1 in" );
