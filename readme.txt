@@ -34,8 +34,12 @@ TODO:
 9. Only start game after placing blocks
 10. Change to 2 blocks per player per round
 11. 60s count down for placing the blocks, and 60s count down for a play 
-round
-12
+    round
+    12
+12. disable 60s coundown when selection.
+13. disable block movement when in placement stage. (yb)
+14. bomb cannot be placed on other block.
 
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
+1. bomb should be able to be put onto the block.
