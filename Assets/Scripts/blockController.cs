@@ -33,8 +33,9 @@ public class blockController : MonoBehaviour
             finished = true;
             for (var i = transform.childCount - 1; i >= 0; i--)
             {
-                // transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-                transform.GetChild(i).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+                transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                // transform.GetChild(i).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             }
         }
     }
