@@ -10,6 +10,7 @@ public class Selection : MonoBehaviour
     private CardSelection _cardSelection1;
     private CardSelection _cardSelection2;
     private GameController gameController;
+    private blockController BlockController;
 
     public bool done = false;
 
@@ -18,7 +19,10 @@ public class Selection : MonoBehaviour
     {
         _cardSelection1 = Choice1.GetComponent<CardSelection>();
         _cardSelection2 = Choice2.GetComponent<CardSelection>();
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        GameObject temp = GameObject.Find("GameController");
+        if (temp) gameController = temp.GetComponent<GameController>();
+        GameObject temp1 = GameObject.Find("Block");
+        if (temp1) BlockController = temp1.GetComponent<blockController>();
     }
 
     // Update is called once per frame
@@ -27,13 +31,32 @@ public class Selection : MonoBehaviour
         if (!done && _cardSelection1.roundUp && _cardSelection2.roundUp)
         {
             done = true;
-            Debug.Log("battle begin");
-            // send gameController that the battle can begins.
+            Debug.Log("placement begin");
+            // send gameController that the placement can begins,
+            
             if (gameController)
             {
+                // placement begin
                 gameController.StartGame();
             }
         }
+    }
+
+    // call this when the placement is done
+    public void DoneWithPlacement()
+    {
+        // set itself as inactive and destroy these blocks that are not put down on map
+        if (BlockController)
+        {
+            foreach (blockMovement block in BlockController.bm)
+            {
+                if (block.set == false)
+                {
+                    Destroy(block.gameObject);
+                }
+            }
+        } 
+        gameObject.SetActive(false);
     }
     
 }

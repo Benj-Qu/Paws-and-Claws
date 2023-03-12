@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
+    public GameObject explosionAes;
     private int level = 0;
     private TextMeshProUGUI winText;
     private GameObject player1;
@@ -24,7 +27,20 @@ public class GameController : MonoBehaviour
 
     public ProgressBar_Main progressBar;
     // Start is called before the first frame update
-    
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            // destroy game object this script attached to, not the script itself. In this situation, the gameController
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         // Screen.SetResolution(960, 720, false);
@@ -44,6 +60,9 @@ public class GameController : MonoBehaviour
         camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
+        
+        // added by zeyi
+        explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
     }
 
     // Update is called once per frame
@@ -120,7 +139,7 @@ public class GameController : MonoBehaviour
         {
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
-            GameObject.Find("SelectionPanel").SetActive(false);
+            GameObject.Find("SelectionPanel").GetComponent<Selection>().DoneWithPlacement();
             GameObject.Find("Flags").GetComponent<flagController>().FlagGeneration();
         }
     }
