@@ -5,6 +5,8 @@ using UnityEngine;
 public class blockController : MonoBehaviour
 {
     public List<blockMovement> bm;
+
+    private bool finished = false;
     // Start is called before the first frame update
     void Start()
     {
