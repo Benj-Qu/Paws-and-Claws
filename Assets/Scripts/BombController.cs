@@ -25,7 +25,9 @@ public class BombController : MonoBehaviour
             if (explosion == false)
             {
                 explosion = true;
-                StartCoroutine(WaitAndExplode());
+                // StartCoroutine(WaitAndExplode());
+                Instantiate(GameController.instance.explosionAes, gameObject.transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
             }
         }
     }
@@ -62,7 +64,7 @@ public class BombController : MonoBehaviour
         }
     }
     
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         //Debug.Log("collide1" + collision.gameObject);
         //Debug.Log("start1" + start);
