@@ -27,8 +27,6 @@ TODO:
 2. in gold spike return to menu reenter cannot selection image appear.
 3. pumpkin won't collide moutain (yb)
 4. Only start game after placing blocks, start when palcement is over. (xy)
-5. disable block movement when in placement stage. (yb)
-6. bomb cannot be placed on other block. (jyy)
 
 Future:
 
