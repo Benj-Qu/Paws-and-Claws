@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4217611111692647463}
   m_Layer: 0
   m_Name: HideSpike
-  m_TagString: Spike
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 4217611111804713682}
   m_Layer: 0
   m_Name: SpikeBox
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

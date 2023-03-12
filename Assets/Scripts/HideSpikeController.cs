@@ -33,7 +33,10 @@ public class HideSpikeController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         anim.SetTrigger("attack");
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(SpikeBox, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1f);
+        //Instantiate(SpikeBox, transform.position, Quaternion.identity);
+        SpikeBox.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        SpikeBox.SetActive(false);
     }
 }
