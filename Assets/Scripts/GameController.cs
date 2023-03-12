@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        Destroy(instance);
         if (instance == null)
         {
             instance = this;
