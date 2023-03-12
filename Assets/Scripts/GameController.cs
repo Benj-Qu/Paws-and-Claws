@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public GameObject explosionAes;
-    private int level = 0;
+    private string level;
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;
@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         // Screen.SetResolution(960, 720, false);
-        level = SceneManager.GetActiveScene().name[5] - '0';
+        level = SceneManager.GetActiveScene().name;
         // scene = SceneManager.GetActiveScene().name[7] - '0';
         // scene = 0;
         Debug.Log("Level: "+ level);
