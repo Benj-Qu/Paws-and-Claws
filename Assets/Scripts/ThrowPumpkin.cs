@@ -9,18 +9,23 @@ public class ThrowPumpkin : MonoBehaviour
 
     private float speed = 4;
     private int seed;
+    private bool start = false;
     // Start is called before the first frame update
 
     void Start()
     {
-        InvokeRepeating("pumpkinThrow", 2f, 3f);
-        InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (start == false && GameController.instance.stage == 2)
+        {
+            start = true;
+            InvokeRepeating("pumpkinThrow", 2f, 3f);
+            InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
+        }
     }
 
     void pumpkinThrow()
