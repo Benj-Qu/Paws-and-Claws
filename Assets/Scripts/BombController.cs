@@ -24,9 +24,9 @@ public class BombController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Block") && start)
+        if (collision.gameObject.CompareTag("Block") && start)
         {
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
             blockMovement bm2 = gameObject.GetComponent<blockMovement>();
@@ -43,9 +43,9 @@ public class BombController : MonoBehaviour
         }
     }
     
-    void OnCollisionStay2D(Collider2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.CompareTag("Block") && start)
+        if (collision.gameObject.CompareTag("Block") && start)
         {
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
             blockMovement bm2 = gameObject.GetComponent<blockMovement>();

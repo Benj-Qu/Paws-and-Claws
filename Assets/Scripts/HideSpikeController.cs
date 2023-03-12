@@ -5,7 +5,7 @@ using UnityEngine;
 public class HideSpikeController : MonoBehaviour
 {
     public GameObject SpikeBox;
-    public float time;
+    public float time=0.4f;
 
     private Animator anim;
 
@@ -33,6 +33,7 @@ public class HideSpikeController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         anim.SetTrigger("attack");
+        yield return new WaitForSeconds(0.2f);
         Instantiate(SpikeBox, transform.position, Quaternion.identity);
     }
 }

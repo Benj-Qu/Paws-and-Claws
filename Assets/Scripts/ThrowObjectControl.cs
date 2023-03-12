@@ -22,6 +22,11 @@ public class ThrowObjectControl : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,5 +35,12 @@ public class ThrowObjectControl : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
+        }
     }
+
+
 }
