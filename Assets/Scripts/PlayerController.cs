@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
     {
         onFloor = false;
         onLeftWall = false;
-        onLeftWall = false;
+        onRightWall = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
