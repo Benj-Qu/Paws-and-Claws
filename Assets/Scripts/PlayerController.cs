@@ -153,8 +153,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isTerrain(Collision2D collision)
     {
-        return collision.gameObject.CompareTag("Block");
-        //    || collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Wall");
+        return collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Mountain");
     }
 
     private void jump()
