@@ -5,6 +5,8 @@ using UnityEngine;
 public class blockController : MonoBehaviour
 {
     public List<blockMovement> bm;
+
+    private bool finished = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,10 @@ public class blockController : MonoBehaviour
                 set_block_cnt += 1;
             }
         }
-        if (set_block_cnt == transform.childCount)
+        if (finished == false && set_block_cnt == transform.childCount)
         {
             GameController.instance.StartGame();
+            finished = true;
             for (var i = transform.childCount - 1; i >= 0; i--)
             {
                 transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
