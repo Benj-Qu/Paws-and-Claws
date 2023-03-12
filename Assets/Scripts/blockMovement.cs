@@ -187,4 +187,5 @@ public class blockMovement : MonoBehaviour
             if (!set) gameObject.SetActive(false);
         }
     }
+
 }

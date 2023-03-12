@@ -24,21 +24,26 @@ All Blocks:
 
 TODO:
 1. Revise the border condition of block position according to different size of the block
-2. (future) Amount of each block displayed and applied when player are placing blocks.
-3. (future) Instantiate a new block when one block is set if this block amount > 0.
-4. (future )Add image of each block (Like Clash Royale).
-5. (Future)Add block selection animation: block selected fly to the inventory bar.
-6. Call GameController.Killed when a player is killed (collide with pumpkin)
-7. Add sprite with white background when choosing what to place
-8. Only start game after placing blocks
-9. Change to 2 blocks per player per round
-10. 60s count down for placing the blocks, and 60s count down for a play 
-    round
-    12
-11. disable 60s coundown when selection.
-12. disable block movement when in placement stage. (yb)
-13. bomb cannot be placed on other block.
+2. Call GameController.Killed when a player is killed (collide with spike and the top of the 干草叉)
+3. in gold spike return to menu reenter cannot selection image appear.
+4. pumpkin won't collide moutain (yb)
+5. Only start game after placing blocks, start when palcement is over. (xy)
+6. disable 60s coundown when selection. (xy)
+7. disable block movement when in placement stage. (yb)
+8. bomb cannot be placed on other block. (jyy)
+
+Future:
+
+1. (future) Amount of each block displayed and applied when player are placing blocks.
+2. (future) Instantiate a new block when one block is set if this block amount > 0.
+3. (future )Add image of each block (Like Clash Royale).
+4. (Future)Add block selection animation: block selected fly to the inventory bar.
 
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
-1. bomb should be able to be put onto the block.
+
+   
+
+   
+
+   
