@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5164851540009751602}
   - component: {fileID: 6781244425603651300}
   - component: {fileID: 4828618431272781010}
+  - component: {fileID: -1469070760636395679}
   m_Layer: 0
   m_Name: pumpkin
   m_TagString: Block
@@ -94,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4263843740587977990}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -140,3 +141,15 @@ PolygonCollider2D:
       - {x: 0.32425523, y: 0.154796}
       - {x: 0.32425523, y: 0.34607637}
       - {x: 0.17207909, y: 0.53395784}
+--- !u!114 &-1469070760636395679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4263843740587977990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320a5693b13354ffc8290615929df500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
