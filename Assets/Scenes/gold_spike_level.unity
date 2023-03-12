@@ -916,6 +916,7 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 0
 --- !u!212 &318143382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1357,6 +1358,7 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 0
 --- !u!212 &448602760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2159,6 +2161,7 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 0
 --- !u!212 &712864933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2219,6 +2222,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1713000702}
     m_Modifications:
     - target: {fileID: 1407597433127936728, guid: cea1173dada05461eae4dc05266405bb, type: 3}
+      propertyPath: isBomb
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407597433127936728, guid: cea1173dada05461eae4dc05266405bb, type: 3}
       propertyPath: block_id
       value: 2
       objectReference: {fileID: 0}
@@ -2272,10 +2279,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146491419425396317, guid: cea1173dada05461eae4dc05266405bb, type: 3}
       propertyPath: m_Name
-      value: Bomb_2
+      value: Bomb
       objectReference: {fileID: 0}
     - target: {fileID: 7146491419425396317, guid: cea1173dada05461eae4dc05266405bb, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146491419425396319, guid: cea1173dada05461eae4dc05266405bb, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3032,6 +3043,7 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 0
 --- !u!212 &1200224609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3760,6 +3772,7 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 0
 --- !u!212 &1714080612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3989,6 +4002,7 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 0
 --- !u!212 &1862775935
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4538,6 +4552,7 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 0
 --- !u!212 &2014034884
 SpriteRenderer:
   m_ObjectHideFlags: 0
