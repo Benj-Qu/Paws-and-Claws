@@ -117,7 +117,7 @@ public class blockMovement : MonoBehaviour
         return true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         // if collide with other blocks
         if (other.CompareTag("Block"))
@@ -126,12 +126,7 @@ public class blockMovement : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-
-    //}
-
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Block"))
         {
