@@ -62,5 +62,6 @@ public class ProgressBar_Main : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
+        _slider.value = _slider.maxValue;
     }
 }
