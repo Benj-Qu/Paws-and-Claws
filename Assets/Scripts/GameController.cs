@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        Destroy(instance);
         if (instance == null)
         {
             instance = this;
@@ -139,7 +140,7 @@ public class GameController : MonoBehaviour
         {
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
-            GameObject.Find("SelectionPanel").SetActive(false);
+            GameObject.Find("SelectionPanel").GetComponent<Selection>().DoneWithPlacement();
             GameObject.Find("Flags").GetComponent<flagController>().FlagGeneration();
         }
     }
