@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7146491419425396312}
   - component: {fileID: 7146491419425396319}
-  - component: {fileID: 7146491419425396318}
   - component: {fileID: 7146491419425396313}
   - component: {fileID: 7146491419425396314}
   - component: {fileID: 1407597433127936728}
+  - component: {fileID: 6235338384132814491}
   m_Layer: 0
   m_Name: bomb
   m_TagString: Bomb
@@ -88,47 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &7146491419425396318
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7146491419425396317}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84375, y: 0.84375}
-    newSize: {x: 0.84375, y: 0.84375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.04275608, y: 0.42150068}
-      - {x: -0.14885616, y: 0.21192122}
-      - {x: -0.33897734, y: 0.2921977}
-      - {x: -0.26749706, y: 0.111995935}
-      - {x: -0.4436741, y: 0.0071074963}
-      - {x: -0.27389812, y: -0.12928128}
-      - {x: -0.341599, y: -0.3415985}
-      - {x: -0.14017057, y: -0.24283624}
-      - {x: -0.032850266, y: -0.421947}
-      - {x: 0.10102606, y: -0.21280432}
-      - {x: 0.2631073, y: -0.303097}
-      - {x: 0.22529984, y: -0.07665563}
-      - {x: 0.39998007, y: -0.00196743}
-      - {x: 0.20499706, y: 0.12883353}
-      - {x: 0.26749706, y: 0.3097837}
-      - {x: 0.06989384, y: 0.24017572}
 --- !u!114 &7146491419425396313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1407597433127936728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,3 +138,30 @@ MonoBehaviour:
   selected: 0
   set: 0
   collisionDetected: 0
+  isBomb: 1
+--- !u!61 &6235338384132814491
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146491419425396317}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.84375, y: 0.84375}
+    newSize: {x: 0.84375, y: 0.84375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.84375, y: 0.84375}
+  m_EdgeRadius: 0
