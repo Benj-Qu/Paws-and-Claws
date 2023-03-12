@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class BombController : MonoBehaviour
        
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Block"))
         {
@@ -38,7 +39,7 @@ public class BombController : MonoBehaviour
         }
     }
     
-    void OnTriggerStay2D(Collider2D collision)
+    void OnCollisionStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Block"))
         {
