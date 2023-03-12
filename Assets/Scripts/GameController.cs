@@ -52,8 +52,8 @@ public class GameController : MonoBehaviour
 
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
         StartPoint2 = StartPoint1;
-        StartPoint1.x -= 1;
-        StartPoint2.x += 1;
+        StartPoint1.x -= 0.5f;
+        StartPoint2.x += 0.5f;
         player1 = GameObject.Find("player_1");
         player2 = GameObject.Find("player_2");
         player1.transform.position = StartPoint1;
@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
         
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
+        progressBar.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -133,6 +134,7 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         // Start time countdown
+        progressBar.gameObject.SetActive(true);
         progressBar.StartGame();
         stage ++;
         // TODO: set player movement true
