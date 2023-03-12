@@ -12,13 +12,28 @@ public class blockController : MonoBehaviour
         {
             bm.Add(transform.GetChild(i).GetComponent<blockMovement>());
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        int set_block_cnt = 0;
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            if (bm[i].set)
+            {
+                set_block_cnt += 1;
+            }
+        }
+        if (set_block_cnt == transform.childCount)
+        {
+            GameController.instance.StartGame();
+            for (var i = transform.childCount - 1; i >= 0; i--)
+            {
+                // transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
+                transform.GetChild(i).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            }
+        }
     }
 
     public void Player1GetBlock(int id)
