@@ -9,6 +9,7 @@ TagManager:
   - Spike
   - Bomb
   - Wall
+  - Flag
   layers:
   - Default
   - TransparentFX

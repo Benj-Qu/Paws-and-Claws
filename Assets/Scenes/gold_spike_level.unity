@@ -5014,13 +5014,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884649206151815868, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
+      objectReference: {fileID: 0}
     - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
+      objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_Name
       value: Flags
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_RootOrder
@@ -5069,6 +5081,10 @@ PrefabInstance:
     - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
