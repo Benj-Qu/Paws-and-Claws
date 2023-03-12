@@ -41,11 +41,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         bc = GetComponent<BoxCollider2D>();
-        gc = GameObject.Find("GameController").GetComponent<GameController>();
-        if (gc.stage == 2)
-        {
-            active = true;
-        }
+        // gc = GameObject.Find("GameController").GetComponent<GameController>();
+        // if (gc.stage == 2)
+        // {
+        //     active = true;
+        // }
     }
 
     void Update()
@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(1f);
-        gc.Killed(gameObject);
+        // gc.Killed(gameObject);
         alive = true;
     }
 
