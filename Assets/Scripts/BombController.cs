@@ -7,8 +7,8 @@ public class BombController : MonoBehaviour
 {
     private GameObject explosionAes;
     private bool explosion = false;
-    private bool start = false;
-    
+    private bool start = false; // battle begin
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +18,26 @@ public class BombController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (!start && GameController.instance.stage == 2)
+       if (start == false && GameController.instance.stage == 2)
         {
             start = true;
+            if (explosion == false)
+            {
+                explosion = true;
+                StartCoroutine(WaitAndExplode());
+            }
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator WaitAndExplode()
+    {
+        yield return new WaitForSeconds(10f);
+        
+        Instantiate(GameController.instance.explosionAes, gameObject.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Block") && start)
         {
@@ -43,7 +56,7 @@ public class BombController : MonoBehaviour
         }
     }
     
-    void OnCollisionStay2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Block") && start)
         {

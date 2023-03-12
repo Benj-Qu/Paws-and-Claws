@@ -24,12 +24,11 @@ All Blocks:
 
 TODO:
 1. Revise the border condition of block position according to different size of the block
-2. Call GameController.Killed when a player is killed (collide with spike and the top of the 干草叉)
-3. in gold spike return to menu reenter cannot selection image appear.
-4. pumpkin won't collide moutain (yb)
-5. Only start game after placing blocks, start when palcement is over. (xy)
-6. disable block movement when in placement stage. (yb)
-7. bomb cannot be placed on other block. (jyy)
+2. in gold spike return to menu reenter cannot selection image appear.
+3. pumpkin won't collide moutain (yb)
+4. Only start game after placing blocks, start when palcement is over. (xy)
+5. disable block movement when in placement stage. (yb)
+6. bomb cannot be placed on other block. (jyy)
 
 Future:
 

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private bool alive;
     private bool active;
-    [SerializeField] private bool onFloor;
+    private bool onFloor;
     private bool onLeftWall;
     private bool onRightWall;
     private int jumpTimes;
@@ -85,6 +85,44 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Ouch!");
             }
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Jump Times
+        if (isTerrain(collision))
+        {
+            ContactPoint2D hitpos = collision.GetContact(0);
+            if (hitpos.normal.y > 0)
+            {
+                Debug.Log("On Floor");
+                onFloor = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            else if (hitpos.normal.x > 0)
+            {
+                Debug.Log("On Left Wall");
+                onLeftWall = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            else if (hitpos.normal.x < 0)
+            {
+                Debug.Log("On Right Wall");
+                onRightWall = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            else
+            {
+                Debug.Log("Ouch!");
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        onFloor = false;
+        onLeftWall = false;
+        onLeftWall = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -188,11 +226,25 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         gc.Killed(gameObject);
         alive = true;
+        onFloor = true;
+        onLeftWall = false;
+        onRightWall = false;
+        jumpTimes = MaxJumpTimes;
     }
 
     private bool onWall()
     {
         return (!onFloor) && ((onLeftWall && sr.flipX) || (onRightWall && !sr.flipX));
+    }
+
+    private void flash()
+    {
+        StartCoroutine(FlashCoroutine());
+    }
+
+    private IEnumerator FlashCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
     }
 
     public bool isActive()
@@ -216,8 +268,4 @@ public class PlayerController : MonoBehaviour
     // }
 
     // alpha
-    public void flash()
-    {
-        
-    }
 }
