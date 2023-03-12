@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,15 @@ public class Card : MonoBehaviour
     private Image _image;
 
     // public int amount = -1;
-    
+
+    private void Awake()
+    {
+        _image = GetComponent<Image>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        _image = GetComponent<Image>();
-        
         SetCard(block_id);
     }
 
