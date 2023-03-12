@@ -143,6 +143,9 @@ public class GameController : MonoBehaviour
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             GameObject.Find("SelectionPanel").GetComponent<Selection>().DoneWithPlacement();
+        }
+        else
+        {
             GameObject.Find("Flags").GetComponent<flagController>().FlagGeneration();
         }
     }
