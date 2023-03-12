@@ -25,10 +25,8 @@ All Blocks:
 TODO:
 1. Revise the border condition of block position according to different size of the block
 2. in gold spike return to menu reenter cannot selection image appear.
-3. pumpkin won't collide moutain (yb)
-4. Only start game after placing blocks, start when palcement is over. (xy)
-5. disable block movement when in placement stage. (yb)
-6. bomb cannot be placed on other block. (jyy)
+3. Only start game after placing blocks, start when palcement is over. (xy)
+4. 
 
 Future:
 
@@ -36,6 +34,9 @@ Future:
 2. (future) Instantiate a new block when one block is set if this block amount > 0.
 3. (future )Add image of each block (Like Clash Royale).
 4. (Future)Add block selection animation: block selected fly to the inventory bar.
+5. switch block when one placement is over 
+6. fobid switch to the block that are set
+7. continuous movement by holding key.
 
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.

@@ -57,14 +57,14 @@ public class Inventory : MonoBehaviour
         }
         
         // select the desire block
-        if (whichPlayer == 1 && Keyboard.current.leftShiftKey.wasPressedThisFrame)
+        if (GameController.instance.stage == 1 && whichPlayer == 1 && Keyboard.current.leftShiftKey.wasPressedThisFrame)
         {
             if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
             RotateIndex();
             if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
         }
 
-        if (whichPlayer == 2 && Keyboard.current.rightShiftKey.wasPressedThisFrame)
+        if (GameController.instance.stage == 1 && whichPlayer == 2 && Keyboard.current.rightShiftKey.wasPressedThisFrame)
         {
             if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
             RotateIndex();

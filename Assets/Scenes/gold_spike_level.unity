@@ -3481,11 +3481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.81
+      value: -5.651
       objectReference: {fileID: 0}
     - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.8
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4354,7 +4354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918520898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32, y: -0.41, z: 1.7519907}
+  m_LocalPosition: {x: -0.32, y: -0.73, z: 1.7519907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5014,13 +5014,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884649206151815868, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
+      objectReference: {fileID: 0}
     - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
+      objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_Name
       value: Flags
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_RootOrder
@@ -5069,6 +5081,10 @@ PrefabInstance:
     - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_TagString
+      value: Flag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
