@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 2134423986}
   m_Layer: 0
   m_Name: TX Village Props - Gunny Bag 02
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,7 +436,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -771,6 +771,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1584120567297465120, guid: 0758e030376c149dc90a93d95f472f71, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6879271774402062634, guid: 0758e030376c149dc90a93d95f472f71, type: 3}
       propertyPath: m_RootOrder
       value: 8

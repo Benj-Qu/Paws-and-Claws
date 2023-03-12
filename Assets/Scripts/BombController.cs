@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class BombController : MonoBehaviour
 {
     private GameObject explosionAes;
     private bool explosion = false;
+    private bool start = false;
     
     // Start is called before the first frame update
     void Start()
@@ -16,12 +18,15 @@ public class BombController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if (!start && GameController.instance.stage == 2)
+        {
+            start = true;
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Block"))
+        if (collision.CompareTag("Block") && start)
         {
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
             blockMovement bm2 = gameObject.GetComponent<blockMovement>();
@@ -38,9 +43,9 @@ public class BombController : MonoBehaviour
         }
     }
     
-    void OnTriggerStay2D(Collider2D collision)
+    void OnCollisionStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Block"))
+        if (collision.CompareTag("Block") && start)
         {
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
             blockMovement bm2 = gameObject.GetComponent<blockMovement>();
