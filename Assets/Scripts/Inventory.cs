@@ -17,7 +17,6 @@ public class Inventory : MonoBehaviour
 
     private bool _doneDim = false;
     private int _selectedIndex = 0;
-    private int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -85,10 +84,5 @@ public class Inventory : MonoBehaviour
             _selectedIndex += 1;
         }
         cards[_selectedIndex].SetCardBrightness(1f);
-    }
-
-    public void ChangeScore(int delta)
-    {
-        score += delta;
     }
 }

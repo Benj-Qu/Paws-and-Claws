@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private bool alive;
     private bool active;
-    private bool onFloor;
+    [SerializeField] private bool onFloor;
     private bool onLeftWall;
     private bool onRightWall;
     private int jumpTimes;
@@ -37,11 +37,11 @@ public class PlayerController : MonoBehaviour
         jumpTimes = MaxJumpTimes;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        // gc = GameObject.Find("GameController").GetComponent<GameController>();
-        // if (gc.stage == 2)
-        // {
-        //     active = true;
-        // }
+        gc = GameObject.Find("GameController").GetComponent<GameController>();
+        if (gc.stage == 2)
+        {
+            active = true;
+        }
     }
 
     void Update()
@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(1f);
-        // gc.Killed(gameObject);
+        gc.Killed(gameObject);
         alive = true;
     }
 

@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour
 
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
+    
+    private int score = 0;
+    
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
     public int stage = 0;
@@ -61,17 +64,29 @@ public class GameController : MonoBehaviour
 
     private IEnumerator Win()
     {
-        winText.text = "You Win!";
-        yield return new WaitForSeconds(2);
-        // SceneManager.LoadScene("Intro");
-        if (level != 6)
+        if (score > 0)
         {
-            SceneManager.LoadScene("Level" + (level + 1));
+            winText.text = "Michigan Wins!";
+        }
+        else if (score < 0)
+        {
+            winText.text = "Ohio Wins!";
         }
         else
         {
-            SceneManager.LoadScene("Intro");
+            winText.text = "Tie! Try again!";
         }
+        
+        yield return new WaitForSeconds(2);
+        // SceneManager.LoadScene("Intro");
+        // if (level != 6)
+        // {
+        //     SceneManager.LoadScene("Level" + (level + 1));
+        // }
+        // else
+        // {
+            SceneManager.LoadScene("Intro");
+        // }
         // player.GetComponent<HasInventory>().Reset();
     }
 
@@ -79,7 +94,7 @@ public class GameController : MonoBehaviour
     {
         // TODO: Add coroutine for animation
         // SceneManager.LoadScene("Level" + level);
-        StartCoroutine(Lose());
+        StartCoroutine(Win());
     }
 
     public void Killed(GameObject player)
@@ -106,6 +121,7 @@ public class GameController : MonoBehaviour
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             GameObject.Find("SelectionPanel").SetActive(false);
+            GameObject.Find("Flags").GetComponent<flagController>().FlagGeneration();
         }
     }
 
@@ -121,5 +137,10 @@ public class GameController : MonoBehaviour
     public string GetLevelName()
     {
         return "level" + level;
+    }
+    
+    public void ChangeScore(int delta)
+    {
+        score += delta;
     }
 }
