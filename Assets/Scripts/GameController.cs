@@ -144,8 +144,9 @@ public class GameController : MonoBehaviour
             player2.GetComponent<PlayerController>().activate();
             GameObject.Find("SelectionPanel").GetComponent<Selection>().DoneWithPlacement();
         }
-        else
+        else 
         {
+            Debug.Log("stage: " + stage);
             GameObject.Find("Flags").GetComponent<flagController>().FlagGeneration();
         }
     }
