@@ -3387,6 +3387,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584127486849517331, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2584127487106174510, guid: 1a13b80f57c4b4a4a85736c77cef3db8, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -3818,6 +3822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1806670750}
   - component: {fileID: 1806670751}
+  - component: {fileID: 1806670752}
   m_Layer: 0
   m_Name: Mountain
   m_TagString: Mountain
@@ -3865,14 +3870,44 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.9048201, y: -1.1357958}
-      - {x: -1.6150975, y: -1.133609}
+    - - {x: 1.0292487, y: -1.2239329}
+      - {x: 0.9416641, y: -1.1318195}
+      - {x: 0.7167647, y: -1.5728941}
+      - {x: -1.1958526, y: -1.3571486}
+      - {x: -1.608713, y: -1.1302835}
+      - {x: -1.7654489, y: -1.2372996}
       - {x: -1.9714617, y: -1.4624239}
       - {x: -2.4091609, y: -2.4345207}
       - {x: -3.2315996, y: -5.6566415}
       - {x: 2.4270697, y: -5.6176367}
       - {x: 1.5662533, y: -2.2714586}
-      - {x: 1.1404372, y: -1.3428054}
+      - {x: 1.119699, y: -1.3635435}
+--- !u!61 &1806670752
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806670748}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.33148754, y: -1.7794}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.551111, y: 1.3064697}
+  m_EdgeRadius: 0
 --- !u!1 &1862775930
 GameObject:
   m_ObjectHideFlags: 0
