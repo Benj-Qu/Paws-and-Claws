@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         alive = true;
-        active = false;
+        active = true;
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;

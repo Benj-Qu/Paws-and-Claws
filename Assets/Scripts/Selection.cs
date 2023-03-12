@@ -18,7 +18,8 @@ public class Selection : MonoBehaviour
     {
         _cardSelection1 = Choice1.GetComponent<CardSelection>();
         _cardSelection2 = Choice2.GetComponent<CardSelection>();
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        GameObject temp = GameObject.Find("GameController");
+        if (temp) gameController = temp.GetComponent<GameController>();
     }
 
     // Update is called once per frame

@@ -54,22 +54,22 @@ public class Inventory : MonoBehaviour
                 i.SetCardBrightness(0.3f);
             }
             cards[0].SetCardBrightness(1f);
-            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].block_id);
+            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
         }
         
         // select the desire block
         if (whichPlayer == 1 && Keyboard.current.leftShiftKey.wasPressedThisFrame)
         {
-            if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].block_id);
+            if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
             RotateIndex();
-            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].block_id);
+            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
         }
 
         if (whichPlayer == 2 && Keyboard.current.rightShiftKey.wasPressedThisFrame)
         {
-            if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].block_id);
+            if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
             RotateIndex();
-            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].block_id);
+            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
         }
     }
 

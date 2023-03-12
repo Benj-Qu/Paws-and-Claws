@@ -13,14 +13,19 @@ public class AllCards : MonoBehaviour
     {
         cards = new Dictionary<int, string>();
         
-        // example with id 0, 1, 2, 3
-        cards.Add(0, "flag_ohio"); // TODO: only works for single sprite (not a split sprite inside a large sprite)
-        cards.Add(1, "flag_um");
-        cards.Add(2, "IMG_1828");
-        cards.Add(3, "IMG_1829");
-        cards.Add(4, "Bar");
-        cards.Add(5, "flag_Empty");
-        cards.Add(6, "6");
-        cards.Add(7, "7");
+        cards.Add(0, "scarecrow_"); // TODO: only works for single sprite (not a split sprite inside a large sprite)
+        cards.Add(1, "hideSpike_");
+        cards.Add(2, "rectangle_");
+        cards.Add(3, "square_");
+        cards.Add(4, "bomb_");
+
+        // cards.Add(0, "scarecrow_");
+        // cards.Add(1, "hideSpike_");
+        // cards.Add(2, "rectangle_");
+        // cards.Add(3, "square_");
+        // cards.Add(4, "bomb_");
+        // cards.Add(5, "scarecrow_");
+        // cards.Add(6, "rectangle_");
+        // cards.Add(7, "square_");
     }
 }
