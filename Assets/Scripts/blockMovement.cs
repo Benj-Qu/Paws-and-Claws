@@ -9,14 +9,22 @@ public class blockMovement : MonoBehaviour
     public bool selected;
     public bool set = false;
     public bool collisionDetected = false;
+    public bool isBomb = false;
 
     private Vector3 defaultPos = new Vector3(0, 0, (float)-0.15);
-    private BoxCollider2D boxCollider2d;
+    private Collider2D Collider2d;
 
     void Start()
     {
         // initially set to inactive
-        boxCollider2d = GetComponent<BoxCollider2D>();
+        if(GetComponent<BoxCollider2D>() != null)
+        {
+            Collider2d = GetComponent<BoxCollider2D>();
+        }
+        else
+        {
+            Collider2d = GetComponent<PolygonCollider2D>();
+        }
         gameObject.SetActive(false);
     }
 
@@ -31,10 +39,22 @@ public class blockMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
                     // press Z to fix the position of this block, can't move any more
-                    if (!collisionDetected)
+                    if(isBomb == true)
                     {
                         set = true;
-                        boxCollider2d.isTrigger = false;
+                        Collider2d.isTrigger = false;
+                        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+                        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                    }
+                    else
+                    {
+                        if (!collisionDetected)
+                        {
+                            set = true;
+                            Collider2d.isTrigger = false;
+                            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+                            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                        }
                     }
                 }
                 Vector3 newPos = defaultPos;
