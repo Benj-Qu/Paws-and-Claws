@@ -2,5 +2,8 @@ Our gold spike mechanic that the two players could use the given blocks to
 design their way to the flags and color as many flags as possible. They 
 will compete with each other when choosing their blocks and building their 
 ways towards the flag with the goal that they can get to the flag while 
-others 
-cannot.
+others cannot.
+
+Operations:
+Player1: use AWDS to move blocks & character1, left shift to switch blocks, Z to set the block
+Player2: use arrows to move blocks & character2, right shift to switch blocks, M to set the block
