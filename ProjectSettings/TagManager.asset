@@ -8,6 +8,7 @@ TagManager:
   - Mountain
   - Spike
   - Bomb
+  - Wall
   layers:
   - Default
   - TransparentFX
