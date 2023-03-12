@@ -377,7 +377,7 @@ MonoBehaviour:
   DieAltitude: -6
   LeftButton: 97
   RightButton: 100
-  JumpButton: 304
+  JumpButton: 119
   onFloor: 0
 --- !u!50 &274675828
 Rigidbody2D:
@@ -4072,7 +4072,7 @@ MonoBehaviour:
   DieAltitude: -6
   LeftButton: 276
   RightButton: 275
-  JumpButton: 13
+  JumpButton: 273
   onFloor: 0
 --- !u!50 &1867150102
 Rigidbody2D:
