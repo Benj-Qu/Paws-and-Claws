@@ -66,25 +66,18 @@ public class PlayerController : MonoBehaviour
             ContactPoint2D hitpos = collision.GetContact(0);
             if (hitpos.normal.y > 0)
             {
-                Debug.Log("On Floor");
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
             }
             else if (hitpos.normal.x > 0)
             {
-                Debug.Log("On Left Wall");
                 onLeftWall = true;
                 jumpTimes = MaxJumpTimes;
             }
             else if (hitpos.normal.x < 0)
             {
-                Debug.Log("On Right Wall");
                 onRightWall = true;
                 jumpTimes = MaxJumpTimes;
-            }
-            else
-            {
-                Debug.Log("Ouch!");
             }
         }
     }
@@ -97,25 +90,18 @@ public class PlayerController : MonoBehaviour
             ContactPoint2D hitpos = collision.GetContact(0);
             if (hitpos.normal.y > 0)
             {
-                Debug.Log("On Floor");
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
             }
             else if (hitpos.normal.x > 0)
             {
-                Debug.Log("On Left Wall");
                 onLeftWall = true;
                 jumpTimes = MaxJumpTimes;
             }
             else if (hitpos.normal.x < 0)
             {
-                Debug.Log("On Right Wall");
                 onRightWall = true;
                 jumpTimes = MaxJumpTimes;
-            }
-            else
-            {
-                Debug.Log("Ouch!");
             }
         }
     }

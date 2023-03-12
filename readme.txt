@@ -25,8 +25,7 @@ All Blocks:
 TODO:
 1. Revise the border condition of block position according to different size of the block
 2. in gold spike return to menu reenter cannot selection image appear.
-3. Only start game after placing blocks, start when palcement is over. (xy)
-4. 
+3. spike attack in placement.
 
 Future:
 
