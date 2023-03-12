@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    public int block_id = -1;
+    public int block_id = -1; // indicate card category
+    public int index = -1;
 
     private Image _image;
 

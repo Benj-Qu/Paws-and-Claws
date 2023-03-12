@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class CardSelection : MonoBehaviour
 {
+    // TODO: use onAwake to automatically added block prefab (with predetermined index) as the children of block, no longer need to manually add
     // each round player will select one card and give the other one to the other player
     public int round = 2;
     public int whichPlayer;
@@ -97,8 +98,8 @@ public class CardSelection : MonoBehaviour
             {
                 // TODO: left selected
                 Debug.Log("left player left");
-                AddToInventory(1, _card1Script.block_id, true);
-                AddToInventory(2, _card2Script.block_id, false);
+                AddToInventory(1, _card1Script.block_id, true, _card1Script.index);
+                AddToInventory(2, _card2Script.block_id, false, _card2Script.index);
                 // next round
                 Round();
             }
@@ -106,8 +107,8 @@ public class CardSelection : MonoBehaviour
             {
                 // TODO: right selected
                 Debug.Log("left player right");
-                AddToInventory(1, _card2Script.block_id, true);
-                AddToInventory(2, _card1Script.block_id, false);
+                AddToInventory(1, _card2Script.block_id, true, _card2Script.index);
+                AddToInventory(2, _card1Script.block_id, false, _card1Script.index);
                 // next round
                 Round();
             }
@@ -119,8 +120,8 @@ public class CardSelection : MonoBehaviour
             {
                 // TODO: left selected
                 Debug.Log("right player left");
-                AddToInventory(2, _card1Script.block_id, true);
-                AddToInventory(1, _card2Script.block_id, false);
+                AddToInventory(2, _card1Script.block_id, true, _card1Script.index);
+                AddToInventory(1, _card2Script.block_id, false, _card2Script.index);
                 // next round
                 Round();
             }
@@ -128,8 +129,8 @@ public class CardSelection : MonoBehaviour
             {
                 // TODO: right selected
                 Debug.Log("right player right");
-                AddToInventory(2, _card2Script.block_id, true);
-                AddToInventory(1, _card1Script.block_id, false);
+                AddToInventory(2, _card2Script.block_id, true, _card2Script.index);
+                AddToInventory(1, _card1Script.block_id, false, _card1Script.index);
                 // next round
                 Round();
             }
@@ -149,26 +150,26 @@ public class CardSelection : MonoBehaviour
             {
                 if (whichPlayer == 1)
                 {
-                    AddToInventory(1, _card1Script.block_id, true);
-                    AddToInventory(2, _card2Script.block_id, false);
+                    AddToInventory(1, _card1Script.block_id, true, _card1Script.index);
+                    AddToInventory(2, _card2Script.block_id, false, _card2Script.index);
                 }
                 else
                 {
-                    AddToInventory(2, _card1Script.block_id, true);
-                    AddToInventory(1, _card2Script.block_id, false);
+                    AddToInventory(2, _card1Script.block_id, true, _card1Script.index);
+                    AddToInventory(1, _card2Script.block_id, false, _card2Script.index);
                 }
             }
             else
             {
                 if (whichPlayer == 1)
                 {
-                    AddToInventory(1, _card2Script.block_id, true);
-                    AddToInventory(2, _card1Script.block_id, false);
+                    AddToInventory(1, _card2Script.block_id, true, _card2Script.index);
+                    AddToInventory(2, _card1Script.block_id, false, _card1Script.index);
                 }
                 else
                 {
-                    AddToInventory(2, _card2Script.block_id, true);
-                    AddToInventory(1, _card1Script.block_id, false);
+                    AddToInventory(2, _card2Script.block_id, true, _card2Script.index);
+                    AddToInventory(1, _card1Script.block_id, false, _card1Script.index);
                 }
             }
             
@@ -193,6 +194,7 @@ public class CardSelection : MonoBehaviour
         StartCoroutine(DrawCard());
     }
 
+    // Use index to identify each card (even the id is the same, indicating the same kind of card)
     private IEnumerator DrawCard()
     {
         yield return new WaitForSeconds(1f);
@@ -203,12 +205,16 @@ public class CardSelection : MonoBehaviour
             if (whichPlayer == 1)
             {
                 _card1Script.SetCard(0);
+                _card1Script.index = 0;
                 _card2Script.SetCard(1);
+                _card2Script.index = 1;
             }
             else
             {
                 _card1Script.SetCard(4);
-                _card2Script.SetCard(5);
+                _card1Script.index = 2;
+                _card2Script.SetCard(0);
+                _card2Script.index = 3;
             }
         }
         else if (_currentRound == 2)
@@ -216,12 +222,16 @@ public class CardSelection : MonoBehaviour
             if (whichPlayer == 2)
             {
                 _card1Script.SetCard(2);
+                _card1Script.index = 4;
                 _card2Script.SetCard(3);
+                _card2Script.index = 5;
             }
             else
             {
-                _card1Script.SetCard(6);
-                _card2Script.SetCard(7);
+                _card1Script.SetCard(2);
+                _card1Script.index = 6;
+                _card2Script.SetCard(3);
+                _card2Script.index = 7;
             }
             
         }
@@ -235,16 +245,17 @@ public class CardSelection : MonoBehaviour
     {
         _timeUp = true;
     }
-
-    public void AddToInventory(int whichInventory, int blockID, bool atFront)
+    
+    public void AddToInventory(int whichInventory, int blockID, bool atFront, int cardIndex)
     {
         if (whichInventory == 1)
         {
-            if (BlockController) BlockController.Player1GetBlock(blockID);
-            
+            if (BlockController) BlockController.Player1GetBlock(cardIndex);
+
             if (atFront)
             {
                 inventory1.cards[inventory1.cardAddedFront].SetCard(blockID);
+                inventory1.cards[inventory1.cardAddedFront].index = cardIndex;
                 inventory1.cards[inventory1.cardAddedFront].CardAppear();
                 // count the pair of card added, only count the one added at the front
                 inventory1.cardAddedFront += 1;
@@ -252,6 +263,7 @@ public class CardSelection : MonoBehaviour
             else
             {
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].SetCard(blockID);
+                inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].index = cardIndex;
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].CardAppear();
                 inventory1.cardAddedBack += 1;
             }
@@ -259,17 +271,19 @@ public class CardSelection : MonoBehaviour
         }
         else
         {
-            if (BlockController) BlockController.Player2GetBlock(blockID);
+            if (BlockController) BlockController.Player2GetBlock(cardIndex);
             
             if (atFront)
             {
                 inventory2.cards[inventory2.cardAddedFront].SetCard(blockID);
+                inventory2.cards[inventory2.cardAddedFront].index = cardIndex;
                 inventory2.cards[inventory2.cardAddedFront].CardAppear(); 
                 inventory2.cardAddedFront += 1;
             }
             else
             {
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].SetCard(blockID);
+                inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].index = cardIndex;
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].CardAppear();
                 inventory2.cardAddedBack += 1;
             }

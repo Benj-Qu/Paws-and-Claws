@@ -127,6 +127,7 @@ MonoBehaviour:
   cardAddedBack: 0
   selection: {fileID: 2440277720884465061}
   whichPlayer: 2
+  BlockController: {fileID: 0}
 --- !u!1 &2440277720525326089
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +255,7 @@ MonoBehaviour:
   cardAddedBack: 0
   selection: {fileID: 2440277720884465061}
   whichPlayer: 1
+  BlockController: {fileID: 0}
 --- !u!1 &2440277720884465118
 GameObject:
   m_ObjectHideFlags: 0
