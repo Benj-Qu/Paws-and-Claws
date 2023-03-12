@@ -104,7 +104,7 @@ public class blockMovement : MonoBehaviour
         if (isBomb == true)
         {
             set = true;
-            Collider2d.isTrigger = false;
+            // Collider2d.isTrigger = false;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
         else
