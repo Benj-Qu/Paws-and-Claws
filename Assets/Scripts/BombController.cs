@@ -18,7 +18,8 @@ public class BombController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (!start && GameController.instance.stage == 2)
+        Debug.Log("stage" + GameController.instance.stage);
+        if (start == false && GameController.instance.stage == 2)
         {
             start = true;
             if (explosion == false)
@@ -39,8 +40,13 @@ public class BombController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("collide" + collision.gameObject);
+        
+        Debug.Log("start" + start);
         if (collision.gameObject.CompareTag("Block") && start)
         {
+            
+            Debug.Log("collide in" );
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
             blockMovement bm2 = gameObject.GetComponent<blockMovement>();
             if (bm1 && bm2 && bm1.set && bm2.set)
@@ -58,8 +64,11 @@ public class BombController : MonoBehaviour
     
     void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("collide1" + collision.gameObject);
+        Debug.Log("start1" + start);
         if (collision.gameObject.CompareTag("Block") && start)
         {
+            Debug.Log("collide1 in" );
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
             blockMovement bm2 = gameObject.GetComponent<blockMovement>();
             if (bm1 && bm2 && bm1.set && bm2.set) 
