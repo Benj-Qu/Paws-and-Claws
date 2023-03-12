@@ -8,6 +8,7 @@ public class HideSpikeController : MonoBehaviour
     public float time=0.4f;
 
     private Animator anim;
+    private bool start;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,15 @@ public class HideSpikeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (start == false && GameController.instance.stage == 2)
+        {
+            start = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (start == true && collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(SpikeAttack());
         }
