@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   JumpSpeed: 10
-  SlideSpeed: 1
+  SlideSpeed: 0.1
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
@@ -1627,6 +1627,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2440277720461811773, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
+      propertyPath: m_Name
+      value: Choice_1
+      objectReference: {fileID: 0}
     - target: {fileID: 2440277720884465058, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1727,6 +1731,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3104043139735856222, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
+      propertyPath: m_Name
+      value: ProgressBar_1
+      objectReference: {fileID: 0}
     - target: {fileID: 3104043141153493464, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1734,6 +1742,14 @@ PrefabInstance:
     - target: {fileID: 3104043141153493464, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104043141218028777, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
+      propertyPath: m_Name
+      value: ProgressBar_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811182452547316825, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
+      propertyPath: m_Name
+      value: Choice_2
       objectReference: {fileID: 0}
     - target: {fileID: 6392671042905875333, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3574,7 +3590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   JumpSpeed: 10
-  SlideSpeed: 1
+  SlideSpeed: 0.1
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
@@ -4061,6 +4077,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3884649206151815868, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_Name
       value: Flags
@@ -4107,6 +4131,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

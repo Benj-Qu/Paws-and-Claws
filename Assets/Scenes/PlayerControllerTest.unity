@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   JumpSpeed: 10
-  SlideSpeed: 1
+  SlideSpeed: 0.1
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -10
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   JumpSpeed: 10
-  SlideSpeed: 1
+  SlideSpeed: 0.1
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -10
