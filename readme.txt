@@ -40,8 +40,47 @@ Future:
 Bugs:
 1. Should blocks from the two players collide with each other when they are not set (not put down on the map yet)? not sure.
 
-   
 
-   
 
-   
+P3 playtest
+
+Design level 的比较大的：
+
+1. 两个player都能放，别人放的我也能上，所以怎么放不是很有策略性，可以考虑一个player放的对自己优势对别人有负面影响。
+   1. 多个round
+2. 增加对战性 让玩家可以阻碍对方 
+   1. 碰撞
+   2. PowerUp 变大，加速，huojian
+   3. possible future: character attack each other
+3. map scale (future)
+4. more Blocks (future)
+5. 选择block可以有简单动画显示block效果
+6. Make the story more natural (future, 画一点，外援)
+   1. 一猫一狗
+7. win mechanism: flag generation （）
+   1. 计分制 积分制获胜条件：每控制flag一段时间得一分 而非最后一刻旗子数量
+   2. 多面旗 powerup 金币
+   3. Football style: each player has their home flag
+   4. maybe change flag generation alg
+8. 选择block需要tutorial 可以加一些guide level (说明是competing还是cooperation）
+   1. follow each phase: player control, seleciton ,placement, flag
+   2. first basic block, 试玩
+
+小改进：
+
+1. 放下block之后自动切换到下一个
+
+1. 出生点不同 （对称）
+2. block 放置失败 indicator
+3. 用两个键盘
+4. Grid make smaller
+5. indicate 哪个block是自己要放的
+6. level 1名字confusing
+7. block边界 （不同大小block不能一出去）
+8. 更多种类的block/地形
+9. 只攻击对方/对自己有特殊效果的block （maybe future）
+
+
+
+
+
