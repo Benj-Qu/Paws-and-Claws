@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class blockController : MonoBehaviour
 {
@@ -77,5 +78,19 @@ public class blockController : MonoBehaviour
             bm[i].UnSelectBlock(id);
         }
     }
-
+    
+    // added by zeyi
+    public bool GetBlockSetStatus(int id)
+    {
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            if (bm[i].block_id == id)
+            {
+                return bm[i].set;
+            }
+        }
+        // otherwise has problem:
+        Assert.IsTrue(false);
+        return true;
+    }
 }

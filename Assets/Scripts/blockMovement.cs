@@ -31,8 +31,10 @@ public class blockMovement : MonoBehaviour
                 // player_1 selected blocks
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
+                    Debug.Log("player 1 z block");
                     // press Z to fix the position of this block, can't move any more
                     freezeBlock();
+                    EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 1)); 
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;
@@ -68,6 +70,7 @@ public class blockMovement : MonoBehaviour
                 {
                     // press Z to fix the position of this block, can't move any more
                     freezeBlock();
+                    EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 2)); 
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;
@@ -200,5 +203,22 @@ public class blockMovement : MonoBehaviour
             if (!set) gameObject.SetActive(false);
         }
     }
+}
 
+// added by zeyi, using eventbus
+public class BlockSetEvent
+{
+    public int block_id = 0;
+    public int whichPlayer = 1;
+
+    public BlockSetEvent(int _block_id, int _whichPlayer)
+    {
+        block_id = _block_id;
+        whichPlayer = _whichPlayer;
+    }
+
+    public override string ToString()
+    {
+        return "Block id " + block_id + " set ";
+    }
 }

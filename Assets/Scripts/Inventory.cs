@@ -17,6 +17,9 @@ public class Inventory : MonoBehaviour
 
     private bool _doneDim = false;
     private int _selectedIndex = 0;
+    private bool _allSet = false;
+    
+    Subscription<BlockSetEvent> block_set_event_subscription;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +43,22 @@ public class Inventory : MonoBehaviour
             cards.Add(child.GetChild(0).GetComponent<Card>());
             amounts.Add(0);
         }
+        
+        // subscription
+        block_set_event_subscription = EventBus.Subscribe<BlockSetEvent>(OnBlockSetEvent);
+    }
+
+    
+    // after set roll to the next
+    private void OnBlockSetEvent(BlockSetEvent e)
+    {
+        if (GameController.instance.stage == 1)
+        {
+            if (e.whichPlayer == whichPlayer)
+            {
+                RollToNextUnset();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -47,6 +66,7 @@ public class Inventory : MonoBehaviour
     {
         if (selection.done && !_doneDim)
         {
+            // only called once
             _doneDim = true;
             foreach (Card i in cards)
             {
@@ -55,26 +75,87 @@ public class Inventory : MonoBehaviour
             cards[0].SetCardBrightness(1f);
             if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
         }
+
+        
+        // if (GameController.instance.stage == 1 && whichPlayer == 1 && Keyboard.current.zKey.wasPressedThisFrame)
+        // {
+        //     Debug.Log("player1 inven z ");
+        //     RollToNextUnset();
+        // }
+        //
+        // if (GameController.instance.stage == 1 && whichPlayer == 2 && Keyboard.current.mKey.wasPressedThisFrame)
+        // {
+        //     RollToNextUnset();
+        // }
+        
         
         // select the desire block
         if (GameController.instance.stage == 1 && whichPlayer == 1 && Keyboard.current.leftShiftKey.wasPressedThisFrame)
         {
-            if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
-            RotateIndex();
-            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
+            // if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
+            // RotateIndex();
+            // if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
+            RollToNextUnset();
         }
-
+        
         if (GameController.instance.stage == 1 && whichPlayer == 2 && Keyboard.current.rightShiftKey.wasPressedThisFrame)
         {
-            if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
+            // if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
+            // RotateIndex();
+            // if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
+            RollToNextUnset();
+        }
+    }
+    
+    // if the current block in the inventory is already set, then roll to the next unset block, if no unset block, all
+    // the block in inventory become dim and none of then can be shifted to.
+    private void RollToNextUnset()
+    {
+        if (BlockController)
+        {
+            int oriSelectedIndex = _selectedIndex;
+            // if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
+            // Debug.Log("here" + BlockController.GetBlockSetStatus(cards[_selectedIndex].index));
             RotateIndex();
-            if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
+            while (BlockController.GetBlockSetStatus(cards[_selectedIndex].index))
+            {
+                // if back to itself (go through a round all set)
+                if (_selectedIndex == oriSelectedIndex)
+                {
+                    // make them all dim and none of them can be selected
+                    foreach (Card card in cards)
+                    {
+                        card.SetCardBrightness(0f);
+                    }
+
+                    _allSet = true;
+                    break;
+                }
+                
+                RotateIndex();
+            }
+            
+            if (!_allSet)
+            {
+                if (BlockController) BlockController.UnSelectBlock(cards[oriSelectedIndex].index);
+                if (BlockController) BlockController.SelectBlock(cards[_selectedIndex].index);
+            }
         }
     }
 
     private void RotateIndex()
     {
-        cards[_selectedIndex].SetCardBrightness(0.3f);
+        Debug.Log("rotate");
+        if (BlockController)
+        {
+            cards[_selectedIndex].SetCardBrightness(0f);
+        }
+
+        if (!BlockController.GetBlockSetStatus(cards[_selectedIndex].index))
+        {
+            cards[_selectedIndex].SetCardBrightness(0.3f);
+        }
+        
         if (_selectedIndex == cards.Count - 1)
         {
             _selectedIndex = 0;
@@ -83,6 +164,20 @@ public class Inventory : MonoBehaviour
         {
             _selectedIndex += 1;
         }
-        cards[_selectedIndex].SetCardBrightness(1f);
+        
+        if (BlockController)
+        {
+            cards[_selectedIndex].SetCardBrightness(0f);
+        }
+
+        if (!BlockController.GetBlockSetStatus(cards[_selectedIndex].index))
+        {
+            cards[_selectedIndex].SetCardBrightness(1f);
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe(block_set_event_subscription);
     }
 }
