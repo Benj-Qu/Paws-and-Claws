@@ -50,35 +50,36 @@ Design level 的比较大的：
    1. 多个round
 2. 增加对战性 让玩家可以阻碍对方 
    1. 碰撞
-   2. PowerUp 变大，加速，huojian
+   2. PowerUp 变大，加速（future）， 推进器（future）
    3. possible future: character attack each other
 3. map scale (future)
 4. more Blocks (future)
-5. 选择block可以有简单动画显示block效果
+5. 选择block可以有简单动画显示block效果 （外援）
 6. Make the story more natural (future, 画一点，外援)
    1. 一猫一狗
+   2. music
 7. win mechanism: flag generation （）
-   1. 计分制 积分制获胜条件：每控制flag一段时间得一分 而非最后一刻旗子数量
-   2. 多面旗 powerup 金币
-   3. Football style: each player has their home flag
-   4. maybe change flag generation alg
-8. 选择block需要tutorial 可以加一些guide level (说明是competing还是cooperation）
-   1. follow each phase: player control, seleciton ,placement, flag
-   2. first basic block, 试玩
+   1. 计分制 积分制获胜条件：每控制flag一段时间得一分 而非最后一刻旗子数量 UI scoreboard
+   2. 多来点旗 金币
+   3. Football style: each player has their home flag （maybe future）
+   4. change flag generation alg （maybe future）
+8. 可以加一些guide level (说明是competing还是cooperation）
+   1. follow each phase: player control, selection ,placement, flag
+   2. 试玩 一个round 的过程， 放block，跳， 抢旗 （互相撞）。
 
 小改进：
 
 1. 放下block之后自动切换到下一个
 
-1. 出生点不同 （对称）
-2. block 放置失败 indicator
-3. 用两个键盘
-4. Grid make smaller
-5. indicate 哪个block是自己要放的
-6. level 1名字confusing
-7. block边界 （不同大小block不能一出去）
-8. 更多种类的block/地形
-9. 只攻击对方/对自己有特殊效果的block （maybe future）
+1. block 放置失败 indicator
+2. Grid make smaller
+3. indicate 哪个block是自己要放的， 边框
+4. indicate block set or not, 勾叉
+5. level 1名字confusing
+6. block边界 （不同大小block不能一出去）
+7. 更多种类的block/地形
+8. 只攻击对方/对自己有特殊效果的block （maybe future）
+9. 出生点不同（maybe future）
 
 
 
