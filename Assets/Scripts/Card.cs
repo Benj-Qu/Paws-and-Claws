@@ -30,7 +30,7 @@ public class Card : MonoBehaviour
         
     }
 
-    public void SetCard(int block_id)
+    public void SetCard(int _block_id)
     {
         if (block_id == -1)
         {
@@ -38,10 +38,21 @@ public class Card : MonoBehaviour
         }
 
         // set the block id
-        this.block_id = block_id;
+        this.block_id = _block_id;
         
         // look for the corresponding image in the sprite folder
-        _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[this.block_id]);
+        _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[this.block_id] + "_");
+    }
+
+    public void SetIndex(int _index)
+    {
+        index = _index;
+    }
+
+    public void SetIndexAndWhichCard(int _block_id, int _index)
+    {
+        SetCard(_block_id);
+        SetIndex(_index);
     }
 
     public void CardDisappear()

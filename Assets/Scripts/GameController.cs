@@ -8,6 +8,12 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    // added by zeyi
+    public int round_big = 1;
+    /*temporarily added by zeyi*/
+    private bool a = false;
+    /*temporarily added by zeyi*/
+
     public GameObject Grid;
     public static GameController instance;
     public GameObject explosionAes;
@@ -16,6 +22,7 @@ public class GameController : MonoBehaviour
     private GameObject player1;
     private GameObject player2;
     private Camera camera_;
+    public GameObject selectionPanel;
 
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
@@ -66,6 +73,8 @@ public class GameController : MonoBehaviour
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
         progressBar.gameObject.SetActive(false);
+        // call this with the local attribute round_big when the round increment
+        EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
     }
 
     // Update is called once per frame
@@ -75,6 +84,15 @@ public class GameController : MonoBehaviour
         {
             ExitMenu.SetActive(true);
         }
+
+        /*temporarily added by zeyi*/
+        if (!a && stage == 2)
+        {
+            round_big++;
+            a = true;
+            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+        }
+        /*temporarily added by zeyi*/
     }
 
     public void GameWin()
@@ -143,7 +161,7 @@ public class GameController : MonoBehaviour
         {
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
-            GameObject.Find("SelectionPanel").GetComponent<Selection>().DoneWithPlacement();
+            selectionPanel.GetComponent<Selection>().DoneWithPlacement();
             Grid.SetActive(false);
         }
         else 
@@ -170,5 +188,19 @@ public class GameController : MonoBehaviour
     public void ChangeScore(int delta)
     {
         score += delta;
+    }
+}
+
+public class BigRoundIncEvent
+{
+    public int round_big;
+    public BigRoundIncEvent(int _round_big)
+    {
+        round_big = _round_big;
+    }
+
+    public override string ToString()
+    {
+        return "Change to big round " + round_big;
     }
 }

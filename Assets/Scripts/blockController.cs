@@ -5,12 +5,27 @@ using UnityEngine.Assertions;
 
 public class blockController : MonoBehaviour
 {
+    // added by zeyi
+    Subscription<BlockInstantiateEvent> block_instantiate_event_subscription;
+    
     public List<blockMovement> bm;
 
     private bool finished = false;
     // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
+        block_instantiate_event_subscription = EventBus.Subscribe<BlockInstantiateEvent>(OnBlockInstantiate);
+    }
+
+    void OnBlockInstantiate(BlockInstantiateEvent e)
+    {
+        ReloadBlock();
+    }
+
+    // Added by zeyi
+    public void ReloadBlock()
+    {
+        bm.Clear();
         for (var i = transform.childCount - 1; i >= 0; i--)
         {
             bm.Add(transform.GetChild(i).GetComponent<blockMovement>());
@@ -92,5 +107,10 @@ public class blockController : MonoBehaviour
         // otherwise has problem:
         Assert.IsTrue(false);
         return true;
+    }
+    
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe(block_instantiate_event_subscription);
     }
 }

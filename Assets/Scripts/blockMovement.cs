@@ -34,7 +34,8 @@ public class blockMovement : MonoBehaviour
                     Debug.Log("player 1 z block");
                     // press Z to fix the position of this block, can't move any more
                     freezeBlock();
-                    EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 1)); 
+                    // added by zeyi
+                    if (isBomb || (!isBomb && !collisionDetected)) EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 1)); 
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;
@@ -70,7 +71,8 @@ public class blockMovement : MonoBehaviour
                 {
                     // press Z to fix the position of this block, can't move any more
                     freezeBlock();
-                    EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 2)); 
+                    // added by zeyi
+                    if (isBomb || (!isBomb && !collisionDetected)) EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 2)); 
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;

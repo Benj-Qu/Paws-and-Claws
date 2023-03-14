@@ -9,7 +9,7 @@ public class CardSelection : MonoBehaviour
 {
     // TODO: use onAwake to automatically added block prefab (with predetermined index) as the children of block, no longer need to manually add
     // each round player will select one card and give the other one to the other player
-    public int round = 2;
+    public int round = 2; // 1-index
     public int whichPlayer;
     public Inventory inventory1;
     public Inventory inventory2;
@@ -25,7 +25,7 @@ public class CardSelection : MonoBehaviour
     private int _currentRound = 0;
     private bool _timeUp = false;
     private bool _beginTimeUpSelection = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -200,42 +200,18 @@ public class CardSelection : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         // TODO: adjust how the card is drawn from the card pool
-        if (_currentRound == 1)
+        List<CardRound> r = new List<CardRound>();
+        r = AllCards.cardRoundSetting[GameController.instance.round_big - 1][_currentRound - 1];
+
+        foreach (CardRound i in r)
         {
-            if (whichPlayer == 1)
+            if (i.whichPlayer == whichPlayer)
             {
-                _card1Script.SetCard(0);
-                _card1Script.index = 0;
-                _card2Script.SetCard(1);
-                _card2Script.index = 1;
-            }
-            else
-            {
-                _card1Script.SetCard(4);
-                _card1Script.index = 2;
-                _card2Script.SetCard(0);
-                _card2Script.index = 3;
+                if (i.leftOrRight == 1) _card1Script.SetIndexAndWhichCard(i.whichCard, i.index);
+                else _card2Script.SetIndexAndWhichCard(i.whichCard, i.index);
             }
         }
-        else if (_currentRound == 2)
-        {
-            if (whichPlayer == 2)
-            {
-                _card1Script.SetCard(2);
-                _card1Script.index = 4;
-                _card2Script.SetCard(3);
-                _card2Script.index = 5;
-            }
-            else
-            {
-                _card1Script.SetCard(2);
-                _card1Script.index = 6;
-                _card2Script.SetCard(3);
-                _card2Script.index = 7;
-            }
-            
-        }
-        
+
         _card1Script.CardAppear();
         _card2Script.CardAppear();
         _cardAppear = true;

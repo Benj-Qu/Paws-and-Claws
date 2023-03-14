@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
+    Subscription<BlockSetEvent> block_set_event_subscription;
+    
     public List<Card> cards;
     public List<int> amounts;
     public List<TextMeshProUGUI> texts;
@@ -18,8 +21,12 @@ public class Inventory : MonoBehaviour
     private bool _doneDim = false;
     private int _selectedIndex = 0;
     private bool _allSet = false;
-    
-    Subscription<BlockSetEvent> block_set_event_subscription;
+
+    private void Awake()
+    {
+        // subscription
+        block_set_event_subscription = EventBus.Subscribe<BlockSetEvent>(OnBlockSetEvent);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,9 +50,6 @@ public class Inventory : MonoBehaviour
             cards.Add(child.GetChild(0).GetComponent<Card>());
             amounts.Add(0);
         }
-        
-        // subscription
-        block_set_event_subscription = EventBus.Subscribe<BlockSetEvent>(OnBlockSetEvent);
     }
 
     

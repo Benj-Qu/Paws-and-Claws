@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 2584127486849517331}
   - component: {fileID: 142261979066203912}
   - component: {fileID: 4835841079598797756}
-  - component: {fileID: 2189566244706022983}
   - component: {fileID: 8732702095305639785}
   m_Layer: 0
-  m_Name: AttackBlock
+  m_Name: crowAttack
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,18 +75,6 @@ MonoBehaviour:
   set: 0
   collisionDetected: 0
   isBomb: 0
---- !u!114 &2189566244706022983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2584127486849517330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f3c512ed73243c1beb153323441837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &8732702095305639785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -98,7 +85,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}

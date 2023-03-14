@@ -56,7 +56,9 @@ public class Selection : MonoBehaviour
                 }
             }
         } 
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
+        Destroy(gameObject);
+        // upon the next round, reinitialize 
     }
     
 }
