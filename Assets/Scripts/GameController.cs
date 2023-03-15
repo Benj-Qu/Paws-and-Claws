@@ -60,8 +60,8 @@ public class GameController : MonoBehaviour
 
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
         StartPoint2 = StartPoint1;
-        StartPoint1.x -= 0.5f;
-        StartPoint2.x += 0.5f;
+        StartPoint1.x -= 0.4f;
+        StartPoint2.x += 0.4f;
         player1 = GameObject.Find("player_1");
         player2 = GameObject.Find("player_2");
         player1.transform.position = StartPoint1;

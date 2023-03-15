@@ -10,6 +10,7 @@ public class blockMovement : MonoBehaviour
     public bool set = false;
     public bool collisionDetected = false;
     public bool isBomb = false;
+    public float alpha = 0.5f;
 
     private Vector3 defaultPos = new Vector3(0, 0, (float)-0.15);
     private Collider2D Collider2d;
@@ -19,6 +20,26 @@ public class blockMovement : MonoBehaviour
         // initially set to inactive
         Collider2d = GetComponent<BoxCollider2D>();
         gameObject.SetActive(false);
+
+        // change the block to be half transparent
+        if(GetComponent<SpriteRenderer>() != null)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+
+        }
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            if(transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
+            {
+                if(transform.GetChild(i).name == "box")
+                {
+                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0.71f, 0.98f, 0.67f, 0.5f);
+                }
+                else {
+                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
@@ -41,22 +62,22 @@ public class blockMovement : MonoBehaviour
                 bool checkPos = false;
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    newPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                    newPos = new Vector3(transform.position.x - (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
                 if (Input.GetKeyDown(KeyCode.D))
                 {
-                    newPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                    newPos = new Vector3(transform.position.x + (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
                 if (Input.GetKeyDown(KeyCode.W))
                 {
-                    newPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    newPos = new Vector3(transform.position.x, transform.position.y + (float)0.5, transform.position.z);
                     checkPos = true;
                 }
                 if (Input.GetKeyDown(KeyCode.S))
                 {
-                    newPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    newPos = new Vector3(transform.position.x, transform.position.y - (float)0.5, transform.position.z);
                     checkPos = true;
                 }
                 if (checkPos == true && validBlockPosition(newPos))
@@ -78,22 +99,22 @@ public class blockMovement : MonoBehaviour
                 bool checkPos = false;
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    newPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                    newPos = new Vector3(transform.position.x - (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    newPos = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                    newPos = new Vector3(transform.position.x + (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    newPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    newPos = new Vector3(transform.position.x, transform.position.y + (float)0.5, transform.position.z);
                     checkPos = true;
                 }
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    newPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+                    newPos = new Vector3(transform.position.x, transform.position.y - (float)0.5, transform.position.z);
                     checkPos = true;
                 }
                 if (checkPos == true && validBlockPosition(newPos))
@@ -111,6 +132,19 @@ public class blockMovement : MonoBehaviour
             set = true;
             // Collider2d.isTrigger = false;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            // change the block to be solid
+            if (GetComponent<SpriteRenderer>() != null)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+
+            }
+            for (var i = transform.childCount - 1; i >= 0; i--)
+            {
+                if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
+                {
+                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                }
+            }
         }
         else
         {
@@ -119,6 +153,19 @@ public class blockMovement : MonoBehaviour
                 set = true;
                 Collider2d.isTrigger = false;
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                // change the block to be solid
+                if (GetComponent<SpriteRenderer>() != null)
+                {
+                    GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+
+                }
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                    }
+                }
             }
         }
     }
@@ -138,37 +185,57 @@ public class blockMovement : MonoBehaviour
         return true;
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    // if collide with other blocks
-    //    if (collision.gameObject.CompareTag("Block"))
-    //    {
-    //        collisionDetected = true;
-    //    }
-    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         // if collide with other blocks
-        if (other.CompareTag("Block"))
+        if (!set && (other.CompareTag("Block") || other.CompareTag("Box")))
         {
             collisionDetected = true;
+            if(transform.tag != "Bomb")
+            {
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.5f);
+                    }
+                }
+            }
         }
     }
 
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Block"))
-    //    {
-    //        collisionDetected = false;
-    //    }
-    //}
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        // if collide with other blocks
+        if (!set && (other.CompareTag("Block") || other.CompareTag("Box")))
+        {
+            collisionDetected = true;
+            if (transform.tag != "Bomb")
+            {
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.5f);
+                    }
+                }
+            }
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Block"))
+        if (!set && (other.CompareTag("Block") || other.CompareTag("Box")))
         {
             collisionDetected = false;
+            for (var i = transform.childCount - 1; i >= 0; i--)
+            {
+                if (transform.GetChild(i).name == "box")
+                {
+                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0.71f, 0.98f, 0.67f, 0.6f);
+                }
+            }
         }
     }
 
