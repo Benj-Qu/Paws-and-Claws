@@ -46,4 +46,14 @@ public class flagController : MonoBehaviour
         }
         return false;
     }
+
+    // Added by Xinyi
+    public void DestroyFlags()
+    {
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject flag = transform.GetChild(i).gameObject;
+            flag.SetActive(false);
+        }
+    }
 }

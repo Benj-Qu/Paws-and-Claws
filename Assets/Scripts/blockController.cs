@@ -26,6 +26,7 @@ public class blockController : MonoBehaviour
     public void ReloadBlock()
     {
         bm.Clear();
+        finished = false;
         for (var i = transform.childCount - 1; i >= 0; i--)
         {
             bm.Add(transform.GetChild(i).GetComponent<blockMovement>());
@@ -45,8 +46,9 @@ public class blockController : MonoBehaviour
                     set_block_cnt += 1;
                 }
             }
-            if (set_block_cnt == transform.childCount)
+            if (set_block_cnt == bm.Count)
             {
+                Debug.Log("stage, blockController");
                 // if blocks are all set, start game
                 GameController.instance.StartGame();
                 RemoveBox();
@@ -128,4 +130,5 @@ public class blockController : MonoBehaviour
     {
         EventBus.Unsubscribe(block_instantiate_event_subscription);
     }
+    
 }

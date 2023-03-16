@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     // added by zeyi
     public int round_big = 1;
     /*temporarily added by zeyi*/
-    private bool a = false;
+    // private bool a = false;
     /*temporarily added by zeyi*/
 
     public GameObject Grid;
@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
 
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
+
+    private flagController flagController;
     
     private int score = 0;
     
@@ -69,6 +71,8 @@ public class GameController : MonoBehaviour
         camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
+
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
@@ -86,12 +90,12 @@ public class GameController : MonoBehaviour
         }
 
         /*temporarily added by zeyi*/
-        if (!a && stage == 2)
-        {
-            round_big++;
-            a = true;
-            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        }
+        // if (!a && stage == 2)
+        // {
+        //     round_big++;
+        //     a = true;
+        //     EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+        // }
         /*temporarily added by zeyi*/
     }
 
@@ -157,17 +161,29 @@ public class GameController : MonoBehaviour
         progressBar.StartGame();
         stage ++;
         // TODO: set player movement true
-        if (stage == 2)
+        if (stage == 2) // start fight
         {
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();
             Grid.SetActive(false);
         }
-        else 
+        else if (stage == 1) // start place block
         {
             Debug.Log("stage: " + stage);
-            GameObject.Find("Flags").GetComponent<flagController>().FlagGeneration();
+            flagController.FlagGeneration();
+        }
+        else // stage == 3 means the previous round is over
+        {
+            round_big++;
+            stage = 0;
+            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+            progressBar.gameObject.SetActive(false);
+            player1.GetComponent<PlayerController>().deactivate();
+            player2.GetComponent<PlayerController>().deactivate();
+            player1.transform.position = StartPoint1;
+            player2.transform.position = StartPoint2;
+            flagController.DestroyFlags();
         }
     }
 

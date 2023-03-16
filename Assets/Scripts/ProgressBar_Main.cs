@@ -32,7 +32,7 @@ public class ProgressBar_Main : MonoBehaviour
             if (_slider.value <= 0)
             {
                 _slider.value = 0;
-                if (gameController.stage == 2)
+                if (gameController.stage == 2 && gameController.round_big == 2)
                 {
                     gameController.GameOver();
                     // destroy itself
@@ -40,6 +40,7 @@ public class ProgressBar_Main : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("stage, progressbar");
                     gameController.StartGame();
                     _slider.value = _slider.maxValue;
                 }
