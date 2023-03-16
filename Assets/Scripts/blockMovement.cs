@@ -177,9 +177,14 @@ public class blockMovement : MonoBehaviour
             // if newPos is out of border, return false
             return false;
         }
-        if(pos.x >= -3 && pos.x <= 2 && pos.y <= -1)
+        if(pos.x > -2.5 && pos.x < 2 && pos.y <= -1 && pos.y > -3.5)
         {
-            // if collide with the mountain, return false
+            // if collide with the upper mountain, return false
+            return false;
+        }
+        if(pos.x > -3 && pos.x <= 3 && pos.y <= -3.5)
+        {
+            // if collide with the lower mountain, return false
             return false;
         }
         return true;

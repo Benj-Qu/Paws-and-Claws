@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     // added by zeyi
     public int round_big = 1;
     /*temporarily added by zeyi*/
-    private bool a = false;
+    // private bool a = false;
     /*temporarily added by zeyi*/
 
     public GameObject Grid;
@@ -26,8 +26,13 @@ public class GameController : MonoBehaviour
 
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
+
+    private flagController flagController;
     
-    private int score = 0;
+    [SerializeField] private float score1 = 0;
+    [SerializeField] private float score2 = 0;
+    private int flagCount1 = 0;
+    private int flagCount2 = 0;
     
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
@@ -74,6 +79,8 @@ public class GameController : MonoBehaviour
         camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
+
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
@@ -90,13 +97,16 @@ public class GameController : MonoBehaviour
             ExitMenu.SetActive(true);
         }
 
+        score1 += flagCount1 * Time.deltaTime;
+        score2 += flagCount2 * Time.deltaTime;
+
         /*temporarily added by zeyi*/
-        if (!a && stage == 2)
-        {
-            round_big++;
-            a = true;
-            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        }
+        // if (!a && stage == 2)
+        // {
+        //     round_big++;
+        //     a = true;
+        //     EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+        // }
         /*temporarily added by zeyi*/
     }
 
@@ -109,11 +119,11 @@ public class GameController : MonoBehaviour
 
     private IEnumerator Win()
     {
-        if (score > 0)
+        if (score1 > score2)
         {
             winText.text = "Michigan Wins!";
         }
-        else if (score < 0)
+        else if (score1 < score2)
         {
             winText.text = "Ohio Wins!";
         }
@@ -165,17 +175,33 @@ public class GameController : MonoBehaviour
         }
         stage ++;
         // TODO: set player movement true
-        if (stage == 2)
+        if (stage == 2) // start fight
         {
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();
             Grid.SetActive(false);
         }
-        else 
+        else if (stage == 1) // start place block
         {
             Debug.Log("stage: " + stage);
-            GameObject.Find("Flags").GetComponent<flagController>().FlagGeneration();
+            flagController.FlagGeneration();
+        }
+        else // stage == 3 means the previous round is over
+        {
+            round_big++;
+            stage = 0;
+            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+            progressBar.gameObject.SetActive(false);
+            // Reset the players
+            player1.GetComponent<PlayerController>().deactivate();
+            player2.GetComponent<PlayerController>().deactivate();
+            player1.transform.position = StartPoint1;
+            player2.transform.position = StartPoint2;
+            // Disable the flags and clear the color
+            flagController.DestroyFlags();
+            flagCount1 = 0;
+            flagCount2 = 0;
         }
     }
 
@@ -193,9 +219,21 @@ public class GameController : MonoBehaviour
         return "level" + level;
     }
     
-    public void ChangeScore(int delta)
+    public void ChangeFlagCount(int owner, int delta)
     {
-        score += delta;
+        if (owner == 1)
+        {
+            flagCount1 += delta;
+        }
+        else if (owner == -1)
+        {
+            flagCount2 += delta;
+        }
+    }
+    
+    public (float s1, float s2) GetScores()
+    {
+        return (score1, score2);
     }
 }
 
