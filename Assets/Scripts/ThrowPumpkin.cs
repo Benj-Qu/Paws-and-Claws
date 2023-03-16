@@ -26,6 +26,11 @@ public class ThrowPumpkin : MonoBehaviour
             InvokeRepeating("pumpkinThrow", 2f, 3f);
             InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
         }
+
+        if (start == true && GameController.instance.stage == 1)
+        {
+            CancelInvoke();
+        }
     }
 
     void pumpkinThrow()
@@ -45,7 +50,6 @@ public class ThrowPumpkin : MonoBehaviour
         Rigidbody2D rgbd = pump.GetComponent<Rigidbody2D>();
         rgbd.velocity = new Vector2(speed, 0);
         rgbd.gravityScale = 0;
-        Destroy(pump, 5f);
     }
 
     void pumpkinThrow2()
@@ -68,6 +72,5 @@ public class ThrowPumpkin : MonoBehaviour
         Rigidbody2D rgbd = pump.GetComponent<Rigidbody2D>();
         rgbd.velocity = new Vector2(-speed, 0);
         rgbd.gravityScale = 0;
-        Destroy(pump, 5f);
     }
 }
