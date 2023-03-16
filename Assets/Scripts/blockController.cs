@@ -47,14 +47,29 @@ public class blockController : MonoBehaviour
             }
             if (set_block_cnt == transform.childCount)
             {
+                // if blocks are all set, start game
                 GameController.instance.StartGame();
+                RemoveBox();
                 finished = true;
-                //    for (var i = transform.childCount - 1; i >= 0; i--)
-                //    {
-                //        transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-                //        transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                //        // transform.GetChild(i).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-                //    }
+            }
+        }
+    }
+
+    private void RemoveBox()
+    {
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            // iterate all blocks
+            for(var j = transform.GetChild(i).transform.childCount - 1; j >= 0; j--)
+            {
+                // iterate all block components
+                GameObject component = transform.GetChild(i).transform.GetChild(j).gameObject;
+                Debug.Log(component.tag);
+                if (component.CompareTag("Box"))
+                {
+                    Debug.Log("HERER");
+                    component.SetActive(false);
+                }
             }
         }
     }

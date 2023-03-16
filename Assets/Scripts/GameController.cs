@@ -60,9 +60,9 @@ public class GameController : MonoBehaviour
 
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
         StartPoint2 = StartPoint1;
-        StartPoint1.x -= 0.5f;
-        StartPoint2.x += 0.5f;
-        if (level == "block_placement_tutorial")
+        StartPoint1.x -= 0.4f;
+        StartPoint2.x += 0.4f;
+        if (level == "Tutorial")
         {
             StartPoint1.x -= 5f;
             StartPoint2.x += 5f;
@@ -158,8 +158,11 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         // Start time countdown
-        progressBar.gameObject.SetActive(true);
-        progressBar.StartGame();
+        if (level != "Tutorial")
+        {
+            progressBar.gameObject.SetActive(true);
+            progressBar.StartGame();
+        }
         stage ++;
         // TODO: set player movement true
         if (stage == 2)

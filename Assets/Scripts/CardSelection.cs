@@ -142,7 +142,7 @@ public class CardSelection : MonoBehaviour
     {
         while (_currentRound <= round)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
         
             Debug.Log("time up random draw");
             int seed = Random.Range(0, 2);
@@ -197,7 +197,7 @@ public class CardSelection : MonoBehaviour
     // Use index to identify each card (even the id is the same, indicating the same kind of card)
     private IEnumerator DrawCard()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         
         // TODO: adjust how the card is drawn from the card pool
         List<CardRound> r = new List<CardRound>();

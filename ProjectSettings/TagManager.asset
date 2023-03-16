@@ -10,6 +10,7 @@ TagManager:
   - Bomb
   - Wall
   - Flag
+  - Box
   layers:
   - Default
   - TransparentFX
