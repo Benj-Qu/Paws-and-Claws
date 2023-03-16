@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public GameObject Grid;
     public static GameController instance;
     public GameObject explosionAes;
-    private string level;
+    public string level;
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;

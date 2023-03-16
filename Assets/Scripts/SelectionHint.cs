@@ -30,7 +30,7 @@ public class SelectionHint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameController.instance)
+        if (GameController.instance && GameController.instance.level == "Tutorial")
         {
             if (GameController.instance.stage == 0)
             {
@@ -47,7 +47,11 @@ public class SelectionHint : MonoBehaviour
                 appear = false;
                 shift_appear = false;
             }
-
+        }
+        else
+        {
+            shift_appear = false;
+            appear = false;
         }
 
         if (akey.activeSelf)

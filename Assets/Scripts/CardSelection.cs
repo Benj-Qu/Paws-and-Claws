@@ -230,6 +230,7 @@ public class CardSelection : MonoBehaviour
 
             if (atFront)
             {
+                inventory1.cards[inventory1.cardAddedFront].StartSelectEffect(1, _card1.transform.position);
                 inventory1.cards[inventory1.cardAddedFront].SetCard(blockID);
                 inventory1.cards[inventory1.cardAddedFront].index = cardIndex;
                 inventory1.cards[inventory1.cardAddedFront].CardAppear();
@@ -238,6 +239,7 @@ public class CardSelection : MonoBehaviour
             }
             else
             {
+                inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].StartSelectEffect(1, _card1.transform.position);
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].SetCard(blockID);
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].index = cardIndex;
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].CardAppear();
@@ -251,6 +253,7 @@ public class CardSelection : MonoBehaviour
             
             if (atFront)
             {
+                inventory2.cards[inventory2.cardAddedFront].StartSelectEffect(2, _card2.transform.position);
                 inventory2.cards[inventory2.cardAddedFront].SetCard(blockID);
                 inventory2.cards[inventory2.cardAddedFront].index = cardIndex;
                 inventory2.cards[inventory2.cardAddedFront].CardAppear(); 
@@ -258,6 +261,7 @@ public class CardSelection : MonoBehaviour
             }
             else
             {
+                inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].StartSelectEffect(2, _card2.transform.position);
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].SetCard(blockID);
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].index = cardIndex;
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].CardAppear();
