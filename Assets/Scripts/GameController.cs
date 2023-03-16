@@ -62,6 +62,11 @@ public class GameController : MonoBehaviour
         StartPoint2 = StartPoint1;
         StartPoint1.x -= 0.5f;
         StartPoint2.x += 0.5f;
+        if (level == "block_placement_tutorial")
+        {
+            StartPoint1.x -= 5f;
+            StartPoint2.x += 5f;
+        }
         player1 = GameObject.Find("player_1");
         player2 = GameObject.Find("player_2");
         player1.transform.position = StartPoint1;
