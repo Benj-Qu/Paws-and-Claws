@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     // private bool a = false;
     /*temporarily added by zeyi*/
 
+    public blockController bc;
     public GameObject Grid;
     public static GameController instance;
     public GameObject explosionAes;
@@ -181,6 +182,7 @@ public class GameController : MonoBehaviour
             player2.GetComponent<PlayerController>().activate();
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();
             Grid.SetActive(false);
+            bc.RemoveBox();
         }
         else if (stage == 1) // start place block
         {
