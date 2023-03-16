@@ -29,7 +29,10 @@ public class GameController : MonoBehaviour
 
     private flagController flagController;
     
-    private int score = 0;
+    [SerializeField] private float score1 = 0;
+    [SerializeField] private float score2 = 0;
+    private int flagCount1 = 0;
+    private int flagCount2 = 0;
     
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
@@ -89,6 +92,9 @@ public class GameController : MonoBehaviour
             ExitMenu.SetActive(true);
         }
 
+        score1 += flagCount1 * Time.deltaTime;
+        score2 += flagCount2 * Time.deltaTime;
+
         /*temporarily added by zeyi*/
         // if (!a && stage == 2)
         // {
@@ -108,11 +114,11 @@ public class GameController : MonoBehaviour
 
     private IEnumerator Win()
     {
-        if (score > 0)
+        if (score1 > score2)
         {
             winText.text = "Michigan Wins!";
         }
-        else if (score < 0)
+        else if (score1 < score2)
         {
             winText.text = "Ohio Wins!";
         }
@@ -179,11 +185,15 @@ public class GameController : MonoBehaviour
             stage = 0;
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
             progressBar.gameObject.SetActive(false);
+            // Reset the players
             player1.GetComponent<PlayerController>().deactivate();
             player2.GetComponent<PlayerController>().deactivate();
             player1.transform.position = StartPoint1;
             player2.transform.position = StartPoint2;
+            // Disable the flags and clear the color
             flagController.DestroyFlags();
+            flagCount1 = 0;
+            flagCount2 = 0;
         }
     }
 
@@ -201,9 +211,21 @@ public class GameController : MonoBehaviour
         return "level" + level;
     }
     
-    public void ChangeScore(int delta)
+    public void ChangeFlagCount(int owner, int delta)
     {
-        score += delta;
+        if (owner == 1)
+        {
+            flagCount1 += delta;
+        }
+        else if (owner == -1)
+        {
+            flagCount2 += delta;
+        }
+    }
+    
+    public (float s1, float s2) GetScores()
+    {
+        return (score1, score2);
     }
 }
 
