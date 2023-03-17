@@ -7,7 +7,7 @@ public class ThrowObjectControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(this, 9f);
     }
 
     // Update is called once per frame

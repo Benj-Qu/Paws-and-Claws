@@ -112,7 +112,7 @@ public class SelectionHint : MonoBehaviour
                 leftshift.SetActive(true);
                 rightshift.SetActive(true);
                 Z.SetActive(true);
-                Z.SetActive(false);
+                M.SetActive(true);
                 leftshiftText.enabled = true;
                 rightshiftText.enabled = true;
             }

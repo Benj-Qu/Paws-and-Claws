@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementTutorial : MonoBehaviour
 {
@@ -44,8 +45,7 @@ public class MovementTutorial : MonoBehaviour
         }
         if (target == 2 && status == 3)
         {
-            target = 0;
-            status += 1;
+            StartCoroutine(step4());
         }
     }
 
@@ -80,5 +80,11 @@ public class MovementTutorial : MonoBehaviour
         FlagRight.transform.position = new Vector3(0.7f, 0f, 0);
         FlagRight.GetComponent<TutorialFlag>().touched = false;
         FlagRight.GetComponent<SpriteRenderer>().sprite = flag_white;
+    }
+
+    IEnumerator step4()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Tutorial");
     }
 }
