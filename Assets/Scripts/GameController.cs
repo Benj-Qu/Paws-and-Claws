@@ -194,8 +194,12 @@ public class GameController : MonoBehaviour
             flagController.DestroyFlags();
             flagCount1 = 0;
             flagCount2 = 0;
+            // Show animation of next round
+            // StartCoroutine()
         }
     }
+    
+    // private IEnumeratorr 
 
     private IEnumerator Lose()
     {
