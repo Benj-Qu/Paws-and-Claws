@@ -7,8 +7,8 @@ public class Level0Control : MonoBehaviour
     public GameObject hint1;
     public GameObject hint2;
     
-    private float player1_stuck = 0f;
-    private float player2_stuck = 0f;
+    [SerializeField] private float player1_stuck = 0f;
+    [SerializeField] private float player2_stuck = 0f;
     private Vector3 player1_last;
     private Vector3 player2_last;
 
@@ -28,31 +28,38 @@ public class Level0Control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameController.stage == 2)
+        if (player1.transform.position == player1_last)
         {
-            if (player1.transform.position == player1_last)
-            {
-                player1_stuck += Time.deltaTime;
-            }
-            else
-            {
-                player1_last = player1.transform.position;
-            }
-            if (player2.transform.position == player2_last)
-            {
-                player2_stuck += Time.deltaTime;
-            }
-            else
-            {
-                player2_last = player2.transform.position;
-            }
+            player1_stuck += Time.deltaTime;
+        }
+        else
+        {
+            player1_last = player1.transform.position;
+            player1_stuck = 0;
+            hint1.SetActive(false);
+        }
+        if (player2.transform.position == player2_last)
+        {
+            player2_stuck += Time.deltaTime;
+        }
+        else
+        {
+            player2_last = player2.transform.position;
+            player2_stuck = 0;
+            hint2.SetActive(false);
+        }
 
-            if (player1_stuck > 3f)
+        if (player1_stuck > 3f)
+        {
+            if (gameController.stage == 2)
             {
                 hint1.SetActive(true);
             }
-        
-            if (player2_stuck > 3f)
+        }
+
+        if (player2_stuck > 3f)
+        {
+            if (gameController.stage == 2)
             {
                 hint2.SetActive(true);
             }

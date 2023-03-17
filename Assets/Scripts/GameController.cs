@@ -182,6 +182,7 @@ public class GameController : MonoBehaviour
             progressBar.StartGame();
         }
         stage ++;
+        Debug.Log("stage: " + stage);
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
@@ -193,7 +194,6 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
-            Debug.Log("stage: " + stage);
             if (flagController) flagController.FlagGeneration();
         }
         else // stage == 3 means the previous round is over

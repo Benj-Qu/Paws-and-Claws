@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9999fef538e16a942b3137cf20c07975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Activate: 0
   Speed: 3
   JumpSpeed: 10
   SlideSpeed: 0.1
@@ -3084,7 +3085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   round_big: 1
-  bc: {fileID: 0}
+  bc: {fileID: 1723064576}
   Grid: {fileID: 405972498}
   explosionAes: {fileID: 0}
   level: 
@@ -3733,6 +3734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9999fef538e16a942b3137cf20c07975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Activate: 0
   Speed: 3
   JumpSpeed: 10
   SlideSpeed: 0.1
