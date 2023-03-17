@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             active = true;
         }
+        if (gc.level == "Tutorial_Player_Control")
+        {
+            active = true;
+        }
     }
 
     private void Update()
