@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float JumpDeactivePeriod;
     public float DieAltitude;
 
+    public float KnockBackPeriod;
+
     public KeyCode LeftButton;
     public KeyCode RightButton;
     public KeyCode JumpButton;
@@ -60,44 +62,88 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        GameObject other = collision.gameObject;
         // Jump Times
-        if (isTerrain(collision))
+        if (isTerrain(other))
         {
             ContactPoint2D hitpos = collision.GetContact(0);
+            // Touch Floor
             if (hitpos.normal.y > 0)
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
             }
+            // Touch Left Wall
             else if (hitpos.normal.x > 0)
             {
                 onLeftWall = true;
                 jumpTimes = MaxJumpTimes;
             }
+            // Touch Right Wall
             else if (hitpos.normal.x < 0)
             {
                 onRightWall = true;
                 jumpTimes = MaxJumpTimes;
             }
         }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        // Jump Times
-        if (isTerrain(collision))
+        else if (isPlayer(other))
         {
             ContactPoint2D hitpos = collision.GetContact(0);
+            // Knock On Below Player
             if (hitpos.normal.y > 0)
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
             }
+            // Knock On Left Player
+            else if (hitpos.normal.x > 0)
+            {
+                PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
+                if (Input.GetKey(pc.RightButton))
+                {
+                    StartCoroutine(KnockBack(new Vector2(pc.Speed, rb.velocity.y)));
+                }
+                else
+                {
+                    StartCoroutine(KnockBack(new Vector2(0f, rb.velocity.y)));
+                }
+            }
+            // Knock On Right Player
+            else if (hitpos.normal.x < 0)
+            {
+                PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
+                if (Input.GetKey(pc.LeftButton))
+                {
+                    StartCoroutine(KnockBack(new Vector2(-pc.Speed, rb.velocity.y)));
+                }
+                else
+                {
+                    StartCoroutine(KnockBack(new Vector2(0f, rb.velocity.y)));
+                }
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        GameObject other = collision.gameObject;
+        // Jump Times
+        if (isTerrain(other))
+        {
+            ContactPoint2D hitpos = collision.GetContact(0);
+            // Touch Floor
+            if (hitpos.normal.y > 0)
+            {
+                onFloor = true;
+                jumpTimes = MaxJumpTimes;
+            }
+            // Touch Left Floor
             else if (hitpos.normal.x > 0)
             {
                 onLeftWall = true;
                 jumpTimes = MaxJumpTimes;
             }
+            // Touch Right Floor
             else if (hitpos.normal.x < 0)
             {
                 onRightWall = true;
@@ -159,9 +205,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool isTerrain(Collision2D collision)
+    private bool isTerrain(GameObject other)
     {
-        return collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Mountain");
+        return other.CompareTag("Block") || other.CompareTag("Mountain");
+    }
+
+    private bool isPlayer(GameObject other)
+    {
+        return other.CompareTag("Player");
     }
 
     private void jump()
@@ -194,6 +245,14 @@ public class PlayerController : MonoBehaviour
     {
         active = false;
         yield return new WaitForSeconds(JumpDeactivePeriod);
+        active = true;
+    }
+
+    public IEnumerator KnockBack(Vector2 direction)
+    {
+        active = false;
+        rb.velocity = direction;
+        yield return new WaitForSeconds(KnockBackPeriod);
         active = true;
     }
 
@@ -260,11 +319,4 @@ public class PlayerController : MonoBehaviour
     {
         active = false;
     }
-
-    // public void SetAlive(bool state)
-    // {
-    //     alive = state;
-    // }
-
-    // alpha
 }
