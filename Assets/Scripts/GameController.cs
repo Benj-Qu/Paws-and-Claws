@@ -14,10 +14,11 @@ public class GameController : MonoBehaviour
     // private bool a = false;
     /*temporarily added by zeyi*/
 
+    public blockController bc;
     public GameObject Grid;
     public static GameController instance;
     public GameObject explosionAes;
-    private string level;
+    public string level;
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;
@@ -62,11 +63,23 @@ public class GameController : MonoBehaviour
         // scene = SceneManager.GetActiveScene().name[7] - '0';
         // scene = 0;
         Debug.Log("Level: "+ level);
-
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
         StartPoint2 = StartPoint1;
         StartPoint1.x -= 0.4f;
         StartPoint2.x += 0.4f;
+        if (level == "Tutorial")
+        {
+            StartPoint1.x -= 5f;
+            StartPoint2.x += 5f;
+        }
+        if (level == "Tutorial_Player_Control")
+        {
+            StartPoint1 = GameObject.Find("StartPoint").transform.position;
+            StartPoint2 = GameObject.Find("StartPoint2").transform.position;
+        } else
+        {
+            flagController = GameObject.Find("Flags").GetComponent<flagController>();
+        }
         player1 = GameObject.Find("player_1");
         player2 = GameObject.Find("player_2");
         player1.transform.position = StartPoint1;
@@ -74,8 +87,6 @@ public class GameController : MonoBehaviour
         camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
-
-        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
@@ -163,8 +174,11 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         // Start time countdown
-        progressBar.gameObject.SetActive(true);
-        progressBar.StartGame();
+        if (level != "Tutorial")
+        {
+            progressBar.gameObject.SetActive(true);
+            progressBar.StartGame();
+        }
         stage ++;
         // TODO: set player movement true
         if (stage == 2) // start fight
@@ -173,6 +187,7 @@ public class GameController : MonoBehaviour
             player2.GetComponent<PlayerController>().activate();
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();
             Grid.SetActive(false);
+            bc.RemoveBox();
         }
         else if (stage == 1) // start place block
         {

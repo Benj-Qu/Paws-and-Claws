@@ -57,7 +57,7 @@ public class blockController : MonoBehaviour
         }
     }
 
-    private void RemoveBox()
+    public void RemoveBox()
     {
         for (var i = transform.childCount - 1; i >= 0; i--)
         {

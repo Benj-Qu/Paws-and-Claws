@@ -31,15 +31,19 @@ public class Selection : MonoBehaviour
         if (!done && _cardSelection1.roundUp && _cardSelection2.roundUp)
         {
             done = true;
-            Debug.Log("placement begin");
             // send gameController that the placement can begins,
-            
-            if (gameController)
-            {
-                // placement begin
-                Debug.Log("stage, selection");
-                gameController.StartGame();
-            }
+            StartCoroutine(DelayStartGame());
+        }
+    }
+
+    private IEnumerator DelayStartGame()
+    {
+        // delay 0.5 second for effect to take place
+        yield return new WaitForSeconds(0.5f);
+        if (gameController)
+        {
+            // placement begin
+            gameController.StartGame();
         }
     }
 

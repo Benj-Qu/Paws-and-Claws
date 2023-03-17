@@ -9642,6 +9642,7 @@ MonoBehaviour:
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
+  KnockBackPeriod: 0.3
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
@@ -51730,8 +51731,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   round_big: 1
+  bc: {fileID: 1723064576}
   Grid: {fileID: 2100524373}
   explosionAes: {fileID: 0}
+  level: 
   selectionPanel: {fileID: 0}
   score1: 0
   score2: 0
@@ -61818,6 +61821,7 @@ MonoBehaviour:
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
+  KnockBackPeriod: 0.3
   LeftButton: 276
   RightButton: 275
   JumpButton: 273

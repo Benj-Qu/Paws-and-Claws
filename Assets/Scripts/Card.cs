@@ -10,6 +10,9 @@ public class Card : MonoBehaviour
     public int index = -1;
 
     private Image _image;
+    private bool move = false;
+    private Vector3 target;
+    private Vector3 speed;
 
     // public int amount = -1;
 
@@ -27,7 +30,12 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (move)
+        {
+            Vector3 temp = _image.transform.position;
+            temp += speed * Time.deltaTime;
+            _image.transform.position = temp;
+        }
     }
 
     public void SetCard(int _block_id)
@@ -42,6 +50,37 @@ public class Card : MonoBehaviour
         
         // look for the corresponding image in the sprite folder
         _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[this.block_id] + "_");
+        
+    }
+
+    public void StartSelectEffect(int leftOrRight, Vector3 pos)
+    {
+        Vector3 img_pos = _image.transform.position;
+        _image.transform.position = pos;
+        _image.transform.localScale *= 2;
+        StartCoroutine(MoveToPos(img_pos, leftOrRight));
+    }
+
+    // pos is the target
+    private IEnumerator MoveToPos(Vector3 img_pos, int leftOrRight)
+    {
+        move = true;
+        target = img_pos;
+        // if (leftOrRight == 1)
+        // {
+        //     target.x += 50f;
+        // }
+        // else
+        // {
+        //     target.x -= 50f;
+        // }
+
+        speed = (target - _image.transform.position) / 0.5f;
+        
+        yield return new WaitForSeconds(0.5f);
+        move = false;
+        _image.transform.localScale /= 2;
+        _image.transform.position = img_pos;
     }
 
     public void SetIndex(int _index)

@@ -68,7 +68,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (selection.done && !_doneDim)
+        if (GameController.instance.stage == 1 && selection.done && !_doneDim)
         {
             // only called once
             _doneDim = true;
