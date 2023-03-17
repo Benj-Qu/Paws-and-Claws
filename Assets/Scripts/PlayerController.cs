@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     private float floorV = 0f;
     private int jumpTimes;
 
-    public float CoinScore = 5f;
     public float DeathPenalty = -5f;
 
     private Rigidbody2D rb;
@@ -194,11 +193,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Coin"))
-        {
-            gameObject.GetComponent<PlayerScore>().updateScore(CoinScore);
-        }
-        else if (!invincible && collision.gameObject.CompareTag("Spike"))
+        if (!invincible && collision.gameObject.CompareTag("Spike"))
         {
             Die();
         }

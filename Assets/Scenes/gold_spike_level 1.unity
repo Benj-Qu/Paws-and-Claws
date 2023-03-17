@@ -2487,7 +2487,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text1: {fileID: 1404745641}
   text2: {fileID: 256074064}
-  countdownTime: 60
 --- !u!1 &61120014
 GameObject:
   m_ObjectHideFlags: 0
@@ -9617,6 +9616,7 @@ GameObject:
   - component: {fileID: 274675829}
   - component: {fileID: 274675828}
   - component: {fileID: 274675827}
+  - component: {fileID: 274675832}
   m_Layer: 3
   m_Name: player_1
   m_TagString: Player
@@ -9636,6 +9636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9999fef538e16a942b3137cf20c07975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Activate: 0
   Speed: 3
   JumpSpeed: 10
   SlideSpeed: 0.1
@@ -9646,6 +9647,7 @@ MonoBehaviour:
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
+  DeathPenalty: -5
 --- !u!50 &274675828
 Rigidbody2D:
   serializedVersion: 4
@@ -9760,6 +9762,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &274675832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274675826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79396b1c20eee5448b2855ff41f5dff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coefficient: 3
 --- !u!1 &275284731
 GameObject:
   m_ObjectHideFlags: 0
@@ -51736,8 +51751,6 @@ MonoBehaviour:
   explosionAes: {fileID: 0}
   level: 
   selectionPanel: {fileID: 0}
-  score1: 0
-  score2: 0
   ExitMenu: {fileID: 1016065690}
   stage: 0
   progressBar: {fileID: 363239753}
@@ -61796,6 +61809,7 @@ GameObject:
   - component: {fileID: 1867150103}
   - component: {fileID: 1867150102}
   - component: {fileID: 1867150101}
+  - component: {fileID: 1867150106}
   m_Layer: 3
   m_Name: player_2
   m_TagString: Player
@@ -61815,6 +61829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9999fef538e16a942b3137cf20c07975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Activate: 0
   Speed: 3
   JumpSpeed: 10
   SlideSpeed: 0.1
@@ -61825,6 +61840,7 @@ MonoBehaviour:
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
+  DeathPenalty: -5
 --- !u!50 &1867150102
 Rigidbody2D:
   serializedVersion: 4
@@ -61939,6 +61955,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867150106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867150100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79396b1c20eee5448b2855ff41f5dff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coefficient: 3
 --- !u!1 &1867169709
 GameObject:
   m_ObjectHideFlags: 0
