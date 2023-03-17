@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool Activate;
+
     public float Speed;
     public float JumpSpeed;
     public float SlideSpeed;
@@ -25,12 +27,13 @@ public class PlayerController : MonoBehaviour
     private bool onLeftWall;
     private bool onRightWall;
     private int jumpTimes;
+    private float floorV;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private GameController gc;
 
-    void Start()
+    private void Start()
     {
         alive = true;
         active = false;
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;
+        floorV = 0f;
         jumpTimes = MaxJumpTimes;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -46,14 +50,18 @@ public class PlayerController : MonoBehaviour
         {
             active = true;
         }
-        if (gc.level == "Tutorial_Player_Control")
+        if (Activate)
         {
             active = true;
         }
     }
 
-    void Update()
+    private void Update()
     {
+        if (gc.level == "Tutorial_Player_Control" && active == false)
+        {
+            active = true;
+        }
         if (isActive())
         {
             UpdateVelocity();
@@ -76,6 +84,14 @@ public class PlayerController : MonoBehaviour
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
+                if (collision.rigidbody)
+                {
+                    floorV = collision.rigidbody.velocity.x;
+                }
+                else
+                {
+                    floorV = 0f;
+                }
             }
             // Touch Left Wall
             else if (hitpos.normal.x > 0)
@@ -98,6 +114,14 @@ public class PlayerController : MonoBehaviour
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
+                if (collision.rigidbody)
+                {
+                    floorV = collision.rigidbody.velocity.x;
+                }
+                else
+                {
+                    floorV = 0f;
+                }
             }
             // Knock On Left Player
             else if (hitpos.normal.x > 0)
@@ -140,6 +164,14 @@ public class PlayerController : MonoBehaviour
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
+                if (collision.rigidbody)
+                {
+                    floorV = collision.rigidbody.velocity.x;
+                }
+                else
+                {
+                    floorV = 0f;
+                }
             }
             // Touch Left Floor
             else if (hitpos.normal.x > 0)
@@ -161,6 +193,7 @@ public class PlayerController : MonoBehaviour
         onFloor = false;
         onLeftWall = false;
         onRightWall = false;
+        floorV = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -176,7 +209,7 @@ public class PlayerController : MonoBehaviour
         // Update Horizontal Velocity
         if (Input.GetKey(LeftButton))
         {
-            rb.velocity = new Vector2(-Speed, rb.velocity.y);
+            rb.velocity = new Vector2(-Speed + floorV, rb.velocity.y);
             sr.flipX = true;
             if (onRightWall)
             {
@@ -185,7 +218,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(RightButton))
         {
-            rb.velocity = new Vector2(Speed, rb.velocity.y);
+            rb.velocity = new Vector2(Speed + floorV, rb.velocity.y);
             sr.flipX = false;
             if (onLeftWall)
             {
@@ -194,7 +227,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
+            rb.velocity = new Vector2(floorV, rb.velocity.y);
         }
         // Handle Jumping
         if (Input.GetKeyDown(JumpButton) && jumpable())
@@ -284,6 +317,7 @@ public class PlayerController : MonoBehaviour
         onLeftWall = false;
         onRightWall = false;
         jumpTimes = MaxJumpTimes;
+        floorV = 0f;
         yield return new WaitForSeconds(0.5f);
         invincible = false;
     }
@@ -322,5 +356,13 @@ public class PlayerController : MonoBehaviour
     public void deactivate()
     {
         active = false;
+    }
+
+    public void LeaveFloor()
+    {
+        floorV = 0f;
+        onFloor = false;
+        onLeftWall = false;
+        onRightWall = false;
     }
 }
