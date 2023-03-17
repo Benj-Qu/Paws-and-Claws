@@ -22,8 +22,8 @@ public class MovementTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FlagLeft.transform.position = new Vector3(-1f, -1.1f, 0);
-        FlagRight.transform.position = new Vector3(3f, -1.1f, 0);
+        FlagLeft.transform.position = new Vector3(-1.5f, -2.2f, 0);
+        FlagRight.transform.position = new Vector3(1.5f, -2.2f, 0);
     }
 
     // Update is called once per frame
@@ -35,9 +35,9 @@ public class MovementTutorial : MonoBehaviour
             JumpBox2.SetActive(true);
             Player1.transform.position = new Vector3(-6f, -2.2f, 0);
             Player2.transform.position = new Vector3(6f, -2.2f, 0);
-            FlagLeft.transform.position = new Vector3(0, -0.2f, 0);
+            FlagLeft.transform.position = new Vector3(-1.2f, -1.2f, 0);
             FlagLeft.GetComponent<TutorialFlag>().touched = false;
-            FlagRight.transform.position = new Vector3(2f, -0.2f, 0);
+            FlagRight.transform.position = new Vector3(1f, -1.2f, 0);
             FlagRight.GetComponent<TutorialFlag>().touched = false;
             target = 0;
             status += 1;
@@ -51,9 +51,9 @@ public class MovementTutorial : MonoBehaviour
             WallBox2.SetActive(true);
             Player1.transform.position = new Vector3(-6f, -2.2f, 0);
             Player2.transform.position = new Vector3(6f, -2.2f, 0);
-            FlagLeft.transform.position = new Vector3(0.25f, 1f, 0);
+            FlagLeft.transform.position = new Vector3(-0.8f, 0f, 0);
             FlagLeft.GetComponent<TutorialFlag>().touched = false;
-            FlagRight.transform.position = new Vector3(1.75f, -0.2f, 0);
+            FlagRight.transform.position = new Vector3(0.7f, 0f, 0);
             FlagRight.GetComponent<TutorialFlag>().touched = false;
             target = 0;
             status += 1;

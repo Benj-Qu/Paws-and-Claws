@@ -46,14 +46,19 @@ public class PlayerController : MonoBehaviour
         {
             active = true;
         }
-        if (gc.level == "Tutorial_Player_Control")
-        {
-            active = true;
-        }
+        //print(gc.level);
+        //if (gc.level == "Tutorial_Player_Control")
+        //{
+        //    active = true;
+        //}
     }
 
     void Update()
     {
+        if (gc.level == "Tutorial_Player_Control" && active == false)
+        {
+            active = true;
+        }
         if (isActive())
         {
             UpdateVelocity();

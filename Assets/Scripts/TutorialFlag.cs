@@ -21,7 +21,7 @@ public class TutorialFlag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && touched == false)
         {
             mt.target += 1;
             touched = true;
