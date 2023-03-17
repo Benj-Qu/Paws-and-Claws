@@ -18,6 +18,9 @@ public class SelectionHint : MonoBehaviour
     public GameObject leftshift;
     public GameObject rightshift;
 
+    public GameObject Z;
+    public GameObject M;
+
     public TextMeshProUGUI leftshiftText;
     public TextMeshProUGUI rightshiftText;
 
@@ -91,6 +94,8 @@ public class SelectionHint : MonoBehaviour
             {
                 leftshift.SetActive(false);
                 rightshift.SetActive(false);
+                Z.SetActive(false);
+                M.SetActive(false);
                 leftshiftText.enabled = false;
                 rightshiftText.enabled = false;
             }
@@ -106,6 +111,8 @@ public class SelectionHint : MonoBehaviour
             {
                 leftshift.SetActive(true);
                 rightshift.SetActive(true);
+                Z.SetActive(true);
+                Z.SetActive(false);
                 leftshiftText.enabled = true;
                 rightshiftText.enabled = true;
             }
