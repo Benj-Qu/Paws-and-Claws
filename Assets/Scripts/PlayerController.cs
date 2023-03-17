@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool Activate;
+
     public float Speed;
     public float JumpSpeed;
     public float SlideSpeed;
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             active = true;
         }
-        if (gc.level == "Tutorial_Player_Control")
+        if (Activate)
         {
             active = true;
         }
