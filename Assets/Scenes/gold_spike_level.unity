@@ -9642,7 +9642,7 @@ MonoBehaviour:
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
-  KnockBackPeriod: 0.3
+  KnockBackPeriod: 0.2
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
@@ -61821,7 +61821,7 @@ MonoBehaviour:
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
-  KnockBackPeriod: 0.3
+  KnockBackPeriod: 0.2
   LeftButton: 276
   RightButton: 275
   JumpButton: 273

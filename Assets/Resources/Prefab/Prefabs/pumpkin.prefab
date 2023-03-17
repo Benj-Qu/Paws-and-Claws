@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6781244425603651300}
   - component: {fileID: 4828618431272781010}
   - component: {fileID: -1469070760636395679}
+  - component: {fileID: 535823229775340034}
   m_Layer: 0
   m_Name: pumpkin
   m_TagString: Block
@@ -153,3 +154,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320a5693b13354ffc8290615929df500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &535823229775340034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4263843740587977990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3080b18851fa2d64b8598761325d772a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
