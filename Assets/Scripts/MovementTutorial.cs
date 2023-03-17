@@ -61,7 +61,7 @@ public class MovementTutorial : MonoBehaviour
         if (target == 2 && status == 3)
         {
             target = 0;
-            status = 1;
+            status += 1;
         }
     }
 }
