@@ -120,6 +120,8 @@ public class GameController : MonoBehaviour
     {
         // TODO: Add coroutine for animation
         Debug.Log("Win!");
+        flagCount1 = 0;
+        flagCount2 = 0;
         StartCoroutine(Win());
     }
 
@@ -192,7 +194,7 @@ public class GameController : MonoBehaviour
         else if (stage == 1) // start place block
         {
             Debug.Log("stage: " + stage);
-            flagController.FlagGeneration();
+            if (flagController) flagController.FlagGeneration();
         }
         else // stage == 3 means the previous round is over
         {
@@ -206,7 +208,7 @@ public class GameController : MonoBehaviour
             player1.transform.position = StartPoint1;
             player2.transform.position = StartPoint2;
             // Disable the flags and clear the color
-            flagController.DestroyFlags();
+            if (flagController) flagController.DestroyFlags();
             flagCount1 = 0;
             flagCount2 = 0;
             // Show animation of next round
