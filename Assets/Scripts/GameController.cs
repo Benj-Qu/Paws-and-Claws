@@ -63,7 +63,6 @@ public class GameController : MonoBehaviour
         // scene = SceneManager.GetActiveScene().name[7] - '0';
         // scene = 0;
         Debug.Log("Level: "+ level);
-
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
         StartPoint2 = StartPoint1;
         StartPoint1.x -= 0.4f;
@@ -73,6 +72,14 @@ public class GameController : MonoBehaviour
             StartPoint1.x -= 5f;
             StartPoint2.x += 5f;
         }
+        if (level == "Tutorial_Player_Control")
+        {
+            StartPoint1 = GameObject.Find("StartPoint").transform.position;
+            StartPoint2 = GameObject.Find("StartPoint2").transform.position;
+        } else
+        {
+            flagController = GameObject.Find("Flags").GetComponent<flagController>();
+        }
         player1 = GameObject.Find("player_1");
         player2 = GameObject.Find("player_2");
         player1.transform.position = StartPoint1;
@@ -80,8 +87,6 @@ public class GameController : MonoBehaviour
         camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
-
-        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
