@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Flag
   - Box
+  - Coin
   layers:
   - Default
   - TransparentFX

@@ -7,28 +7,26 @@ public class ScoreDisplayer : MonoBehaviour
 {
     public TextMeshProUGUI text1;
     public TextMeshProUGUI text2;
-    public float countdownTime = 60f;
-
-    private GameController gameController;
+    private PlayerScore Score1;
+    private PlayerScore Score2;
     // private HasInventory inventory;
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        // inventory = GameObject.Find("Player").GetComponent<HasInventory>();
+        Score1 = GameObject.Find("player_1").GetComponent<PlayerScore>();
+        Score2 = GameObject.Find("player_2").GetComponent<PlayerScore>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        var scores = gameController.GetScores();
         if (text1)
         {
-            text1.text = "Score: " + scores.Item1.ToString("F2");
+            text1.text = "Score: " + Score1.getScore().ToString("G");
         }
         if (text2)
         {
-            text2.text = "Score: " + scores.Item2.ToString("F2");
+            text2.text = "Score: " + Score2.getScore().ToString("G");
         }
     }
 }

@@ -20,14 +20,17 @@ public class PlayerController : MonoBehaviour
     public KeyCode RightButton;
     public KeyCode JumpButton;
 
-    private bool alive;
-    private bool active;
-    private bool invincible;
-    private bool onFloor;
-    private bool onLeftWall;
-    private bool onRightWall;
+    private bool alive = true;
+    private bool active = false;
+    private bool invincible = false;
+    private bool onFloor = true;
+    private bool onLeftWall = false;
+    private bool onRightWall = false;
+    private float floorV = 0f;
     private int jumpTimes;
-    private float floorV;
+
+    public float CoinScore = 5f;
+    public float DeathPenalty = -5f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -35,13 +38,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        alive = true;
-        active = false;
-        invincible = false;
-        onFloor = true;
-        onLeftWall = false;
-        onRightWall = false;
-        floorV = 0f;
         jumpTimes = MaxJumpTimes;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -66,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             UpdateVelocity();
         }
-        if (gameObject.transform.position.y < DieAltitude)
+        if (alive && gameObject.transform.position.y < DieAltitude)
         {
             Die();
         }
@@ -198,7 +194,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!invincible && collision.gameObject.CompareTag("Spike"))
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            gameObject.GetComponent<PlayerScore>().updateScore(CoinScore);
+        }
+        else if (!invincible && collision.gameObject.CompareTag("Spike"))
         {
             Die();
         }
@@ -305,6 +305,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator KilledAnimation()
     {
+        gameObject.GetComponent<PlayerScore>().updateScore(DeathPenalty);
         alive = false;
         rb.velocity = Vector2.zero;
         flash();
