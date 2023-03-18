@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 2535ae0afacf248949d3f774e60d8d84
+  - enabled: 1
+    path: Assets/Scenes/gold_spike_level.unity
+    guid: bfa8878cebc79447a9f7dd5722f072d3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bb1009897c0f740f1a1b7c23fb84fcd0, type: 2}
