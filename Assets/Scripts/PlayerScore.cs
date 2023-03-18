@@ -9,9 +9,12 @@ public class PlayerScore : MonoBehaviour
 
     public int coefficient = 3;
 
+    private bool fierce = false;
+    private int coef = 1;
+
     private void Update()
     {
-        score += flagNum * Time.deltaTime;
+        score += coef * flagNum * Time.deltaTime;
     }
 
     public void updateScore(float delta)
@@ -37,11 +40,29 @@ public class PlayerScore : MonoBehaviour
     public void resetFlag()
     {
         flagNum = 0;
+
     }
 
     public void reset()
     {
         flagNum = 0;
         score = 0;
+    }
+
+    public void Fierce()
+    {
+        if (!fierce)
+        {
+            fierce = true;
+            StartCoroutine(FinalBattle(10f));
+        }
+    }
+
+    private IEnumerator FinalBattle(float duration)
+    {
+        coef = 2;
+        yield return new WaitForSeconds(duration);
+        coef = 1;
+        fierce = false;
     }
 }

@@ -126,7 +126,8 @@ public class PlayerController : MonoBehaviour
                 PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
                 if (Input.GetKey(pc.RightButton))
                 {
-                    StartCoroutine(KnockBack(new Vector2(pc.Speed, rb.velocity.y)));
+                    float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
+                    StartCoroutine(KnockBack(new Vector2(pc.Speed * coef, rb.velocity.y)));
                 }
                 else
                 {
@@ -139,7 +140,8 @@ public class PlayerController : MonoBehaviour
                 PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
                 if (Input.GetKey(pc.LeftButton))
                 {
-                    StartCoroutine(KnockBack(new Vector2(-pc.Speed, rb.velocity.y)));
+                    float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
+                    StartCoroutine(KnockBack(new Vector2(-pc.Speed * coef, rb.velocity.y)));
                 }
                 else
                 {
@@ -363,5 +365,27 @@ public class PlayerController : MonoBehaviour
         onFloor = false;
         onLeftWall = false;
         onRightWall = false;
+    }
+
+    public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
+    {
+        StartCoroutine(PowerUpCoroutine(period, SpeedUp, JumpUp, SizeUp, Invincible));
+    }
+
+    private IEnumerator PowerUpCoroutine(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
+    {
+        float _Speed = Speed;
+        float _JumpSpeed = JumpSpeed;
+        Vector3 _localScale = gameObject.transform.localScale;
+        bool _invincible = invincible;
+        Speed *= SpeedUp;
+        JumpSpeed *= JumpUp;
+        gameObject.transform.localScale *= SizeUp;
+        invincible = invincible || Invincible;
+        yield return new WaitForSeconds(period);
+        Speed = _Speed;
+        JumpSpeed = _JumpSpeed;
+        invincible = _invincible;
+        gameObject.transform.localScale = _localScale;
     }
 }
