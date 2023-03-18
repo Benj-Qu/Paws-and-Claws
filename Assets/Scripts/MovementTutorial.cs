@@ -14,6 +14,8 @@ public class MovementTutorial : MonoBehaviour
     public GameObject Player1;
     public GameObject Player2;
     public GameObject HintText2;
+    public GameObject WinLeft;
+    public GameObject WinRight;
     public Sprite flag_white;
     public int target = 0;
 
@@ -52,6 +54,8 @@ public class MovementTutorial : MonoBehaviour
     IEnumerator step2()
     {
         yield return new WaitForSeconds(2);
+        WinLeft.SetActive(false);
+        WinRight.SetActive(false);
         JumpBox1.SetActive(true);
         JumpBox2.SetActive(true);
         Player1.transform.position = new Vector3(-6f, -2.2f, 0);
@@ -67,6 +71,8 @@ public class MovementTutorial : MonoBehaviour
     IEnumerator step3()
     {
         yield return new WaitForSeconds(2);
+        WinLeft.SetActive(false);
+        WinRight.SetActive(false);
         HintText2.SetActive(true);
         JumpBox1.SetActive(false);
         JumpBox2.SetActive(false);
@@ -85,6 +91,8 @@ public class MovementTutorial : MonoBehaviour
     IEnumerator step4()
     {
         yield return new WaitForSeconds(2f);
+        WinLeft.SetActive(false);
+        WinRight.SetActive(false);
         SceneManager.LoadScene("Tutorial");
     }
 }
