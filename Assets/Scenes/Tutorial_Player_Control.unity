@@ -738,6 +738,8 @@ MonoBehaviour:
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
+  player_die: {fileID: 0}
+  DeathPenalty: -5
 --- !u!50 &265125346
 Rigidbody2D:
   serializedVersion: 4
@@ -887,8 +889,6 @@ MonoBehaviour:
   explosionAes: {fileID: 0}
   level: 
   selectionPanel: {fileID: 1083939755}
-  score1: 0
-  score2: 0
   ExitMenu: {fileID: 972269372}
   stage: 0
   progressBar: {fileID: 605720807}
@@ -1433,7 +1433,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &525433195
 RectTransform:
@@ -5106,6 +5106,8 @@ MonoBehaviour:
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
+  player_die: {fileID: 0}
+  DeathPenalty: -5
 --- !u!50 &1551339301
 Rigidbody2D:
   serializedVersion: 4
