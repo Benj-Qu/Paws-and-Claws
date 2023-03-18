@@ -62,11 +62,11 @@ public class GameController : MonoBehaviour
         StartPoint2 = StartPoint1;
         StartPoint1.x -= 0.4f;
         StartPoint2.x += 0.4f;
-        if (level == "Tutorial")
-        {
-            StartPoint1.x -= 5f;
-            StartPoint2.x += 5f;
-        }
+        // if (level == "Tutorial")
+        // {
+        //     StartPoint1.x -= 5f;
+        //     StartPoint2.x += 5f;
+        // }
         if (level == "Tutorial_Player_Control")
         {
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
