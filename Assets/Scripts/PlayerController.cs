@@ -356,6 +356,7 @@ public class PlayerController : MonoBehaviour
 
     public void deactivate()
     {
+        Debug.Log("Deactivate");
         active = false;
     }
 
