@@ -7,7 +7,8 @@ Block:
 1. Block switch: 选中某个block时要call blockController的SelectBlock(i)才能移动该block
 2. Block selection: 玩家抢到某个block时要call blockController的Player1GetBlock/Player2GetBlock来mark
 3. 每个block有自己的public block_id需要手动输入
-3. block must have box collider and rigidbody
+4. block must have box collider and rigidbody
+5. All Flying Objects must have a "Floor Block" Component
 
 Control:
 1. player 1: WASD, left shift for switch block, z for place block on map.

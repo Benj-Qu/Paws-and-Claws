@@ -30,11 +30,6 @@ public class GameController : MonoBehaviour
 
     private flagController flagController;
     
-    [SerializeField] private float score1 = 0;
-    [SerializeField] private float score2 = 0;
-    private int flagCount1 = 0;
-    private int flagCount2 = 0;
-    
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
     public int stage = 0;
@@ -103,9 +98,6 @@ public class GameController : MonoBehaviour
             ExitMenu.SetActive(true);
         }
 
-        score1 += flagCount1 * Time.deltaTime;
-        score2 += flagCount2 * Time.deltaTime;
-
         /*temporarily added by zeyi*/
         // if (!a && stage == 2)
         // {
@@ -120,18 +112,18 @@ public class GameController : MonoBehaviour
     {
         // TODO: Add coroutine for animation
         Debug.Log("Win!");
-        flagCount1 = 0;
-        flagCount2 = 0;
+        player1.GetComponent<PlayerScore>().resetFlag();
+        player2.GetComponent<PlayerScore>().resetFlag();
         StartCoroutine(Win());
     }
 
     private IEnumerator Win()
     {
-        if (score1 > score2)
+        if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
         {
             winText.text = "Michigan Wins!";
         }
-        else if (score1 < score2)
+        else if (player1.GetComponent<PlayerScore>().getScore() < player2.GetComponent<PlayerScore>().getScore())
         {
             winText.text = "Ohio Wins!";
         }
@@ -209,8 +201,8 @@ public class GameController : MonoBehaviour
             player2.transform.position = StartPoint2;
             // Disable the flags and clear the color
             if (flagController) flagController.DestroyFlags();
-            flagCount1 = 0;
-            flagCount2 = 0;
+            player1.GetComponent<PlayerScore>().resetFlag();
+            player2.GetComponent<PlayerScore>().resetFlag();
             // Show animation of next round
             // StartCoroutine()
         }
@@ -230,23 +222,6 @@ public class GameController : MonoBehaviour
     public string GetLevelName()
     {
         return "level" + level;
-    }
-    
-    public void ChangeFlagCount(int owner, int delta)
-    {
-        if (owner == 1)
-        {
-            flagCount1 += delta;
-        }
-        else if (owner == -1)
-        {
-            flagCount2 += delta;
-        }
-    }
-    
-    public (float s1, float s2) GetScores()
-    {
-        return (score1, score2);
     }
 }
 

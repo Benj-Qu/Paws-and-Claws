@@ -8,48 +8,49 @@ public class flagTransformer : MonoBehaviour
     public Sprite flag_UM;
     public Sprite flag_Ohio;
     public Sprite flag_white;
-    public string player_1 = "player_1";
-    public string player_2 = "player_2";
+
+    private GameObject owner;
     private SpriteRenderer spriteRenderer;
 
-    private int state = 0; // record its owner, 1 for player1 and -1 for player2
-
-    private GameController gameController;
-    // Start is called before the first frame update
     void Start()
     {
+        owner = null;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("color flag: " + other.name);
-        if (other.name == player_1)
+        // Modify Flag Color
+        if (other.name == "player_1")
         {
             spriteRenderer.sprite = flag_UM;
-            gameController.ChangeFlagCount(state, -1);
-            state = 1;
-            gameController.ChangeFlagCount(state, 1);
+            UpdateFlagNum(other.gameObject);
         }
-        if (other.name == player_2)
+        else if (other.name == "player_2")
         {
             spriteRenderer.sprite = flag_Ohio;
-            gameController.ChangeFlagCount(state, -1);
-            state = -1;
-            gameController.ChangeFlagCount(state, 1);
+            UpdateFlagNum(other.gameObject);
+        }
+    }
+
+    private void UpdateFlagNum(GameObject other)
+    {
+        if (owner == null)
+        {
+            owner = other;
+            owner.GetComponent<PlayerScore>().getFlag();
+        }
+        else if (owner != other)
+        {
+            owner.GetComponent<PlayerScore>().loseFlag();
+            owner = other;
+            owner.GetComponent<PlayerScore>().getFlag();
         }
     }
 
     private void OnDisable()
     {
-        state = 0;
+        owner = null;
         spriteRenderer.sprite = flag_white;
     }
 }
