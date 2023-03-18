@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode RightButton;
     public KeyCode JumpButton;
 
+    public AudioClip player_die;
+
     private bool alive = true;
     private bool active = false;
     private bool invincible = false;
@@ -295,6 +297,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        AudioSource.PlayClipAtPoint(player_die, Camera.main.transform.position);
         StartCoroutine(KilledAnimation());
     }
 

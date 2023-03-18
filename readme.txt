@@ -84,5 +84,39 @@ Design level 的比较大的：
 
 
 
+MAR 17
 
+1. tutorial text align to right and flag fix generate (yb).
+
+2. intro level0 level1 tutorial button, connect tutorial and level 0 xinyi.
+
+3. pumpkin bug: 1. second round 不会生成2。飞出去不会消失 yb
+
+4. last 10 second double score zhemin
+
+5. second round placement player allow to move bug xinyi
+
+6. Change level name xinyi
+
+7. bomb can overlap hint yb
+
+8. level0 hint text move to ground. xinyi
+
+9. second round block use collectables. zhemin zeyi 
+
+10. 狗猫叫 when obtain flag. jyy
+
+11. change background intro jyy
+
+12. placement flag 不能变色。jyy
+
+13. bonus survey. all
+
+14. esc panel stop game (chatgpt) Zeyi panel layer above selection block.
+
+    
+
+    
+
+    
 

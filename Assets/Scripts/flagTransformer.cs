@@ -8,6 +8,8 @@ public class flagTransformer : MonoBehaviour
     public Sprite flag_UM;
     public Sprite flag_Ohio;
     public Sprite flag_white;
+    public AudioClip player_1_audio;
+    public AudioClip player_2_audio;
 
     private GameObject owner;
     private SpriteRenderer spriteRenderer;
@@ -20,17 +22,22 @@ public class flagTransformer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Modify Flag Color
-        if (other.name == "player_1")
+        if(GameController.instance.stage == 2)
         {
-            spriteRenderer.sprite = flag_UM;
-            UpdateFlagNum(other.gameObject);
-        }
-        else if (other.name == "player_2")
-        {
-            spriteRenderer.sprite = flag_Ohio;
-            UpdateFlagNum(other.gameObject);
-        }
+            // Modify Flag Color
+            if (other.name == "player_1")
+            {
+                spriteRenderer.sprite = flag_UM;
+                AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
+                UpdateFlagNum(other.gameObject);
+            }
+            else if (other.name == "player_2")
+            {
+                spriteRenderer.sprite = flag_Ohio;
+                AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
+                UpdateFlagNum(other.gameObject);
+            }
+        } 
     }
 
     private void UpdateFlagNum(GameObject other)
