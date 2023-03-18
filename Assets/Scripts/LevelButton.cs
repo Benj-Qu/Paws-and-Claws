@@ -20,8 +20,7 @@ public class LevelButton : MonoBehaviour
     {
         // Debug.Log(messageText.text);
         // HasInventory.Reset_static();
-        // SceneManager.LoadScene(messageText.text);
-        SceneManager.LoadScene(gameController.level);
+        SceneManager.LoadScene(messageText.text);
     }
     
     public void ExitGame()
@@ -32,7 +31,7 @@ public class LevelButton : MonoBehaviour
     public void RestartGame()
     {
         // HasInventory.Reset_static();
-        SceneManager.LoadScene(GameObject.Find("GameController").GetComponent<GameController>().GetLevelName());
+        SceneManager.LoadScene(gameController.level);
     }
 
     public void Cancel()
