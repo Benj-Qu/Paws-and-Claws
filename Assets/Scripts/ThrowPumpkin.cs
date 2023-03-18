@@ -29,6 +29,7 @@ public class ThrowPumpkin : MonoBehaviour
 
         if (start == true && GameController.instance.stage == 1)
         {
+            start = false;
             CancelInvoke();
         }
     }
