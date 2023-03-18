@@ -15,12 +15,17 @@ public class ProgressBar_Main : MonoBehaviour
     private GameController gameController;
     private bool gameStarted = false; // If the game starts
 
+    private GameObject Player1;
+    private GameObject Player2;
+
     // Start is called before the first frame update
     void Start()
     {
         _slider = GetComponent<Slider>();
         // _cardSelection = choice.GetComponent<CardSelection>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        Player1 = GameObject.Find("player_1");
+        Player2 = GameObject.Find("player_2");
     }
 
     // Update is called once per frame
@@ -44,6 +49,11 @@ public class ProgressBar_Main : MonoBehaviour
                     gameController.StartGame();
                     _slider.value = _slider.maxValue;
                 }
+            }
+            else if (_slider.value <= 10)
+            {
+                Player1.GetComponent<PlayerScore>().Fierce();
+                Player2.GetComponent<PlayerScore>().Fierce();
             }
         
             // decrement time
