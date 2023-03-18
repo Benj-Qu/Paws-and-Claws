@@ -221,7 +221,7 @@ public class GameController : MonoBehaviour
 
     public string GetLevelName()
     {
-        return "level" + level;
+        return level;
     }
 }
 

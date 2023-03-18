@@ -8,10 +8,12 @@ using TMPro;
 public class LevelButton : MonoBehaviour
 {
     private TextMeshProUGUI messageText;
+    private GameController gameController;
     public GameObject panel;
     void Start()
     {
         messageText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     public void SelectLevel()
@@ -19,7 +21,7 @@ public class LevelButton : MonoBehaviour
         // Debug.Log(messageText.text);
         // HasInventory.Reset_static();
         // SceneManager.LoadScene(messageText.text);
-        SceneManager.LoadScene("gold_spike_level");
+        SceneManager.LoadScene(gameController.level);
     }
     
     public void ExitGame()
