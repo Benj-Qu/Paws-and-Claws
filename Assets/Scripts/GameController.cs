@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;
+    private PlayerController player1_control;
+    private PlayerController player2_control;
     private Camera camera_;
     public GameObject selectionPanel;
 
@@ -76,6 +78,8 @@ public class GameController : MonoBehaviour
         }
         player1 = GameObject.Find("player_1");
         player2 = GameObject.Find("player_2");
+        player1_control = player1.GetComponent<PlayerController>();
+        player2_control = player2.GetComponent<PlayerController>();
         player1.transform.position = StartPoint1;
         player2.transform.position = StartPoint2;
         camera_ = Camera.main;
@@ -105,6 +109,18 @@ public class GameController : MonoBehaviour
                 ExitMenu.SetActive(false);
                 Time.timeScale = 1f;
                 pause = false;
+            }
+
+            if (stage != 2)
+            {
+                if (player1_control.isActive())
+                {
+                    player1_control.deactivate();
+                }
+                if (player2_control.isActive())
+                {
+                    player2_control.deactivate();
+                }
             }
         }
 

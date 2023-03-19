@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip player_die;
 
-    private bool alive = true;
+    private bool alive = true; 
     private bool active = false;
     private bool invincible = false;
     private bool onFloor = true;
