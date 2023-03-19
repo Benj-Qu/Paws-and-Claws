@@ -36,7 +36,7 @@ public class ThrowObjectControl : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("a"))
+        if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(this.gameObject);
         }
