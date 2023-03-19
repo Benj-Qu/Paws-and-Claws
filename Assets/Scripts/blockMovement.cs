@@ -255,7 +255,6 @@ public class blockMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(name+"collide stay" + other.tag);
         // if collide with other blocks
         if (transform.tag == "Bomb")
         {
