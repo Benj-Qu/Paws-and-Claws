@@ -110,17 +110,17 @@ public class GameController : MonoBehaviour
                 Time.timeScale = 1f;
                 pause = false;
             }
+        }
 
-            if (stage != 2)
+        if (stage != 2)
+        {
+            if (player1_control.isActive())
             {
-                if (player1_control.isActive())
-                {
-                    player1_control.deactivate();
-                }
-                if (player2_control.isActive())
-                {
-                    player2_control.deactivate();
-                }
+                player1_control.deactivate();
+            }
+            if (player2_control.isActive())
+            {
+                player2_control.deactivate();
             }
         }
 
