@@ -37,7 +37,7 @@ public class ProgressBar_Main : MonoBehaviour
             if (_slider.value <= 0)
             {
                 _slider.value = 0;
-                if (gameController.stage == 2 && gameController.round_big == 2)
+                if (gameController.stage == 2 && (gameController.round_big == 2 || gameController.level == "Trial Level"))
                 {
                     gameController.GameOver();
                     // destroy itself
