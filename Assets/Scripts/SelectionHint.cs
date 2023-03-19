@@ -20,6 +20,7 @@ public class SelectionHint : MonoBehaviour
 
     public GameObject Z;
     public GameObject M;
+    public GameObject bomb;
 
     public TextMeshProUGUI leftshiftText;
     public TextMeshProUGUI rightshiftText;
@@ -33,7 +34,7 @@ public class SelectionHint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameController.instance && GameController.instance.level == "Tutorial")
+        if (GameController.instance && GameController.instance.level == "Tutorial1")
         {
             if (GameController.instance.stage == 0)
             {
@@ -65,11 +66,13 @@ public class SelectionHint : MonoBehaviour
                 dkey.SetActive(false);
                 leftkey.SetActive(false);
                 rightkey.SetActive(false);
-                hintText.enabled = false;
+                hintText.text = "   can destroy any block.";
+                //hintText.enabled = false;
             }
             else
             {
-                hintText.enabled = true;
+                hintText.text = "Select a block, give the opponent the other.";
+                //hintText.enabled = true;
             }
         }
         else
@@ -80,11 +83,12 @@ public class SelectionHint : MonoBehaviour
                 dkey.SetActive(true);
                 leftkey.SetActive(true);
                 rightkey.SetActive(true);
-                hintText.enabled = true;
+                hintText.text = "Select a block, give the opponent the other.";
+                //hintText.enabled = true;
             }
             else
             {
-                hintText.enabled = false;
+                hintText.text = "    can destroy any block.";
             }
         }
 
@@ -96,6 +100,7 @@ public class SelectionHint : MonoBehaviour
                 rightshift.SetActive(false);
                 Z.SetActive(false);
                 M.SetActive(false);
+                bomb.SetActive(false);
                 leftshiftText.enabled = false;
                 rightshiftText.enabled = false;
             }
@@ -113,6 +118,7 @@ public class SelectionHint : MonoBehaviour
                 rightshift.SetActive(true);
                 Z.SetActive(true);
                 M.SetActive(true);
+                bomb.SetActive(true);
                 leftshiftText.enabled = true;
                 rightshiftText.enabled = true;
             }

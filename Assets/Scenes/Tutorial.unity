@@ -889,6 +889,7 @@ MonoBehaviour:
   explosionAes: {fileID: 0}
   level: 
   selectionPanel: {fileID: 1083939755}
+  pause: 0
   ExitMenu: {fileID: 972269372}
   stage: 0
   progressBar: {fileID: 605720807}
@@ -959,8 +960,8 @@ MonoBehaviour:
   touched: 0
   flag_UM: {fileID: 21300000, guid: f11e681e0816e46a48a21c4486bb519a, type: 3}
   flag_Ohio: {fileID: 21300000, guid: d0f8c8420d2324350a5f9d3d04ed4d95, type: 3}
-  WinLeft: {fileID: 0}
-  WinRight: {fileID: 0}
+  WinLeft: {fileID: 1456642817}
+  WinRight: {fileID: 1169451697}
   player_1: player_1
   player_2: player_2
 --- !u!1 &375359225 stripped
@@ -1015,8 +1016,8 @@ MonoBehaviour:
   touched: 0
   flag_UM: {fileID: 21300000, guid: f11e681e0816e46a48a21c4486bb519a, type: 3}
   flag_Ohio: {fileID: 21300000, guid: d0f8c8420d2324350a5f9d3d04ed4d95, type: 3}
-  WinLeft: {fileID: 0}
-  WinRight: {fileID: 0}
+  WinLeft: {fileID: 1456642817}
+  WinRight: {fileID: 1169451697}
   player_1: player_1
   player_2: player_2
 --- !u!1 &395939078
@@ -4005,7 +4006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1169451698
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4810,7 +4811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1456642818
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5578,8 +5579,8 @@ MonoBehaviour:
   Player1: {fileID: 1551339299}
   Player2: {fileID: 265125344}
   HintText2: {fileID: 729682873}
-  WinLeft: {fileID: 0}
-  WinRight: {fileID: 0}
+  WinLeft: {fileID: 1456642817}
+  WinRight: {fileID: 1169451697}
   flag_white: {fileID: 21300000, guid: 956cb95a8c0e242d290cf0c317942224, type: 3}
   target: 0
 --- !u!4 &1832094424

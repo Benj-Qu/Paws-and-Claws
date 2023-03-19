@@ -27,7 +27,7 @@ public class ThrowPumpkin : MonoBehaviour
             InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
         }
 
-        if (start == true && GameController.instance.stage == 1)
+        if (start == true && GameController.instance.stage != 2)
         {
             start = false;
             CancelInvoke();
