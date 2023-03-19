@@ -373,12 +373,14 @@ public class PlayerController : MonoBehaviour
     {
         Speed *= SpeedUp;
         JumpSpeed *= JumpUp;
+        rb.mass *= SizeUp;
         gameObject.transform.localScale *= SizeUp;
         invincible = Invincible;
         yield return new WaitForSeconds(period);
         Speed /= SpeedUp;
         JumpSpeed /= JumpUp;
         invincible = false;
+        rb.mass /= SizeUp;
         gameObject.transform.localScale /= SizeUp;
     }
 }
