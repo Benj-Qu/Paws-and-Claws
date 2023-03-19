@@ -375,18 +375,14 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PowerUpCoroutine(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
     {
-        float _Speed = Speed;
-        float _JumpSpeed = JumpSpeed;
-        Vector3 _localScale = gameObject.transform.localScale;
-        bool _invincible = invincible;
         Speed *= SpeedUp;
         JumpSpeed *= JumpUp;
         gameObject.transform.localScale *= SizeUp;
-        invincible = invincible || Invincible;
+        invincible = Invincible;
         yield return new WaitForSeconds(period);
-        Speed = _Speed;
-        JumpSpeed = _JumpSpeed;
-        invincible = _invincible;
-        gameObject.transform.localScale = _localScale;
+        Speed /= SpeedUp;
+        JumpSpeed /= JumpUp;
+        invincible = false;
+        gameObject.transform.localScale /= SizeUp;
     }
 }
