@@ -55,10 +55,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (gc.level == "Tutorial_Player_Control" && active == false)
-        {
-            active = true;
-        }
         if (isActive())
         {
             UpdateVelocity();
