@@ -204,7 +204,7 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
-            if (level == "Tutorial")
+            if (level == "Tutorial1")
             {
                 StartCoroutine(FinishTutorial());
             }
