@@ -72,6 +72,14 @@ public class ProgressBar_Main : MonoBehaviour
 
     public void StartGame()
     {
+        if (gameController.level == "Trial Level")
+        {
+            _slider.maxValue = 30;
+        }
+        else
+        {
+            _slider.maxValue = 60;
+        }
         gameStarted = true;
         _slider.value = _slider.maxValue;
     }
