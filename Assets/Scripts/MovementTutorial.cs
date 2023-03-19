@@ -93,6 +93,6 @@ public class MovementTutorial : MonoBehaviour
         yield return new WaitForSeconds(2f);
         WinLeft.SetActive(false);
         WinRight.SetActive(false);
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial1");
     }
 }

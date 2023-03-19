@@ -160,14 +160,14 @@ public class GameController : MonoBehaviour
         
         yield return new WaitForSeconds(2);
         // SceneManager.LoadScene("Intro");
-        // if (level != 6)
-        // {
-        //     SceneManager.LoadScene("Level" + (level + 1));
-        // }
-        // else
-        // {
+        if (level == "Tutorial")
+        {
+            SceneManager.LoadScene("Trial Level");
+        }
+        else
+        {
             SceneManager.LoadScene("Intro");
-        // }
+        }
         // player.GetComponent<HasInventory>().Reset();
     }
 
@@ -194,7 +194,7 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         // Start time countdown
-        if (level != "Tutorial")
+        if (level != "Tutorial1")
         {
             progressBar.gameObject.SetActive(true);
             progressBar.StartGame();
@@ -204,6 +204,10 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
+            if (level == "Tutorial")
+            {
+                StartCoroutine(FinishTutorial());
+            }
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();
@@ -232,6 +236,14 @@ public class GameController : MonoBehaviour
             // Show animation of next round
             // StartCoroutine()
         }
+    }
+    
+    private IEnumerator FinishTutorial()
+    {
+        winText.text = "You got it!";
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Trial Level");
+        winText.text = "";
     }
     
     // private IEnumeratorr 
