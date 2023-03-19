@@ -86,11 +86,11 @@ Design level 的比较大的：
 
 MAR 17
 
-1. tutorial text align to right and flag fix generate (yb).
+1. tutorial text align to right and flag fix generate (yb). √
 
-2. intro level0 level1 tutorial button, connect tutorial and level 0 xinyi.
+2. intro level0 level1 tutorial button, connect tutorial and level 0 xinyi. √
 
-3. pumpkin bug: 1. second round 不会生成2。飞出去不会消失 yb
+3. pumpkin bug: 1. second round 不会生成2。飞出去不会消失 yb 
 
 4. last 10 second double score zhemin
 

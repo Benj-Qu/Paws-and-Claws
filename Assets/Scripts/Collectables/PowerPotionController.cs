@@ -10,12 +10,19 @@ public class PowerPotionController : MonoBehaviour
     public float SizeUp = 2f;
     public bool invincible = false;
 
+    private GameController gc;
+
     public AudioClip PowerUp;
+
+    private void Start()
+    {
+        gc = GameObject.Find("GameController").GetComponent<GameController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject player = collision.gameObject;
-        if (player.CompareTag("Player"))
+        if (player.CompareTag("Player") && gc.stage == 2)
         {
             AudioSource.PlayClipAtPoint(PowerUp, Camera.main.transform.position);
             player.GetComponent<PlayerController>().PowerUp(LastPeriod, SpeedUp, JumpUp, SizeUp, invincible);
