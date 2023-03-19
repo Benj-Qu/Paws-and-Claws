@@ -360,8 +360,6 @@ public class PlayerController : MonoBehaviour
     {
         floorV = 0f;
         onFloor = false;
-        onLeftWall = false;
-        onRightWall = false;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
@@ -373,12 +371,14 @@ public class PlayerController : MonoBehaviour
     {
         Speed *= SpeedUp;
         JumpSpeed *= JumpUp;
+        rb.mass *= SizeUp;
         gameObject.transform.localScale *= SizeUp;
         invincible = Invincible;
         yield return new WaitForSeconds(period);
         Speed /= SpeedUp;
         JumpSpeed /= JumpUp;
         invincible = false;
+        rb.mass /= SizeUp;
         gameObject.transform.localScale /= SizeUp;
     }
 }
