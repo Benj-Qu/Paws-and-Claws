@@ -66,13 +66,25 @@ public class SelectionHint : MonoBehaviour
                 dkey.SetActive(false);
                 leftkey.SetActive(false);
                 rightkey.SetActive(false);
-                hintText.text = "   can destroy any block.";
-                //hintText.enabled = false;
+                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                {
+                    hintText.text = "   can destroy any block.";
+                }
+                else
+                {
+                    hintText.enabled = false;
+                }
             }
             else
             {
-                hintText.text = "Select a block, give the opponent the other.";
-                //hintText.enabled = true;
+                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                {
+                    hintText.text = "Select a block, give the opponent the other.";
+                }
+                else
+                {
+                    hintText.enabled = true;
+                }
             }
         }
         else
@@ -83,12 +95,24 @@ public class SelectionHint : MonoBehaviour
                 dkey.SetActive(true);
                 leftkey.SetActive(true);
                 rightkey.SetActive(true);
-                hintText.text = "Select a block, give the opponent the other.";
-                //hintText.enabled = true;
+                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                {
+                    hintText.text = "Select a block, give the opponent the other.";
+                } else
+                {
+                    hintText.enabled = true;
+                }    
             }
             else
             {
-                hintText.text = "    can destroy any block.";
+                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                {
+                    hintText.text = "   can destroy any block.";
+                }
+                else
+                {
+                    hintText.enabled = false;
+                }
             }
         }
 
