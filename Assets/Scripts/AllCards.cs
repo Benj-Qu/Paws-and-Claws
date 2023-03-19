@@ -37,6 +37,11 @@ public class AllCards : MonoBehaviour
         cards.Add(2, "rectangle");
         cards.Add(3, "square");
         cards.Add(4, "bomb");
+        cards.Add(5, "Coin");
+        cards.Add(6, "Power Potion");
+        cards.Add(7, "Speed Potion");
+        cards.Add(8, "Invincible Potion");
+        
         
         // instantiate the blocks as the child of the block
         block = GameObject.Find("Block");
@@ -101,10 +106,10 @@ public class AllCards : MonoBehaviour
         
         // big round 2
             // small round 1
-        CardRound cardRound2_1 = new CardRound(0, 8,  1, 1);
-        CardRound cardRound2_2 = new CardRound(1, 9,  1, 2);
-        CardRound cardRound2_3 = new CardRound(4, 10,  2, 1);
-        CardRound cardRound2_4 = new CardRound(0, 11,  2, 2);
+        CardRound cardRound2_1 = new CardRound(6, 8,  1, 1);
+        CardRound cardRound2_2 = new CardRound(5, 9,  1, 2);
+        CardRound cardRound2_3 = new CardRound(7, 10,  2, 1);
+        CardRound cardRound2_4 = new CardRound(8, 11,  2, 2);
         List<CardRound> s21 = new List<CardRound>();
         s21.Add(cardRound2_1);
         s21.Add(cardRound2_2);
@@ -114,8 +119,8 @@ public class AllCards : MonoBehaviour
             // small round 2
         CardRound cardRound2_5 = new CardRound(2, 12, 1, 1);
         CardRound cardRound2_6 = new CardRound(3, 13, 1, 2);
-        CardRound cardRound2_7 = new CardRound(2, 14, 2, 1);
-        CardRound cardRound2_8 = new CardRound(3, 15, 2, 2);
+        CardRound cardRound2_7 = new CardRound(4, 14, 2, 1);
+        CardRound cardRound2_8 = new CardRound(0, 15, 2, 2);
         List<CardRound> s22 = new List<CardRound>();
         s22.Add(cardRound2_5);
         s22.Add(cardRound2_6);

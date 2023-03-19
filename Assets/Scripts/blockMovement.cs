@@ -127,7 +127,7 @@ public class blockMovement : MonoBehaviour
 
     private void freezeBlock()
     {
-        if (isBomb == true)
+        if (isBomb == true || gameObject.CompareTag("Collectable"))
         {
             set = true;
             // Collider2d.isTrigger = false;
