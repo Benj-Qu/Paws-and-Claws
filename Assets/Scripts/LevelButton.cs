@@ -8,12 +8,10 @@ using TMPro;
 public class LevelButton : MonoBehaviour
 {
     private TextMeshProUGUI messageText;
-    private GameController gameController;
     public GameObject panel;
     void Start()
     {
         messageText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     public void SelectLevel()
@@ -26,16 +24,22 @@ public class LevelButton : MonoBehaviour
     public void ExitGame()
     {
         SceneManager.LoadScene("Intro");
+        GameController.instance.pause = false;
+        Time.timeScale = 1f;
     }
     
     public void RestartGame()
     {
         // HasInventory.Reset_static();
-        SceneManager.LoadScene(gameController.level);
+        SceneManager.LoadScene(GameController.instance.level);
+        GameController.instance.pause = false;
+        Time.timeScale = 1f;
     }
 
     public void Cancel()
     {
         panel.SetActive(false);
+        GameController.instance.pause = false;
+        Time.timeScale = 1f;
     }
 }

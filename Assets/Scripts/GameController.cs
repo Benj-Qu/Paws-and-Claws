@@ -10,9 +10,6 @@ public class GameController : MonoBehaviour
 {
     // added by zeyi
     public int round_big = 1;
-    /*temporarily added by zeyi*/
-    // private bool a = false;
-    /*temporarily added by zeyi*/
 
     public blockController bc;
     public GameObject Grid;
@@ -27,6 +24,8 @@ public class GameController : MonoBehaviour
 
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
+
+    public bool pause = false;
 
     private flagController flagController;
     
@@ -95,7 +94,18 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ExitMenu.SetActive(true);
+            if (!pause)
+            {
+                ExitMenu.SetActive(true);
+                Time.timeScale = 0f;
+                pause = true;
+            }
+            else
+            {
+                ExitMenu.SetActive(false);
+                Time.timeScale = 1f;
+                pause = false;
+            }
         }
 
         /*temporarily added by zeyi*/
