@@ -360,8 +360,6 @@ public class PlayerController : MonoBehaviour
     {
         floorV = 0f;
         onFloor = false;
-        onLeftWall = false;
-        onRightWall = false;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)

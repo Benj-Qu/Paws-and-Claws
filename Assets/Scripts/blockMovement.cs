@@ -11,6 +11,7 @@ public class blockMovement : MonoBehaviour
     public bool collisionDetected = false;
     public bool isBomb = false;
     public float alpha = 0.5f;
+    public int block_status = 0; // 0: green, >0: red
 
     private Vector3 defaultPos = new Vector3(0, 0, (float)-0.15);
     private Collider2D Collider2d;
@@ -47,6 +48,30 @@ public class blockMovement : MonoBehaviour
     {
         if (!set)
         {
+            if(block_status == 0)
+            {
+                // block not collide with others, show green box
+                collisionDetected = false;
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0.71f, 0.98f, 0.67f, 0.6f);
+                    }
+                }
+            }
+            else if(block_status > 0)
+            {
+                // block collide with others, show red box
+                collisionDetected = true;
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.5f);
+                    }
+                }
+            }
             if (block_side == false & selected)
             {
                 // player_1 selected blocks
@@ -177,16 +202,16 @@ public class blockMovement : MonoBehaviour
             // if newPos is out of border, return false
             return false;
         }
-        if(pos.x > -2.5 && pos.x < 2 && pos.y <= -1 && pos.y > -3.5)
-        {
-            // if collide with the upper mountain, return false
-            return false;
-        }
-        if(pos.x > -3 && pos.x <= 3 && pos.y <= -3.5)
-        {
-            // if collide with the lower mountain, return false
-            return false;
-        }
+        //if(pos.x > -2.5 && pos.x < 2 && pos.y <= -1 && pos.y > -3.5)
+        //{
+        //    // if collide with the upper mountain, return false
+        //    return false;
+        //}
+        //if(pos.x > -3 && pos.x <= 3 && pos.y <= -3.5)
+        //{
+        //    // if collide with the lower mountain, return false
+        //    return false;
+        //}
         return true;
     }
 
@@ -194,11 +219,29 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // if collide with other blocks
-        if (!set && (other.CompareTag("Block") || other.CompareTag("Box")))
+        if(transform.tag == "Bomb")
         {
-            collisionDetected = true;
-            if(transform.tag != "Bomb")
+            // if current block is bomb, can't be placed on mountain
+            if(!set && other.CompareTag("Mountain"))
             {
+                block_status++;
+                collisionDetected = true;
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.5f);
+                    }
+                }
+            }
+        }
+        else
+        {
+            // if current block is normal block, can't be placed on mountain, box, block
+            if(!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player")))
+            {
+                block_status++;
+                collisionDetected = true;
                 for (var i = transform.childCount - 1; i >= 0; i--)
                 {
                     if (transform.GetChild(i).name == "box")
@@ -213,11 +256,27 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         // if collide with other blocks
-        if (!set && (other.CompareTag("Block") || other.CompareTag("Box")))
+        if (transform.tag == "Bomb")
         {
-            collisionDetected = true;
-            if (transform.tag != "Bomb")
+            // if current block is bomb, can't be placed on mountain
+            if (!set && other.CompareTag("Mountain"))
             {
+                collisionDetected = true;
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.5f);
+                    }
+                }
+            }
+        }
+        else
+        {
+            // if current block is normal block, can't be placed on mountain, box, block
+            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player")))
+            {
+                collisionDetected = true;
                 for (var i = transform.childCount - 1; i >= 0; i--)
                 {
                     if (transform.GetChild(i).name == "box")
@@ -231,14 +290,36 @@ public class blockMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!set && (other.CompareTag("Block") || other.CompareTag("Box")))
+        // if collide with other blocks
+        if (transform.tag == "Bomb")
         {
-            collisionDetected = false;
-            for (var i = transform.childCount - 1; i >= 0; i--)
+            // if current block is bomb, can't be placed on mountain
+            if (!set && other.CompareTag("Mountain"))
             {
-                if (transform.GetChild(i).name == "box")
+                block_status--;
+                collisionDetected = false;
+                for (var i = transform.childCount - 1; i >= 0; i--)
                 {
-                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0.71f, 0.98f, 0.67f, 0.6f);
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0.71f, 0.98f, 0.67f, 0.6f);
+                    }
+                }
+            }
+        }
+        else
+        {
+            // if current block is normal block, can't be placed on mountain, box, block
+            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player")))
+            {
+                block_status--;
+                collisionDetected = false;
+                for (var i = transform.childCount - 1; i >= 0; i--)
+                {
+                    if (transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0.71f, 0.98f, 0.67f, 0.6f);
+                    }
                 }
             }
         }

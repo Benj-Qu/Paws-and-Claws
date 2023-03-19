@@ -67,7 +67,6 @@ public class CardSelection : MonoBehaviour
     {
         if (roundUp)
         {
-            Debug.Log("round up");
             _card1Script.CardDisappear();
             _card2Script.CardDisappear();
             
@@ -97,7 +96,6 @@ public class CardSelection : MonoBehaviour
             if (Keyboard.current.aKey.wasPressedThisFrame)
             {
                 // TODO: left selected
-                Debug.Log("left player left");
                 AddToInventory(1, _card1Script.block_id, true, _card1Script.index);
                 AddToInventory(2, _card2Script.block_id, false, _card2Script.index);
                 // next round
@@ -106,7 +104,6 @@ public class CardSelection : MonoBehaviour
             else if (Keyboard.current.dKey.wasPressedThisFrame)
             {
                 // TODO: right selected
-                Debug.Log("left player right");
                 AddToInventory(1, _card2Script.block_id, true, _card2Script.index);
                 AddToInventory(2, _card1Script.block_id, false, _card1Script.index);
                 // next round
@@ -119,7 +116,6 @@ public class CardSelection : MonoBehaviour
             if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
             {
                 // TODO: left selected
-                Debug.Log("right player left");
                 AddToInventory(2, _card1Script.block_id, true, _card1Script.index);
                 AddToInventory(1, _card2Script.block_id, false, _card2Script.index);
                 // next round
@@ -128,7 +124,6 @@ public class CardSelection : MonoBehaviour
             else if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
             {
                 // TODO: right selected
-                Debug.Log("right player right");
                 AddToInventory(2, _card2Script.block_id, true, _card2Script.index);
                 AddToInventory(1, _card1Script.block_id, false, _card1Script.index);
                 // next round

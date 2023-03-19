@@ -9799,7 +9799,7 @@ MonoBehaviour:
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
-  player_die: {fileID: 0}
+  player_die: {fileID: 8300000, guid: b5a3125316a3d41c8bb291273cd78df7, type: 3}
   DeathPenalty: -5
 --- !u!50 &274675828
 Rigidbody2D:
@@ -63583,7 +63583,7 @@ MonoBehaviour:
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
-  player_die: {fileID: 0}
+  player_die: {fileID: 8300000, guid: b5a3125316a3d41c8bb291273cd78df7, type: 3}
   DeathPenalty: -5
 --- !u!50 &1867150102
 Rigidbody2D:
