@@ -10,9 +10,9 @@ public class PowerPotionController : MonoBehaviour
     public float SizeUp = 2f;
     public bool invincible = false;
 
-    private GameController gc;
-
     public AudioClip PowerUp;
+
+    private GameController gc;
 
     private void Start()
     {

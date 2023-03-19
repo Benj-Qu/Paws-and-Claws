@@ -238,7 +238,7 @@ public class blockMovement : MonoBehaviour
         else
         {
             // if current block is normal block, can't be placed on mountain, box, block
-            if(!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain")))
+            if(!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable")))
             {
                 block_status++;
                 collisionDetected = true;
@@ -274,7 +274,7 @@ public class blockMovement : MonoBehaviour
         else
         {
             // if current block is normal block, can't be placed on mountain, box, block
-            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain")))
+            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable")))
             {
                 collisionDetected = true;
                 for (var i = transform.childCount - 1; i >= 0; i--)
@@ -310,7 +310,7 @@ public class blockMovement : MonoBehaviour
         else
         {
             // if current block is normal block, can't be placed on mountain, box, block
-            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain")))
+            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable")))
             {
                 block_status--;
                 collisionDetected = false;
