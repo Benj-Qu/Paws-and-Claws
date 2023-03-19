@@ -33,7 +33,7 @@ public class SelectionHint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameController.instance && GameController.instance.level == "Tutorial")
+        if (GameController.instance && GameController.instance.level == "Tutorial1")
         {
             if (GameController.instance.stage == 0)
             {

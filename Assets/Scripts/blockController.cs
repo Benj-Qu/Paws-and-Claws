@@ -9,6 +9,7 @@ public class blockController : MonoBehaviour
     Subscription<BlockInstantiateEvent> block_instantiate_event_subscription;
     
     public List<blockMovement> bm;
+    public int count;
 
     private bool finished = false;
     // Start is called before the first frame update
@@ -54,6 +55,8 @@ public class blockController : MonoBehaviour
                 RemoveBox();
                 finished = true;
             }
+
+            count = set_block_cnt;
         }
     }
 
