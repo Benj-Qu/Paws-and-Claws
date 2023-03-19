@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        // Screen.SetResolution(960, 720, false);
+        Screen.SetResolution(1728, 1080, false);
         level = SceneManager.GetActiveScene().name;
         // scene = SceneManager.GetActiveScene().name[7] - '0';
         // scene = 0;
