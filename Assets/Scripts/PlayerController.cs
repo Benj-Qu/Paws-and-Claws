@@ -55,10 +55,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (gc.level == "Tutorial_Player_Control" && active == false)
-        {
-            active = true;
-        }
         if (isActive())
         {
             UpdateVelocity();
@@ -243,7 +239,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isTerrain(GameObject other)
     {
-        return other.CompareTag("Block") || other.CompareTag("Mountain");
+        return other.CompareTag("Block") || other.CompareTag("Mountain") || other.CompareTag("Wall");
     }
 
     private bool isPlayer(GameObject other)
