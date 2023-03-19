@@ -1,0 +1,29 @@
+One suggestion we got from playtest is that the player that it is 
+difficult for the player who falls behind to catch up. To handle this, we 
+applied scores instead of the number of flags as the goal of the game. We
+added another round in the game where the flags are re-generated. Thus, 
+the players will have another chance to build their advantage. We also 
+added a "Party time" at the last 10s of each round, when the scores earned 
+will be doubled, giving the players a larger chance to catch up. Moreover, 
+we introduced powerups in the second round to give the falling-behind 
+player another window to win.
+
+Another suggestion we received is that the game would be more compatitive 
+if the players can hinder each other's movement in some way. We added 
+collision between the players so that they can interfere and block each 
+other.
+
+We also introduced more guide level as we found the game hard for the new 
+players to learn the control, and improved the block selection progress. 
+We have separate tutorial levels for playermovement, choosing the blocks 
+and placing the blocks. Then we have a simple level where suggestions will 
+be presented if the player forgets. Furthermore, we improved our 
+visualization in block placement. Now it will auto-switch to the next 
+available block after the current one is set. We also added a box arround 
+each block when placing them to indicate if the current position is valid 
+or not.
+
+Furthermore, we made the game more juicy by adding the background music 
+and sound effect for the mountain night level and add more fun.
+
+
