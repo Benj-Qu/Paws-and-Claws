@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float DieAltitude;
 
     public float KnockBackPeriod;
+    public float speedDecade = 4f;
 
     public KeyCode LeftButton;
     public KeyCode RightButton;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private bool onRightWall = false;
     private float floorV = 0f;
     private int jumpTimes;
+    private bool onIce = false;
 
     public float DeathPenalty = -5f;
 
@@ -71,6 +73,15 @@ public class PlayerController : MonoBehaviour
         // Jump Times
         if (isTerrain(other))
         {
+            if (collision.gameObject.CompareTag("Ice"))
+            {
+                onIce = true;
+            }
+            else
+            {
+                onIce = false;
+            }
+
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
             if (hitpos.normal.y > 0)
@@ -222,7 +233,34 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(floorV, rb.velocity.y);
+            if (!onIce)
+            {
+                rb.velocity = new Vector2(floorV, rb.velocity.y);
+            }
+            else
+            {
+                if (floorV != 0)
+                {
+                    rb.velocity = new Vector2(floorV, rb.velocity.y);
+                }
+                else
+                {
+                    if (rb.velocity.x > 0)
+                    {
+                        rb.velocity -= new Vector2(speedDecade * Time.deltaTime, 0);
+                    }
+                    else if (rb.velocity.x < 0)
+                    {
+                        rb.velocity += new Vector2(speedDecade * Time.deltaTime, 0);
+                    }
+                    else
+                    {
+                        rb.velocity = new Vector2(floorV * Time.deltaTime, 0);
+
+                    }
+                }
+            }
+            //rb.velocity = new Vector2(floorV, rb.velocity.y);
         }
         // Handle Jumping
         if (Input.GetKeyDown(JumpButton) && jumpable())
@@ -239,7 +277,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isTerrain(GameObject other)
     {
-        return other.CompareTag("Block") || other.CompareTag("Mountain") || other.CompareTag("Wall");
+        return other.CompareTag("Block") || other.CompareTag("Mountain") || other.CompareTag("Wall") || other.CompareTag("ice");
     }
 
     private bool isPlayer(GameObject other)
