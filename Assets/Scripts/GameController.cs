@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     private Camera camera_;
     public GameObject selectionPanel;
     public GameObject mask;
+    public GameObject follower;
 
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
@@ -216,10 +217,12 @@ public class GameController : MonoBehaviour
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();
             Grid.SetActive(false);
             bc.RemoveBox();
+            follower.SetActive(false);
         }
         else if (stage == 1) // start place block
         {
             if (flagController) flagController.FlagGeneration();
+            follower.SetActive(true);
         }
         else // stage == 3 means the previous round is over
         {
