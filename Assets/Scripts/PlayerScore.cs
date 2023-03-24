@@ -20,6 +20,7 @@ public class PlayerScore : MonoBehaviour
     public void updateScore(float delta)
     {
         score += delta;
+        if (score < 0) score = 0;
     }
 
     public int getScore()
