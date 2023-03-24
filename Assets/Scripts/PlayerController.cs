@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip player_die;
 
+    public ShowAddScore showAddScore;
+
     private bool alive = true; 
     private bool active = false;
     private bool invincible = false;
@@ -333,6 +335,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        showAddScore.ShowScore();
         AudioSource.PlayClipAtPoint(player_die, Camera.main.transform.position);
         StartCoroutine(KilledAnimation());
     }
