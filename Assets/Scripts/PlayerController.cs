@@ -291,7 +291,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isTerrain(GameObject other)
     {
-        return other.CompareTag("Block") || other.CompareTag("Mountain") || other.CompareTag("Wall") || other.CompareTag("ice");
+        return other.CompareTag("Block") || other.CompareTag("Mountain") || other.CompareTag("Wall") || other.CompareTag("Ice");
     }
 
     private bool isPlayer(GameObject other)
