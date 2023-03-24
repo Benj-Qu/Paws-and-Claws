@@ -12,6 +12,7 @@ public class blockMovement : MonoBehaviour
     public bool isBomb = false;
     public float alpha = 0.5f;
     public int block_status = 0; // 0: green, >0: red
+    public float follower_distance;
 
     private Vector3 defaultPos = new Vector3(0, 0, (float)-0.15);
     private Collider2D Collider2d;
@@ -75,6 +76,8 @@ public class blockMovement : MonoBehaviour
             if (block_side == false & selected)
             {
                 // player_1 selected blocks
+                GameObject player_1_follower = GameObject.Find("DogFollower");
+                player_1_follower.transform.position = new Vector3(transform.position.x, transform.position.y + follower_distance, transform.position.z);
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
                     Debug.Log("player 1 z block");
@@ -113,6 +116,8 @@ public class blockMovement : MonoBehaviour
             if (block_side == true & selected)
             {
                 //player_2 selected blocks
+                GameObject player_2_follower = GameObject.Find("CatFollower");
+                player_2_follower.transform.position = new Vector3(transform.position.x, transform.position.y + follower_distance, transform.position.z);
                 if (Input.GetKeyDown(KeyCode.M))
                 {
                     // press Z to fix the position of this block, can't move any more
