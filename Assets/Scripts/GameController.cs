@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public GameObject explosionAes;
     public string level;
+    public float dist = 0.4f;
+    
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;
@@ -62,8 +64,8 @@ public class GameController : MonoBehaviour
         Debug.Log("Level: "+ level);
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
         StartPoint2 = StartPoint1;
-        StartPoint1.x -= 0.4f;
-        StartPoint2.x += 0.4f;
+        StartPoint1.x -= dist;
+        StartPoint2.x += dist;
         // if (level == "Tutorial")
         // {
         //     StartPoint1.x -= 5f;
