@@ -224,6 +224,8 @@ public class GameController : MonoBehaviour
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
             progressBar.gameObject.SetActive(false);
             // Reset the players
+            player1.GetComponent<PlayerController>().reset();
+            player2.GetComponent<PlayerController>().reset();
             player1.GetComponent<PlayerController>().deactivate();
             player2.GetComponent<PlayerController>().deactivate();
             player1.transform.position = StartPoint1;

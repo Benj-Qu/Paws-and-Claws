@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float JumpDeactivePeriod;
     public float DieAltitude;
 
+    public float AirKnockCoef;
     public float KnockBackPeriod;
     public float speedDecade = 4f;
 
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             UpdateVelocity();
         }
-        if (alive && gameObject.transform.position.y < DieAltitude)
+        if (gameObject.transform.position.y < DieAltitude)
         {
             Die();
         }
@@ -115,24 +116,36 @@ public class PlayerController : MonoBehaviour
         else if (isPlayer(other))
         {
             ContactPoint2D hitpos = collision.GetContact(0);
+            PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
             // Knock On Below Player
             if (hitpos.normal.y > 0)
             {
-                onFloor = true;
-                jumpTimes = MaxJumpTimes;
-                if (collision.rigidbody)
+                // If Other Player On Floor
+                if (pc.OnFloor())
                 {
-                    floorV = collision.rigidbody.velocity.x;
+                    onFloor = true;
+                    jumpTimes = MaxJumpTimes;
+                    if (collision.rigidbody)
+                    {
+                        floorV = collision.rigidbody.velocity.x;
+                    }
+                    else
+                    {
+                        floorV = 0f;
+                    }
                 }
+                // If Other Player Jumping / Flying
                 else
                 {
-                    floorV = 0f;
+                    jumpTimes = MaxJumpTimes;
+                    float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
+                    float distdiff = transform.position.x - other.transform.position.x;
+                    StartCoroutine(KnockBack(new Vector2(AirKnockCoef * pc.Speed * coef * distdiff, rb.velocity.y)));
                 }
             }
             // Knock On Left Player
             else if (hitpos.normal.x > 0)
             {
-                PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
                 if (Input.GetKey(pc.RightButton))
                 {
                     float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
@@ -146,7 +159,6 @@ public class PlayerController : MonoBehaviour
             // Knock On Right Player
             else if (hitpos.normal.x < 0)
             {
-                PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
                 if (Input.GetKey(pc.LeftButton))
                 {
                     float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
@@ -335,29 +347,47 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        showAddScore.ShowScore();
-        AudioSource.PlayClipAtPoint(player_die, Camera.main.transform.position);
-        StartCoroutine(KilledAnimation());
+        if (alive)
+        {
+            showAddScore.ShowScore();
+            AudioSource.PlayClipAtPoint(player_die, Camera.main.transform.position);
+            StartCoroutine(KilledAnimation());
+        }
     }
 
     private IEnumerator KilledAnimation()
     {
+        // Die and Freeze
         gameObject.GetComponent<PlayerScore>().updateScore(DeathPenalty);
         alive = false;
         rb.velocity = Vector2.zero;
         flash();
         yield return new WaitForSeconds(0.2f);
+        // Rebirth and Freeze
         gc.Killed(gameObject);
-        invincible = true;
         yield return new WaitForSeconds(0.3f);
+        reset();
+        // Rebirth Invincible
+        invincible = true;
+        yield return new WaitForSeconds(0.5f);
+        invincible = false;
+    }
+
+    public void reset()
+    {
         alive = true;
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;
         jumpTimes = MaxJumpTimes;
         floorV = 0f;
-        yield return new WaitForSeconds(0.5f);
-        invincible = false;
+        onIce = false;
+        rb.velocity = Vector2.zero;
+    }
+
+    public bool OnFloor()
+    {
+        return onFloor;
     }
 
     private bool onWall()
@@ -401,6 +431,11 @@ public class PlayerController : MonoBehaviour
     {
         floorV = 0f;
         onFloor = false;
+    }
+
+    public bool Flying()
+    {
+        return !(onFloor || onLeftWall || onRightWall);
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
