@@ -150,8 +150,12 @@ Not now
 6. 显示可以攻击的block的攻击范围
 
     
-
-    
-
+Austin:
+1. Integrate tutorial level into the game. Use sprite/scene to show the difficulty level (green -> on fire, storm) 
+	Change the control to make it more intuitive (e.g., grab blocks by jumping to it, and when the player gets a block, it has bubble around it so that it can place)
+2. Remove michigan & ohio logos. Dogs and cats fighting all over the world sounds interesting
+3. Change to controllers
+4. "You can walljump" instead of "You can walljumping"
+5. Overtime when the player falls behind holds the majority flags
     
 
