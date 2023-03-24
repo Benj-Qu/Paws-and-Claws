@@ -9599,10 +9599,12 @@ MonoBehaviour:
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
   KnockBackPeriod: 0
+  speedDecade: 4
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
   player_die: {fileID: 0}
+  showAddScore: {fileID: 0}
   DeathPenalty: -5
 --- !u!50 &274675828
 Rigidbody2D:
@@ -62674,10 +62676,12 @@ MonoBehaviour:
   JumpDeactivePeriod: 0.15
   DieAltitude: -6
   KnockBackPeriod: 0
+  speedDecade: 4
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
   player_die: {fileID: 0}
+  showAddScore: {fileID: 0}
   DeathPenalty: -5
 --- !u!50 &1867150102
 Rigidbody2D:
