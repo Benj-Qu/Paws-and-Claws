@@ -114,6 +114,41 @@ MAR 17
 
 14. esc panel stop game (chatgpt) Zeyi panel layer above selection block.
 
+
+
+
+
+
+MAR 21
+1. 说明goal是flag 解释score (blue / red "+1" beside the flag & “-15”)
+3. score不明显 难以注意到 score加粗
+4. potion description (polish sprites) (对面拿到旗触发效果）
+5. round1/3 2/3 3/3 三局两胜
+6. Block的数量变成4，2，2， 2的时间减半
+       最后一轮可以考虑全换成道具
+8. Combine placement tutorial with level 0, reduce the number of block
+10. 字太多了 tutorial里一次出现的内容太多了
+11. Change player movement tutorial to one scene
+14. 放block的时候indicate不同player 加icon或者颜色
+15. 游戏结束忘记把player彻底reset了（）
+16. 音效比背景音乐声音大很多 音效太响太惨烈
+20. choose block tutorial（换成框选 而不是按了左右就选了 / keyboard sprites on the choices
+21. Adjust the size of the blocks
+23. 优化collision
+
+New Map:
+1. 中国：房檐顶上 / 桌子&花瓶
+2. 橄榄球场： 裁判扔橄榄球和红牌
+3. 极光：扔冰锥 + 冰块block（滑） 碎冰block
+
+Not now
+1. Rotate the block
+2. 玩家互相攻击（如果是controller的话可以用右trigger
+3. 有点过于像super chicken horse，想一想怎么做的不同
+4. powerup可以重复使用
+5. 自己放的block只能打别人
+6. 显示可以攻击的block的攻击范围
+
     
 
     
