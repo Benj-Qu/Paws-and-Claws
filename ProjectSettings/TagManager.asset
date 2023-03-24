@@ -12,6 +12,8 @@ TagManager:
   - Flag
   - Box
   - Collectable
+  - Ice
+  - ice
   layers:
   - Default
   - TransparentFX

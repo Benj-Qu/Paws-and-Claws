@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public GameObject explosionAes;
     public string level;
+    public float dist = 0.4f;
+    
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;
@@ -22,6 +24,8 @@ public class GameController : MonoBehaviour
     private PlayerController player2_control;
     private Camera camera_;
     public GameObject selectionPanel;
+    public GameObject mask;
+    public GameObject follower;
 
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
@@ -60,8 +64,8 @@ public class GameController : MonoBehaviour
         Debug.Log("Level: "+ level);
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
         StartPoint2 = StartPoint1;
-        StartPoint1.x -= 0.4f;
-        StartPoint2.x += 0.4f;
+        StartPoint1.x -= dist;
+        StartPoint2.x += dist;
         // if (level == "Tutorial")
         // {
         //     StartPoint1.x -= 5f;
@@ -207,15 +211,20 @@ public class GameController : MonoBehaviour
             {
                 StartCoroutine(FinishTutorial());
             }
+            Color tmp = mask.GetComponent<SpriteRenderer>().color;
+            tmp.a = 0.14f;
+            mask.GetComponent<SpriteRenderer>().color = tmp;
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();
             Grid.SetActive(false);
             bc.RemoveBox();
+            follower.SetActive(false);
         }
         else if (stage == 1) // start place block
         {
             if (flagController) flagController.FlagGeneration();
+            follower.SetActive(true);
         }
         else // stage == 3 means the previous round is over
         {
@@ -224,6 +233,8 @@ public class GameController : MonoBehaviour
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
             progressBar.gameObject.SetActive(false);
             // Reset the players
+            player1.GetComponent<PlayerController>().reset();
+            player2.GetComponent<PlayerController>().reset();
             player1.GetComponent<PlayerController>().deactivate();
             player2.GetComponent<PlayerController>().deactivate();
             player1.transform.position = StartPoint1;
