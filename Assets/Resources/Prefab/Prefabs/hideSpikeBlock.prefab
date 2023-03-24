@@ -188,6 +188,8 @@ MonoBehaviour:
   collisionDetected: 0
   isBomb: 0
   alpha: 0.5
+  block_status: 0
+  follower_distance: 0.8
 --- !u!1 &3864637148434152631
 GameObject:
   m_ObjectHideFlags: 0

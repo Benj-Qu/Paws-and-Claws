@@ -306,8 +306,11 @@ public class PlayerControlTest : MonoBehaviour
         return (jumpTimes > 0);
     }
 
+    public bool OnFloor()
+    {
+        return onFloor;
+    }
     
-
     private bool onWall()
     {
         return (!onFloor) && ((onLeftWall && sr.flipX) || (onRightWall && !sr.flipX));

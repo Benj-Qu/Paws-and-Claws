@@ -24,6 +24,8 @@ public class SelectionHint : MonoBehaviour
 
     public TextMeshProUGUI leftshiftText;
     public TextMeshProUGUI rightshiftText;
+    public TextMeshProUGUI leftZText;
+    public TextMeshProUGUI rightMText;
 
     // Start is called before the first frame update
     void Start()
@@ -127,11 +129,15 @@ public class SelectionHint : MonoBehaviour
                 bomb.SetActive(false);
                 leftshiftText.enabled = false;
                 rightshiftText.enabled = false;
+                leftZText.enabled = false;
+                rightMText.enabled = false;
             }
             else
             {
                 leftshiftText.enabled = true;
                 rightshiftText.enabled = true;
+                leftZText.enabled = true;
+                rightMText.enabled = true;
             }
         }
         else
@@ -145,11 +151,15 @@ public class SelectionHint : MonoBehaviour
                 bomb.SetActive(true);
                 leftshiftText.enabled = true;
                 rightshiftText.enabled = true;
+                leftZText.enabled = true;
+                rightMText.enabled = true;
             }
             else
             {
                 leftshiftText.enabled = false;
                 rightshiftText.enabled = false;
+                leftZText.enabled = false;
+                rightMText.enabled = false;
             }
         }
     }

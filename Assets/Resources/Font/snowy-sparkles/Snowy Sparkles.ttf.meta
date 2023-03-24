@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: dd792b17b8d22422086b5ad1dadb800e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Snowy Sparkles
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 04d054b55595a43c980350b3bf698a3d, type: 3}
+  - {fileID: 12800000, guid: a3b0193daf491499b9f9ca495f249c91, type: 3}
+  - {fileID: 12800000, guid: d1cce9c3dec3c4e438fd25faaaff0cb9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
