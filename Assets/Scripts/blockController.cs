@@ -38,7 +38,7 @@ public class blockController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!finished)
+        if (GameController.instance.stage == 1 && !finished)
         {
             int set_block_cnt = 0;
             for (var i = transform.childCount - 1; i >= 0; i--)

@@ -43,7 +43,7 @@ public class Selection : MonoBehaviour
         if (gameController)
         {
             // placement begin
-            Debug.Log("selection call");
+            Debug.Log("stage, selection call");
             gameController.StartGame();
         }
     }
