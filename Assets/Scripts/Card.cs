@@ -75,9 +75,9 @@ public class Card : MonoBehaviour
         //     target.x -= 50f;
         // }
 
-        speed = (target - _image.transform.position) / 0.5f;
+        speed = (target - _image.transform.position) / 0.75f;
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
         move = false;
         _image.transform.localScale /= 2;
         _image.transform.position = img_pos;
