@@ -56,4 +56,21 @@ public class flagController : MonoBehaviour
             flag.SetActive(false);
         }
     }
+
+    public void StartPartyTime()
+    {
+        for(var i = transform.childCount - 1; i >= 0; i--)
+        {
+            transform.GetChild(i).GetComponent<flagTransformer>().StartPartyTime();
+        }
+    }
+
+    public void EndPartyTime()
+    {
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            transform.GetChild(i).GetComponent<flagTransformer>().EndPartyTime();
+        }
+    }
+
 }

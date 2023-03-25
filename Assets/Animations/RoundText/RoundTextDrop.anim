@@ -22,7 +22,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -264
+        value: -272
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -32,8 +32,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.06666667
         value: -210
-        inSlope: 779.99994
-        outSlope: 779.99994
+        inSlope: 839.99994
+        outSlope: 839.99994
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -104,7 +104,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 141.42
+        value: 249
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -114,8 +114,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.06666667
         value: 125
-        inSlope: -492.5999
-        outSlope: -492.5999
+        inSlope: -1492.4999
+        outSlope: -1492.4999
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -230,7 +230,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -264
+        value: -272
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -240,8 +240,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.06666667
         value: -210
-        inSlope: 779.99994
-        outSlope: 779.99994
+        inSlope: 839.99994
+        outSlope: 839.99994
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -312,7 +312,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 141.42
+        value: 249
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -322,8 +322,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.06666667
         value: 125
-        inSlope: -492.5999
-        outSlope: -492.5999
+        inSlope: -1492.4999
+        outSlope: -1492.4999
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334

@@ -75,4 +75,26 @@ public class flagTransformer : MonoBehaviour
         owner = null;
         spriteRenderer.sprite = flag_white;
     }
+
+    public void StartPartyTime()
+    {
+        foreach(Transform child in transform)
+        {
+            if(child.name == "FlagPartyEffect")
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void EndPartyTime()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.name == "FlagPartyEffect")
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+    }
 }
