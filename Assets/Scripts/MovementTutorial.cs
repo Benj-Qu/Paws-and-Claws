@@ -26,8 +26,11 @@ public class MovementTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FlagLeft.transform.position = new Vector3(-1.5f, -2.2f, 0);
-        FlagRight.transform.position = new Vector3(1.5f, -2.2f, 0);
+        //FlagLeft.transform.position = new Vector3(-1.5f, -2.2f, 0);
+        //FlagRight.transform.position = new Vector3(1.5f, -2.2f, 0);
+        HintText2.SetActive(true);
+        //FlagLeft.transform.position = new Vector3(-0.8f, 0f, 0);
+        //FlagRight.transform.position = new Vector3(0.7f, 0f, 0);
     }
 
     // Update is called once per frame
@@ -36,57 +39,57 @@ public class MovementTutorial : MonoBehaviour
         if (target == 2 && status == 1)
         {
             target = 0;
-            status += 1;
-            StartCoroutine(step2());
-        }
-        if (target == 2 && status == 2)
-        {
-            target = 0;
-            status += 1;
-            StartCoroutine(step3());
-        }
-        if (target == 2 && status == 3)
-        {
+            //status += 3;
             StartCoroutine(step4());
         }
+        //if (target == 2 && status == 2)
+        //{
+        //    target = 0;
+        //    status += 1;
+        //    StartCoroutine(step3());
+        //}
+        //if (target == 2 && status == 3)
+        //{
+        //    StartCoroutine(step4());
+        //}
     }
 
-    IEnumerator step2()
-    {
-        yield return new WaitForSeconds(2);
-        WinLeft.SetActive(false);
-        WinRight.SetActive(false);
-        JumpBox1.SetActive(true);
-        JumpBox2.SetActive(true);
-        Player1.transform.position = new Vector3(-6f, -2.2f, 0);
-        Player2.transform.position = new Vector3(6f, -2.2f, 0);
-        FlagLeft.transform.position = new Vector3(-1.2f, -1.2f, 0);
-        FlagLeft.GetComponent<TutorialFlag>().touched = false;
-        FlagLeft.GetComponent<SpriteRenderer>().sprite = flag_white;
-        FlagRight.transform.position = new Vector3(1f, -1.2f, 0);
-        FlagRight.GetComponent<TutorialFlag>().touched = false;
-        FlagRight.GetComponent<SpriteRenderer>().sprite = flag_white;
-    }
+    //IEnumerator step2()
+    //{
+    //    yield return new WaitForSeconds(2);
+    //    WinLeft.SetActive(false);
+    //    WinRight.SetActive(false);
+    //    JumpBox1.SetActive(true);
+    //    JumpBox2.SetActive(true);
+    //    Player1.transform.position = new Vector3(-6f, -2.2f, 0);
+    //    Player2.transform.position = new Vector3(6f, -2.2f, 0);
+    //    FlagLeft.transform.position = new Vector3(-1.2f, -1.2f, 0);
+    //    FlagLeft.GetComponent<TutorialFlag>().touched = false;
+    //    FlagLeft.GetComponent<SpriteRenderer>().sprite = flag_white;
+    //    FlagRight.transform.position = new Vector3(1f, -1.2f, 0);
+    //    FlagRight.GetComponent<TutorialFlag>().touched = false;
+    //    FlagRight.GetComponent<SpriteRenderer>().sprite = flag_white;
+    //}
 
-    IEnumerator step3()
-    {
-        yield return new WaitForSeconds(2);
-        WinLeft.SetActive(false);
-        WinRight.SetActive(false);
-        HintText2.SetActive(true);
-        JumpBox1.SetActive(false);
-        JumpBox2.SetActive(false);
-        WallBox1.SetActive(true);
-        WallBox2.SetActive(true);
-        Player1.transform.position = new Vector3(-6f, -2.2f, 0);
-        Player2.transform.position = new Vector3(6f, -2.2f, 0);
-        FlagLeft.transform.position = new Vector3(-0.8f, 0f, 0);
-        FlagLeft.GetComponent<TutorialFlag>().touched = false;
-        FlagLeft.GetComponent<SpriteRenderer>().sprite = flag_white;
-        FlagRight.transform.position = new Vector3(0.7f, 0f, 0);
-        FlagRight.GetComponent<TutorialFlag>().touched = false;
-        FlagRight.GetComponent<SpriteRenderer>().sprite = flag_white;
-    }
+    //IEnumerator step3()
+    //{
+    //    yield return new WaitForSeconds(2);
+    //    WinLeft.SetActive(false);
+    //    WinRight.SetActive(false);
+    //    HintText2.SetActive(true);
+    //    JumpBox1.SetActive(false);
+    //    JumpBox2.SetActive(false);
+    //    WallBox1.SetActive(true);
+    //    WallBox2.SetActive(true);
+    //    Player1.transform.position = new Vector3(-6f, -2.2f, 0);
+    //    Player2.transform.position = new Vector3(6f, -2.2f, 0);
+    //    FlagLeft.transform.position = new Vector3(-0.8f, 0f, 0);
+    //    FlagLeft.GetComponent<TutorialFlag>().touched = false;
+    //    FlagLeft.GetComponent<SpriteRenderer>().sprite = flag_white;
+    //    FlagRight.transform.position = new Vector3(0.7f, 0f, 0);
+    //    FlagRight.GetComponent<TutorialFlag>().touched = false;
+    //    FlagRight.GetComponent<SpriteRenderer>().sprite = flag_white;
+    //}
 
     IEnumerator step4()
     {
