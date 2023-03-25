@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -41,12 +42,38 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private GameController gc;
+    private PlayerXboxControls controls;
+
+    public int joystickNumber;
+
+    // private void Awake() {
+    //     controls = new PlayerXboxControls();
+    //     controls.Gameplay.Jump.performed += ctx => XboxCheckAndJump();
+    //     controls.Gameplay.Move.performed += ctx => XboxCheckAndJump();
+    // }
+    //
+    // private void OnEnable() {
+    //     controls.Gameplay.Enable();
+    // }
+    //
+    // private void OnDisable() {
+    //     controls.Gameplay.Disable();
+    // }
+    //
+    // private void XboxCheckAndJump() {
+    //     if (jumpable())
+    //     {
+    //         jump();
+    //     }
+    // }
+    private AudioSource pas;
 
     private void Start()
     {
         jumpTimes = MaxJumpTimes;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        pas = GetComponent<AudioSource>();
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         if (gc.stage == 2)
         {
@@ -225,19 +252,37 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateVelocity()
     {
+        string joystickString = joystickNumber.ToString();
+        float joystickInput = Input.GetAxis("Horizontal" + joystickString) * Speed;
+        Debug.Log("Hor: " + joystickInput);
+        
         // Update Horizontal Velocity
-        if (Input.GetKey(LeftButton))
+        if (Input.GetKey(LeftButton) || joystickInput < 0)
         {
-            rb.velocity = new Vector2(-Speed + floorV, rb.velocity.y);
+            if (joystickInput < 0)
+            {
+                rb.velocity = new Vector2(floorV + joystickInput, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(-Speed + floorV, rb.velocity.y);
+            }
             sr.flipX = true;
             if (onRightWall)
             {
                 onRightWall = false;
             }
         }
-        else if (Input.GetKey(RightButton))
+        else if (Input.GetKey(RightButton) || joystickInput > 0)
         {
-            rb.velocity = new Vector2(Speed + floorV, rb.velocity.y);
+            if (joystickInput < 0)
+            {
+                rb.velocity = new Vector2(floorV + joystickInput, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(Speed + floorV, rb.velocity.y);
+            }
             sr.flipX = false;
             if (onLeftWall)
             {
@@ -276,8 +321,9 @@ public class PlayerController : MonoBehaviour
             //rb.velocity = new Vector2(floorV, rb.velocity.y);
         }
         // Handle Jumping
-        if (Input.GetKeyDown(JumpButton) && jumpable())
+        if ((Input.GetKeyDown(JumpButton) || Input.GetButtonDown("A" + joystickString)) && jumpable())
         {
+            Debug.Log("A" + joystickString);
             jump();
         }
         // Wall Sliding
@@ -349,7 +395,7 @@ public class PlayerController : MonoBehaviour
         if (alive)
         {
             showAddScore.ShowScore();
-            AudioSource.PlayClipAtPoint(player_die, Camera.main.transform.position);
+            pas.PlayOneShot(player_die, 0.5f);
             StartCoroutine(KilledAnimation());
         }
     }
