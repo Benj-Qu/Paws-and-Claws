@@ -7492,7 +7492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &225802600
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7526,7 +7526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: {fileID: 1867150100}
-  textObject: {fileID: 225802599}
+  textObject: {fileID: 225802602}
 --- !u!114 &225802602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7549,8 +7549,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: -15
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 796e83df6248a48ceb4efd6142f8157b, type: 2}
-  m_sharedMaterial: {fileID: -2150107056423502001, guid: 796e83df6248a48ceb4efd6142f8157b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15860,7 +15860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &414754792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15894,7 +15894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: {fileID: 274675826}
-  textObject: {fileID: 414754791}
+  textObject: {fileID: 414754794}
 --- !u!114 &414754794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15917,8 +15917,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: -15
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 796e83df6248a48ceb4efd6142f8157b, type: 2}
-  m_sharedMaterial: {fileID: -2150107056423502001, guid: 796e83df6248a48ceb4efd6142f8157b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -45727,6 +45727,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1315412430 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 943054791875090096, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+  m_PrefabInstance: {fileID: 3884649206134707472}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1318315113
 GameObject:
   m_ObjectHideFlags: 0
@@ -52853,6 +52864,7 @@ MonoBehaviour:
   Grid: {fileID: 2100524373}
   explosionAes: {fileID: 0}
   level: 
+  dist: 0.4
   selectionPanel: {fileID: 0}
   mask: {fileID: 1362968462}
   follower: {fileID: 1147559429}
@@ -72624,6 +72636,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2478045443295247836, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: textObject
+      value: 
+      objectReference: {fileID: 1315412430}
     - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: flag_UM
       value: 

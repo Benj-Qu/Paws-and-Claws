@@ -211,9 +211,14 @@ public class GameController : MonoBehaviour
             {
                 StartCoroutine(FinishTutorial());
             }
-            Color tmp = mask.GetComponent<SpriteRenderer>().color;
-            tmp.a = 0.14f;
-            mask.GetComponent<SpriteRenderer>().color = tmp;
+
+            if (mask)
+            {
+                Color tmp = mask.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0.14f;
+                mask.GetComponent<SpriteRenderer>().color = tmp;
+            }
+            
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
             selectionPanel.GetComponent<Selection>().DoneWithPlacement();

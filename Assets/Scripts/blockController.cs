@@ -51,6 +51,7 @@ public class blockController : MonoBehaviour
             {
                 Debug.Log("stage, blockController");
                 // if blocks are all set, start game
+                Debug.Log("block call");
                 GameController.instance.StartGame();
                 RemoveBox();
                 finished = true;

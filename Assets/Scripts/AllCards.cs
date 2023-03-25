@@ -130,10 +130,38 @@ public class AllCards : MonoBehaviour
         List<List<CardRound>> b2 = new List<List<CardRound>>();
         b2.Add(s21);
         b2.Add(s22);
+        
+        // big round 3
+        // small round 1
+        CardRound cardRound3_1 = new CardRound(6, 16,  1, 1);
+        CardRound cardRound3_2 = new CardRound(5, 17,  1, 2);
+        CardRound cardRound3_3 = new CardRound(7, 18,  2, 1);
+        CardRound cardRound3_4 = new CardRound(8, 19,  2, 2);
+        List<CardRound> s31 = new List<CardRound>();
+        s31.Add(cardRound3_1);
+        s31.Add(cardRound3_2);
+        s31.Add(cardRound3_3);
+        s31.Add(cardRound3_4);
+        
+        // small round 2
+        CardRound cardRound3_5 = new CardRound(2, 20, 1, 1);
+        CardRound cardRound3_6 = new CardRound(3, 21, 1, 2);
+        CardRound cardRound3_7 = new CardRound(4, 22, 2, 1);
+        CardRound cardRound3_8 = new CardRound(0, 23, 2, 2);
+        List<CardRound> s32 = new List<CardRound>();
+        s32.Add(cardRound3_5);
+        s32.Add(cardRound3_6);
+        s32.Add(cardRound3_7);
+        s32.Add(cardRound3_8);
+        
+        List<List<CardRound>> b3 = new List<List<CardRound>>();
+        b3.Add(s31);
+        b3.Add(s32);
 
         cardRoundSetting = new List<List<List<CardRound>>>();
         cardRoundSetting.Add(b1);
         cardRoundSetting.Add(b2);
+        cardRoundSetting.Add(b3);
     }
 
     private void SetEachCardUnderBlock(int _whichCard, int _index)

@@ -34,7 +34,7 @@ Future:
 2. (future) Instantiate a new block when one block is set if this block amount > 0.
 3. (future )Add image of each block (Like Clash Royale).
 4. (Future)Add block selection animation: block selected fly to the inventory bar.
-5. switch block when one placement is over 
+5. switch block when one placement is over
 6. fobid switch to the block that are set
 7. continuous movement by holding key.
 
@@ -49,7 +49,7 @@ Design level 的比较大的：
 
 1. 两个player都能放，别人放的我也能上，所以怎么放不是很有策略性，可以考虑一个player放的对自己优势对别人有负面影响。
    1. 多个round
-2. 增加对战性 让玩家可以阻碍对方 
+2. 增加对战性 让玩家可以阻碍对方
    1. 碰撞
    2. PowerUp 变大，加速（future）， 推进器（future）
    3. possible future: character attack each other
@@ -90,7 +90,7 @@ MAR 17
 
 2. intro level0 level1 tutorial button, connect tutorial and level 0 xinyi. √
 
-3. pumpkin bug: 1. second round 不会生成2。飞出去不会消失 yb 
+3. pumpkin bug: 1. second round 不会生成2。飞出去不会消失 yb
 
 4. last 10 second double score zhemin
 
@@ -102,7 +102,7 @@ MAR 17
 
 8. level0 hint text move to ground. xinyi
 
-9. second round block use collectables. zhemin zeyi 
+9. second round block use collectables. zhemin zeyi
 
 10. 狗猫叫 when obtain flag. jyy
 
@@ -149,13 +149,15 @@ Not now
 5. 自己放的block只能打别人
 6. 显示可以攻击的block的攻击范围
 
-    
+
 Austin:
-1. Integrate tutorial level into the game. Use sprite/scene to show the difficulty level (green -> on fire, storm) 
+1. Integrate tutorial level into the game. Use sprite/scene to show the difficulty level (green -> on fire, storm)
 	Change the control to make it more intuitive (e.g., grab blocks by jumping to it, and when the player gets a block, it has bubble around it so that it can place)
 2. Remove michigan & ohio logos. Dogs and cats fighting all over the world sounds interesting
 3. Change to controllers
 4. "You can walljump" instead of "You can walljumping"
 5. Overtime when the player falls behind holds the majority flags
-    
+
+Mar 24:
+1. larger map camera move.
 

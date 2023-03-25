@@ -6,7 +6,7 @@ using TMPro;
 public class ShowAddScore : MonoBehaviour
 {
     public GameObject flag;
-    public GameObject textObject;
+    public TextMeshProUGUI textObject;
     private RectTransform textTransform;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class ShowAddScore : MonoBehaviour
 
     public void ShowScore()
     {
-        textObject.SetActive(true);
+        textObject.enabled = true;
         StartCoroutine(ShowScoreAnimation());
     }
 
@@ -34,6 +34,6 @@ public class ShowAddScore : MonoBehaviour
         textTransform.anchoredPosition = position;
         // textObject.transform.position = position;
         yield return new WaitForSeconds(0.2f);
-        textObject.SetActive(false);
+        textObject.enabled = false;
     }
 }
