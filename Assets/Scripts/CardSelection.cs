@@ -93,7 +93,8 @@ public class CardSelection : MonoBehaviour
         // left player
         if (whichPlayer == 1)
         {
-            if (Keyboard.current.aKey.wasPressedThisFrame)
+            float joystickInput = Input.GetAxis("Horizontal1");
+            if (Keyboard.current.aKey.wasPressedThisFrame || joystickInput < 0)
             {
                 // TODO: left selected
                 AddToInventory(1, _card1Script.block_id, true, _card1Script.index);
@@ -101,7 +102,7 @@ public class CardSelection : MonoBehaviour
                 // next round
                 Round();
             }
-            else if (Keyboard.current.dKey.wasPressedThisFrame)
+            else if (Keyboard.current.dKey.wasPressedThisFrame || joystickInput > 0)
             {
                 // TODO: right selected
                 AddToInventory(1, _card2Script.block_id, true, _card2Script.index);
@@ -113,7 +114,8 @@ public class CardSelection : MonoBehaviour
         // right player
         else
         {
-            if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
+            float joystickInput = Input.GetAxis("Horizontal2");
+            if (Keyboard.current.leftArrowKey.wasPressedThisFrame || joystickInput < 0)
             {
                 // TODO: left selected
                 AddToInventory(2, _card1Script.block_id, true, _card1Script.index);
@@ -121,7 +123,7 @@ public class CardSelection : MonoBehaviour
                 // next round
                 Round();
             }
-            else if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+            else if (Keyboard.current.rightArrowKey.wasPressedThisFrame || joystickInput > 0)
             {
                 // TODO: right selected
                 AddToInventory(2, _card2Script.block_id, true, _card2Script.index);

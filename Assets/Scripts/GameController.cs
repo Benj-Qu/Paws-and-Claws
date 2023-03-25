@@ -151,11 +151,11 @@ public class GameController : MonoBehaviour
     {
         if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
         {
-            winText.text = "Michigan Wins!";
+            winText.text = "DOG Wins!";
         }
         else if (player1.GetComponent<PlayerScore>().getScore() < player2.GetComponent<PlayerScore>().getScore())
         {
-            winText.text = "Ohio Wins!";
+            winText.text = "CAT Wins!";
         }
         else
         {
@@ -252,6 +252,13 @@ public class GameController : MonoBehaviour
             sd.Reset();
             // Show animation of next round
             // StartCoroutine()
+            if (mask)
+            {
+                Color tmp = mask.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0.27f;
+                mask.GetComponent<SpriteRenderer>().color = tmp;
+            }
+            Grid.SetActive(true);
         }
     }
     

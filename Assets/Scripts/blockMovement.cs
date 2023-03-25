@@ -18,6 +18,14 @@ public class blockMovement : MonoBehaviour
     private Vector3 defaultPos = new Vector3(0, 0, (float)-0.15);
     private Collider2D Collider2d;
 
+    private float notRespondTime = 0.08f;
+    private float notRespondTimer = 0f;
+    private bool respond = true;
+
+    private float joystickInputx = 0f;
+    private float joystickInputy = 0f;
+    
+
     void Start()
     {
         // initially set to inactive
@@ -50,7 +58,7 @@ public class blockMovement : MonoBehaviour
     {
         if (!set)
         {
-            if(block_status == 0)
+            if (block_status == 0)
             {
                 // block not collide with others, show green box
                 collisionDetected = false;
@@ -77,9 +85,38 @@ public class blockMovement : MonoBehaviour
             if (block_side == false & selected)
             {
                 // player_1 selected blocks
+                joystickInputx = Input.GetAxis("Horizontal1");
+                joystickInputy = Input.GetAxis("Vertical1");
+                if (respond)
+                {
+                    if (Mathf.Abs(joystickInputx) > Mathf.Abs(joystickInputy))
+                    {
+                        joystickInputy = 0;
+                    }
+                    else
+                    {
+                        joystickInputx = 0;
+                    }
+                    respond = false;
+                }
+                else
+                {
+                    if (joystickInputx != 0 || joystickInputy != 0)
+                    {
+                        notRespondTimer += Time.deltaTime;
+                        if (notRespondTimer >= notRespondTime)
+                        {
+                            notRespondTimer = 0f;
+                            respond = true;
+                        }
+                    }
+                    joystickInputx = 0;
+                    joystickInputy = 0;
+                }
+                
                 GameObject player_1_follower = GameObject.Find("DogFollower");
                 player_1_follower.transform.position = new Vector3(transform.position.x + follower_distance_x, transform.position.y + follower_distance, transform.position.z);
-                if (Input.GetKeyDown(KeyCode.Z))
+                if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("A1"))
                 {
                     Debug.Log("player 1 z block");
                     // press Z to fix the position of this block, can't move any more
@@ -89,22 +126,22 @@ public class blockMovement : MonoBehaviour
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKeyDown(KeyCode.A) || joystickInputx < 0)
                 {
                     newPos = new Vector3(transform.position.x - (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.D) || joystickInputx > 0)
                 {
                     newPos = new Vector3(transform.position.x + (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
-                if (Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.W) || joystickInputy < 0)
                 {
                     newPos = new Vector3(transform.position.x, transform.position.y + (float)0.5, transform.position.z);
                     checkPos = true;
                 }
-                if (Input.GetKeyDown(KeyCode.S))
+                if (Input.GetKeyDown(KeyCode.S) || joystickInputy > 0)
                 {
                     newPos = new Vector3(transform.position.x, transform.position.y - (float)0.5, transform.position.z);
                     checkPos = true;
@@ -117,9 +154,39 @@ public class blockMovement : MonoBehaviour
             if (block_side == true & selected)
             {
                 //player_2 selected blocks
+                joystickInputx = Input.GetAxis("Horizontal2");
+                joystickInputy = Input.GetAxis("Vertical2");
+                if (respond)
+                {
+                    if (Mathf.Abs(joystickInputx) > Mathf.Abs(joystickInputy))
+                    {
+                        joystickInputy = 0;
+                    }
+                    else
+                    {
+                        joystickInputx = 0;
+                    }
+                    respond = false;
+                }
+                else
+                {
+                    if (joystickInputx != 0 || joystickInputy != 0)
+                    {
+                        notRespondTimer += Time.deltaTime;
+                        if (notRespondTimer >= notRespondTime)
+                        {
+                            notRespondTimer = 0f;
+                            respond = true;
+                        }
+                    }
+
+                    joystickInputx = 0;
+                    joystickInputy = 0;
+                }
+                
                 GameObject player_2_follower = GameObject.Find("CatFollower");
                 player_2_follower.transform.position = new Vector3(transform.position.x + follower_distance_x, transform.position.y + follower_distance, transform.position.z);
-                if (Input.GetKeyDown(KeyCode.M))
+                if (Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("A2"))
                 {
                     // press Z to fix the position of this block, can't move any more
                     freezeBlock();
@@ -128,22 +195,22 @@ public class blockMovement : MonoBehaviour
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || joystickInputx < 0 )
                 {
                     newPos = new Vector3(transform.position.x - (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
+                if (Input.GetKeyDown(KeyCode.RightArrow) || joystickInputx > 0)
                 {
                     newPos = new Vector3(transform.position.x + (float)0.5, transform.position.y, transform.position.z);
                     checkPos = true;
                 }
-                if (Input.GetKeyDown(KeyCode.UpArrow))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || joystickInputy < 0)
                 {
                     newPos = new Vector3(transform.position.x, transform.position.y + (float)0.5, transform.position.z);
                     checkPos = true;
                 }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeyCode.DownArrow) || joystickInputy > 0)
                 {
                     newPos = new Vector3(transform.position.x, transform.position.y - (float)0.5, transform.position.z);
                     checkPos = true;
