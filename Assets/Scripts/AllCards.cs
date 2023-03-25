@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class AllCards : MonoBehaviour
 {
-    Subscription<BigRoundIncEvent> big_round_inc_event_subscription;
+    Subscription<RoundTextDoneEvent> big_round_inc_event_subscription;
     
     // id, name
     public static Dictionary<int, string> cards;
@@ -27,7 +27,7 @@ public class AllCards : MonoBehaviour
     private void Awake()
     {
   
-        big_round_inc_event_subscription = EventBus.Subscribe<BigRoundIncEvent>(OnRoundInc);
+        big_round_inc_event_subscription = EventBus.Subscribe<RoundTextDoneEvent>(OnRoundInc);
 
         _selectionPanel = Resources.Load<GameObject>("Prefab/SelectionPanel");
         _selectionPanel_2 = Resources.Load<GameObject>("Prefab/SelectionPanel_2");
@@ -62,7 +62,7 @@ public class AllCards : MonoBehaviour
         }
     } // after that the start func of blockcontroller will be called and load all the blocks.
 
-    private void OnRoundInc(BigRoundIncEvent e)
+    private void OnRoundInc(RoundTextDoneEvent e)
     {
         // set the round block as the child of block
         foreach (List<CardRound> s in cardRoundSetting[e.round_big - 1])
