@@ -20,6 +20,7 @@ public class blockController : MonoBehaviour
 
     void OnBlockInstantiate(BlockInstantiateEvent e)
     {
+        Debug.Log("Instantiate");
         ReloadBlock();
     }
 

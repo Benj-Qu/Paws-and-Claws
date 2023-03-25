@@ -239,60 +239,67 @@ public class GameController : MonoBehaviour
         }
         else // stage == 3 means the previous round is over
         {
-            round_big++;
-            stage = 0;
-            int score = sd.GetWinner();
-            if (score == 1)
-            {
-                score1Big += 1;
-            } else if (score == -1)
-            {
-                score2Big += 1;
-            }
-            else
-            {
-                score1Big += 1;
-                score2Big += 1;
-            }
-
-            ScoreText.text = score1Big.ToString() + " : " + score2Big.ToString();
-            if (score1Big > score2Big)
-            {
-                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
-            }
-            else if (score1Big < score2Big)
-            {
-                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
-            }
-            else
-            {
-                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
-            }
-            WinImage.SetActive(true);
-            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-            progressBar.gameObject.SetActive(false);
-            // Reset the players
-            player1.GetComponent<PlayerController>().reset();
-            player2.GetComponent<PlayerController>().reset();
-            player1.GetComponent<PlayerController>().deactivate();
-            player2.GetComponent<PlayerController>().deactivate();
-            player1.transform.position = StartPoint1;
-            player2.transform.position = StartPoint2;
-            // Disable the flags and clear the color
-            if (flagController) flagController.DestroyFlags();
-            player1.GetComponent<PlayerScore>().resetFlag();
-            player2.GetComponent<PlayerScore>().resetFlag();
-            sd.Reset();
-            // Show animation of next round
-            // StartCoroutine()
-            if (mask)
-            {
-                Color tmp = mask.GetComponent<SpriteRenderer>().color;
-                tmp.a = 0.27f;
-                mask.GetComponent<SpriteRenderer>().color = tmp;
-            }
-            Grid.SetActive(true);
+            StartCoroutine(ShowScore());
         }
+    }
+
+    private IEnumerator ShowScore()
+    {
+        round_big++;
+        stage = 0;
+        int score = sd.GetWinner();
+        if (score == 1)
+        {
+            score1Big += 1;
+        } else if (score == -1)
+        {
+            score2Big += 1;
+        }
+        else
+        {
+            score1Big += 1;
+            score2Big += 1;
+        }
+
+        ScoreText.text = score1Big.ToString() + " : " + score2Big.ToString();
+        if (score1Big > score2Big)
+        {
+            WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+        }
+        else if (score1Big < score2Big)
+        {
+            WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+        }
+        else
+        {
+            WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+        }
+        WinImage.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        WinImage.SetActive(false);
+        EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+        progressBar.gameObject.SetActive(false);
+        // Reset the players
+        player1.GetComponent<PlayerController>().reset();
+        player2.GetComponent<PlayerController>().reset();
+        player1.GetComponent<PlayerController>().deactivate();
+        player2.GetComponent<PlayerController>().deactivate();
+        player1.transform.position = StartPoint1;
+        player2.transform.position = StartPoint2;
+        // Disable the flags and clear the color
+        if (flagController) flagController.DestroyFlags();
+        player1.GetComponent<PlayerScore>().resetFlag();
+        player2.GetComponent<PlayerScore>().resetFlag();
+        sd.Reset();
+        // Show animation of next round
+        // StartCoroutine()
+        if (mask)
+        {
+            Color tmp = mask.GetComponent<SpriteRenderer>().color;
+            tmp.a = 0.27f;
+            mask.GetComponent<SpriteRenderer>().color = tmp;
+        }
+        Grid.SetActive(true);
     }
     
     private IEnumerator FinishTutorial()
