@@ -36,4 +36,13 @@ public class ScoreDisplayer : MonoBehaviour
         Score1.reset();
         Score2.reset();
     }
+
+    public int GetWinner()
+    {
+        int score1 = Score1.getScore();
+        int score2 = Score2.getScore();
+        if (score1 > score2) return 1;
+        if (score1 < score2) return -1;
+        return 0;
+    }
 }

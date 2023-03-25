@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameController : MonoBehaviour
     public GameObject explosionAes;
     public string level;
     public float dist = 0.4f;
+    public GameObject WinImage;
+    public TextMeshProUGUI ScoreText;
     
     private TextMeshProUGUI winText;
     private GameObject player1;
@@ -23,6 +26,8 @@ public class GameController : MonoBehaviour
     private PlayerController player1_control;
     private PlayerController player2_control;
     private Camera camera_;
+    private int score1Big = 0;
+    private int score2Big = 0;
     public GameObject selectionPanel;
     public GameObject mask;
     public GameObject follower;
@@ -236,6 +241,34 @@ public class GameController : MonoBehaviour
         {
             round_big++;
             stage = 0;
+            int score = sd.GetWinner();
+            if (score == 1)
+            {
+                score1Big += 1;
+            } else if (score == -1)
+            {
+                score2Big += 1;
+            }
+            else
+            {
+                score1Big += 1;
+                score2Big += 1;
+            }
+
+            ScoreText.text = score1Big.ToString() + " : " + score2Big.ToString();
+            if (score1Big > score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+            }
+            else if (score1Big < score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+            }
+            else
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+            }
+            WinImage.SetActive(true);
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
             progressBar.gameObject.SetActive(false);
             // Reset the players
