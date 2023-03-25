@@ -41,12 +41,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private GameController gc;
+    private AudioSource pas;
 
     private void Start()
     {
         jumpTimes = MaxJumpTimes;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        pas = GetComponent<AudioSource>();
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         if (gc.stage == 2)
         {
@@ -349,7 +351,7 @@ public class PlayerController : MonoBehaviour
         if (alive)
         {
             showAddScore.ShowScore();
-            AudioSource.PlayClipAtPoint(player_die, Camera.main.transform.position);
+            pas.PlayOneShot(player_die, 0.5f);
             StartCoroutine(KilledAnimation());
         }
     }
