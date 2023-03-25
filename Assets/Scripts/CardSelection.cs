@@ -183,10 +183,16 @@ public class CardSelection : MonoBehaviour
         // check if reach the final round
         if (_currentRound > round)
         {
-            roundUp = true;
+            StartCoroutine(DelayRoundUp());
             return;
         }
         StartCoroutine(DrawCard());
+    }
+
+    private IEnumerator DelayRoundUp()
+    {
+        yield return new WaitForSeconds(0.75f);
+        roundUp = true;
     }
 
     // Use index to identify each card (even the id is the same, indicating the same kind of card)
