@@ -52853,6 +52853,7 @@ MonoBehaviour:
   Grid: {fileID: 2100524373}
   explosionAes: {fileID: 0}
   level: 
+  dist: 0.4
   selectionPanel: {fileID: 0}
   mask: {fileID: 1362968462}
   follower: {fileID: 1147559429}
