@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,5 +29,11 @@ public class ScoreDisplayer : MonoBehaviour
         {
             text2.text = "Score: " + Score2.getScore().ToString("G");
         }
+    }
+
+    public void Reset()
+    {
+        Score1.reset();
+        Score2.reset();
     }
 }

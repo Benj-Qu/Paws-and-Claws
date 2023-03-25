@@ -11,6 +11,7 @@ public class ShowAddScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textObject.enabled = false;
         textTransform = textObject.GetComponent<RectTransform>();
     }
     
@@ -29,8 +30,8 @@ public class ShowAddScore : MonoBehaviour
     private IEnumerator ShowScoreAnimation()
     {
         Vector2 position;
-        position.x = (flag.transform.position.x + 1) * 50;
-        position.y = flag.transform.position.y * 40;
+        position.x = (flag.transform.position.x + 2) * 40;
+        position.y = flag.transform.position.y * 30;
         textTransform.anchoredPosition = position;
         // textObject.transform.position = position;
         yield return new WaitForSeconds(0.2f);
