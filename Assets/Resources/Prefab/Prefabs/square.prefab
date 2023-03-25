@@ -104,7 +104,8 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 1
+  follower_distance: 1.2
+  follower_distance_x: -0.25
 --- !u!212 &5232615872953051784
 SpriteRenderer:
   m_ObjectHideFlags: 0

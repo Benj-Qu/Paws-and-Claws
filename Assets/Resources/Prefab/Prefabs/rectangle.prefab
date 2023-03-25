@@ -357,7 +357,7 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 1
+  follower_distance: 1.2
 --- !u!61 &890994156982665260
 BoxCollider2D:
   m_ObjectHideFlags: 0
