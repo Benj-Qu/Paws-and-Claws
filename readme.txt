@@ -160,4 +160,6 @@ Austin:
 
 Mar 24:
 1. larger map camera move.
-
+2. effect of the potion (on player), for example a shield for invisible potion.
+3. ask player about selection, make it not fly to another player?
+4. change the block in the winter land scene, use ice block.

@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979021cec09a1d449a6e1a38f070a84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LastPeriod: 5
+  LastPeriod: 15
   SpeedUp: 1
   JumpUp: 1.2
   SizeUp: 2
