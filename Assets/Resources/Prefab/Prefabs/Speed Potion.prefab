@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -265,6 +265,7 @@ MonoBehaviour:
   alpha: 0.5
   block_status: 0
   follower_distance: 1
+  follower_distance_x: 0
 --- !u!50 &3909842302045974508
 Rigidbody2D:
   serializedVersion: 4
