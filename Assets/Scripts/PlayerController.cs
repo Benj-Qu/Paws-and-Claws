@@ -147,11 +147,11 @@ public class PlayerController : MonoBehaviour
             // Knock On Below Player
             if (hitpos.normal.y > 0)
             {
-                onFloor = true;
-                jumpTimes = MaxJumpTimes;
                 // If Other Player On Floor
-                if (pc.OnFloor())
+                if (!onFloor && pc.OnFloor())
                 {
+                    onFloor = true;
+                    jumpTimes = MaxJumpTimes;
                     if (collision.rigidbody)
                     {
                         floorV = collision.rigidbody.velocity.x;
@@ -162,11 +162,18 @@ public class PlayerController : MonoBehaviour
                     }
                 }
                 // If Other Player Jumping / Flying
-                else
+                else if (onFloor)
                 {
+                    onFloor = true;
+                    jumpTimes = MaxJumpTimes;
                     float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
                     float distdiff = transform.position.x - other.transform.position.x;
                     StartCoroutine(KnockBack(new Vector2(AirKnockCoef * pc.Speed * coef * distdiff, rb.velocity.y)));
+                }
+                else
+                {
+                    onFloor = true;
+                    jumpTimes = MaxJumpTimes;
                 }
             }
             // Knock On Left Player

@@ -51,6 +51,7 @@ public class ProgressBar_Main : MonoBehaviour
                     _slider.value = _slider.maxValue;
                 }
             }
+            // Party Time!
             else if (_slider.value <= 10)
             {
                 Player1.GetComponent<PlayerScore>().Fierce();

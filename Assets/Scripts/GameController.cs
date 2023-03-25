@@ -45,6 +45,8 @@ public class GameController : MonoBehaviour
     public int stage = 0;
 
     public ProgressBar_Main progressBar;
+
+    public GameObject ScorePanel;
     // Start is called before the first frame update
 
     private void Awake()
@@ -100,6 +102,9 @@ public class GameController : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+
+        ScorePanel = GameObject.Find("ScorePanel");
+        ScorePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -210,6 +215,7 @@ public class GameController : MonoBehaviour
         }
         stage ++;
         Debug.Log("stage: " + stage);
+        ScorePanel.SetActive(false);
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
@@ -231,6 +237,7 @@ public class GameController : MonoBehaviour
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
+            ScorePanel.SetActive(true);
         }
         else if (stage == 1) // start place block
         {
