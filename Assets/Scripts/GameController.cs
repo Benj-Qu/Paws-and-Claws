@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
     public bool pause = false;
 
     private flagController flagController;
+    public ScoreDisplayer sd;
     
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
@@ -88,7 +89,7 @@ public class GameController : MonoBehaviour
         camera_ = Camera.main;
         winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
         ExitMenu.SetActive(false);
-        
+
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
         progressBar.gameObject.SetActive(false);
@@ -248,6 +249,7 @@ public class GameController : MonoBehaviour
             if (flagController) flagController.DestroyFlags();
             player1.GetComponent<PlayerScore>().resetFlag();
             player2.GetComponent<PlayerScore>().resetFlag();
+            sd.Reset();
             // Show animation of next round
             // StartCoroutine()
             if (mask)
