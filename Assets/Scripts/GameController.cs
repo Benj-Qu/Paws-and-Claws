@@ -38,7 +38,6 @@ public class GameController : MonoBehaviour
     public bool pause = false;
 
     private flagController flagController;
-    public ScoreDisplayer sd;
     
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
@@ -260,7 +259,7 @@ public class GameController : MonoBehaviour
     {
         round_big++;
         stage = 0;
-        int score = sd.GetWinner();
+        int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
         if (score == 1)
         {
             score1Big += 1;
@@ -303,7 +302,7 @@ public class GameController : MonoBehaviour
         if (flagController) flagController.DestroyFlags();
         player1.GetComponent<PlayerScore>().resetFlag();
         player2.GetComponent<PlayerScore>().resetFlag();
-        sd.Reset();
+        ScorePanel.GetComponent<ScorePanel>().reset();
         // Show animation of next round
         // StartCoroutine()
         if (mask)

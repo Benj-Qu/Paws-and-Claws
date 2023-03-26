@@ -8,13 +8,23 @@ public class ScorePanel : MonoBehaviour
     public Slider slider;
     public ScoreDisplayer sd;
 
-    void Start()
+    private void Start()
     {
         sd = GameObject.Find("Scores").GetComponent<ScoreDisplayer>();
     }
 
-    void Update()
+    private void Update()
     {
         slider.value = sd.GetRatio();
+    }
+
+    public void reset()
+    {
+        sd.reset();
+    }
+
+    public int GetWinner()
+    {
+        return sd.GetWinner();
     }
 }

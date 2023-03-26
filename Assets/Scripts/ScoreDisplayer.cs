@@ -48,7 +48,7 @@ public class ScoreDisplayer : MonoBehaviour
         }
     }
 
-    public void Reset()
+    public void reset()
     {
         Score1.reset();
         Score2.reset();
