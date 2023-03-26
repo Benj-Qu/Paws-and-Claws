@@ -30,7 +30,24 @@ public class SelectionHint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // TODO: change the logic according to tutorial name
+        if (GameController.instance.level == "Winter Land") // TODO: add more
+        {
+            akey.SetActive(false);
+            dkey.SetActive(false);
+            leftkey.SetActive(false);
+            rightkey.SetActive(false);
+            hintText.enabled = false;
+            leftshift.SetActive(false);
+            rightshift.SetActive(false);
+            Z.SetActive(false);
+            M.SetActive(false);
+            bomb.SetActive(false);
+            leftshiftText.enabled = false;
+            rightshiftText.enabled = false;
+            leftZText.enabled = false;
+            rightMText.enabled = false;
+        }
     }
 
     // Update is called once per frame
