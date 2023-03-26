@@ -52464,7 +52464,6 @@ MonoBehaviour:
   mask: {fileID: 1362968462}
   follower: {fileID: 1147559429}
   pause: 0
-  sd: {fileID: 0}
   ExitMenu: {fileID: 1016065690}
   stage: 0
   progressBar: {fileID: 363239753}
