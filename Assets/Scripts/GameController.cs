@@ -104,7 +104,7 @@ public class GameController : MonoBehaviour
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
 
         ScorePanel = GameObject.Find("ScorePanel");
-        ScorePanel.SetActive(false);
+        if (ScorePanel) ScorePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -215,7 +215,7 @@ public class GameController : MonoBehaviour
         }
         stage ++;
         Debug.Log("stage: " + stage);
-        ScorePanel.SetActive(false);
+        if (ScorePanel) ScorePanel.SetActive(false);
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
@@ -237,7 +237,7 @@ public class GameController : MonoBehaviour
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
-            ScorePanel.SetActive(true);
+            if (ScorePanel) ScorePanel.SetActive(true);
         }
         else if (stage == 1) // start place block
         {

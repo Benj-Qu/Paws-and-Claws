@@ -900,6 +900,7 @@ MonoBehaviour:
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
+  joystickNumber: 2
 --- !u!50 &265125346
 Rigidbody2D:
   serializedVersion: 4
@@ -1049,13 +1050,17 @@ MonoBehaviour:
   explosionAes: {fileID: 0}
   level: 
   dist: 0.4
+  WinImage: {fileID: 0}
+  ScoreText: {fileID: 0}
   selectionPanel: {fileID: 0}
   mask: {fileID: 0}
   follower: {fileID: 1650666560}
   pause: 0
+  sd: {fileID: 0}
   ExitMenu: {fileID: 972269372}
   stage: 2
   progressBar: {fileID: 605720807}
+  ScorePanel: {fileID: 0}
 --- !u!4 &286817043
 Transform:
   m_ObjectHideFlags: 0
@@ -1098,7 +1103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.34, y: 5.14}
+    oldSize: {x: 3.99, y: 3.97}
     newSize: {x: 4.74, y: 6.02}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1154,7 +1159,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.34, y: 5.14}
+    oldSize: {x: 3.99, y: 3.97}
     newSize: {x: 4.57, y: 5.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5534,6 +5539,7 @@ MonoBehaviour:
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
+  joystickNumber: 1
 --- !u!50 &1551339301
 Rigidbody2D:
   serializedVersion: 4
