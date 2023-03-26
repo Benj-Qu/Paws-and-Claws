@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5366429486305918704}
   - component: {fileID: 3489695499539538983}
   m_Layer: 0
-  m_Name: bamboo steamer
+  m_Name: bamboo_steamer
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
