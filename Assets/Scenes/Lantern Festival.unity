@@ -62299,6 +62299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845205879}
   - component: {fileID: 1845205878}
+  - component: {fileID: 1845205880}
   m_Layer: 0
   m_Name: IMG_1891
   m_TagString: Untagged
