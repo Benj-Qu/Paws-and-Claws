@@ -106,6 +106,10 @@ MonoBehaviour:
   block_status: 0
   follower_distance: 1.2
   follower_distance_x: -0.25
+  UpOffset: 0.5
+  DownOffset: 1
+  LeftOffset: 0.5
+  RightOffset: 1
 --- !u!212 &5232615872953051784
 SpriteRenderer:
   m_ObjectHideFlags: 0
