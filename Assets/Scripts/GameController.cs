@@ -83,7 +83,8 @@ public class GameController : MonoBehaviour
         {
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
-        } else
+        } 
+        else
         {
             flagController = GameObject.Find("Flags").GetComponent<flagController>();
         }
@@ -102,7 +103,6 @@ public class GameController : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-
         ScorePanel = GameObject.Find("ScorePanel");
         if (ScorePanel) ScorePanel.SetActive(false);
     }
@@ -208,7 +208,8 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         // Start time countdown
-        if (level != "Tutorial1")
+        // make tutorial1 finished
+        if (level != "Tutorial1" && level != "Trial Test")
         {
             progressBar.gameObject.SetActive(true);
             progressBar.StartGame();
@@ -219,10 +220,10 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
-            if (level == "Tutorial1")
-            {
-                StartCoroutine(FinishTutorial());
-            }
+            //if (level == "Tutorial1")
+            //{
+            //    StartCoroutine(FinishTutorial());
+            //}
 
             if (mask)
             {

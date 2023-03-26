@@ -1,19 +1,21 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Level0Control : MonoBehaviour
 {
-    public GameObject MoveHint1;
-    public GameObject MoveHint2;
-    public GameObject PlaceHint1;
-    public GameObject PlaceHint2;
+    public GameObject FlagHint;
+    //public GameObject MoveHint1;
+    //public GameObject MoveHint2;
+    //public GameObject PlaceHint1;
+    //public GameObject PlaceHint2;
     
-    [SerializeField] private float player1_stuck = 0f;
-    [SerializeField] private float player2_stuck = 0f;
-    private Vector3 player1_last;
-    private Vector3 player2_last;
-    private int count_last;
+    //[SerializeField] private float player1_stuck = 0f;
+    //[SerializeField] private float player2_stuck = 0f;
+    //private Vector3 player1_last;
+    //private Vector3 player2_last;
+    //private int count_last;
 
     private GameObject player1;
 
@@ -21,7 +23,7 @@ public class Level0Control : MonoBehaviour
 
     private GameController gameController;
 
-    private blockController bc;
+    //private blockController bc;
     // Start is called before the first frame update
     void Start()
     {
@@ -106,3 +108,4 @@ public class Level0Control : MonoBehaviour
         }
     }
 }
+*/

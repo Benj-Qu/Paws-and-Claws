@@ -9,6 +9,7 @@ public class PartyTime : MonoBehaviour
     public TextMeshProUGUI partyTimeText;
     public GameObject progressBar;
     public flagController fc;
+    public AudioClip count_down;
     public bool _changeColor = false;
     private Slider _slider;
     private GameObject _fill;
@@ -33,6 +34,7 @@ public class PartyTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(_slider.value);
         if (_changeColor == false && GameController.instance.stage == 2 && GameController.instance.level != "Tutorial" &&
             GameController.instance.level != "Tutorial1" && GameController.instance.level != "Trial Level" && _slider.value <= 10)
         {
@@ -42,6 +44,12 @@ public class PartyTime : MonoBehaviour
             _image.color = tempColor;
             partyTimeText.enabled = true;
             fc.StartPartyTime();
+            if (Mathf.Abs(_slider.value - 10) <= 0.5f)
+            {
+                Debug.Log("count == 10s");
+                AudioSource partyTimecountDown = GetComponent<AudioSource>();
+                partyTimecountDown.PlayOneShot(count_down, 1f);
+            }
             //if(_slider.value <= 9)
             //{
             //    partyTimeText.text = _slider.value.ToString();
