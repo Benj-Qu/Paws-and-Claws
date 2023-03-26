@@ -48,12 +48,29 @@ public class SelectionHint : MonoBehaviour
             leftZText.enabled = false;
             rightMText.enabled = false;
         }
+        if (GameController.instance.level == "Trial Test") // TODO: add more
+        {
+            akey.SetActive(false);
+            dkey.SetActive(false);
+            leftkey.SetActive(false);
+            rightkey.SetActive(false);
+            hintText.enabled = true;
+            leftshift.SetActive(false);
+            rightshift.SetActive(false);
+            Z.SetActive(false);
+            M.SetActive(false);
+            bomb.SetActive(false);
+            leftshiftText.enabled = false;
+            rightshiftText.enabled = false;
+            leftZText.enabled = false;
+            rightMText.enabled = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameController.instance && GameController.instance.level == "Tutorial1")
+        if (GameController.instance && GameController.instance.level == "Trial Test")
         {
             if (GameController.instance.stage == 0)
             {
@@ -85,7 +102,7 @@ public class SelectionHint : MonoBehaviour
                 dkey.SetActive(false);
                 leftkey.SetActive(false);
                 rightkey.SetActive(false);
-                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                if (GameController.instance && GameController.instance.level == "Trial Test")
                 {
                     hintText.text = "   can destroy any block.";
                 }
@@ -96,7 +113,7 @@ public class SelectionHint : MonoBehaviour
             }
             else
             {
-                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                if (GameController.instance && GameController.instance.level == "Trial Test")
                 {
                     hintText.text = "Select a block, give the opponent the other.";
                 }
@@ -114,7 +131,7 @@ public class SelectionHint : MonoBehaviour
                 dkey.SetActive(true);
                 leftkey.SetActive(true);
                 rightkey.SetActive(true);
-                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                if (GameController.instance && GameController.instance.level == "Trial Test")
                 {
                     hintText.text = "Select a block, give the opponent the other.";
                 } else
@@ -124,7 +141,7 @@ public class SelectionHint : MonoBehaviour
             }
             else
             {
-                if (GameController.instance && GameController.instance.level == "Tutorial1")
+                if (GameController.instance && GameController.instance.level == "Trial Test")
                 {
                     hintText.text = "   can destroy any block.";
                 }
