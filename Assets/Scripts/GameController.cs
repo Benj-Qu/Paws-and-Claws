@@ -208,7 +208,7 @@ public class GameController : MonoBehaviour
     {
         // Start time countdown
         // make tutorial1 finished
-        if (level != "Tutorial1")
+        if (level != "Tutorial1" && level != "Trial Test")
         {
             progressBar.gameObject.SetActive(true);
             progressBar.StartGame();

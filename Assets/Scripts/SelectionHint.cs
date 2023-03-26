@@ -70,6 +70,7 @@ public class SelectionHint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (GameController.instance && GameController.instance.level == "Trial Test")
         {
             if (GameController.instance.stage == 0)
@@ -86,6 +87,8 @@ public class SelectionHint : MonoBehaviour
             {
                 appear = false;
                 shift_appear = false;
+                hintText.enabled = true;
+                hintText.text = "Seize the flag to gain points!";
             }
         }
         else
