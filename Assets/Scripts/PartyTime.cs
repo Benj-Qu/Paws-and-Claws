@@ -9,7 +9,6 @@ public class PartyTime : MonoBehaviour
     public TextMeshProUGUI partyTimeText;
     public GameObject progressBar;
     public flagController fc;
-    public GameObject partyEffect;
     public bool _changeColor = false;
     private Slider _slider;
     private GameObject _fill;
@@ -43,7 +42,10 @@ public class PartyTime : MonoBehaviour
             _image.color = tempColor;
             partyTimeText.enabled = true;
             fc.StartPartyTime();
-            partyEffect.SetActive(true);
+            //if(_slider.value <= 9)
+            //{
+            //    partyTimeText.text = _slider.value.ToString();
+            //}
         }
 
         if (_changeColor && _slider.value >= 50f)
@@ -54,7 +56,6 @@ public class PartyTime : MonoBehaviour
             _image.color = tempColor;
             partyTimeText.enabled = false;
             fc.EndPartyTime();
-            partyEffect.SetActive(false);
         }
     }
 }
