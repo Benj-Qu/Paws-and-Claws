@@ -6,7 +6,6 @@ public class ThrowBaozi : MonoBehaviour
 {
     public GameObject Baozi;
 
-    private float speed = 4;
     private int seed;
     private bool start = false;
     // Start is called before the first frame update
@@ -22,17 +21,17 @@ public class ThrowBaozi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (start == false && GameController.instance.stage == 2)
-        //{
-        //    start = true;
-        //    InvokeRepeating("baoziThrow", 2f, 3f);
-        //}
+        if (start == false && GameController.instance.stage == 2)
+        {
+            start = true;
+            InvokeRepeating("baoziThrow", 2f, 3f);
+        }
 
-        //if (start == true && GameController.instance.stage != 2)
-        //{
-        //    start = false;
-        //    CancelInvoke();
-        //}
+        if (start == true && GameController.instance.stage != 2)
+        {
+            start = false;
+            CancelInvoke();
+        }
     }
 
     void baoziThrow()
