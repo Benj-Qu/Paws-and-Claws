@@ -23,18 +23,29 @@ public class flagController : MonoBehaviour
 
     public void FlagGeneration()
     {
-        for (var i = transform.childCount - 1; i >= 0; i--)
+        if (GameController.instance.level == "Trial Test")
         {
-            GameObject flag = transform.GetChild(i).gameObject;
+            GameObject flag = transform.GetChild(0).gameObject;
             flag.SetActive(true);
-            int x = Random.Range(x_min[i], x_max[i]);
-            int y = Random.Range(y_min, y_max + 1);
-            while (invalidPosition(x, y))
-            {
-                x = Random.Range(x_min[i], x_max[i]);
-                y = Random.Range(y_min, y_max + 1);
-            }
+            int x = Random.Range(-7, 7);
+            int y = Random.Range(0, 4);
             flag.transform.position = new Vector3(x, y, -1);
+        }
+        else
+        {
+            for (var i = transform.childCount - 1; i >= 0; i--)
+            {
+                GameObject flag = transform.GetChild(i).gameObject;
+                flag.SetActive(true);
+                int x = Random.Range(x_min[i], x_max[i]);
+                int y = Random.Range(y_min, y_max + 1);
+                while (invalidPosition(x, y))
+                {
+                    x = Random.Range(x_min[i], x_max[i]);
+                    y = Random.Range(y_min, y_max + 1);
+                }
+                flag.transform.position = new Vector3(x, y, -1);
+            }
         }
     }
 
