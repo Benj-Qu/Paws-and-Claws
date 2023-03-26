@@ -6,13 +6,14 @@ using TMPro;
 public class ShowAddScore : MonoBehaviour
 {
     public GameObject flag;
-    public TextMeshProUGUI textObject;
-    private RectTransform textTransform;
+    // public TextMeshProUGUI textObject;
+    // private RectTransform textTransform;
+    public GameObject textObject;
     // Start is called before the first frame update
     void Start()
     {
-        textObject.enabled = false;
-        textTransform = textObject.GetComponent<RectTransform>();
+        textObject.SetActive(false);
+        // textTransform = textObject.GetComponent<RectTransform>();
     }
     
     // // Update is called once per frame
@@ -23,18 +24,29 @@ public class ShowAddScore : MonoBehaviour
 
     public void ShowScore()
     {
-        textObject.enabled = true;
+        textObject.SetActive(true);
         StartCoroutine(ShowScoreAnimation());
     }
 
     private IEnumerator ShowScoreAnimation()
     {
-        Vector2 position;
-        position.x = (flag.transform.position.x + 2) * 40;
-        position.y = flag.transform.position.y * 30;
-        textTransform.anchoredPosition = position;
+        // Vector2 position;
+        // position.x = (flag.transform.position.x + 1) * 80;
+        // position.y = flag.transform.position.y * 60;
+        // textTransform.anchoredPosition = position;
         // textObject.transform.position = position;
         yield return new WaitForSeconds(0.2f);
-        textObject.enabled = false;
+        textObject.SetActive(false);
+    }
+
+    public void SetColor(int owner)
+    {
+        if (owner == 2)
+        {
+            textObject.GetComponent<SpriteRenderer>().color = Color.red;
+        } else if (owner == 1)
+        {
+            textObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
     }
 }
