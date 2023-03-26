@@ -209,11 +209,11 @@ public class GameController : MonoBehaviour
     {
         // Start time countdown
         // make tutorial1 finished
-        //if (level != "Tutorial1")
-        //{
-        //    progressBar.gameObject.SetActive(true);
-        //    progressBar.StartGame();
-        //}
+        if (level != "Tutorial1")
+        {
+            progressBar.gameObject.SetActive(true);
+            progressBar.StartGame();
+        }
         stage ++;
         Debug.Log("stage: " + stage);
         if (ScorePanel) ScorePanel.SetActive(false);

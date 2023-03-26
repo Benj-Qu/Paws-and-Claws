@@ -73011,6 +73011,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Flag
       objectReference: {fileID: 0}
+    - target: {fileID: 3884649207738965784, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: y_max
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_RootOrder
       value: 4
