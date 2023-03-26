@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ad2b53e4459a74cca8cd49d53f1483f9
+guid: 200d1928efec29f48a1472cc40a0414f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 1119, y: 465, z: 1109, w: 458}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minus_0
+      name: Screenshot 2023-03-26 160959-PhotoRoom.png-PhotoRoom_0
       rect:
         serializedVersion: 2
-        x: 1130
-        y: 484
-        width: 100
-        height: 80
+        x: 12
+        y: 8
+        width: 403
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9059965b0c4f4b558dd43f6332a091d
-      internalID: -985746795
+      spriteID: 3c36ff26b8c9c794589d5d2886ad6b83
+      internalID: 1110802637
       vertices: []
       indices: 
       edges: []
@@ -141,14 +141,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      minus_0: -985746795
+      Screenshot 2023-03-26 160959-PhotoRoom.png-PhotoRoom_0: 1110802637
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

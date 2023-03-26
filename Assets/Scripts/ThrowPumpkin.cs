@@ -17,25 +17,25 @@ public class ThrowPumpkin : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        InvokeRepeating("pumpkinThrow", 2f, 3f);
-        InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
+        //InvokeRepeating("pumpkinThrow", 2f, 3f);
+        //InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (start == false && GameController.instance.stage == 2)
-        //{
-        //    start = true;
-        //    InvokeRepeating("pumpkinThrow", 2f, 3f);
-        //    InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
-        //}
+        if (start == false && GameController.instance.stage == 2)
+        {
+            start = true;
+            InvokeRepeating("pumpkinThrow", 2f, 3f);
+            InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
+        }
 
-        //if (start == true && GameController.instance.stage != 2)
-        //{
-        //    start = false;
-        //    CancelInvoke();
-        //}
+        if (start == true && GameController.instance.stage != 2)
+        {
+            start = false;
+            CancelInvoke();
+        }
     }
 
     void pumpkinThrow()
