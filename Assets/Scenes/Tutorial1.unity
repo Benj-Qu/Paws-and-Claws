@@ -9393,11 +9393,7 @@ MonoBehaviour:
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
-<<<<<<< HEAD
   joystickNumber: 1
-=======
-  joystickNumber: 0
->>>>>>> 9c2374d3df2d4588f5227cccd2ec2bb5ee77fa16
 --- !u!50 &274675828
 Rigidbody2D:
   serializedVersion: 4
@@ -52168,11 +52164,7 @@ MonoBehaviour:
   dist: 0.4
   WinImage: {fileID: 0}
   ScoreText: {fileID: 0}
-<<<<<<< HEAD
-  selectionPanel: {fileID: 0}
-=======
   selectionPanel: {fileID: 2440277720884465118, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
->>>>>>> 9c2374d3df2d4588f5227cccd2ec2bb5ee77fa16
   mask: {fileID: 0}
   follower: {fileID: 1904736958}
   pause: 0
@@ -52180,11 +52172,7 @@ MonoBehaviour:
   ExitMenu: {fileID: 1016065690}
   stage: 0
   progressBar: {fileID: 363239753}
-<<<<<<< HEAD
-  ScorePanel: {fileID: 0}
-=======
   ScorePanel: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
->>>>>>> 9c2374d3df2d4588f5227cccd2ec2bb5ee77fa16
 --- !u!4 &1518848699
 Transform:
   m_ObjectHideFlags: 0
@@ -63351,11 +63339,7 @@ MonoBehaviour:
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
-<<<<<<< HEAD
   joystickNumber: 2
-=======
-  joystickNumber: 0
->>>>>>> 9c2374d3df2d4588f5227cccd2ec2bb5ee77fa16
 --- !u!50 &1867150102
 Rigidbody2D:
   serializedVersion: 4
