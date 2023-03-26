@@ -24,6 +24,11 @@ public class blockMovement : MonoBehaviour
 
     private float joystickInputx = 0f;
     private float joystickInputy = 0f;
+
+    public float UpOffset = 0f;
+    public float DownOffset = 0f;
+    public float LeftOffset = 0f;
+    public float RightOffset = 0f;
     
 
     void Start()
@@ -270,7 +275,7 @@ public class blockMovement : MonoBehaviour
 
     private bool validBlockPosition(Vector3 pos)
     {
-        if(pos.x < -7 || pos.x > 7 || pos.y < -4 || pos.y > 4)
+        if(pos.x < (-7 - LeftOffset) || pos.x > (7 + RightOffset) || pos.y < (-4 - DownOffset) || pos.y > (4 + UpOffset))
         {
             // if newPos is out of border, return false
             return false;
