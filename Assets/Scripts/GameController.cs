@@ -224,6 +224,12 @@ public class GameController : MonoBehaviour
             //    StartCoroutine(FinishTutorial());
             //}
 
+            if (level == "Trial Test")
+            {
+                progressBar.gameObject.SetActive(true);
+                progressBar.StartGame();
+            }
+
             if (mask)
             {
                 Color tmp = mask.GetComponent<SpriteRenderer>().color;
