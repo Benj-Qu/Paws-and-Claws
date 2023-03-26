@@ -106,6 +106,10 @@ MonoBehaviour:
   block_status: 0
   follower_distance: 1.2
   follower_distance_x: -0.25
+  UpOffset: 0.5
+  DownOffset: 1
+  LeftOffset: 0.5
+  RightOffset: 1
 --- !u!212 &5232615872953051784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -168,7 +172,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6173833470469505923}
   - component: {fileID: 2291348841494729293}
-  - component: {fileID: 484729630385568968}
   m_Layer: 0
   m_Name: box
   m_TagString: Box
@@ -243,32 +246,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &484729630385568968
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2249463497388716484}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.76, y: 9.19}
-    newSize: {x: 9.76, y: 9.19}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7.58, y: 7.18}
-  m_EdgeRadius: 0
 --- !u!1 &5725854110513717451
 GameObject:
   m_ObjectHideFlags: 0

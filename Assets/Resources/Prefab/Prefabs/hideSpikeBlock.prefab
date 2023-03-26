@@ -191,6 +191,10 @@ MonoBehaviour:
   block_status: 0
   follower_distance: 1.2
   follower_distance_x: 0
+  UpOffset: 0.5
+  DownOffset: 1
+  LeftOffset: 0
+  RightOffset: 0
 --- !u!1 &3586333771478135534
 GameObject:
   m_ObjectHideFlags: 0

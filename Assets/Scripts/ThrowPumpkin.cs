@@ -6,15 +6,19 @@ public class ThrowPumpkin : MonoBehaviour
 {
     public GameObject Pumpkin;
     public GameObject Fork;
+    public bool left = true;
 
     private float speed = 4;
     private int seed;
     private bool start = false;
+    private SpriteRenderer sr;
     // Start is called before the first frame update
 
     void Start()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
+        //InvokeRepeating("pumpkinThrow", 2f, 3f);
+        //InvokeRepeating("pumpkinThrow2", 3.5f, 3f);
     }
 
     // Update is called once per frame
@@ -40,6 +44,11 @@ public class ThrowPumpkin : MonoBehaviour
         Vector3 pos = this.transform.position;
         //pos += new Vector3(0, 1.5f, 0);
         GameObject pump;
+        if (left == false)
+        {
+            left = !left;
+            sr.flipX = !sr.flipX;
+        }
         if (seed == 1)
         {
             pump = Instantiate(Pumpkin, pos, Quaternion.identity);
@@ -59,6 +68,11 @@ public class ThrowPumpkin : MonoBehaviour
         Vector3 pos = this.transform.position;
         //pos += new Vector3(0, 1.5f, 0);
         GameObject pump;
+        if (left == true)
+        {
+            left = !left;
+            sr.flipX = !sr.flipX;
+        }
         if (seed == 1)
         {
             pump = Instantiate(Pumpkin, pos, Quaternion.identity);

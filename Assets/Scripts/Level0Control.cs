@@ -23,7 +23,7 @@ public class Level0Control : MonoBehaviour
 
     private GameController gameController;
 
-    //private blockController bc;
+    private blockController bc;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,71 +38,72 @@ public class Level0Control : MonoBehaviour
     {
         if (gameController.stage == 2)
         {
-            if (player1.transform.position == player1_last)
-            {
-                player1_stuck += Time.deltaTime;
-            }
-            else
-            {
-                player1_last = player1.transform.position;
-                player1_stuck = 0;
-                MoveHint1.SetActive(false);
-                PlaceHint1.SetActive(false);
-            }
-            if (player2.transform.position == player2_last)
-            {
-                player2_stuck += Time.deltaTime;
-            }
-            else
-            {
-                player2_last = player2.transform.position;
-                player2_stuck = 0;
-                MoveHint2.SetActive(false);
-                PlaceHint2.SetActive(false);
-            }
-        } else if (gameController.stage == 1)
-        {
-            if (bc.count == count_last)
-            {
-                player2_stuck += Time.deltaTime;
-                player1_stuck += Time.deltaTime;
-            }
-            else
-            {
-                count_last = bc.count;
-                player2_stuck = 0;
-                player1_stuck = 0;
-                MoveHint1.SetActive(false);
-                PlaceHint1.SetActive(false);
-                MoveHint2.SetActive(false);
-                PlaceHint2.SetActive(false);
-            }
-        }
+            FlagHint.SetActive(true);
+        //    if (player1.transform.position == player1_last)
+        //    {
+        //        player1_stuck += Time.deltaTime;
+        //    }
+        //    else
+        //    {
+        //        player1_last = player1.transform.position;
+        //        player1_stuck = 0;
+        //        MoveHint1.SetActive(false);
+        //        PlaceHint1.SetActive(false);
+        //    }
+        //    if (player2.transform.position == player2_last)
+        //    {
+        //        player2_stuck += Time.deltaTime;
+        //    }
+        //    else
+        //    {
+        //        player2_last = player2.transform.position;
+        //        player2_stuck = 0;
+        //        MoveHint2.SetActive(false);
+        //        PlaceHint2.SetActive(false);
+        //    }
+        //} else if (gameController.stage == 1)
+        //{
+        //    if (bc.count == count_last)
+        //    {
+        //        player2_stuck += Time.deltaTime;
+        //        player1_stuck += Time.deltaTime;
+        //    }
+        //    else
+        //    {
+        //        count_last = bc.count;
+        //        player2_stuck = 0;
+        //        player1_stuck = 0;
+        //        MoveHint1.SetActive(false);
+        //        PlaceHint1.SetActive(false);
+        //        MoveHint2.SetActive(false);
+        //        PlaceHint2.SetActive(false);
+        //    }
+        //}
         
 
-        if (player1_stuck > 5f)
-        {
-            Debug.Log("Stage: " + gameController.stage);
-            if (gameController.stage == 2)
-            {
-                MoveHint1.SetActive(true);
-            } else if (gameController.stage == 1)
-            {
-                PlaceHint1.SetActive(true);
-            }
-            // player1_stuck = 0;
-        }
+        //if (player1_stuck > 5f)
+        //{
+        //    Debug.Log("Stage: " + gameController.stage);
+        //    if (gameController.stage == 2)
+        //    {
+        //        MoveHint1.SetActive(true);
+        //    } else if (gameController.stage == 1)
+        //    {
+        //        PlaceHint1.SetActive(true);
+        //    }
+        //    // player1_stuck = 0;
+        //}
 
-        if (player2_stuck > 5f)
-        {
-            Debug.Log("Stage: " + gameController.stage);
-            if (gameController.stage == 2)
-            {
-                MoveHint2.SetActive(true);
-            } else if (gameController.stage == 1)
-            {
-                PlaceHint2.SetActive(true);
-            }
+        //if (player2_stuck > 5f)
+        //{
+        //    Debug.Log("Stage: " + gameController.stage);
+        //    if (gameController.stage == 2)
+        //    {
+        //        MoveHint2.SetActive(true);
+        //    } else if (gameController.stage == 1)
+        //    {
+        //        PlaceHint2.SetActive(true);
+        //    }
 
             // player2_stuck = 0;
         }

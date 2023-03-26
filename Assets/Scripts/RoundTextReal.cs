@@ -49,7 +49,7 @@ public class RoundTextReal : MonoBehaviour
 
         //_rb.constraints = RigidbodyConstraints2D.None;
         //text_.text = "Round " + round.ToString();
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         //text_.enabled = false;
         EventBus.Publish<RoundTextDoneEvent>(new RoundTextDoneEvent(round));
         // return to the original position

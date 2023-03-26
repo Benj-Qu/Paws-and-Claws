@@ -43,6 +43,7 @@ public class flagTransformer : MonoBehaviour
                 spriteRenderer.sprite = flag_UM;
                 AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
                 UpdateFlagNum(other.gameObject);
+                showAddScore.SetColor(1);
                 delta_time = 0f;
             }
             else if (other.name == "player_2")
@@ -50,6 +51,7 @@ public class flagTransformer : MonoBehaviour
                 spriteRenderer.sprite = flag_Ohio;
                 AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
                 UpdateFlagNum(other.gameObject);
+                showAddScore.SetColor(2);
                 delta_time = 0f;
             }
         } 

@@ -1,0 +1,1279 @@
+fileFormatVersion: 2
+guid: 02a9efd7fbcd94fa1b56f51202656e29
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 840
+        width: 183
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22eabad973da4cd782b8fff54452647
+      internalID: -1590130293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 840
+        width: 184
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f975fcfae4d748b6a824f6e77da6d31
+      internalID: 368286393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_2
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 840
+        width: 185
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1b21a57aef5408099e98d8a1ea4c00
+      internalID: 1631202114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_3
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 840
+        width: 186
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee114520ccf44e47b15ad6325707daf
+      internalID: 282971030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 600
+        width: 186
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951bf2830bd1a477db81c469a3614111
+      internalID: 1019333286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_5
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 688
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d8fe692c7394b349545ba20dcfbeba
+      internalID: 286557504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_6
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 688
+        width: 113
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2777fc71f3d4c08b868bef63f7c191
+      internalID: -2056671014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_7
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 695
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c0ced75115d4f4ca5ee5f43d1fa012
+      internalID: 854749835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 667
+        width: 43
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ce1fd94f252402baaa68f8fac1bf91
+      internalID: -478892893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 312
+        width: 182
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807d57f95bc5a40a687118a0aa44c940
+      internalID: -1003679975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 312
+        width: 266
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689de24579c4e426abb86014f0220310
+      internalID: -410091716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_11
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 312
+        width: 320
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b7124171eb14940981997b3d8af099
+      internalID: 1104123145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_12
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 312
+        width: 318
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b998fd00823ea49cdabd491919d10694
+      internalID: -1162449281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_13
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 312
+        width: 347
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf61e8f69a004194b50508a659fe8b3
+      internalID: 421933143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_14
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 312
+        width: 399
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfc8e595fa094abfb454da78caaa5e6
+      internalID: -909686018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_15
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 312
+        width: 417
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b57c86bbf0c45c9b40f6e718881a6a
+      internalID: -1936058332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_16
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 386
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d405a6557416e40abb9319e04b19758e
+      internalID: 97081917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_17
+      rect:
+        serializedVersion: 2
+        x: 2513
+        y: 312
+        width: 317
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8140b2faefe884f0ebf248627c9b0593
+      internalID: 1493840951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_18
+      rect:
+        serializedVersion: 2
+        x: 2871
+        y: 312
+        width: 314
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47bd8ddaa14548378913a15b197d80f
+      internalID: -504108939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_19
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 370
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72afbf9721f9b4228bee45ffe5176ac8
+      internalID: 1381685079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 24
+        width: 184
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef70bc2f2d32b4c83899127d0ef4d0b2
+      internalID: 1661454747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_21
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 24
+        width: 188
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21bf5806f50954ad79dc98957410d8e5
+      internalID: 574579881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_22
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 24
+        width: 189
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d018489aeb29d439ea76bd2d30536167
+      internalID: -644134590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_23
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 24
+        width: 236
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb0f490bf53f4bc0ab6a353bf913f10
+      internalID: 889766740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_24
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 24
+        width: 237
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9589ff34d1034c39b3fff523b9daf85
+      internalID: 1282400952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_25
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 64
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7673f5a6b852a4992bba92374516d3eb
+      internalID: -705512562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_26
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 30
+        width: 234
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f194c982cf664af3aa3caacd535967a
+      internalID: 1070542866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_27
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 30
+        width: 236
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b3745c41089409c9c70943a1efe8ce
+      internalID: -1449716578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_28
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 24
+        width: 240
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86204c416e84345dbba06a0778efac6c
+      internalID: 1547321742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_29
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 24
+        width: 170
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60cfbb46154e4b8396f5e9e56d90413
+      internalID: 1122323438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_30
+      rect:
+        serializedVersion: 2
+        x: 2222
+        y: 24
+        width: 155
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0ee2404cb964213a9df03aa38eabd4
+      internalID: -780467028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_31
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 24
+        width: 166
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b5f7d24ed8f45ac89ee25a9b6bb057
+      internalID: 166600307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_32
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 24
+        width: 220
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2e354ab1de74759a019466c27acb4e
+      internalID: 598766579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_33
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 24
+        width: 232
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53316583a3b764de9b2a0afcdef62b35
+      internalID: -956657453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_34
+      rect:
+        serializedVersion: 2
+        x: 3141
+        y: 24
+        width: 245
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a3348e7a1ce44379cf35915c8d98d0
+      internalID: -865370942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_35
+      rect:
+        serializedVersion: 2
+        x: 3431
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b107e3e50ced486fac5a6e9eb76c810
+      internalID: 1933509821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_36
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 66
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360d29b9983d04534b190cd2b1727c1e
+      internalID: -1205451263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_37
+      rect:
+        serializedVersion: 2
+        x: 3447
+        y: 24
+        width: 160
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8b9d1ef9ebf4a74ba30e387f1ba322
+      internalID: -1148841548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_38
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 65
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c26efc88e2e429c977bf927ab8d819
+      internalID: -974765535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_39
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 51
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08faa1189c8be4f03a789e5f16fa5da4
+      internalID: -2075577601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_40
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 53
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe38076844b343eaaed547f7f797002
+      internalID: -1033356100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_41
+      rect:
+        serializedVersion: 2
+        x: 3431
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a2482f51cc04f20b5ae70bf78afcf4
+      internalID: 903565054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_42
+      rect:
+        serializedVersion: 2
+        x: 3619
+        y: 57
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1c4a3de798140f0ba7ffbfa2c4c971
+      internalID: -711489997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_43
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 46
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b01d126b40f7425491d17cd2a2dd6a5
+      internalID: -1560504499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_44
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 46
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8d5528382614bf2a5901ecce8cc216
+      internalID: -96385877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_45
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 51
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07555e5a130b245aea9391244da41f7f
+      internalID: 1106550035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_46
+      rect:
+        serializedVersion: 2
+        x: 3438
+        y: 43
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95977309fba74b09a72e81654743c57
+      internalID: -437359017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_47
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 46
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560ca1644debe45d8bd05269c536e81e
+      internalID: 1663013609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_48
+      rect:
+        serializedVersion: 2
+        x: 3608
+        y: 42
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56548a2a454d4c7d95878a2e21dfc4e
+      internalID: 1389152825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_49
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 37
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7d2c5e1bea44980a4a5acfd2bd6694
+      internalID: -1398308271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_50
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 24
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5768dbc2511df4c17a24b760000b6beb
+      internalID: -1413037929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Giant Snowman Level 3_51
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 24
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5d97b7c09cf4811adf790ee4edfd1d
+      internalID: 320575868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - MapleStory - Giant Snowman Level 3_28: 1547321742
+      PC Computer - MapleStory - Giant Snowman Level 3_46: -437359017
+      PC Computer - MapleStory - Giant Snowman Level 3_21: 574579881
+      PC Computer - MapleStory - Giant Snowman Level 3_2: 1631202114
+      PC Computer - MapleStory - Giant Snowman Level 3_17: 1493840951
+      PC Computer - MapleStory - Giant Snowman Level 3_27: -1449716578
+      PC Computer - MapleStory - Giant Snowman Level 3_51: 320575868
+      PC Computer - MapleStory - Giant Snowman Level 3_20: 1661454747
+      PC Computer - MapleStory - Giant Snowman Level 3_8: -478892893
+      PC Computer - MapleStory - Giant Snowman Level 3_6: -2056671014
+      PC Computer - MapleStory - Giant Snowman Level 3_13: 421933143
+      PC Computer - MapleStory - Giant Snowman Level 3_10: -410091716
+      PC Computer - MapleStory - Giant Snowman Level 3_18: -504108939
+      PC Computer - MapleStory - Giant Snowman Level 3_24: 1282400952
+      PC Computer - MapleStory - Giant Snowman Level 3_25: -705512562
+      PC Computer - MapleStory - Giant Snowman Level 3_22: -644134590
+      PC Computer - MapleStory - Giant Snowman Level 3_12: -1162449281
+      PC Computer - MapleStory - Giant Snowman Level 3_1: 368286393
+      PC Computer - MapleStory - Giant Snowman Level 3_19: 1381685079
+      PC Computer - MapleStory - Giant Snowman Level 3_36: -1205451263
+      PC Computer - MapleStory - Giant Snowman Level 3_9: -1003679975
+      PC Computer - MapleStory - Giant Snowman Level 3_30: -780467028
+      PC Computer - MapleStory - Giant Snowman Level 3_45: 1106550035
+      PC Computer - MapleStory - Giant Snowman Level 3_48: 1389152825
+      PC Computer - MapleStory - Giant Snowman Level 3_40: -1033356100
+      PC Computer - MapleStory - Giant Snowman Level 3_4: 1019333286
+      PC Computer - MapleStory - Giant Snowman Level 3_0: -1590130293
+      PC Computer - MapleStory - Giant Snowman Level 3_16: 97081917
+      PC Computer - MapleStory - Giant Snowman Level 3_34: -865370942
+      PC Computer - MapleStory - Giant Snowman Level 3_47: 1663013609
+      PC Computer - MapleStory - Giant Snowman Level 3_15: -1936058332
+      PC Computer - MapleStory - Giant Snowman Level 3_14: -909686018
+      PC Computer - MapleStory - Giant Snowman Level 3_3: 282971030
+      PC Computer - MapleStory - Giant Snowman Level 3_26: 1070542866
+      PC Computer - MapleStory - Giant Snowman Level 3_42: -711489997
+      PC Computer - MapleStory - Giant Snowman Level 3_29: 1122323438
+      PC Computer - MapleStory - Giant Snowman Level 3_32: 598766579
+      PC Computer - MapleStory - Giant Snowman Level 3_44: -96385877
+      PC Computer - MapleStory - Giant Snowman Level 3_43: -1560504499
+      PC Computer - MapleStory - Giant Snowman Level 3_38: -974765535
+      PC Computer - MapleStory - Giant Snowman Level 3_31: 166600307
+      PC Computer - MapleStory - Giant Snowman Level 3_49: -1398308271
+      PC Computer - MapleStory - Giant Snowman Level 3_50: -1413037929
+      PC Computer - MapleStory - Giant Snowman Level 3_41: 903565054
+      PC Computer - MapleStory - Giant Snowman Level 3_33: -956657453
+      PC Computer - MapleStory - Giant Snowman Level 3_35: 1933509821
+      PC Computer - MapleStory - Giant Snowman Level 3_7: 854749835
+      PC Computer - MapleStory - Giant Snowman Level 3_37: -1148841548
+      PC Computer - MapleStory - Giant Snowman Level 3_23: 889766740
+      PC Computer - MapleStory - Giant Snowman Level 3_39: -2075577601
+      PC Computer - MapleStory - Giant Snowman Level 3_11: 1104123145
+      PC Computer - MapleStory - Giant Snowman Level 3_5: 286557504
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
