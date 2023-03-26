@@ -208,21 +208,22 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         // Start time countdown
-        if (level != "Tutorial1")
-        {
-            progressBar.gameObject.SetActive(true);
-            progressBar.StartGame();
-        }
+        // make tutorial1 finished
+        //if (level != "Tutorial1")
+        //{
+        //    progressBar.gameObject.SetActive(true);
+        //    progressBar.StartGame();
+        //}
         stage ++;
         Debug.Log("stage: " + stage);
         ScorePanel.SetActive(false);
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
-            if (level == "Tutorial1")
-            {
-                StartCoroutine(FinishTutorial());
-            }
+            //if (level == "Tutorial1")
+            //{
+            //    StartCoroutine(FinishTutorial());
+            //}
 
             if (mask)
             {
