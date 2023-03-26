@@ -53190,7 +53190,7 @@ MonoBehaviour:
   ExitMenu: {fileID: 1016065690}
   stage: 0
   progressBar: {fileID: 363239753}
-  ScorePanel: {fileID: 0}
+  ScorePanel: {fileID: 2139250135}
 --- !u!4 &1518848699
 Transform:
   m_ObjectHideFlags: 0
@@ -72464,6 +72464,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2139250135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
+  m_PrefabInstance: {fileID: 4428402045309953259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2140950603
 GameObject:
   m_ObjectHideFlags: 0

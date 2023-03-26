@@ -51981,7 +51981,7 @@ MonoBehaviour:
   dist: 0.4
   WinImage: {fileID: 0}
   ScoreText: {fileID: 0}
-  selectionPanel: {fileID: 0}
+  selectionPanel: {fileID: 2440277720884465118, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
   mask: {fileID: 0}
   follower: {fileID: 1904736958}
   pause: 0
