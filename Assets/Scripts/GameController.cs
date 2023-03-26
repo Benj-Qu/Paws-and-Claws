@@ -83,7 +83,8 @@ public class GameController : MonoBehaviour
         {
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
-        } else
+        } 
+        else
         {
             flagController = GameObject.Find("Flags").GetComponent<flagController>();
         }
@@ -102,8 +103,6 @@ public class GameController : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-
-        ScorePanel = GameObject.Find("ScorePanel");
         if (ScorePanel) ScorePanel.SetActive(false);
     }
 
