@@ -107,10 +107,6 @@ public class PlayerController : MonoBehaviour
             {
                 onIce = true;
             }
-            else
-            {
-                onIce = false;
-            }
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
@@ -204,6 +200,11 @@ public class PlayerController : MonoBehaviour
         // Jump Times
         if (isTerrain(other))
         {
+            if (collision.gameObject.CompareTag("Ice"))
+            {
+                onIce = true;
+            }
+
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
             if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
@@ -239,6 +240,7 @@ public class PlayerController : MonoBehaviour
         onFloor = false;
         onLeftWall = false;
         onRightWall = false;
+        onIce = false;
         floorV = 0;
     }
 
@@ -313,8 +315,7 @@ public class PlayerController : MonoBehaviour
                     }
                     else
                     {
-                        rb.velocity = new Vector2(floorV * Time.deltaTime, 0);
-
+                        rb.velocity = new Vector2(floorV, rb.velocity.y);
                     }
                 }
             }
