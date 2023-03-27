@@ -9870,7 +9870,6 @@ MonoBehaviour:
   SlideSpeed: 0.1
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
-  DieAltitude: -6
   AirKnockCoef: 0
   KnockBackPeriod: 0.2
   speedDecade: 4
@@ -9880,7 +9879,7 @@ MonoBehaviour:
   player_die: {fileID: 8300000, guid: b5a3125316a3d41c8bb291273cd78df7, type: 3}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
-  joystickNumber: 0
+  joystickNumber: 1
 --- !u!50 &274675828
 Rigidbody2D:
   serializedVersion: 4
@@ -34329,6 +34328,7 @@ RectTransform:
   - {fileID: 778072923}
   - {fileID: 1137818600}
   - {fileID: 339296550}
+  - {fileID: 21532887}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53705,7 +53705,6 @@ MonoBehaviour:
   mask: {fileID: 0}
   follower: {fileID: 1606704894}
   pause: 0
-  sd: {fileID: 0}
   ExitMenu: {fileID: 1016065690}
   stage: 0
   progressBar: {fileID: 363239753}
@@ -53737,12 +53736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a9af88a3c444fb3ae54fc2abe99b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveHint1: {fileID: 711126239}
-  MoveHint2: {fileID: 1656937571}
-  PlaceHint1: {fileID: 1914486514}
-  PlaceHint2: {fileID: 857364426}
-  player1_stuck: 0
-  player2_stuck: 0
+  FlagHint: {fileID: 0}
 --- !u!1 &1527274280
 GameObject:
   m_ObjectHideFlags: 0
@@ -63843,7 +63837,6 @@ MonoBehaviour:
   SlideSpeed: 0.1
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
-  DieAltitude: -6
   AirKnockCoef: 0
   KnockBackPeriod: 0.2
   speedDecade: 4
@@ -63853,7 +63846,7 @@ MonoBehaviour:
   player_die: {fileID: 8300000, guid: b5a3125316a3d41c8bb291273cd78df7, type: 3}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
-  joystickNumber: 0
+  joystickNumber: 2
 --- !u!50 &1867150102
 Rigidbody2D:
   serializedVersion: 4
