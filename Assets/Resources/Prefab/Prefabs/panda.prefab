@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d873c5fe26e4ce49faa994f724afd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pumpkin: {fileID: 0}
-  Fork: {fileID: 0}
+  Pumpkin: {fileID: 874668575125315256, guid: 51f9c186cc2684f3a9ae3d4fcc4e2f80, type: 3}
+  Fork: {fileID: 874668575125315256, guid: 51f9c186cc2684f3a9ae3d4fcc4e2f80, type: 3}
   left: 1
 --- !u!1 &7857471338443132132
 GameObject:
