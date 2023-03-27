@@ -371,11 +371,11 @@ public class GameController : MonoBehaviour
         {
             WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
         }
+        progressBar.gameObject.SetActive(false);
         WinImage.SetActive(true);
         yield return new WaitForSeconds(2f);
         WinImage.SetActive(false);
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        progressBar.gameObject.SetActive(false);
         // Reset the players
         player1.GetComponent<PlayerController>().reset();
         player2.GetComponent<PlayerController>().reset();
