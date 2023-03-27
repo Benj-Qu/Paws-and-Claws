@@ -37,7 +37,7 @@ public class ThrowBaozi : MonoBehaviour
     void baoziThrow()
     {
         Vector3 pos = this.transform.position;
-        pos += new Vector3(0, 1.5f, 0);
+        pos += new Vector3(0, 1f, 0);
         Debug.Log("HIIII");
         GameObject pump = Instantiate(Baozi, pos, Quaternion.identity);
         Rigidbody2D rgbd = pump.GetComponent<Rigidbody2D>();

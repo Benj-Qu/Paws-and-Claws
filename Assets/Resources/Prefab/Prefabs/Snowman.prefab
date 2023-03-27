@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6207999270949412094}
   - component: {fileID: 6207999270949412095}
-  - component: {fileID: 6207999270949412080}
   - component: {fileID: 6207999270949412093}
+  - component: {fileID: 8759837018852061715}
+  - component: {fileID: 7035761906291702290}
+  - component: {fileID: 4716903959034275357}
   m_Layer: 0
   m_Name: Snowman
   m_TagString: Block
@@ -73,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -558665
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1019333286, guid: 02a9efd7fbcd94fa1b56f51202656e29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -87,47 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &6207999270949412080
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6207999270949412081}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.47289467, y: 0.5231266}
-  - {x: -0.119426906, y: 0.9220898}
-  - {x: 0.25379688, y: 0.9116535}
-  - {x: 0.4910646, y: 0.74107456}
-  - {x: 0.5746371, y: 0.6087525}
-  - {x: 0.6368763, y: 0.28740835}
-  - {x: 0.5686366, y: 0.03673172}
-  - {x: 0.4716391, y: -0.018693447}
-  - {x: 0.6941431, y: -0.31766415}
-  - {x: 0.71932, y: -0.6550052}
-  - {x: 0.57132095, y: -0.92976713}
-  - {x: 0.3412432, y: -1.051744}
-  - {x: -0.4578914, y: -1.0366721}
-  - {x: -0.6748904, y: -0.9008446}
-  - {x: -0.77006996, y: -0.69156194}
-  - {x: -0.73826313, y: -0.3421173}
-  - {x: -0.6264777, y: -0.16403675}
-  - {x: -0.45451698, y: -0.021184444}
-  - {x: -0.5422497, y: 0.12110114}
-  - {x: -0.56000566, y: 0.28361297}
-  - {x: -0.46681467, y: 0.54021263}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!114 &6207999270949412093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +104,79 @@ MonoBehaviour:
   Pumpkin: {fileID: 3317187531270850120, guid: 74f72dca3dbde4b7c9b7893df6c93145, type: 3}
   Fork: {fileID: 3317187531270850120, guid: 74f72dca3dbde4b7c9b7893df6c93145, type: 3}
   left: 0
+--- !u!114 &8759837018852061715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207999270949412081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8bb9703286b44be8acbce54012a2f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block_id: 16
+  block_side: 0
+  selected: 0
+  set: 0
+  collisionDetected: 0
+  isBomb: 0
+  alpha: 0.5
+  block_status: 0
+  follower_distance: 2
+  follower_distance_x: 0
+  UpOffset: 0
+  DownOffset: 0
+  LeftOffset: 0
+  RightOffset: 0
+--- !u!61 &7035761906291702290
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207999270949412081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.05}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8612605, y: 2.15}
+    newSize: {x: 1.8612605, y: 2.15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8}
+  m_EdgeRadius: 0
+--- !u!50 &4716903959034275357
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207999270949412081}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8473279145072580696
 GameObject:
   m_ObjectHideFlags: 0
