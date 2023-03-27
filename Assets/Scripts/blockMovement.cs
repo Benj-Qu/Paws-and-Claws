@@ -311,7 +311,7 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // if collide with other blocks
-        if (name == "LanternPoint(Clone)" && other.name == "Lantern") return;
+        if (name == "Lantern(Clone)" && other.name == "LanternBox") return;
         if (transform.tag == "Bomb")
         {
             // if current block is bomb, can't be placed on mountain
@@ -349,7 +349,7 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         // if collide with other blocks
-        if (name == "LanternPoint(Clone)" && other.name == "Lantern") return;
+        if (name == "Lantern(Clone)" && other.name == "LanternBox") return;
         if (transform.tag == "Bomb")
         {
             // if current block is bomb, can't be placed on mountain
@@ -385,7 +385,7 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         // if collide with other blocks
-        if (name == "LanternPoint(Clone)" && other.name == "Lantern") return;
+        if (name == "Lantern(Clone)" && other.name == "LanternBox") return;
         if (transform.tag == "Bomb")
         {
             // if current block is bomb, can't be placed on mountain
