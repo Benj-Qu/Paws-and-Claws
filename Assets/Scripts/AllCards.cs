@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AllCards : MonoBehaviour
 {
@@ -44,6 +45,15 @@ public class AllCards : MonoBehaviour
         cards.Add(6, "Power Potion");
         cards.Add(7, "Speed Potion");
         cards.Add(8, "Invincible Potion");
+        cards.Add(9, "panda");
+        cards.Add(10, "bamboo_steamer");
+        cards.Add(11, "LanternPoint");
+        cards.Add(13, "square_china");
+        cards.Add(14, "rectangle_china");
+        // crow panda 0-9
+        // spike bamboo 1 lantern 1-10 1-11
+        // 3-13 2-14
+        
         
         
         // instantiate the blocks as the child of the block
@@ -89,6 +99,99 @@ public class AllCards : MonoBehaviour
     
     private void SetRound()
     {
+        string level = SceneManager.GetActiveScene().name;
+        if (level == "Lantern Festival")
+        {
+            // big round 1
+            // small round 1
+            CardRound cardRoundf1_1 = new CardRound(9, 0,  1, 1);
+            CardRound cardRoundf1_2 = new CardRound(10, 1,  1, 2);
+            CardRound cardRoundf1_3 = new CardRound(14, 2,  2, 1);
+            CardRound cardRoundf1_4 = new CardRound(9, 3,  2, 2);
+            List<CardRound> sf11 = new List<CardRound>();
+            sf11.Add(cardRoundf1_1);
+            sf11.Add(cardRoundf1_2);
+            sf11.Add(cardRoundf1_3);
+            sf11.Add(cardRoundf1_4);
+        
+            // small round 2
+            CardRound cardRoundf1_5 = new CardRound(14, 4,  1, 1);
+            CardRound cardRoundf1_6 = new CardRound(13, 5,  1, 2);
+            CardRound cardRoundf1_7 = new CardRound(14, 6,  2, 1);
+            CardRound cardRoundf1_8 = new CardRound(13, 7,  2, 2);
+            List<CardRound> sf12 = new List<CardRound>();
+            sf12.Add(cardRoundf1_5);
+            sf12.Add(cardRoundf1_6);
+            sf12.Add(cardRoundf1_7);
+            sf12.Add(cardRoundf1_8);
+
+            List<List<CardRound>> bf1 = new List<List<CardRound>>();
+            bf1.Add(sf11);
+            bf1.Add(sf12);
+            
+            // big round 2
+                // small round 1
+            CardRound cardRoundf2_1 = new CardRound(6, 8,  1, 1);
+            CardRound cardRoundf2_2 = new CardRound(14, 9,  1, 2);
+            CardRound cardRoundf2_3 = new CardRound(8, 10,  2, 1);
+            CardRound cardRoundf2_4 = new CardRound(11, 11,  2, 2);
+            List<CardRound> sf21 = new List<CardRound>();
+            sf21.Add(cardRoundf2_1);
+            sf21.Add(cardRoundf2_2);
+            sf21.Add(cardRoundf2_3);
+            sf21.Add(cardRoundf2_4);
+            
+            //     // small round 2
+            // CardRound cardRound2_5 = new CardRound(2, 12, 1, 1);
+            // CardRound cardRound2_6 = new CardRound(3, 13, 1, 2);
+            // CardRound cardRound2_7 = new CardRound(4, 14, 2, 1);
+            // CardRound cardRound2_8 = new CardRound(0, 15, 2, 2);
+            // List<CardRound> s22 = new List<CardRound>();
+            // s22.Add(cardRound2_5);
+            // s22.Add(cardRound2_6);
+            // s22.Add(cardRound2_7);
+            // s22.Add(cardRound2_8);
+            
+            List<List<CardRound>> bf2 = new List<List<CardRound>>();
+            bf2.Add(sf21);
+            // b2.Add(s22);
+            
+            // big round 3
+            // small round 1
+            CardRound cardRoundf3_1 = new CardRound(5, 16,  1, 1);
+            CardRound cardRoundf3_2 = new CardRound(4, 17,  1, 2);
+            CardRound cardRoundf3_3 = new CardRound(7, 18,  2, 1);
+            CardRound cardRoundf3_4 = new CardRound(4, 19,  2, 2);
+            List<CardRound> sf31 = new List<CardRound>();
+            sf31.Add(cardRoundf3_1);
+            sf31.Add(cardRoundf3_2);
+            sf31.Add(cardRoundf3_3);
+            sf31.Add(cardRoundf3_4);
+            
+            // // small round 2
+            // CardRound cardRound3_5 = new CardRound(2, 20, 1, 1);
+            // CardRound cardRound3_6 = new CardRound(3, 21, 1, 2);
+            // CardRound cardRound3_7 = new CardRound(4, 22, 2, 1);
+            // CardRound cardRound3_8 = new CardRound(0, 23, 2, 2);
+            // List<CardRound> s32 = new List<CardRound>();
+            // s32.Add(cardRound3_5);
+            // s32.Add(cardRound3_6);
+            // s32.Add(cardRound3_7);
+            // s32.Add(cardRound3_8);
+            
+            List<List<CardRound>> bf3 = new List<List<CardRound>>();
+            bf3.Add(sf31);
+            // b3.Add(s32);
+
+            cardRoundSetting = new List<List<List<CardRound>>>();
+            cardRoundSetting.Add(bf1);
+            cardRoundSetting.Add(bf2);
+            cardRoundSetting.Add(bf3);
+            return;
+        }
+        
+        // other scene, including tutorial and trail level use the same currently
+        
         // big round 1
             // small round 1
         CardRound cardRound1_1 = new CardRound(0, 0,  1, 1);
@@ -180,6 +283,7 @@ public class AllCards : MonoBehaviour
     {
         Debug.Log("Prefab/Prefabs/" + AllCards.cards[_whichCard]);
         GameObject temp = Resources.Load<GameObject>("Prefab/Prefabs/" + AllCards.cards[_whichCard]);
+        Debug.Log("whichcardtemp" + temp);
         GameObject temp1 = Instantiate(temp, Vector3.zero, Quaternion.identity);
         blockMovement bm = temp1.GetComponent<blockMovement>();
         bm.block_id = _index;
