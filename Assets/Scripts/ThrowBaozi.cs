@@ -24,7 +24,7 @@ public class ThrowBaozi : MonoBehaviour
         if (start == false && GameController.instance.stage == 2)
         {
             start = true;
-            InvokeRepeating("baoziThrow", 2f, 3f);
+            InvokeRepeating("baoziThrow", 2f, 1.5f);
         }
 
         if (start == true && GameController.instance.stage != 2)

@@ -305,15 +305,15 @@ public class PlayerController : MonoBehaviour
                 {
                     if (rb.velocity.x > 0.1)
                     {
-                        rb.velocity -= new Vector2(speedDecade * Time.deltaTime, rb.velocity.y);
+                        rb.velocity -= new Vector2(speedDecade * Time.deltaTime, 0);
                     }
                     else if (rb.velocity.x < -0.1)
                     {
-                        rb.velocity += new Vector2(speedDecade * Time.deltaTime, rb.velocity.y);
+                        rb.velocity += new Vector2(speedDecade * Time.deltaTime, 0);
                     }
                     else
                     {
-                        rb.velocity = new Vector2(floorV * Time.deltaTime, rb.velocity.y);
+                        rb.velocity = new Vector2(floorV * Time.deltaTime, 0);
 
                     }
                 }
