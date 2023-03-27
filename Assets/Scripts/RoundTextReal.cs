@@ -20,22 +20,21 @@ public class RoundTextReal : MonoBehaviour
 
     private void Awake()
     {
-        
         round_inc_event_subscription = EventBus.Subscribe<BigRoundIncEvent>(OnRoundInc);
-    }
-
-    private void Start()
-    {
-        _oriPos = gameObject.transform.position;
-        _oriQua = gameObject.transform.rotation;
-        // _animator = GetComponent<Animator>();
-        // animationHash = Animator.StringToHash("Base Layer.RoundTextDrop");
-        //Debug.Log("text_ is null" + text_);
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
         _round1 = Resources.Load<Sprite>("Sprite/RoundTextWhite1");
         _round2 = Resources.Load<Sprite>("Sprite/RoundTextWhite2");
         _round3 = Resources.Load<Sprite>("Sprite/RoundTextWhite3");
+        _oriPos = gameObject.transform.position;
+        _oriQua = gameObject.transform.rotation;
+    }
+
+    private void Start()
+    {
+        // _animator = GetComponent<Animator>();
+        // animationHash = Animator.StringToHash("Base Layer.RoundTextDrop");
+        //Debug.Log("text_ is null" + text_);
     }
 
     private void OnRoundInc(BigRoundIncEvent e)
