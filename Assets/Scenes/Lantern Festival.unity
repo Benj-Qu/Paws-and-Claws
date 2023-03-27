@@ -27658,6 +27658,10 @@ PrefabInstance:
       value: RoundTextReal
       objectReference: {fileID: 0}
     - target: {fileID: 4830349337302652541, guid: 4fa42c406e7dc8a43a1fbfa8bff5b019, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830349337302652541, guid: 4fa42c406e7dc8a43a1fbfa8bff5b019, type: 3}
       propertyPath: m_TagString
       value: Block
       objectReference: {fileID: 0}
