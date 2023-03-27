@@ -1827,7 +1827,7 @@ MonoBehaviour:
   partyTimeText: {fileID: 1276861467}
   progressBar: {fileID: 460385376}
   fc: {fileID: 1185109323}
-  count_down: {fileID: 0}
+  count_down: {fileID: 8300000, guid: 374714fce91b947e180dbe3c453ba224, type: 3}
   _changeColor: 0
 --- !u!114 &48923878
 MonoBehaviour:
@@ -27656,6 +27656,10 @@ PrefabInstance:
     - target: {fileID: 4830349337302652541, guid: 4fa42c406e7dc8a43a1fbfa8bff5b019, type: 3}
       propertyPath: m_Name
       value: RoundTextReal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830349337302652541, guid: 4fa42c406e7dc8a43a1fbfa8bff5b019, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4830349337302652541, guid: 4fa42c406e7dc8a43a1fbfa8bff5b019, type: 3}
       propertyPath: m_TagString
@@ -67653,6 +67657,10 @@ PrefabInstance:
     - target: {fileID: 3884649207738965784, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: y_max
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207738965784, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: y_min
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_RootOrder
