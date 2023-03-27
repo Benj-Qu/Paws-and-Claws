@@ -1,33 +1,11 @@
-One suggestion we got from playtest is that the player that it is 
-difficult for the player who falls behind to catch up. To handle this, we 
-applied scores instead of the number of flags as the goal of the game. Each
-flag will give the owner 3 points each second. We added another round in 
-the game where the flags are re-generated. Thus, the players will have 
-another chance to build their advantage. We also added a "Party time" at 
-the last 10s of each round, when the scores earned will be doubled, giving 
-the players a larger chance to catch up. Moreover, we introduced powerups 
-in the second round to give the falling-behind player another window to win.
+One suggestion we got from play test is that the score is not clear. We bolded the score text and changed the numbers into a score panel to vividly visualize the magnitude relationship of the scores. We propose that this change would make the game juicier. We also received feedback that the round switch is to sudden and not clear so we added round text to indicate the round number and made transitions between each round.
 
-Another suggestion we received is that the game would be more compatitive 
-if the players can hinder each other's movement in some way. We added 
-collision between the players so that they can interfere and block each 
-other.
+Also, some player gives the feedback that they have no idea why their scores are negative (which is because their character dies for too many times). To further illustrate how the score increases and decreases, we add score adding effect on flags and score deducting effect when player dies. This UI effects make the game goal much clearer and help players understand how their score changes.
 
-The other suggestion is that players don't receive large penalty for death.
-Since the game mechanism is changed to cumulative score, 15 points are deducted 
-once the player is dead (falling or attacked by spikes). 
+According to the instructors' feedback and our own feelings, some parts of the tutorial seems to be a bit abundant. We revised the tutorial by removing the block placement tutorial, and combining the three movement tutorial levels into one.
 
-We also introduced more guide level as we found the game hard for the new 
-players to learn the control, and improved the block selection progress. 
-We have separate tutorial levels for playermovement, choosing the blocks 
-and placing the blocks. Then we have a simple level where suggestions will 
-be presented if the player forgets. Furthermore, we improved our 
-visualization in block placement. Now it will auto-switch to the next 
-available block after the current one is set. We also added a box arround 
-each block when placing them to indicate if the current position is valid 
-or not.
+Moreover, some player indicated that the sound effects were too loud compared to the background music, so we adjusted the sound effect to make it smoother.
 
-Furthermore, we made the game more juicy by adding the background music 
-and sound effect for the mountain night level and add more fun.
+Furthermore, players indicated that it is difficult for both players to use keyboard control and some of the keys are not intuitive to use and are hard to remember. Thus, we changed the input system to controllers.
 
-
+We made the indications clearer. Several students reflect that they are little confused about which block they are control when placing the block, therefore we added indicators with player icons to illustrate which block is the player currently controlling. Also, all players says its' hard to know the effect of the potions. We designed sprites for each potion. Like the shoe sprite for speedup potion, the arm sprite for powerup potion, and the shield for invincibility potion.
