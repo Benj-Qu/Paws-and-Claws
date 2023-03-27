@@ -47,7 +47,7 @@ public class AllCards : MonoBehaviour
         cards.Add(8, "Invincible Potion");
         cards.Add(9, "panda");
         cards.Add(10, "bamboo_steamer");
-        cards.Add(11, "LanternPoint");
+        cards.Add(11, "Lantern");
         cards.Add(13, "square_china");
         cards.Add(14, "rectangle_china");
         cards.Add(15, "TrapIce");
