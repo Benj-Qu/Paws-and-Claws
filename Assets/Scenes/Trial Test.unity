@@ -60559,7 +60559,7 @@ MonoBehaviour:
   partyTimeText: {fileID: 678749724}
   progressBar: {fileID: 1599239721}
   fc: {fileID: 1760108617}
-  count_down: {fileID: 0}
+  count_down: {fileID: 8300000, guid: 374714fce91b947e180dbe3c453ba224, type: 3}
   _changeColor: 0
 --- !u!114 &1806541684
 MonoBehaviour:

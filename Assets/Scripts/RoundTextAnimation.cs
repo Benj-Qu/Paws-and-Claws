@@ -21,7 +21,7 @@ public class RoundTextAnimation : MonoBehaviour
 
     private void OnRoundInc(BigRoundIncEvent e)
     {
-        StartCoroutine(OtherHoldRoundAppear(e.round_big)); //TODO: temporarily on hold if used physical round text 
+        StartCoroutine(OtherHoldRoundAppear(e.round_big)); // TODO: temporarily on hold if used physical round text 
     }
 
     private IEnumerator OtherHoldRoundAppear(int round)
