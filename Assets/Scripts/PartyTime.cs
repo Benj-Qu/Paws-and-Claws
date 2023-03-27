@@ -48,7 +48,7 @@ public class PartyTime : MonoBehaviour
             {
                 //Debug.Log("count == 10s");
                 AudioSource partyTimecountDown = GetComponent<AudioSource>();
-                partyTimecountDown.PlayOneShot(count_down, 1f);
+                if (partyTimecountDown) partyTimecountDown.PlayOneShot(count_down, 1f);
             }
             //if(_slider.value <= 9)
             //{
