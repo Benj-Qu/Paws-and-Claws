@@ -129,10 +129,13 @@ public class blockMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("A1"))
                 {
                     Debug.Log("player 1 z block");
-                    // press Z to fix the position of this block, can't move any more
-                    freezeBlock();
                     // added by zeyi
-                    if (isBomb || (!isBomb && !collisionDetected)) EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 1)); 
+                    if (isBomb || (!isBomb && !collisionDetected))
+                    {
+                        // press Z to fix the position of this block, can't move any more
+                        freezeBlock();
+                        EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 1));
+                    } 
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;
@@ -198,10 +201,13 @@ public class blockMovement : MonoBehaviour
                 player_2_follower.transform.position = new Vector3(transform.position.x + follower_distance_x, transform.position.y + follower_distance, transform.position.z);
                 if (Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("A2"))
                 {
-                    // press Z to fix the position of this block, can't move any more
-                    freezeBlock();
                     // added by zeyi
-                    if (isBomb || (!isBomb && !collisionDetected)) EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 2)); 
+                    if (isBomb || (!isBomb && !collisionDetected))
+                    {
+                        // press Z to fix the position of this block, can't move any more
+                        freezeBlock();
+                        EventBus.Publish<BlockSetEvent>(new BlockSetEvent(block_id, 2));
+                    } 
                 }
                 Vector3 newPos = defaultPos;
                 bool checkPos = false;
