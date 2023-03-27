@@ -18,11 +18,16 @@ public class RoundTextReal : MonoBehaviour
     private Sprite _round2;
     private Sprite _round3;
 
+    private void Awake()
+    {
+        
+        round_inc_event_subscription = EventBus.Subscribe<BigRoundIncEvent>(OnRoundInc);
+    }
+
     private void Start()
     {
         _oriPos = gameObject.transform.position;
         _oriQua = gameObject.transform.rotation;
-        round_inc_event_subscription = EventBus.Subscribe<BigRoundIncEvent>(OnRoundInc);
         // _animator = GetComponent<Animator>();
         // animationHash = Animator.StringToHash("Base Layer.RoundTextDrop");
         //Debug.Log("text_ is null" + text_);
