@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4404146626948587049}
   - component: {fileID: 4404146626948587050}
   - component: {fileID: 7521389949625615103}
+  - component: {fileID: 6980307461935931595}
   m_Layer: 0
   m_Name: panda
   m_TagString: Untagged
@@ -155,6 +156,27 @@ MonoBehaviour:
   DownOffset: 0
   LeftOffset: 0
   RightOffset: 0
+--- !u!50 &6980307461935931595
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404146626948587046}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &7857471338443132132
 GameObject:
   m_ObjectHideFlags: 0
