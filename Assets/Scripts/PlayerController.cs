@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public int MaxJumpTimes;
     public float JumpDeactivePeriod;
-    public float DieAltitude;
+    private float DieAltitude = -5.5f;
 
     public float AirKnockCoef;
     public float KnockBackPeriod;
