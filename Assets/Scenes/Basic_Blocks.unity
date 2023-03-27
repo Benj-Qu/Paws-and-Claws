@@ -47157,7 +47157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1433102463
 Transform:
   m_ObjectHideFlags: 0
@@ -74102,6 +74102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2875252911849527680, guid: f9e9095db3399478caf917cdbb688959, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2875252912847401537, guid: f9e9095db3399478caf917cdbb688959, type: 3}
       propertyPath: m_Name
       value: TrapIce
@@ -74116,7 +74120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2875252912847401543, guid: f9e9095db3399478caf917cdbb688959, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.576344
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 2875252912847401543, guid: f9e9095db3399478caf917cdbb688959, type: 3}
       propertyPath: m_LocalPosition.z
@@ -74506,6 +74510,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6207999270949412094, guid: f3c565e06f59a4e63a971dbb6d4503a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473279145072580696, guid: f3c565e06f59a4e63a971dbb6d4503a8, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

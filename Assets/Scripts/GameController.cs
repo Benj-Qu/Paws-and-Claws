@@ -160,15 +160,99 @@ public class GameController : MonoBehaviour
     {
         if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
         {
-            winText.text = "DOG Wins!";
+            int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
+            if (score == 1)
+            {
+                score1Big += 1;
+            } else if (score == -1)
+            {
+                score2Big += 1;
+            }
+            else
+            {
+                score1Big += 1;
+                score2Big += 1;
+            }
+
+            ScoreText.text = "DOG Wins!";
+            if (score1Big > score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+            }
+            else if (score1Big < score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+            }
+            else
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+            }
+            WinImage.SetActive(true);
+            // winText.text = "DOG Wins!";
         }
         else if (player1.GetComponent<PlayerScore>().getScore() < player2.GetComponent<PlayerScore>().getScore())
         {
-            winText.text = "CAT Wins!";
+            int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
+            if (score == 1)
+            {
+                score1Big += 1;
+            } else if (score == -1)
+            {
+                score2Big += 1;
+            }
+            else
+            {
+                score1Big += 1;
+                score2Big += 1;
+            }
+
+            ScoreText.text = "CAT Wins!";
+            if (score1Big > score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+            }
+            else if (score1Big < score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+            }
+            else
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+            }
+            WinImage.SetActive(true);
+            // winText.text = "CAT Wins!";
         }
         else
         {
-            winText.text = "Tie! Try again!";
+            int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
+            if (score == 1)
+            {
+                score1Big += 1;
+            } else if (score == -1)
+            {
+                score2Big += 1;
+            }
+            else
+            {
+                score1Big += 1;
+                score2Big += 1;
+            }
+
+            ScoreText.text = "Tie! Try again!";
+            if (score1Big > score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+            }
+            else if (score1Big < score2Big)
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+            }
+            else
+            {
+                WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+            }
+            WinImage.SetActive(true);
+            // winText.text = "Tie! Try again!";
         }
         
         yield return new WaitForSeconds(2);
