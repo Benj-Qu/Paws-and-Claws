@@ -55,7 +55,9 @@ public class blockMovement : MonoBehaviour
                     transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(0.71f, 0.98f, 0.67f, 0.5f);
                 }
                 else {
-                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+                    Color temp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
+                    temp.a = 0.5f;
+                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = temp;
                 }
             }
         }
