@@ -24,7 +24,7 @@ public class ThrowBaozi : MonoBehaviour
         if (start == false && GameController.instance.stage == 2)
         {
             start = true;
-            InvokeRepeating("baoziThrow", 2f, 3f);
+            InvokeRepeating("baoziThrow", 2f, 1.5f);
         }
 
         if (start == true && GameController.instance.stage != 2)
@@ -37,7 +37,7 @@ public class ThrowBaozi : MonoBehaviour
     void baoziThrow()
     {
         Vector3 pos = this.transform.position;
-        pos += new Vector3(0, 1.5f, 0);
+        pos += new Vector3(0, 1f, 0);
         Debug.Log("HIIII");
         GameObject pump = Instantiate(Baozi, pos, Quaternion.identity);
         Rigidbody2D rgbd = pump.GetComponent<Rigidbody2D>();
