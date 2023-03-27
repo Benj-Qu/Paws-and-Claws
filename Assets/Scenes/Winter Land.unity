@@ -3335,8 +3335,8 @@ GameObject:
   - component: {fileID: 88281937}
   - component: {fileID: 88281936}
   m_Layer: 7
-  m_Name: Mountain (1)
-  m_TagString: Untagged
+  m_Name: Floor
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
