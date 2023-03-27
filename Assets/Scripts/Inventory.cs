@@ -94,7 +94,7 @@ public class Inventory : MonoBehaviour
         
         
         // select the desire block
-        if (GameController.instance.stage == 1 && whichPlayer == 1 && Keyboard.current.leftShiftKey.wasPressedThisFrame)
+        if (GameController.instance.stage == 1 && whichPlayer == 1 && (Keyboard.current.leftShiftKey.wasPressedThisFrame || Input.GetButtonDown("B1")))
         {
             // if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
             // RotateIndex();
@@ -102,7 +102,7 @@ public class Inventory : MonoBehaviour
             RollToNextUnset();
         }
         
-        if (GameController.instance.stage == 1 && whichPlayer == 2 && Keyboard.current.rightShiftKey.wasPressedThisFrame)
+        if (GameController.instance.stage == 1 && whichPlayer == 2 && (Keyboard.current.rightShiftKey.wasPressedThisFrame || Input.GetButtonDown("B2")))
         {
             // if (BlockController) BlockController.UnSelectBlock(cards[_selectedIndex].index);
             // RotateIndex();
