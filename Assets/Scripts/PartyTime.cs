@@ -34,7 +34,7 @@ public class PartyTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_slider.value);
+        //Debug.Log(_slider.value);
         if (_changeColor == false && GameController.instance.stage == 2 && GameController.instance.level != "Tutorial" &&
             GameController.instance.level != "Tutorial1" && GameController.instance.level != "Trial Level" && _slider.value <= 10)
         {
@@ -46,7 +46,7 @@ public class PartyTime : MonoBehaviour
             fc.StartPartyTime();
             if (Mathf.Abs(_slider.value - 10) <= 0.5f)
             {
-                Debug.Log("count == 10s");
+                //Debug.Log("count == 10s");
                 AudioSource partyTimecountDown = GetComponent<AudioSource>();
                 partyTimecountDown.PlayOneShot(count_down, 1f);
             }

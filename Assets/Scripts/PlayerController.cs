@@ -256,7 +256,7 @@ public class PlayerController : MonoBehaviour
     {
         string joystickString = joystickNumber.ToString();
         float joystickInput = Input.GetAxis("Horizontal" + joystickString) * Speed;
-        Debug.Log("Hor: " + joystickInput);
+        //Debug.Log("Hor: " + joystickInput);
         
         // Update Horizontal Velocity
         if (Input.GetKey(LeftButton) || joystickInput < 0)

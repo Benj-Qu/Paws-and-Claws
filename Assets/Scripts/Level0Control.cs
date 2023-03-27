@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,26 +16,26 @@ public class Level0Control : MonoBehaviour
     //private Vector3 player2_last;
     //private int count_last;
 
-    private GameObject player1;
+    //private GameObject player1;
 
-    private GameObject player2;
+    //private GameObject player2;
 
-    private GameController gameController;
+    //private GameController gameController;
 
-    private blockController bc;
+    //private blockController bc;
     // Start is called before the first frame update
     void Start()
     {
-        player1 = GameObject.Find("player_1");
-        player2 = GameObject.Find("player_2");
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        bc = GameObject.Find("Block").GetComponent<blockController>();
+        //player1 = GameObject.Find("player_1");
+        //player2 = GameObject.Find("player_2");
+        //gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        //bc = GameObject.Find("Block").GetComponent<blockController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameController.stage == 2)
+        if (GameController.instance.stage == 2)
         {
             FlagHint.SetActive(true);
         //    if (player1.transform.position == player1_last)
@@ -109,4 +108,3 @@ public class Level0Control : MonoBehaviour
         }
     }
 }
-*/
