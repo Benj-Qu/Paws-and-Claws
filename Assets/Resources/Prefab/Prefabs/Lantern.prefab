@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2012394706697297216}
   - component: {fileID: -5266574226051701016}
   m_Layer: 0
-  m_Name: LanternPoint
+  m_Name: Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 4390138399319972908}
   - component: {fileID: 4390138399319972909}
   m_Layer: 0
-  m_Name: Lantern
+  m_Name: LanternBox
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
