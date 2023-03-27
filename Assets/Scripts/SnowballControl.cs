@@ -6,7 +6,7 @@ public class SnowballControl : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    private float speed = 500f;
+    private float speed = 500;
 
     // Start is called before the first frame update
     void Start()
