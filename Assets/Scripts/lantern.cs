@@ -6,7 +6,7 @@ public class lantern : MonoBehaviour
 {
     private Rigidbody2D _rb;
 
-    private bool freeze = false;
+    //private bool freeze = false;
     // Start is called before the first frame update
     void Start()
     {
