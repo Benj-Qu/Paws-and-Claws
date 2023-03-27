@@ -281,8 +281,8 @@ MonoBehaviour:
   block_status: 0
   follower_distance: 1
   follower_distance_x: 0
-  UpOffset: 0
-  DownOffset: 0
+  UpOffset: 0.5
+  DownOffset: 0.5
   LeftOffset: 0
   RightOffset: 0
 --- !u!50 &6392802198347688280
