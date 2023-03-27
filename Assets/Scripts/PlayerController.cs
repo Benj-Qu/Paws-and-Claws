@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if (hitpos.normal.y > 0)
+            if ((hitpos.normal.y > 0) && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
             ContactPoint2D hitpos = collision.GetContact(0);
             PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
             // Knock On Below Player
-            if (hitpos.normal.y > 0)
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
             {
                 // If Other Player On Floor
                 if (!onFloor && pc.OnFloor())
@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
         {
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if (hitpos.normal.y > 0)
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
