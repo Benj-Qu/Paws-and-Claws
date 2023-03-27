@@ -15,7 +15,6 @@ public class ThrowBaozi : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("baoziThrow", 2f, 3f);
     }
 
     // Update is called once per frame
