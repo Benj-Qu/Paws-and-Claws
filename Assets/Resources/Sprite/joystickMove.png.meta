@@ -1,0 +1,2863 @@
+fileFormatVersion: 2
+guid: 6330148c7b8ed490799435b7a84080ed
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: joystickMove_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 770
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d425803939194a03a2fd475ec6d8037
+      internalID: 1913156769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 770
+        width: 82
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f9e41a953ce4d66a8e7830b6c90c35
+      internalID: -277730481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_2
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 793
+        width: 106
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5e8459f20684574873c8252bb20523
+      internalID: 1907238851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_3
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 793
+        width: 83
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d2379ed986b482080e1bca6c8b3abc
+      internalID: -735100924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_4
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 793
+        width: 104
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca758aed26bb04dfba5ef561beaf9b97
+      internalID: -1409457054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_5
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 770
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d97c7e586e7c4d66874288188a8e355
+      internalID: -852136582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_6
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 793
+        width: 128
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b10c1adc351d43bd9435610275e6460
+      internalID: -1892335124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_7
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 801
+        width: 104
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8136302ead0794b3f95cec6a96b50779
+      internalID: -1194541752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_8
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 770
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7ec0bc6681748939bb589225ef43c5
+      internalID: 921375101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_9
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 770
+        width: 83
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadc86e9e666c4e5abb37eca6bd5d8ff
+      internalID: -1186378431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_10
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 793
+        width: 106
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bf00f1a21d44a17a7014d1c1f1cd6b
+      internalID: 1598867943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_11
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 793
+        width: 83
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870b4286a3dfa4f0e83389ec56eac49e
+      internalID: -196992319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_12
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 648
+        width: 105
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f11f7a0c54f948aaa7053f7f89e1b35
+      internalID: 1865009612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_13
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 626
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0b383a3428941ad9dd0f3d30967e87
+      internalID: 1125190430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 648
+        width: 128
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854485d1a0ece4371bab13874da618ab
+      internalID: 1321620587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_15
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 710
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfad47b72a5ea4425b06b0f006856b06
+      internalID: -489509572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_16
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 639
+        width: 114
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8725bbbfc986d4f56846ba651e710d2d
+      internalID: 103317099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_17
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 639
+        width: 112
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d115e382ef6084f4694e169c22dc7939
+      internalID: -518979253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_18
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 626
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507792d7c36634f50891f2faeafd286a
+      internalID: 344038955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_19
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 626
+        width: 83
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc644b932fdb4061a36b5b1f90324e2
+      internalID: -501877904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_20
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 648
+        width: 106
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0974d0b7aaae84856beccd0c656ead9f
+      internalID: -1389717150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_21
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 648
+        width: 83
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c639358eeb4ad4ffbba7f394be8755f4
+      internalID: 1069339270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_22
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 648
+        width: 105
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ddd08c581d84deda32d4ba7e09b0b2
+      internalID: 1531816183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_23
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 626
+        width: 83
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d04f1fde931463bae664bb6ca07751
+      internalID: 1710379848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_24
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 641
+        width: 100
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a971a6e255b41d1a8314b090626c68
+      internalID: 1701793173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 327
+        width: 4
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103693c56a4c14a21bf01253ba044cb9
+      internalID: -1178154195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_26
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 505
+        width: 128
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ff82526cc1a473489a47e7fb433dae
+      internalID: -1676405616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_27
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 567
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace6076702ce04298ae31f780946e9c3
+      internalID: -244204614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_28
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 495
+        width: 114
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eabf2ea6da2d4753ad5322dc746a1a0
+      internalID: 22691589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_29
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 495
+        width: 112
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca9b8fcb5fcb400bb4e55f8bb11f158
+      internalID: 1120968964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_30
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 510
+        width: 107
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84e657c3fbf64f62b864919f1c33ba6
+      internalID: 1964288447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_31
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 509
+        width: 107
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eee17379651e478484bdc7d43184827
+      internalID: -1689079391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_32
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 509
+        width: 107
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0616388943841e9bf9c2a52b2bb564
+      internalID: -1612331471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_33
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 509
+        width: 107
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abb50bce32db46d1bbb7daae1696fe7
+      internalID: -647005212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_34
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 492
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ccddb8c7de74e0eb4b4cc91d868c69
+      internalID: 532125108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_35
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 492
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c02634a29902493294f2039228959c4
+      internalID: 988334083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_36
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 492
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7545f37484a4f18b9e9dcd544f2a11
+      internalID: -1653877107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_37
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 492
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9afefa35d4a4946acefb8567b67539
+      internalID: -1049969910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_38
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 510
+        width: 107
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab9302fc25f7424e896a71c7f9ff46a
+      internalID: -686652131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_39
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 495
+        width: 104
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b907e5fffbe4cc0963c28c005ed185
+      internalID: -321593356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_40
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 365
+        width: 107
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696d73885b431468b886fbc1d3ae2536
+      internalID: 839983593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_41
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 365
+        width: 107
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc32b8cfd2ff44565b98786f7ef36f0a
+      internalID: 228369167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_42
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 365
+        width: 107
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46116244762bf4409aaa9f4206268e68
+      internalID: 403484038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_43
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 348
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d4c27286d934ed294fea2fc209821b
+      internalID: 1093426366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_44
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 348
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bccd0ccba3cd41698ead8888e74dd07
+      internalID: -1116615817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_45
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 348
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: becb833b9bd6546b49cc6788b5ce9955
+      internalID: 1615277721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_46
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 348
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911a819b238224bb5827c6e926f57625
+      internalID: -19044524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_47
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 380
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81a7d80e3db44437ad1077095a32739
+      internalID: 1480406390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_48
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 380
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85fcf4198dfe4553a00e87b1f3f337d
+      internalID: 1587831969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_49
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 380
+        width: 75
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3505e444ff244f69878268ad424b24
+      internalID: -2101575084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_50
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 381
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6284c9bbf0fb4221814964ed6ed5f57
+      internalID: -1319618663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_51
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 380
+        width: 104
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c477c4428c144663b62aa695ef1484c
+      internalID: -664462053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_52
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 380
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc99d0e45aaa74968ab3b8d6d32398c5
+      internalID: 1809429299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_53
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 381
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27a7166a09d642fd8eedae9e8a25118
+      internalID: -202909543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_54
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 380
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2948a1f3007f74e6bb777268dac9f86f
+      internalID: 958980648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_55
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 413
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caadf8877850d4ae5912dd2418a62790
+      internalID: -317481629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_56
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 381
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412f8d577fd364f92ad685b24821face
+      internalID: -1054097163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_57
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 381
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6a5cd0260d8458db352c20b32a26fc
+      internalID: -1889085441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_58
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 413
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2345180e7db1847cf89cf71567e071b0
+      internalID: -2142030008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_59
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 380
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1194903916f4eeda22927658e204da
+      internalID: -1107567090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_60
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 381
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54255b6b7651410da194ecd94ef670a
+      internalID: -1699848280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_61
+      rect:
+        serializedVersion: 2
+        x: 1964
+        y: 412
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c65ceccc3a744d891572c49ab52199
+      internalID: 1350169630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_62
+      rect:
+        serializedVersion: 2
+        x: 1996
+        y: 380
+        width: 78
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5033f8dd8b20f432da6bb5e737387f09
+      internalID: 871459355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_63
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 351
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef9ccc5c954b4292a1743e4f0626e10
+      internalID: -898625133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_64
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 349
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a348227271774f18b4a8d6bb18d379a
+      internalID: -2028322884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_65
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 349
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da55731274696412ead37dd05d210cfd
+      internalID: 561002733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_66
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 351
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08898fe3d41b24e26bf37e3a1e2e356e
+      internalID: 2026071218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_67
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 349
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12988962bf48b4e1983bae45c4340f9f
+      internalID: -1574737497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_68
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 348
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c8b4feb9f764027813af699e069a60
+      internalID: 1244369894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_69
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 351
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7c39d97f57f4925b57f3d29441aad2
+      internalID: 1035083087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_70
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 207
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f074847dfcfea408ca24794dcdb095e2
+      internalID: -1952535764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_71
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 262
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e640baf82873484aafb6c751cf408f8
+      internalID: -37701585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_72
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 239
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3d46c8608e3439c98ab8d1c8f66c2e
+      internalID: -1339582072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_73
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 241
+        width: 49
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568184ba3fa224483b2c99078ab39826
+      internalID: 1951323117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_74
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 263
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba687ced5b8b44a9f9258e4b5b5a32fe
+      internalID: -1146881060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_75
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 240
+        width: 46
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b092cab33d6154e2088584300857d36b
+      internalID: 392394300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_76
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310e9ec16c2b345efb76e01912eac60f
+      internalID: -735028997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_77
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 263
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed1b8aef22b4d440f85c45b6ed7df127
+      internalID: -135736447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_78
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbeda24c435f347c58f54b2edd169786
+      internalID: -21901281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_79
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec42aa860c67d44c08848d509650b32c
+      internalID: -121898801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_80
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 263
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cc69ca66e9d4b54aa6c29caba4a92a
+      internalID: 1050757732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_81
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 240
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402a52e7d2379427eabda7a8bec435af
+      internalID: -899408124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_82
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69ca619fbe9b4adf8d5c7b308768a1e
+      internalID: -872871171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_83
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 263
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1910a8f79f59f483797be9637c2ca4cd
+      internalID: 1847442720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_84
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 241
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06aa20ac5e85e4066a4cf778c1f658df
+      internalID: 436915111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_85
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 241
+        width: 49
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b80208efb9b4b4195aa07e805d9f33
+      internalID: -1098237743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_86
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 263
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1070a28067e45978dd02e65731f9e2
+      internalID: -244666523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_87
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 240
+        width: 46
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750f99028295946778b2e1c834ab3145
+      internalID: 1737340707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_88
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 239
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1461817532c18428cb0179605d2d5096
+      internalID: 1345196151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_89
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 263
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5356b0dfa818469a9e5f0a094795796
+      internalID: -1303376873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_90
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 239
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc299afb2e5bb4edda75ddfea5b395d2
+      internalID: -847803296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_91
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 241
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55283ae1d0d004aa19de296850cfde9f
+      internalID: -1376407268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_92
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 263
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ad69bd5cecd4e5da5922e2dac98869
+      internalID: 423350551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_93
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58019e84d6bbe464db3dc1986754e69d
+      internalID: -1705606277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_94
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5d8aabbcc6b450ba448d00ea615f4f
+      internalID: 856863237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_95
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 263
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25ece258f5b2482e92f713428530670
+      internalID: 205994208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_96
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de090f58199b4a4982f1d83e6da7f2a
+      internalID: -1676133662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_97
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 240
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2176ef7c0597e4dbca2dce5e7ff461ad
+      internalID: -1216103759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_98
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 240
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c5679b28f9d4478959db8bf04ab267
+      internalID: -336700677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_99
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468dbc942175149c79a51dc1e59ed8a7
+      internalID: -885611813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_100
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 263
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4272be60abef8484b880e663b6dad63a
+      internalID: -1455501422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_101
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 240
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c111d6350b53f421daf18c1fb3038916
+      internalID: -1383451338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_102
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 207
+        width: 68
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973b0324c2ab14be08e72f08c8c719e6
+      internalID: 1569556861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_103
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 198
+        width: 69
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c171055f80f134af1a0dfe351de27079
+      internalID: -1700415904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_104
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 207
+        width: 69
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc25b927b4f9a4d88a4633b9e4c5f3d5
+      internalID: -78866610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_105
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 207
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5bf2e0c2c041469591207884a1c8a23
+      internalID: 1220873987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_106
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 207
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ba8f146d5a14b48aec267bd2cf38d2
+      internalID: 976311923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_107
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 207
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3596440251c4c07a20ef57133397a7
+      internalID: -16171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_108
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 207
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d90e27c48cda4d53a1b7a89d863a414
+      internalID: 1019453731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_109
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 207
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c660ba6ee4a40629126bbb6ca1d13c
+      internalID: 1659372134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_110
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 207
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e95b3f084a94c8caa7278886e42bde
+      internalID: 1003141367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_111
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 207
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6f83799c2ff4cd9b76b420773f01bc
+      internalID: 400441343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_112
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 207
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0a591fadd524d22bf7e40263c79770
+      internalID: 859888744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_113
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 207
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabbbebacaf2b43f8a742493f3e0d7fb
+      internalID: 742439353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_114
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 207
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f937f89125e43d5b1a062109c876ee
+      internalID: -29469903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_115
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 63
+        width: 69
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02932d7165fa44b3fb9968aec7e98146
+      internalID: 1865708593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_116
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 63
+        width: 69
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de5b69660d884ece9ea6124f9e8cfce
+      internalID: -1596871503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_117
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 63
+        width: 69
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b07597ac23a49209fe0225733e60a3
+      internalID: 1341160449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_118
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 80
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba183f24026c40b688703eee219b0d8
+      internalID: -584385864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_119
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 80
+        width: 68
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710644a9532d94f6c89f385982fa9f95
+      internalID: 423815722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_120
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 80
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2741ba7d771544b0865166cf2f0244e
+      internalID: 1064227085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_121
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 105
+        width: 68
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4876630f1913a49ec84584826d49e299
+      internalID: -1950670241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_122
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 81
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccf74e37020c4fbfb989c5eaed5bc01
+      internalID: -122992803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickMove_123
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 89
+        width: 68
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e1e80f1e75341a59ad159b5a51c1a9
+      internalID: 2136308327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      joystickMove_94: 856863237
+      joystickMove_107: -16171
+      joystickMove_91: -1376407268
+      joystickMove_5: -852136582
+      joystickMove_41: 228369167
+      joystickMove_8: 921375101
+      joystickMove_84: 436915111
+      joystickMove_77: -135736447
+      joystickMove_88: 1345196151
+      joystickMove_30: 1964288447
+      joystickMove_123: 2136308327
+      joystickMove_105: 1220873987
+      joystickMove_82: -872871171
+      joystickMove_110: 1003141367
+      joystickMove_120: 1064227085
+      joystickMove_49: -2101575084
+      joystickMove_61: 1350169630
+      joystickMove_76: -735028997
+      joystickMove_53: -202909543
+      joystickMove_89: -1303376873
+      joystickMove_75: 392394300
+      joystickMove_48: 1587831969
+      joystickMove_12: 1865009612
+      joystickMove_18: 344038955
+      joystickMove_10: 1598867943
+      joystickMove_97: -1216103759
+      joystickMove_81: -899408124
+      joystickMove_16: 103317099
+      joystickMove_9: -1186378431
+      joystickMove_62: 871459355
+      joystickMove_25: -1178154195
+      joystickMove_83: 1847442720
+      joystickMove_106: 976311923
+      joystickMove_6: -1892335124
+      joystickMove_31: -1689079391
+      joystickMove_0: 1913156769
+      joystickMove_2: 1907238851
+      joystickMove_38: -686652131
+      joystickMove_52: 1809429299
+      joystickMove_118: -584385864
+      joystickMove_112: 859888744
+      joystickMove_14: 1321620587
+      joystickMove_15: -489509572
+      joystickMove_73: 1951323117
+      joystickMove_33: -647005212
+      joystickMove_24: 1701793173
+      joystickMove_50: -1319618663
+      joystickMove_68: 1244369894
+      joystickMove_45: 1615277721
+      joystickMove_36: -1653877107
+      joystickMove_39: -321593356
+      joystickMove_66: 2026071218
+      joystickMove_113: 742439353
+      joystickMove_86: -244666523
+      joystickMove_20: -1389717150
+      joystickMove_64: -2028322884
+      joystickMove_1: -277730481
+      joystickMove_111: 400441343
+      joystickMove_40: 839983593
+      joystickMove_58: -2142030008
+      joystickMove_46: -19044524
+      joystickMove_26: -1676405616
+      joystickMove_55: -317481629
+      joystickMove_104: -78866610
+      joystickMove_71: -37701585
+      joystickMove_34: 532125108
+      joystickMove_78: -21901281
+      joystickMove_56: -1054097163
+      joystickMove_27: -244204614
+      joystickMove_51: -664462053
+      joystickMove_108: 1019453731
+      joystickMove_90: -847803296
+      joystickMove_98: -336700677
+      joystickMove_4: -1409457054
+      joystickMove_115: 1865708593
+      joystickMove_114: -29469903
+      joystickMove_3: -735100924
+      joystickMove_54: 958980648
+      joystickMove_122: -122992803
+      joystickMove_100: -1455501422
+      joystickMove_95: 205994208
+      joystickMove_19: -501877904
+      joystickMove_102: 1569556861
+      joystickMove_59: -1107567090
+      joystickMove_23: 1710379848
+      joystickMove_85: -1098237743
+      joystickMove_72: -1339582072
+      joystickMove_70: -1952535764
+      joystickMove_22: 1531816183
+      joystickMove_99: -885611813
+      joystickMove_101: -1383451338
+      joystickMove_37: -1049969910
+      joystickMove_57: -1889085441
+      joystickMove_74: -1146881060
+      joystickMove_69: 1035083087
+      joystickMove_7: -1194541752
+      joystickMove_17: -518979253
+      joystickMove_29: 1120968964
+      joystickMove_109: 1659372134
+      joystickMove_11: -196992319
+      joystickMove_28: 22691589
+      joystickMove_44: -1116615817
+      joystickMove_63: -898625133
+      joystickMove_92: 423350551
+      joystickMove_79: -121898801
+      joystickMove_96: -1676133662
+      joystickMove_60: -1699848280
+      joystickMove_103: -1700415904
+      joystickMove_119: 423815722
+      joystickMove_121: -1950670241
+      joystickMove_67: -1574737497
+      joystickMove_35: 988334083
+      joystickMove_13: 1125190430
+      joystickMove_65: 561002733
+      joystickMove_42: 403484038
+      joystickMove_47: 1480406390
+      joystickMove_87: 1737340707
+      joystickMove_117: 1341160449
+      joystickMove_21: 1069339270
+      joystickMove_80: 1050757732
+      joystickMove_93: -1705606277
+      joystickMove_43: 1093426366
+      joystickMove_116: -1596871503
+      joystickMove_32: -1612331471
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
