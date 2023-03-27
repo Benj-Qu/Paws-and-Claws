@@ -31,18 +31,15 @@ public class ThrowObjectControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name != "Snowman" && collision.gameObject.name != "panda")
+        Debug.Log(collision.gameObject.tag+"========");
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Flag") && !collision.gameObject.CompareTag("Box"))
         {
+            Destroy(this.gameObject);
+        }
 
-            if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Flag") && !collision.gameObject.CompareTag("Box"))
-            {
-                Destroy(this.gameObject);
-            }
-
-            if (collision.gameObject.CompareTag("Wall"))
-            {
-                Destroy(this.gameObject);
-            }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
         }
     }
 
