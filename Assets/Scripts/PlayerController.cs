@@ -464,14 +464,14 @@ public class PlayerController : MonoBehaviour
     public void activate()
     {
         active = true;
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void deactivate()
     {
         Debug.Log("Deactivate");
         active = false;
-        rb.bodyType = RigidbodyType2D.Static;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     public void LeaveFloor()
