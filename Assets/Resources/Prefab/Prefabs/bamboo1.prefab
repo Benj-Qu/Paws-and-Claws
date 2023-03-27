@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2017975431336475573}
   - component: {fileID: 3962511450340781793}
   - component: {fileID: 2894249087719539799}
+  - component: {fileID: 2803614837043628210}
   m_Layer: 0
   m_Name: bamboo1
   m_TagString: Block
@@ -146,3 +147,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320a5693b13354ffc8290615929df500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &2803614837043628210
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874668575125315256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.059900284, y: 0.09983444}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.3, y: 6.28}
+    newSize: {x: 6.28, y: 11.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.4280434, y: 0.2898903}
+  m_EdgeRadius: 0

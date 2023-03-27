@@ -158,6 +158,8 @@ public class GameController : MonoBehaviour
 
     private IEnumerator Win()
     {
+        if (flagController) flagController.DestroyFlags();
+        ScorePanel.SetActive(false);
         if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
         {
             int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
@@ -272,6 +274,7 @@ public class GameController : MonoBehaviour
     {
         // TODO: Add coroutine for animation
         // SceneManager.LoadScene("Level" + level);
+        progressBar.gameObject.SetActive(false);
         StartCoroutine(Win());
     }
 

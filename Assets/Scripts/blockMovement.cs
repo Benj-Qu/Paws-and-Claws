@@ -71,6 +71,7 @@ public class blockMovement : MonoBehaviour
             if (block_status == 0)
             {
                 // block not collide with others, show green box
+                if (name == "LanternPoint(Clone)") Debug.Log("LanternPoint(Clone)" + block_status);
                 collisionDetected = false;
                 for (var i = transform.childCount - 1; i >= 0; i--)
                 {
@@ -83,6 +84,7 @@ public class blockMovement : MonoBehaviour
             else if(block_status > 0)
             {
                 // block collide with others, show red box
+                if (name == "LanternPoint(Clone)") Debug.Log("LanternPoint(Clone)" + block_status);
                 collisionDetected = true;
                 for (var i = transform.childCount - 1; i >= 0; i--)
                 {
@@ -309,7 +311,8 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // if collide with other blocks
-        if(transform.tag == "Bomb")
+        if (name == "LanternPoint(Clone)" && other.name == "Lantern") return;
+        if (transform.tag == "Bomb")
         {
             // if current block is bomb, can't be placed on mountain
             if(!set && other.CompareTag("Mountain"))
@@ -346,6 +349,7 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         // if collide with other blocks
+        if (name == "LanternPoint(Clone)" && other.name == "Lantern") return;
         if (transform.tag == "Bomb")
         {
             // if current block is bomb, can't be placed on mountain
@@ -381,6 +385,7 @@ public class blockMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         // if collide with other blocks
+        if (name == "LanternPoint(Clone)" && other.name == "Lantern") return;
         if (transform.tag == "Bomb")
         {
             // if current block is bomb, can't be placed on mountain

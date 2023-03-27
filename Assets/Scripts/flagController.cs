@@ -64,6 +64,7 @@ public class flagController : MonoBehaviour
         for (var i = transform.childCount - 1; i >= 0; i--)
         {
             GameObject flag = transform.GetChild(i).gameObject;
+            flag.GetComponent<flagTransformer>().showAddScore.textObject.SetActive(false);
             flag.SetActive(false);
         }
     }
