@@ -11,7 +11,8 @@ public class ThrowBaozi : MonoBehaviour
     // Start is called before the first frame update
 
     public float SpeedUp = 3f;
-    public float verticalSpeed = 2f;
+    public float MaxHorizontalSpeed = 2f;
+    public float MinHorizontalSpeed = 1f;
 
     void Start()
     {
@@ -40,6 +41,11 @@ public class ThrowBaozi : MonoBehaviour
         Debug.Log("HIIII");
         GameObject pump = Instantiate(Baozi, pos, Quaternion.identity);
         Rigidbody2D rgbd = pump.GetComponent<Rigidbody2D>();
-        rgbd.velocity = new Vector2(Random.Range(-verticalSpeed, verticalSpeed), SpeedUp);
+        float v_x;
+        do
+        {
+            v_x = Random.Range(-MaxHorizontalSpeed, MaxHorizontalSpeed);
+        } while (v_x < MinHorizontalSpeed && v_x > -MinHorizontalSpeed);
+        rgbd.velocity = new Vector2(v_x, SpeedUp);
     }
 }
