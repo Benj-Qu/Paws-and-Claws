@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Trial Level__.unity
     guid: 1eb5c8d776f2344719e6048b4db3c6b7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cover.unity
     guid: 7bdf14c6d3d784c97b30f7a062497432
   - enabled: 1
