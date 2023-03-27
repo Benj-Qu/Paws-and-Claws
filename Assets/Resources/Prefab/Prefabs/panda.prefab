@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4404146626948587048}
   - component: {fileID: 4404146626948587049}
   - component: {fileID: 4404146626948587050}
+  - component: {fileID: 7521389949625615103}
   m_Layer: 0
   m_Name: panda
   m_TagString: Untagged
@@ -128,6 +129,32 @@ MonoBehaviour:
   Pumpkin: {fileID: 0}
   Fork: {fileID: 0}
   left: 1
+--- !u!114 &7521389949625615103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404146626948587046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8bb9703286b44be8acbce54012a2f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block_id: 0
+  block_side: 0
+  selected: 0
+  set: 0
+  collisionDetected: 0
+  isBomb: 0
+  alpha: 0.5
+  block_status: 0
+  follower_distance: 1
+  follower_distance_x: 0
+  UpOffset: 0
+  DownOffset: 0
+  LeftOffset: 0
+  RightOffset: 0
 --- !u!1 &7857471338443132132
 GameObject:
   m_ObjectHideFlags: 0
