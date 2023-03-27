@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class blockMovement : MonoBehaviour
 {
@@ -40,7 +41,9 @@ public class blockMovement : MonoBehaviour
         // change the block to be half transparent
         if(GetComponent<SpriteRenderer>() != null)
         {
-            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+            Color temp = GetComponent<SpriteRenderer>().color;
+            temp.a = 0.5f;
+            GetComponent<SpriteRenderer>().color = temp;
 
         }
         for (var i = transform.childCount - 1; i >= 0; i--)
@@ -238,14 +241,18 @@ public class blockMovement : MonoBehaviour
             // change the block to be solid
             if (GetComponent<SpriteRenderer>() != null)
             {
-                GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                Color temp = GetComponent<SpriteRenderer>().color;
+                temp.a = 1f;
+                GetComponent<SpriteRenderer>().color = temp;
 
             }
             for (var i = transform.childCount - 1; i >= 0; i--)
             {
                 if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
                 {
-                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                    Color temp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
+                    temp.a = 1f;
+                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = temp;
                 }
             }
         }
@@ -259,14 +266,17 @@ public class blockMovement : MonoBehaviour
                 // change the block to be solid
                 if (GetComponent<SpriteRenderer>() != null)
                 {
-                    GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-
+                    Color temp = GetComponent<SpriteRenderer>().color;
+                    temp.a = 1f;
+                    GetComponent<SpriteRenderer>().color = temp;
                 }
                 for (var i = transform.childCount - 1; i >= 0; i--)
                 {
                     if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
                     {
-                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                        Color temp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
+                        temp.a = 1f;
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = temp;
                     }
                 }
             }
