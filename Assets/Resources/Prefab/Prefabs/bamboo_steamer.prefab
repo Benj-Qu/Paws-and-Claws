@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Baozi: {fileID: 3121696257470706153, guid: c36a999adab9d4f0c9532f9352babbe9, type: 3}
   SpeedUp: 3
-  MaxHorizontalSpeed: 2.5
+  MaxHorizontalSpeed: 5
   MinHorizontalSpeed: 1
 --- !u!114 &-8904916161484019111
 MonoBehaviour:

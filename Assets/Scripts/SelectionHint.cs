@@ -31,7 +31,7 @@ public class SelectionHint : MonoBehaviour
     void Start()
     {
         // TODO: change the logic according to tutorial name
-        if (GameController.instance.level == "Winter Land") // TODO: add more
+        if (GameController.instance.level == "Winter Land" || GameController.instance.level == "Lantern Festival") // TODO: add more
         {
             akey.SetActive(false);
             dkey.SetActive(false);
