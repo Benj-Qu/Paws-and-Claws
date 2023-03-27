@@ -42,7 +42,7 @@ public class ThrowPumpkin : MonoBehaviour
     {
         seed = Random.Range(0, 2);
         Vector3 pos = this.transform.position;
-        //pos += new Vector3(0, 1.5f, 0);
+        pos += new Vector3(1.5f, 0, 0);
         GameObject pump;
         if (left == false)
         {
@@ -66,7 +66,7 @@ public class ThrowPumpkin : MonoBehaviour
     {
         seed = Random.Range(0, 2);
         Vector3 pos = this.transform.position;
-        //pos += new Vector3(0, 1.5f, 0);
+        pos += new Vector3(-1.5f, 0, 0);
         GameObject pump;
         if (left == true)
         {
