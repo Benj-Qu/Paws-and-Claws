@@ -284,7 +284,96 @@ public class AllCards : MonoBehaviour
             cardRoundSetting.Add(bf3);
             return;
         }
-        
+
+        if (level == "ForAnimation")
+        {
+            // big round 1
+            // small round 1
+            CardRound cardRounda1_1 = new CardRound(2, 0, 1, 1);
+            CardRound cardRounda1_2 = new CardRound(5, 1, 1, 2);
+            CardRound cardRounda1_3 = new CardRound(2, 2, 2, 1);
+            CardRound cardRounda1_4 = new CardRound(5, 3, 2, 2);
+            List<CardRound> sa11 = new List<CardRound>();
+            sa11.Add(cardRounda1_1);
+            sa11.Add(cardRounda1_2);
+            sa11.Add(cardRounda1_3);
+            sa11.Add(cardRounda1_4);
+
+            // // small round 2
+            // CardRound cardRoundf1_5 = new CardRound(18, 4, 1, 1);
+            // CardRound cardRoundf1_6 = new CardRound(19, 5, 1, 2);
+            // CardRound cardRoundf1_7 = new CardRound(18, 6, 2, 1);
+            // CardRound cardRoundf1_8 = new CardRound(19, 7, 2, 2);
+            // List<CardRound> sf12 = new List<CardRound>();
+            // sf12.Add(cardRoundf1_5);
+            // sf12.Add(cardRoundf1_6);
+            // sf12.Add(cardRoundf1_7);
+            // sf12.Add(cardRoundf1_8);
+
+            List<List<CardRound>> ba1 = new List<List<CardRound>>();
+            ba1.Add(sa11);
+            // bf1.Add(sf12);
+
+            // big round 2
+            // small round 1
+            // CardRound cardRoundf2_1 = new CardRound(6, 8, 1, 1);
+            // CardRound cardRoundf2_2 = new CardRound(18, 9, 1, 2);
+            // CardRound cardRoundf2_3 = new CardRound(8, 10, 2, 1);
+            // CardRound cardRoundf2_4 = new CardRound(15, 11, 2, 2);
+            // List<CardRound> sf21 = new List<CardRound>();
+            // sf21.Add(cardRoundf2_1);
+            // sf21.Add(cardRoundf2_2);
+            // sf21.Add(cardRoundf2_3);
+            // sf21.Add(cardRoundf2_4);
+
+            //     // small round 2
+            // CardRound cardRound2_5 = new CardRound(2, 12, 1, 1);
+            // CardRound cardRound2_6 = new CardRound(3, 13, 1, 2);
+            // CardRound cardRound2_7 = new CardRound(4, 14, 2, 1);
+            // CardRound cardRound2_8 = new CardRound(0, 15, 2, 2);
+            // List<CardRound> s22 = new List<CardRound>();
+            // s22.Add(cardRound2_5);
+            // s22.Add(cardRound2_6);
+            // s22.Add(cardRound2_7);
+            // s22.Add(cardRound2_8);
+
+            // List<List<CardRound>> bf2 = new List<List<CardRound>>();
+            // bf2.Add(sf21);
+            // b2.Add(s22);
+
+            // big round 3
+            // small round 1
+            // CardRound cardRoundf3_1 = new CardRound(5, 16, 1, 1);
+            // CardRound cardRoundf3_2 = new CardRound(4, 17, 1, 2);
+            // CardRound cardRoundf3_3 = new CardRound(7, 18, 2, 1);
+            // CardRound cardRoundf3_4 = new CardRound(4, 19, 2, 2);
+            // List<CardRound> sf31 = new List<CardRound>();
+            // sf31.Add(cardRoundf3_1);
+            // sf31.Add(cardRoundf3_2);
+            // sf31.Add(cardRoundf3_3);
+            // sf31.Add(cardRoundf3_4);
+
+            // // small round 2
+            // CardRound cardRound3_5 = new CardRound(2, 20, 1, 1);
+            // CardRound cardRound3_6 = new CardRound(3, 21, 1, 2);
+            // CardRound cardRound3_7 = new CardRound(4, 22, 2, 1);
+            // CardRound cardRound3_8 = new CardRound(0, 23, 2, 2);
+            // List<CardRound> s32 = new List<CardRound>();
+            // s32.Add(cardRound3_5);
+            // s32.Add(cardRound3_6);
+            // s32.Add(cardRound3_7);
+            // s32.Add(cardRound3_8);
+
+            // List<List<CardRound>> bf3 = new List<List<CardRound>>();
+            // bf3.Add(sf31);
+            // // b3.Add(s32);
+
+            cardRoundSetting = new List<List<List<CardRound>>>();
+            cardRoundSetting.Add(ba1);
+            // cardRoundSetting.Add(bf2);
+            // cardRoundSetting.Add(bf3);
+            return;
+        }
         // other scene, including tutorial and trail level use the same currently
         
         // big round 1

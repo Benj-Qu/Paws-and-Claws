@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7932539526704889794}
   - component: {fileID: 1558303491585332823}
   - component: {fileID: 8095882985462874584}
+  - component: {fileID: 3846838335337784664}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -90,3 +91,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block_id: -1
+  index: -1
+  animator: {fileID: 3846838335337784664}
+  playDescriptionAnimation: 1
+--- !u!95 &3846838335337784664
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819468211118062164}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c330c73dcbffb41a9afa3997027b0748, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
