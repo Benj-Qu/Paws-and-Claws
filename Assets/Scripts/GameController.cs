@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
     public ProgressBar_Main progressBar;
 
     public GameObject ScorePanel;
+
+    private TextMeshProUGUI RoundTextHint;
     // Start is called before the first frame update
 
     private void Awake()
@@ -105,6 +107,7 @@ public class GameController : MonoBehaviour
         ScorePanel = GameObject.Find("ScorePanel");
         if (ScorePanel) ScorePanel.SetActive(false);
         if (WinImage.activeSelf == false) WinImage.SetActive(true);
+        RoundTextHint = GameObject.Find("RoundTextHint").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -355,6 +358,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator ShowScore()
     {
+        RoundTextHint.text = "";
         round_big++;
         stage = 0;
         int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
@@ -390,6 +394,7 @@ public class GameController : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         WinImage.SetActive(true);
         yield return new WaitForSeconds(2f);
+        RoundTextHint.text = "Round " + round_big + " / 3";
         WinImage.GetComponent<WinImage>().reset();
         WinImage.SetActive(false);
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
