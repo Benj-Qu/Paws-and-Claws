@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public KeyCode LeftButton;
     public KeyCode RightButton;
     public KeyCode JumpButton;
-    public KeyCode FireButton;
 
     public AudioClip player_die;
 
@@ -72,7 +71,6 @@ public class PlayerController : MonoBehaviour
         if (isActive())
         {
             UpdateVelocity();
-            Fire();
         }
         if (gameObject.transform.position.y < DieAltitude)
         {
@@ -100,16 +98,6 @@ public class PlayerController : MonoBehaviour
             onRightWall = false;
             onIce = false;
             floorV = 0;
-        }
-    }
-
-    private void Fire()
-    {
-        string joystickString = joystickNumber.ToString();
-        if ((Input.GetAxis("Fire" + joystickString) != 0) || Input.GetKey(FireButton))
-        {
-            Debug.Log("Fire" + joystickString);
-            // TODO
         }
     }
 
