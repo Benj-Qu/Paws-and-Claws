@@ -16,6 +16,7 @@ public class CardSelection : MonoBehaviour
     public GameObject progressBar;
     public bool roundUp = false;
     public blockController BlockController = null;
+    public CardSelectionController cardSelectionController;
 
     private GameObject _card1;
     private GameObject _card2;
@@ -69,6 +70,7 @@ public class CardSelection : MonoBehaviour
         {
             _card1Script.CardDisappear();
             _card2Script.CardDisappear();
+            cardSelectionController.Disappear();
             
             // destroy progressbar if existed
             if (progressBar) Destroy(progressBar);
@@ -93,43 +95,55 @@ public class CardSelection : MonoBehaviour
         // left player
         if (whichPlayer == 1)
         {
-            float joystickInput = Input.GetAxis("Horizontal1");
-            if (Keyboard.current.aKey.wasPressedThisFrame || joystickInput < 0)
+            // float joystickInput = Input.GetAxis("Horizontal1");
+            if (Input.GetButtonDown("A1") || Keyboard.current.zKey.wasPressedThisFrame)
             {
-                // TODO: left selected
-                AddToInventory(1, _card1Script.block_id, true, _card1Script.index);
-                AddToInventory(2, _card2Script.block_id, false, _card2Script.index);
-                // next round
-                Round();
-            }
-            else if (Keyboard.current.dKey.wasPressedThisFrame || joystickInput > 0)
-            {
-                // TODO: right selected
-                AddToInventory(1, _card2Script.block_id, true, _card2Script.index);
-                AddToInventory(2, _card1Script.block_id, false, _card1Script.index);
-                // next round
-                Round();
+                // if (Keyboard.current.aKey.wasPressedThisFrame || joystickInput < 0)
+                if (cardSelectionController.activeButton == 0)
+                {
+                    // TODO: left selected
+                    AddToInventory(1, _card1Script.block_id, true, _card1Script.index);
+                    AddToInventory(2, _card2Script.block_id, false, _card2Script.index);
+                    // next round
+                    Round();
+                }
+                // else if (Keyboard.current.dKey.wasPressedThisFrame || joystickInput > 0)
+                else
+                {
+                    // TODO: right selected
+                    AddToInventory(1, _card2Script.block_id, true, _card2Script.index);
+                    AddToInventory(2, _card1Script.block_id, false, _card1Script.index);
+                    // next round
+                    Round();
+                }
+                cardSelectionController.Reset();
             }
         }
         // right player
         else
         {
-            float joystickInput = Input.GetAxis("Horizontal2");
-            if (Keyboard.current.leftArrowKey.wasPressedThisFrame || joystickInput < 0)
+            // float joystickInput = Input.GetAxis("Horizontal2");
+            if (Input.GetButtonDown("A2") || Keyboard.current.mKey.wasPressedThisFrame)
             {
-                // TODO: left selected
-                AddToInventory(2, _card1Script.block_id, true, _card1Script.index);
-                AddToInventory(1, _card2Script.block_id, false, _card2Script.index);
-                // next round
-                Round();
-            }
-            else if (Keyboard.current.rightArrowKey.wasPressedThisFrame || joystickInput > 0)
-            {
-                // TODO: right selected
-                AddToInventory(2, _card2Script.block_id, true, _card2Script.index);
-                AddToInventory(1, _card1Script.block_id, false, _card1Script.index);
-                // next round
-                Round();
+                // if (Keyboard.current.leftArrowKey.wasPressedThisFrame || joystickInput < 0)
+                if (cardSelectionController.activeButton == 0)
+                {
+                    // TODO: left selected
+                    AddToInventory(2, _card1Script.block_id, true, _card1Script.index);
+                    AddToInventory(1, _card2Script.block_id, false, _card2Script.index);
+                    // next round
+                    Round();
+                }
+                // else if (Keyboard.current.rightArrowKey.wasPressedThisFrame || joystickInput > 0)
+                else
+                {
+                    // TODO: right selected
+                    AddToInventory(2, _card2Script.block_id, true, _card2Script.index);
+                    AddToInventory(1, _card1Script.block_id, false, _card1Script.index);
+                    // next round
+                    Round();
+                }
+                cardSelectionController.Reset();
             }
         }
     }
