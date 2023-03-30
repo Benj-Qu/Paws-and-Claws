@@ -50,7 +50,7 @@ public class CardSelection : MonoBehaviour
                     _card1Script = _card1.GetComponent<Card>();
                 }
             }
-            else
+            else if (child.gameObject.name == "Choice2")
             {
                 foreach (Transform child_ in child.gameObject.transform)
                 {
