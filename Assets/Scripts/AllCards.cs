@@ -109,7 +109,7 @@ public class AllCards : MonoBehaviour
         {
             // big round 1
             // small round 1
-            CardRound cardRoundf1_1 = new CardRound(9, 0,  1, 1);
+            CardRound cardRoundf1_1 = new CardRound(10, 0,  1, 1);
             CardRound cardRoundf1_2 = new CardRound(10, 1,  1, 2);
             CardRound cardRoundf1_3 = new CardRound(14, 2,  2, 1);
             CardRound cardRoundf1_4 = new CardRound(9, 3,  2, 2);
