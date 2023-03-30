@@ -15241,12 +15241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676240a2a220d4ff8828a5776967c536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag_UM: {fileID: 21300000, guid: f11e681e0816e46a48a21c4486bb519a, type: 3}
-  flag_Ohio: {fileID: 21300000, guid: d0f8c8420d2324350a5f9d3d04ed4d95, type: 3}
+  flag_1: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
+  flag_2: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
   flag_white: {fileID: 21300000, guid: 956cb95a8c0e242d290cf0c317942224, type: 3}
   player_1_audio: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
   player_2_audio: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
   showAddScore: {fileID: 6070350633266711485}
+  ControlPeriod: 5
 --- !u!61 &3566844923214173485
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15376,12 +15377,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676240a2a220d4ff8828a5776967c536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag_UM: {fileID: 21300000, guid: f11e681e0816e46a48a21c4486bb519a, type: 3}
-  flag_Ohio: {fileID: 21300000, guid: d0f8c8420d2324350a5f9d3d04ed4d95, type: 3}
+  flag_1: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
+  flag_2: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
   flag_white: {fileID: 21300000, guid: 956cb95a8c0e242d290cf0c317942224, type: 3}
   player_1_audio: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
   player_2_audio: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
   showAddScore: {fileID: 8725423578550241011}
+  ControlPeriod: 5
 --- !u!61 &6605174224897850622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15562,12 +15564,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676240a2a220d4ff8828a5776967c536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag_UM: {fileID: 21300000, guid: f11e681e0816e46a48a21c4486bb519a, type: 3}
-  flag_Ohio: {fileID: 21300000, guid: d0f8c8420d2324350a5f9d3d04ed4d95, type: 3}
+  flag_1: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
+  flag_2: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
   flag_white: {fileID: 21300000, guid: 956cb95a8c0e242d290cf0c317942224, type: 3}
   player_1_audio: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
   player_2_audio: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
   showAddScore: {fileID: 2218025576968466405}
+  ControlPeriod: 5
 --- !u!61 &6855990352016724355
 BoxCollider2D:
   m_ObjectHideFlags: 0
