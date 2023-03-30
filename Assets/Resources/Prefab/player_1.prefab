@@ -165,10 +165,12 @@ MonoBehaviour:
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
+  FireButton: 106
   player_die: {fileID: 8300000, guid: b5a3125316a3d41c8bb291273cd78df7, type: 3}
   showAddScore: {fileID: 6658275036396007916}
   DeathPenalty: -5
   joystickNumber: 1
+  joystickNumberOther: 2
 --- !u!114 &6658275035224939859
 MonoBehaviour:
   m_ObjectHideFlags: 0

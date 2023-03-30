@@ -787,10 +787,12 @@ MonoBehaviour:
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
+  FireButton: 32
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
   joystickNumber: 2
+  joystickNumberOther: 1
 --- !u!50 &265125346
 Rigidbody2D:
   serializedVersion: 4
@@ -829,7 +831,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.39, y: 4.58}
+    oldSize: {x: 3.14, y: 3.64}
     newSize: {x: 4.39, y: 4.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4503,10 +4505,12 @@ MonoBehaviour:
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
+  FireButton: 106
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
   joystickNumber: 1
+  joystickNumberOther: 2
 --- !u!50 &1551339301
 Rigidbody2D:
   serializedVersion: 4
@@ -4545,7 +4549,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.39, y: 4.43}
+    oldSize: {x: 2.99, y: 3.59}
     newSize: {x: 4.39, y: 4.43}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
