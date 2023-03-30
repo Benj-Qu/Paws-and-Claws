@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,33 +41,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private GameController gc;
-    private PlayerXboxControls controls;
     private bool collectInvinciblePowerUp = false;
-
-    public int joystickNumber;
-
-    // private void Awake() {
-    //     controls = new PlayerXboxControls();
-    //     controls.Gameplay.Jump.performed += ctx => XboxCheckAndJump();
-    //     controls.Gameplay.Move.performed += ctx => XboxCheckAndJump();
-    // }
-    //
-    // private void OnEnable() {
-    //     controls.Gameplay.Enable();
-    // }
-    //
-    // private void OnDisable() {
-    //     controls.Gameplay.Disable();
-    // }
-    //
-    // private void XboxCheckAndJump() {
-    //     if (jumpable())
-    //     {
-    //         jump();
-    //     }
-    // }
     private AudioSource pas;
 
+    public int joystickNumber;
     private void Start()
     {
         jumpTimes = MaxJumpTimes;
@@ -96,6 +72,17 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+        string joystickString = joystickNumber.ToString();
+        if (Input.GetAxis("Fire" + joystickString) != 0)
+        {
+            Debug.Log("Fire"+joystickString);
+            Fire();
+        }
+    }
+
+    private void Fire()
+    {
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -323,7 +310,8 @@ public class PlayerController : MonoBehaviour
             //rb.velocity = new Vector2(floorV, rb.velocity.y);
         }
         // Handle Jumping
-        if ((Input.GetKeyDown(JumpButton) || Input.GetButtonDown("A" + joystickString)) && jumpable())
+        // if ((Input.GetKeyDown(JumpButton) || Input.GetButtonDown("A" + joystickString)) && jumpable())
+        if ((Input.GetKeyDown(JumpButton)) && jumpable())
         {
             Debug.Log("A" + joystickString);
             jump();
@@ -346,7 +334,7 @@ public class PlayerController : MonoBehaviour
         return other.CompareTag("Player");
     }
 
-    private void jump()
+    public void jump()
     {
         if (onFloor)
         {
@@ -387,7 +375,7 @@ public class PlayerController : MonoBehaviour
         active = true;
     }
 
-    private bool jumpable()
+    public bool jumpable()
     {
         return (jumpTimes > 0);
     }
