@@ -45,6 +45,7 @@ public class Selection : MonoBehaviour
             // placement begin
             Debug.Log("stage, selection call");
             gameController.StartGame();
+            EventBus.Publish<DoneWithSelection>(new DoneWithSelection(GameController.instance.round_big));
         }
     }
 
@@ -67,4 +68,14 @@ public class Selection : MonoBehaviour
         // upon the next round, reinitialize 
     }
     
+}
+
+class DoneWithSelection
+{
+    public int big_round = 0;
+
+    public DoneWithSelection(int big_round_)
+    {
+        big_round = big_round_;
+    }
 }
