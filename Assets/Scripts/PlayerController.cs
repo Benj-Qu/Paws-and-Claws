@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     private GameController gc;
     private PlayerXboxControls controls;
+    private bool collectInvinciblePowerUp = false;
 
     public int joystickNumber;
 
@@ -498,11 +499,29 @@ public class PlayerController : MonoBehaviour
         rb.mass *= SizeUp;
         gameObject.transform.localScale *= SizeUp;
         invincible = Invincible;
+        if (collectInvinciblePowerUp == false && Invincible)
+        {
+            collectInvinciblePowerUp = true;
+        }
         yield return new WaitForSeconds(period);
         Speed /= SpeedUp;
         JumpSpeed /= JumpUp;
         invincible = false;
         rb.mass /= SizeUp;
         gameObject.transform.localScale /= SizeUp;
+        if (collectInvinciblePowerUp && invincible == false)
+        {
+            collectInvinciblePowerUp = false;
+        }
+    }
+
+    // public bool GetFlip()
+    // {
+    //     return sr.flipX;
+    // }
+
+    public bool GetInvincible()
+    {
+        return collectInvinciblePowerUp;
     }
 }
