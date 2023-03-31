@@ -4980,8 +4980,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137484084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0141, y: 0.0123, z: -1}
-  m_LocalScale: {x: 16.014082, y: 10.015551, z: 1}
+  m_LocalPosition: {x: 0.0086, y: -0.0088, z: -1}
+  m_LocalScale: {x: 17.453867, y: 10.271233, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19127,8 +19127,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555327623}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010900021, y: 0, z: -1}
-  m_LocalScale: {x: 16.025526, y: 10.046263, z: 1}
+  m_LocalPosition: {x: 0.0004, y: 0.0226, z: -1}
+  m_LocalScale: {x: 17.349081, y: 10.127206, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 751084509}
@@ -27489,7 +27489,17 @@ MonoBehaviour:
   selectionPanel: {fileID: 0}
   mask: {fileID: 137484084}
   follower: {fileID: 346991972}
+  FarmStage1Objects: {fileID: 0}
+  FarmStage1Texts: {fileID: 0}
+  FarmStoryText: {fileID: 0}
+  FarmStage2Objects: {fileID: 0}
+  FarmStage2Texts: {fileID: 0}
+  FarmStage3Objects: {fileID: 0}
+  FarmStage3Texts: {fileID: 0}
+  FarmWinText: {fileID: 0}
+  attackTutorialFinished: 0
   pause: 0
+  flags: 0
   ExitMenu: {fileID: 1098755702}
   stage: 0
   progressBar: {fileID: 460385377}
@@ -27600,14 +27610,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
-      propertyPath: m_Name
-      value: ScorePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6658275035224939865, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
       propertyPath: m_Name
       value: player_1
@@ -27662,6 +27664,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6658275036396007918, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
       propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
+      propertyPath: m_Name
+      value: ScorePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -33964,8 +33974,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039747323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0004, y: 0.0005, z: 0}
+  m_LocalScale: {x: 1.0869521, y: 1.0165828, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 751084509}
@@ -62334,8 +62344,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845205877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0027999878, y: 0.00999999, z: 0}
-  m_LocalScale: {x: 0.60644627, y: 0.60768414, z: 1}
+  m_LocalPosition: {x: 0.0684, y: -0.023, z: 0}
+  m_LocalScale: {x: 0.6501845, y: 0.6090181, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 751084509}

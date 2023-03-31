@@ -18,10 +18,16 @@ public class ProgressBar_Main : MonoBehaviour
     private GameObject Player1;
     private GameObject Player2;
 
+    private void Awake()
+    {
+        _slider = GetComponent<Slider>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _slider = GetComponent<Slider>();
+        Debug.Log("_slider: " + _slider);
         // _cardSelection = choice.GetComponent<CardSelection>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         Player1 = GameObject.Find("player_1");
@@ -37,7 +43,7 @@ public class ProgressBar_Main : MonoBehaviour
             if (_slider.value <= 0)
             {
                 _slider.value = 0;
-                if (gameController.stage == 2 && (gameController.round_big == 3 || gameController.level == "Trial Test"))
+                if (gameController.stage == 2 && (gameController.round_big == 3 || gameController.level == "Farm"))
                 {
                     gameController.GameOver();
                     // destroy itself
@@ -74,7 +80,7 @@ public class ProgressBar_Main : MonoBehaviour
 
     public void StartGame()
     {
-        if (GameController.instance.level == "Trial Test")
+        if (GameController.instance.level == "Farm")
         {
             _slider.maxValue = 30;
         }

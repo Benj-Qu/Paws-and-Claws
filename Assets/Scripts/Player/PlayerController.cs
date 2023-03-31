@@ -472,7 +472,7 @@ public class PlayerController : MonoBehaviour
     public void activate()
     {
         active = true;
-        //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void deactivate()
@@ -491,6 +491,19 @@ public class PlayerController : MonoBehaviour
     public bool Flying()
     {
         return !(onFloor || onLeftWall || onRightWall);
+    }
+
+    public void KnockBack(Vector2 direction, float time)
+    {
+        StartCoroutine(KnockBackCoroutine(direction, time));
+    }
+
+    private IEnumerator KnockBackCoroutine(Vector2 direction, float time)
+    {
+        active = false;
+        rb.velocity = direction;
+        yield return new WaitForSeconds(time);
+        active = true;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
