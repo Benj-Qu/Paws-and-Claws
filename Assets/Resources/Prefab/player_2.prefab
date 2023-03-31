@@ -557,6 +557,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickNumber: 2
   FireButton: 32
+  EnemyName: player_1
+  offset: 100
+  AttackRange: 2
+  AttackAngle: 45
+  AttackFrequency: 2
+  KnockSpeed: 10
+  KnockPeriod: 1
+  DownButton: 274
 --- !u!1 &4138337599467028355
 GameObject:
   m_ObjectHideFlags: 0

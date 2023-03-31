@@ -23,7 +23,7 @@ public class LevelButton : MonoBehaviour
     
     public void ExitGame()
     {
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("NewIntro");
         GameController.instance.pause = false;
         Time.timeScale = 1f;
     }

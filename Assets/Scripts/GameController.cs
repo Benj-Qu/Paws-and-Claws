@@ -98,14 +98,11 @@ public class GameController : MonoBehaviour
             stage = -2; // -2: movement, -1: attack
             FarmStage1Objects.SetActive(true);
             FarmStage1Texts.SetActive(true);
-            FarmStoryText.updateText("[speed=0.1]<b>Guadians are strong. They can climb high walls!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Guadians are strong. They can climb high walls!</b>");
             player1_control.activate();
             player2_control.activate();
         } 
-        else
-        {
-            flagController = GameObject.Find("Flags").GetComponent<flagController>();
-        }
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         player1.transform.position = StartPoint1;
         player2.transform.position = StartPoint2;
         camera_ = Camera.main;
@@ -123,11 +120,14 @@ public class GameController : MonoBehaviour
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
         progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
-        EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        ScorePanel = GameObject.Find("ScorePanel");
-        if (ScorePanel) ScorePanel.SetActive(false);
-        if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
         RoundTextHint = GameObject.Find("RoundTextHint").GetComponent<TextMeshProUGUI>();
+        if(level != "Farm")
+        {
+            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+            ScorePanel = GameObject.Find("ScorePanel");
+            if (ScorePanel) ScorePanel.SetActive(false);
+            if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -160,7 +160,7 @@ public class GameController : MonoBehaviour
                 player2_control.deactivate();
             }
         }
-
+        
         if(level == "Farm")
         {
             player1_control.activate();
@@ -173,10 +173,21 @@ public class GameController : MonoBehaviour
             {
                 StartCoroutine(finishStageT2());
             }
+            if(stage != -2 && stage != -1 && stage != 2)
+            {
+                if (player1_control.isActive())
+                {
+                    player1_control.deactivate();
+                }
+                if (player2_control.isActive())
+                {
+                    player2_control.deactivate();
+                }
+            }
         }
 
     }
-
+    
     IEnumerator finishStageT1()
     {
         stage = -1; // attack tutorial
@@ -186,7 +197,7 @@ public class GameController : MonoBehaviour
         FarmStage2Objects.SetActive(true);
         FarmStage2Texts.SetActive(true);
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.1]<b>Guadians are skilled. They can attack enemies!</b>");
+        FarmStoryText.updateText("[speed=0.08]<b>Guadians are skilled. They can attack enemies!</b>");
     }
 
     IEnumerator finishStageT2()
@@ -197,9 +208,13 @@ public class GameController : MonoBehaviour
         FarmStage2Texts.SetActive(false);
         FarmStage3Objects.SetActive(true);
         FarmStage3Texts.SetActive(true);
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.1]<b>Guadians are smart. They can select suitable blocks!</b>");
-        StartGame();
+        FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart. They can select suitable blocks!</b>");
+        EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+        ScorePanel = GameObject.Find("ScorePanel");
+        if (ScorePanel) ScorePanel.SetActive(false);
+        if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
     }
 
 
@@ -222,6 +237,7 @@ public class GameController : MonoBehaviour
     {
         if (flagController) flagController.DestroyFlags();
         ScorePanel.SetActive(false);
+        if(FarmStoryText) FarmStoryText.updateText("");
         if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
         {
             int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
@@ -329,15 +345,7 @@ public class GameController : MonoBehaviour
         }
         
         yield return new WaitForSeconds(2);
-        // SceneManager.LoadScene("Intro");
-        if (level == "Tutorial")
-        {
-            SceneManager.LoadScene("Trial Level");
-        }
-        else
-        {
-            SceneManager.LoadScene("Intro");
-        }
+        SceneManager.LoadScene("NewIntro");
         // player.GetComponent<HasInventory>().Reset();
     }
 
@@ -366,6 +374,7 @@ public class GameController : MonoBehaviour
     {
         // Start time countdown
         // make tutorial1 finished
+
         progressBar.gameObject.SetActive(true);
         progressBar.StartGame();
 
@@ -375,12 +384,7 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
-            //if (level == "Tutorial1")
-            //{
-            //    StartCoroutine(FinishTutorial());
-            //}
-
-            if (level == "Trial Test")
+            if (level == "Farm")
             {
                 progressBar.gameObject.SetActive(true);
                 progressBar.StartGame();

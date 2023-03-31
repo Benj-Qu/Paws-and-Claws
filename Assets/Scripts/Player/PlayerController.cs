@@ -29,8 +29,9 @@ public class PlayerController : MonoBehaviour
 
     public ShowAddScore showAddScore;
 
-    private bool alive = true; 
+    private bool alive = true;
     private bool active = false;
+    private bool jumping = false;
     private bool invincible = false;
     private bool onFloor = true;
     private bool onLeftWall = false;
@@ -107,6 +108,8 @@ public class PlayerController : MonoBehaviour
         // Jump Times
         if (isTerrain(other))
         {
+            active = true;
+
             if (collision.gameObject.CompareTag("Ice"))
             {
                 onIce = true;
@@ -239,6 +242,11 @@ public class PlayerController : MonoBehaviour
                 jumpTimes = MaxJumpTimes;
             }
         }
+        else if (isPlayer(other))
+        {
+            onFloor = true;
+            jumpTimes = MaxJumpTimes;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -263,7 +271,7 @@ public class PlayerController : MonoBehaviour
         string joystickString = joystickNumber.ToString();
         float joystickInput = Input.GetAxis("Horizontal" + joystickString) * Speed;
         //Debug.Log("Hor: " + joystickInput);
-        
+
         // Update Horizontal Velocity
         if (Input.GetKey(LeftButton) || joystickInput < 0)
         {
@@ -375,14 +383,14 @@ public class PlayerController : MonoBehaviour
             sr.flipX = true;
             jumpTimes--;
             StartCoroutine(JumpCoroutine());
-        }        
+        }
     }
 
     public IEnumerator JumpCoroutine()
     {
-        active = false;
+        jumping = true;
         yield return new WaitForSeconds(JumpDeactivePeriod);
-        active = true;
+        jumping = false;
     }
 
     public IEnumerator KnockBack(Vector2 direction)
@@ -466,6 +474,11 @@ public class PlayerController : MonoBehaviour
 
     public bool isActive()
     {
+        return alive && active && !jumping;
+    }
+
+    public bool isAttackable()
+    {
         return alive && active;
     }
 
@@ -491,6 +504,19 @@ public class PlayerController : MonoBehaviour
     public bool Flying()
     {
         return !(onFloor || onLeftWall || onRightWall);
+    }
+
+    public void KnockBack(Vector2 direction, float time)
+    {
+        StartCoroutine(KnockBackCoroutine(direction, time));
+    }
+
+    private IEnumerator KnockBackCoroutine(Vector2 direction, float time)
+    {
+        active = false;
+        rb.velocity = direction;
+        yield return new WaitForSeconds(time);
+        active = true;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)

@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lantern Festival.unity
     guid: c6619386fdf9e4095a9bdecc93351329
+  - enabled: 1
+    path: Assets/Scenes/NewIntro.unity
+    guid: 213bfedc7d8654c6aaf702fb72383d6d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bb1009897c0f740f1a1b7c23fb84fcd0, type: 2}
