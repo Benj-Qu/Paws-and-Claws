@@ -342,15 +342,7 @@ public class GameController : MonoBehaviour
         }
         
         yield return new WaitForSeconds(2);
-        // SceneManager.LoadScene("Intro");
-        if (level == "Tutorial")
-        {
-            SceneManager.LoadScene("Trial Level");
-        }
-        else
-        {
-            SceneManager.LoadScene("Intro");
-        }
+        SceneManager.LoadScene("NewIntro");
         // player.GetComponent<HasInventory>().Reset();
     }
 
@@ -408,7 +400,6 @@ public class GameController : MonoBehaviour
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
-            ScorePanel = GameObject.Find("ScorePanel");
             if (ScorePanel) ScorePanel.SetActive(true);
         }
         else if (stage == 1) // start place block
