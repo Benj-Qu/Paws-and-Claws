@@ -471,10 +471,12 @@ MonoBehaviour:
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
+  FireButton: 32
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
   joystickNumber: 2
+  joystickNumberOther: 1
 --- !u!50 &265125346
 Rigidbody2D:
   serializedVersion: 4
@@ -3641,10 +3643,12 @@ MonoBehaviour:
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
+  FireButton: 106
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
   joystickNumber: 1
+  joystickNumberOther: 2
 --- !u!50 &1551339301
 Rigidbody2D:
   serializedVersion: 4

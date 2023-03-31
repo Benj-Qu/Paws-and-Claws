@@ -44,6 +44,7 @@ public class RoundTextReal : MonoBehaviour
 
     private IEnumerator OtherHoldRoundAppear(int round)
     {
+        Debug.Log("Round: " + round);
         if (round == 1) _spriteRenderer.sprite = _round1;
         else if (round == 2) _spriteRenderer.sprite = _round2;
         else _spriteRenderer.sprite = _round3;

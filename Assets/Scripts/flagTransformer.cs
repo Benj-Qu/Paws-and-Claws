@@ -5,16 +5,21 @@ using UnityEngine;
 
 public class flagTransformer : MonoBehaviour
 {
-    public Sprite flag_UM;
-    public Sprite flag_Ohio;
+    public Sprite flag_1;
+    public Sprite flag_2;
     public Sprite flag_white;
     public AudioClip player_1_audio;
     public AudioClip player_2_audio;
     public ShowAddScore showAddScore;
+    public float ControlPeriod = 5f;
 
     private GameObject owner;
     private SpriteRenderer spriteRenderer;
     private float delta_time = 0f;
+    private float control_time = 0f;
+
+    private bool player_1_on = false;
+    private bool player_2_on = false;
 
     void Start()
     {
@@ -31,30 +36,85 @@ public class flagTransformer : MonoBehaviour
             showAddScore.ShowScore();
             delta_time = 0f;
         }
+        if (owner && !OwnerOn())
+        {
+            control_time += Time.deltaTime;
+            if (control_time > ControlPeriod)
+            {
+                reset();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(GameController.instance.stage == 2)
+        if(GameController.instance.stage == 2 && other.CompareTag("Player"))
         {
-            // Modify Flag Color
+            // Update player_on
             if (other.name == "player_1")
             {
-                spriteRenderer.sprite = flag_UM;
+                player_1_on = true;
+            }
+            if (other.name == "player_2")
+            {
+                player_2_on = true;
+            }
+            // Determine Ownership
+            if (OwnerOn() && (other != owner))
+            {
+                return;
+            }
+            else if (other.name == "player_1")
+            {
+                spriteRenderer.sprite = flag_1;
                 AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
-                UpdateFlagNum(other.gameObject);
                 showAddScore.SetColor(1);
+                UpdateFlagNum(other.gameObject);
                 delta_time = 0f;
+                control_time = 0f;
             }
             else if (other.name == "player_2")
             {
-                spriteRenderer.sprite = flag_Ohio;
+                spriteRenderer.sprite = flag_2;
                 AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
-                UpdateFlagNum(other.gameObject);
                 showAddScore.SetColor(2);
+                UpdateFlagNum(other.gameObject);
                 delta_time = 0f;
+                control_time = 0f;
             }
         } 
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.name == "player_1")
+        {
+            player_1_on = false;
+            if (player_2_on)
+            {
+                GameObject player2 = GameObject.Find("player_2");
+                spriteRenderer.sprite = flag_2;
+                AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
+                showAddScore.SetColor(2);
+                UpdateFlagNum(player2);
+                delta_time = 0f;
+                control_time = 0f;
+            }
+        }
+        if (other.name == "player_2")
+        {
+            player_2_on = false;
+            if (player_1_on)
+            {
+                GameObject player1 = GameObject.Find("player_1");
+                spriteRenderer.sprite = flag_1;
+                AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
+                showAddScore.SetColor(1);
+                UpdateFlagNum(player1);
+                delta_time = 0f;
+                control_time = 0f;
+            }
+        }
     }
 
     private void UpdateFlagNum(GameObject other)
@@ -72,10 +132,23 @@ public class flagTransformer : MonoBehaviour
         }
     }
 
+    private void reset()
+    {
+        if (owner)
+        {
+            owner.GetComponent<PlayerScore>().loseFlag();
+            owner = null;
+        }
+        spriteRenderer.sprite = flag_white;
+        player_1_on = false;
+        player_2_on = false;
+        delta_time = 0f;
+        control_time = 0f;
+    }
+
     private void OnDisable()
     {
-        owner = null;
-        spriteRenderer.sprite = flag_white;
+        reset();
     }
 
     public void StartPartyTime()
@@ -98,5 +171,21 @@ public class flagTransformer : MonoBehaviour
                 child.gameObject.SetActive(false);
             }
         }
+    }
+
+    private bool OwnerOn()
+    {
+        if (owner)
+        {
+            if (owner.name == "player_1")
+            {
+                return player_1_on;
+            }
+            if (owner.name == "player_2")
+            {
+                return player_2_on;
+            }
+        }
+        return false;
     }
 }

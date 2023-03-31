@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 544797113576235165}
   - component: {fileID: 8649230981783621502}
   - component: {fileID: 5972522944824699718}
+  - component: {fileID: 7836483670668928459}
   m_Layer: 3
   m_Name: player_1
   m_TagString: Player
@@ -162,6 +163,8 @@ MonoBehaviour:
   AirKnockCoef: 2.5
   KnockBackPeriod: 0.2
   speedDecade: 4
+  LeftBorder: -8
+  RightBorder: 8
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
@@ -381,6 +384,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickNumber: 1
   Speed: 3
+--- !u!114 &7836483670668928459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658275035224939865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842fd3cf9fffe6e4390cc4f0a7476eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickNumber: 1
+  FireButton: 106
 --- !u!1 &6658275035360821964
 GameObject:
   m_ObjectHideFlags: 0
