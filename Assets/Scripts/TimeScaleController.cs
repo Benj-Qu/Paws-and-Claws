@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeScaleController : MonoBehaviour
 {
-    public float timeScale = 0.2f;
+    public float timeScale = 0.8f;
     // Start is called before the first frame update
     void Start()
     {
