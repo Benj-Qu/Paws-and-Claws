@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
         //     StartPoint1.x -= 5f;
         //     StartPoint2.x += 5f;
         // }
-        if (level == "Trial Level")
+        if (level == "Farm")
         {
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
@@ -104,7 +104,7 @@ public class GameController : MonoBehaviour
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
         ScorePanel = GameObject.Find("ScorePanel");
         if (ScorePanel) ScorePanel.SetActive(false);
-        if (WinImage.activeSelf == false) WinImage.SetActive(true);
+        if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
     }
 
     // Update is called once per frame

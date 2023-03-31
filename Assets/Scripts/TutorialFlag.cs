@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TutorialFlag : MonoBehaviour
 {
-    public MovementTutorial mt;
+    public TutorialController tc;
+    public textController tutorial_text;
     public bool touched = false;
     public Sprite flag_UM;
     public Sprite flag_Ohio;
@@ -18,6 +19,7 @@ public class TutorialFlag : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        tutorial_text.updateText("[speed=0.1]<b>Guadians are strong. They can climb high walls!</b>");
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class TutorialFlag : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && touched == false)
         {
-            mt.target += 1;
+            tc.flags += 1;
             touched = true;
             if (collision.name == player_1)
             {
