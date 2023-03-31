@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialFlag : MonoBehaviour
 {
-    public TutorialController tc;
+    public GameController gc;
     public bool touched = false;
     public Sprite flag_UM;
     public Sprite flag_Ohio;
@@ -30,7 +30,7 @@ public class TutorialFlag : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && touched == false)
         {
-            tc.flags += 1;
+            gc.flags += 1;
             touched = true;
             if (collision.name == player_1)
             {

@@ -32,12 +32,23 @@ public class GameController : MonoBehaviour
     public GameObject mask;
     public GameObject follower;
 
+    public GameObject FarmStage1Objects;
+    public GameObject FarmStage1Texts;
+    public textController FarmStoryText;
+    public GameObject FarmStage2Objects;
+    public GameObject FarmStage2Texts;
+    public GameObject FarmStage3Objects;
+    public GameObject FarmStage3Texts;
+    public TextMeshProUGUI FarmWinText;
+    public bool attackTutorialFinished = false;
+
     private Vector3 StartPoint1;
     private Vector3 StartPoint2;
 
     public bool pause = false;
 
     private flagController flagController;
+    public int flags = 0;
     
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
@@ -73,28 +84,36 @@ public class GameController : MonoBehaviour
         StartPoint2 = StartPoint1;
         StartPoint1.x -= dist;
         StartPoint2.x += dist;
-        // if (level == "Tutorial")
-        // {
-        //     StartPoint1.x -= 5f;
-        //     StartPoint2.x += 5f;
-        // }
+        player1 = GameObject.Find("player_1");
+        player2 = GameObject.Find("player_2");
+        player1_control = player1.GetComponent<PlayerController>();
+        player2_control = player2.GetComponent<PlayerController>();
         if (level == "Farm")
         {
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
+            stage = -2; // -2: movement, -1: attack
+            FarmStage1Objects.SetActive(true);
+            FarmStage1Texts.SetActive(true);
+            FarmStoryText.updateText("[speed=0.1]<b>Guadians are strong. They can climb high walls!</b>");
+            player1_control.activate();
+            player2_control.activate();
         } 
         else
         {
             flagController = GameObject.Find("Flags").GetComponent<flagController>();
         }
-        player1 = GameObject.Find("player_1");
-        player2 = GameObject.Find("player_2");
-        player1_control = player1.GetComponent<PlayerController>();
-        player2_control = player2.GetComponent<PlayerController>();
         player1.transform.position = StartPoint1;
         player2.transform.position = StartPoint2;
         camera_ = Camera.main;
-        winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
+        if(level == "Farm")
+        {
+            winText = FarmWinText;
+        }
+        else
+        {
+            winText = GameObject.Find("Win Text").GetComponent<TextMeshProUGUI>();
+        }
         ExitMenu.SetActive(false);
 
         // added by zeyi
@@ -126,7 +145,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (stage != 2)
+        if (level != "Farm" && stage != 2)
         {
             if (player1_control.isActive())
             {
@@ -138,14 +157,52 @@ public class GameController : MonoBehaviour
             }
         }
 
-        /*temporarily added by zeyi*/
-        // if (!a && stage == 2)
-        // {
-        //     round_big++;
-        //     a = true;
-        //     EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        // }
-        /*temporarily added by zeyi*/
+        if(level == "Farm")
+        {
+            player1_control.activate();
+            player2_control.activate();
+            if(stage == -2 && flags == 2)
+            {
+                StartCoroutine(finishStageT1());
+            }
+            if(stage == -1 && attackTutorialFinished == true)
+            {
+                StartCoroutine(finishStageT2());
+            }
+        }
+
+    }
+
+    IEnumerator finishStageT1()
+    {
+        stage = -1; // attack tutorial
+        yield return new WaitForSeconds(2f);
+        FarmStage1Objects.SetActive(false);
+        FarmStage1Texts.SetActive(false);
+        FarmStage2Objects.SetActive(true);
+        FarmStage2Texts.SetActive(true);
+        ResetPlayers();
+        FarmStoryText.updateText("[speed=0.1]<b>Guadians are skilled. They can attack enemies!</b>");
+    }
+
+    IEnumerator finishStageT2()
+    {
+        stage = 0; // start game
+        yield return new WaitForSeconds(2f);
+        FarmStage2Objects.SetActive(false);
+        FarmStage2Texts.SetActive(false);
+        FarmStage3Objects.SetActive(true);
+        FarmStage3Texts.SetActive(true);
+        ResetPlayers();
+        FarmStoryText.updateText("[speed=0.1]<b>Guadians are smart. They can select suitable blocks!</b>");
+        StartGame();
+    }
+
+
+    public void ResetPlayers()
+    {
+        player1.transform.position = GameObject.Find("StartPoint").transform.position;
+        player2.transform.position = GameObject.Find("StartPoint2").transform.position;
     }
 
     public void GameWin()
@@ -305,11 +362,9 @@ public class GameController : MonoBehaviour
     {
         // Start time countdown
         // make tutorial1 finished
-        if (level != "Tutorial1" && level != "Trial Test")
-        {
-            progressBar.gameObject.SetActive(true);
-            progressBar.StartGame();
-        }
+        progressBar.gameObject.SetActive(true);
+        progressBar.StartGame();
+
         stage ++;
         Debug.Log("stage: " + stage);
         if (ScorePanel) ScorePanel.SetActive(false);

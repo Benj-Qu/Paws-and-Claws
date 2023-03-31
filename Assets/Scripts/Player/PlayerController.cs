@@ -472,7 +472,7 @@ public class PlayerController : MonoBehaviour
     public void activate()
     {
         active = true;
-        //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void deactivate()

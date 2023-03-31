@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: d122ea5fa55fd406480ac832a2aeb732
   - enabled: 1
-    path: Assets/Scenes/Farm.unity
+    path: Assets/Scenes/Farm Test.unity
     guid: 05bf363765f6b46539958207cb779ada
   - enabled: 0
     path: Assets/Scenes/Tutorial1.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Cover.unity
     guid: 7bdf14c6d3d784c97b30f7a062497432
   - enabled: 1
-    path: Assets/Scenes/Trial Test.unity
+    path: Assets/Scenes/Farm.unity
     guid: 9e11391a742cd4676a52d40afb4658b8
   - enabled: 1
     path: Assets/Scenes/Lantern Festival.unity
