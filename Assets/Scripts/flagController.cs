@@ -40,6 +40,7 @@ public class flagController : MonoBehaviour
 
     bool invalidPosition(int x, int y)
     {
+        Debug.Log(GameController.instance.level + " " + x + " " + y);
         if(GameController.instance.level == "Winter Land")
         {
             if (x >= -3 && x <= 4 && y <= -1)
@@ -67,6 +68,7 @@ public class flagController : MonoBehaviour
                 return false;
             }
         }
+        Debug.Log("valid");
         return false;
     }
 
