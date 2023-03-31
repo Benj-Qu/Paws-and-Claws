@@ -39741,11 +39741,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1114186307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
-  m_PrefabInstance: {fileID: 43298657}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116804330
 GameObject:
   m_ObjectHideFlags: 0
@@ -68953,7 +68948,7 @@ MonoBehaviour:
   dist: 0.4
   WinImage: {fileID: 590931281}
   ScoreText: {fileID: 590931280}
-  selectionPanel: {fileID: 1114186307}
+  selectionPanel: {fileID: 0}
   mask: {fileID: 581622951}
   follower: {fileID: 466552355}
   FarmStage1Objects: {fileID: 162711590}

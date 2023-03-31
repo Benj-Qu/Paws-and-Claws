@@ -123,10 +123,10 @@ public class GameController : MonoBehaviour
         if(level != "Farm")
         {
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+            ScorePanel = GameObject.Find("ScorePanel");
+            if (ScorePanel) ScorePanel.SetActive(false);
+            if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
         }
-        ScorePanel = GameObject.Find("ScorePanel");
-        if (ScorePanel) ScorePanel.SetActive(false);
-        if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
     }
 
     // Update is called once per frame
@@ -172,6 +172,17 @@ public class GameController : MonoBehaviour
             {
                 StartCoroutine(finishStageT2());
             }
+            if(stage != -2 && stage != -1 && stage != 2)
+            {
+                if (player1_control.isActive())
+                {
+                    player1_control.deactivate();
+                }
+                if (player2_control.isActive())
+                {
+                    player2_control.deactivate();
+                }
+            }
         }
 
     }
@@ -199,7 +210,9 @@ public class GameController : MonoBehaviour
         ResetPlayers();
         FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart. They can select suitable blocks!</b>");
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        StartGame();
+        ScorePanel = GameObject.Find("ScorePanel");
+        if (ScorePanel) ScorePanel.SetActive(false);
+        if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
     }
 
 
@@ -366,6 +379,7 @@ public class GameController : MonoBehaviour
     {
         // Start time countdown
         // make tutorial1 finished
+
         progressBar.gameObject.SetActive(true);
         progressBar.StartGame();
 
@@ -375,11 +389,6 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
-            //if (level == "Tutorial1")
-            //{
-            //    StartCoroutine(FinishTutorial());
-            //}
-
             if (level == "Trial Test")
             {
                 progressBar.gameObject.SetActive(true);
@@ -399,6 +408,7 @@ public class GameController : MonoBehaviour
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
+            ScorePanel = GameObject.Find("ScorePanel");
             if (ScorePanel) ScorePanel.SetActive(true);
         }
         else if (stage == 1) // start place block
