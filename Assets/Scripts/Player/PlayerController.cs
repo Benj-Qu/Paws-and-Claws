@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public float KnockBackPeriod;
     public float speedDecade = 4f;
 
+    public float LeftBorder = -8f;
+    public float RightBorder = 8f;
+
     public KeyCode LeftButton;
     public KeyCode RightButton;
     public KeyCode JumpButton;
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource pas;
 
     public int joystickNumber;
+
     private void Start()
     {
         jumpTimes = MaxJumpTimes;
@@ -72,17 +76,29 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
-        string joystickString = joystickNumber.ToString();
-        if (Input.GetAxis("Fire" + joystickString) != 0)
-        {
-            Debug.Log("Fire"+joystickString);
-            Fire();
-        }
+        RoundWorld();
     }
 
-    private void Fire()
+    private void RoundWorld()
     {
-        
+        if (transform.position.x < LeftBorder - 0.1f)
+        {
+            transform.position = new Vector2(RightBorder - 0.1f, transform.position.y);
+            onFloor = false;
+            onLeftWall = false;
+            onRightWall = false;
+            onIce = false;
+            floorV = 0;
+        }
+        if (transform.position.x > RightBorder + 0.1f)
+        {
+            transform.position = new Vector2(LeftBorder + 0.1f, transform.position.y);
+            onFloor = false;
+            onLeftWall = false;
+            onRightWall = false;
+            onIce = false;
+            floorV = 0;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -98,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if ((hitpos.normal.y > 0) && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
+            if ((hitpos.normal.y > 0) && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
@@ -128,8 +144,10 @@ public class PlayerController : MonoBehaviour
         {
             ContactPoint2D hitpos = collision.GetContact(0);
             PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
+            string otherJoystickString = pc.joystickNumber.ToString();
+            float otherJoystickInput = Input.GetAxis("Horizontal" + otherJoystickString);
             // Knock On Below Player
-            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
             {
                 // If Other Player On Floor
                 if (!onFloor && pc.OnFloor())
@@ -156,7 +174,7 @@ public class PlayerController : MonoBehaviour
             // Knock On Left Player
             else if (hitpos.normal.x > 0)
             {
-                if (Input.GetKey(pc.RightButton))
+                if (Input.GetKey(pc.RightButton) || otherJoystickInput > 0)
                 {
                     float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
                     StartCoroutine(KnockBack(new Vector2(pc.Speed * coef, rb.velocity.y)));
@@ -169,7 +187,7 @@ public class PlayerController : MonoBehaviour
             // Knock On Right Player
             else if (hitpos.normal.x < 0)
             {
-                if (Input.GetKey(pc.LeftButton))
+                if (Input.GetKey(pc.LeftButton) || otherJoystickInput < 0)
                 {
                     float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
                     StartCoroutine(KnockBack(new Vector2(-pc.Speed * coef, rb.velocity.y)));
@@ -195,7 +213,7 @@ public class PlayerController : MonoBehaviour
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;

@@ -45,7 +45,7 @@ public class BombController : MonoBehaviour
         //Debug.Log("collide" + collision.gameObject);
         
         //Debug.Log("start" + start);
-        if (collision.gameObject.CompareTag("Block") && start)
+        if (isBlock(collision.gameObject) && start)
         {
             
             Debug.Log("collide in" );
@@ -68,7 +68,7 @@ public class BombController : MonoBehaviour
     {
         //Debug.Log("collide1" + collision.gameObject);
         //Debug.Log("start1" + start);
-        if (collision.gameObject.CompareTag("Block") && start)
+        if (isBlock(collision.gameObject) && start)
         {
             Debug.Log("collide1 in" );
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
@@ -84,5 +84,10 @@ public class BombController : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    private bool isBlock(GameObject obj)
+    {
+        return obj.CompareTag("Block") || obj.CompareTag("Ice");
     }
 }

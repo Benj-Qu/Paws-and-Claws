@@ -89,6 +89,7 @@ public class AllCards : MonoBehaviour
         }
 
         int numSmallRound = cardRoundSetting[e.round_big - 1].Count;
+        Debug.Log("numSmallRound: " + numSmallRound);
         if (numSmallRound == 2)
         {
             GameController.instance.selectionPanel = Instantiate(_selectionPanel, transform.position, Quaternion.identity);
@@ -289,10 +290,10 @@ public class AllCards : MonoBehaviour
         {
             // big round 1
             // small round 1
-            CardRound cardRounda1_1 = new CardRound(1, 0, 1, 1);
-            CardRound cardRounda1_2 = new CardRound(0, 1, 1, 2);
-            CardRound cardRounda1_3 = new CardRound(8, 2, 2, 1);
-            CardRound cardRounda1_4 = new CardRound(2, 3, 2, 2);
+            CardRound cardRounda1_1 = new CardRound(16, 0, 1, 1);
+            CardRound cardRounda1_2 = new CardRound(16, 1, 1, 2);
+            CardRound cardRounda1_3 = new CardRound(16, 2, 2, 1);
+            CardRound cardRounda1_4 = new CardRound(16, 3, 2, 2);
             List<CardRound> sa11 = new List<CardRound>();
             sa11.Add(cardRounda1_1);
             sa11.Add(cardRounda1_2);
@@ -372,6 +373,97 @@ public class AllCards : MonoBehaviour
             cardRoundSetting.Add(ba1);
             // cardRoundSetting.Add(bf2);
             // cardRoundSetting.Add(bf3);
+            return;
+        }
+
+        if(level == "Farm")
+        {
+            Debug.Log("Farm");
+            // big round 1
+            // small round 1
+            CardRound cardRoundfarm_1 = new CardRound(0, 0, 1, 1);
+            CardRound cardRoundfarm_2 = new CardRound(1, 1, 1, 2);
+            CardRound cardRoundfarm_3 = new CardRound(4, 2, 2, 1);
+            CardRound cardRoundfarm_4 = new CardRound(0, 3, 2, 2);
+            List<CardRound> sfarm11 = new List<CardRound>();
+            sfarm11.Add(cardRoundfarm_1);
+            sfarm11.Add(cardRoundfarm_2);
+            sfarm11.Add(cardRoundfarm_3);
+            sfarm11.Add(cardRoundfarm_4);
+
+            // small round 2
+            CardRound cardRoundfarm_5 = new CardRound(2, 4, 1, 1);
+            CardRound cardRoundfarm_6 = new CardRound(3, 5, 1, 2);
+            CardRound cardRoundfarm_7 = new CardRound(2, 6, 2, 1);
+            CardRound cardRoundfarm_8 = new CardRound(3, 7, 2, 2);
+            List<CardRound> sfarm12 = new List<CardRound>();
+            sfarm12.Add(cardRoundfarm_5);
+            sfarm12.Add(cardRoundfarm_6);
+            sfarm12.Add(cardRoundfarm_7);
+            sfarm12.Add(cardRoundfarm_8);
+
+            List<List<CardRound>> bfarm1 = new List<List<CardRound>>();
+            bfarm1.Add(sfarm11);
+            bfarm1.Add(sfarm12);
+
+            // big round 2
+            // small round 1
+            CardRound cardRoundfarm2_1 = new CardRound(6, 8, 1, 1);
+            CardRound cardRoundfarm2_2 = new CardRound(2, 9, 1, 2);
+            CardRound cardRoundfarm2_3 = new CardRound(8, 10, 2, 1);
+            CardRound cardRoundfarm2_4 = new CardRound(1, 11, 2, 2);
+            List<CardRound> sfarm21 = new List<CardRound>();
+            sfarm21.Add(cardRoundfarm2_1);
+            sfarm21.Add(cardRoundfarm2_2);
+            sfarm21.Add(cardRoundfarm2_3);
+            sfarm21.Add(cardRoundfarm2_4);
+
+            //     // small round 2
+            // CardRound cardRound2_5 = new CardRound(2, 12, 1, 1);
+            // CardRound cardRound2_6 = new CardRound(3, 13, 1, 2);
+            // CardRound cardRound2_7 = new CardRound(4, 14, 2, 1);
+            // CardRound cardRound2_8 = new CardRound(0, 15, 2, 2);
+            // List<CardRound> s22 = new List<CardRound>();
+            // s22.Add(cardRound2_5);
+            // s22.Add(cardRound2_6);
+            // s22.Add(cardRound2_7);
+            // s22.Add(cardRound2_8);
+
+            List<List<CardRound>> bfarm2 = new List<List<CardRound>>();
+            bfarm2.Add(sfarm21);
+            // b2.Add(s22);
+
+            // big round 3
+            // small round 1
+            CardRound cardRoundfarm3_1 = new CardRound(5, 16, 1, 1);
+            CardRound cardRoundfarm3_2 = new CardRound(4, 17, 1, 2);
+            CardRound cardRoundfarm3_3 = new CardRound(7, 18, 2, 1);
+            CardRound cardRoundfarm3_4 = new CardRound(4, 19, 2, 2);
+            List<CardRound> sfarm31 = new List<CardRound>();
+            sfarm31.Add(cardRoundfarm3_1);
+            sfarm31.Add(cardRoundfarm3_2);
+            sfarm31.Add(cardRoundfarm3_3);
+            sfarm31.Add(cardRoundfarm3_4);
+
+            // // small round 2
+            // CardRound cardRound3_5 = new CardRound(2, 20, 1, 1);
+            // CardRound cardRound3_6 = new CardRound(3, 21, 1, 2);
+            // CardRound cardRound3_7 = new CardRound(4, 22, 2, 1);
+            // CardRound cardRound3_8 = new CardRound(0, 23, 2, 2);
+            // List<CardRound> s32 = new List<CardRound>();
+            // s32.Add(cardRound3_5);
+            // s32.Add(cardRound3_6);
+            // s32.Add(cardRound3_7);
+            // s32.Add(cardRound3_8);
+
+            List<List<CardRound>> bfarm3 = new List<List<CardRound>>();
+            bfarm3.Add(sfarm31);
+            // b3.Add(s32);
+
+            cardRoundSetting = new List<List<List<CardRound>>>();
+            cardRoundSetting.Add(bfarm1);
+            cardRoundSetting.Add(bfarm2);
+            cardRoundSetting.Add(bfarm3);
             return;
         }
         // other scene, including tutorial and trail level use the same currently
