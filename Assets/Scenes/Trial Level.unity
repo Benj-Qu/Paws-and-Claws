@@ -756,6 +756,7 @@ GameObject:
   - component: {fileID: 265125347}
   - component: {fileID: 265125346}
   - component: {fileID: 265125345}
+  - component: {fileID: 265125350}
   m_Layer: 3
   m_Name: player_2
   m_TagString: Player
@@ -784,15 +785,15 @@ MonoBehaviour:
   AirKnockCoef: 0
   KnockBackPeriod: 0
   speedDecade: 4
+  LeftBorder: -8
+  RightBorder: 8
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
-  FireButton: 32
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
   joystickNumber: 2
-  joystickNumberOther: 1
 --- !u!50 &265125346
 Rigidbody2D:
   serializedVersion: 4
@@ -907,6 +908,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &265125350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265125344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842fd3cf9fffe6e4390cc4f0a7476eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickNumber: 2
+  FireButton: 32
+  EnemyName: player_1
+  offset: 20
+  AttackRange: 2
+  AttackAngle: 45
+  AttackFrequency: 2.5
+  KnockSpeed: 5
+  KnockPeriod: 2.5
+  DownButton: 274
 --- !u!1 &286817041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,6 +4497,7 @@ GameObject:
   - component: {fileID: 1551339302}
   - component: {fileID: 1551339301}
   - component: {fileID: 1551339300}
+  - component: {fileID: 1551339305}
   m_Layer: 3
   m_Name: player_1
   m_TagString: Player
@@ -4502,15 +4526,15 @@ MonoBehaviour:
   AirKnockCoef: 0
   KnockBackPeriod: 0
   speedDecade: 4
+  LeftBorder: -8
+  RightBorder: 8
   LeftButton: 97
   RightButton: 100
   JumpButton: 119
-  FireButton: 106
-  player_die: {fileID: 0}
+  player_die: {fileID: 8300000, guid: b5a3125316a3d41c8bb291273cd78df7, type: 3}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
   joystickNumber: 1
-  joystickNumberOther: 2
 --- !u!50 &1551339301
 Rigidbody2D:
   serializedVersion: 4
@@ -4625,6 +4649,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551339305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551339299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842fd3cf9fffe6e4390cc4f0a7476eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickNumber: 1
+  FireButton: 106
+  EnemyName: player_2
+  offset: 20
+  AttackRange: 2
+  AttackAngle: 45
+  AttackFrequency: 2.5
+  KnockSpeed: 5
+  KnockPeriod: 2.5
+  DownButton: 115
 --- !u!1001 &1566660499
 PrefabInstance:
   m_ObjectHideFlags: 0
