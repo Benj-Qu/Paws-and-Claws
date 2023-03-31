@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
             stage = -2; // -2: movement, -1: attack
             FarmStage1Objects.SetActive(true);
             FarmStage1Texts.SetActive(true);
-            FarmStoryText.updateText("[speed=0.1]<b>Guadians are strong. They can climb high walls!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Guadians are strong. They can climb high walls!</b>");
             player1_control.activate();
             player2_control.activate();
         } 
@@ -120,7 +120,10 @@ public class GameController : MonoBehaviour
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
         progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
-        EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+        if(level != "Farm")
+        {
+            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+        }
         ScorePanel = GameObject.Find("ScorePanel");
         if (ScorePanel) ScorePanel.SetActive(false);
         if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
@@ -182,7 +185,7 @@ public class GameController : MonoBehaviour
         FarmStage2Objects.SetActive(true);
         FarmStage2Texts.SetActive(true);
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.1]<b>Guadians are skilled. They can attack enemies!</b>");
+        FarmStoryText.updateText("[speed=0.08]<b>Guadians are skilled. They can attack enemies!</b>");
     }
 
     IEnumerator finishStageT2()
@@ -194,7 +197,8 @@ public class GameController : MonoBehaviour
         FarmStage3Objects.SetActive(true);
         FarmStage3Texts.SetActive(true);
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.1]<b>Guadians are smart. They can select suitable blocks!</b>");
+        FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart. They can select suitable blocks!</b>");
+        EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
         StartGame();
     }
 

@@ -89,6 +89,7 @@ public class AllCards : MonoBehaviour
         }
 
         int numSmallRound = cardRoundSetting[e.round_big - 1].Count;
+        Debug.Log("allcards: " + numSmallRound);
         if (numSmallRound == 2)
         {
             GameController.instance.selectionPanel = Instantiate(_selectionPanel, transform.position, Quaternion.identity);
@@ -105,6 +106,7 @@ public class AllCards : MonoBehaviour
     private void SetRound()
     {
         string level = SceneManager.GetActiveScene().name;
+        Debug.Log("allcards: " + level);
         if (level == "Lantern Festival")
         {
             // big round 1
