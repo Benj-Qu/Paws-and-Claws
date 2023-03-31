@@ -558,12 +558,12 @@ MonoBehaviour:
   joystickNumber: 2
   FireButton: 32
   EnemyName: player_1
-  offset: 20
+  offset: 100
   AttackRange: 2
   AttackAngle: 45
-  AttackFrequency: 2.5
-  KnockSpeed: 5
-  KnockPeriod: 2.5
+  AttackFrequency: 2
+  KnockSpeed: 10
+  KnockPeriod: 1
   DownButton: 274
 --- !u!1 &4138337599467028355
 GameObject:

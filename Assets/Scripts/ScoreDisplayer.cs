@@ -25,26 +25,10 @@ public class ScoreDisplayer : MonoBehaviour
         if (text1)
         {
             text1.text = Score1.getScore().ToString("G");
-            /*if (GetRatio() > 0.25)
-            {
-                text1.text = Score1.getScore().ToString("G");
-            }
-            else
-            {
-                text1.text = "";
-            }*/
         }
         if (text2)
         {
             text2.text = Score2.getScore().ToString("G");
-            /*if (GetRatio() < 0.75)
-            {
-                text2.text = Score2.getScore().ToString("G");
-            }
-            else
-            {
-                text2.text = "";
-            }*/
         }
     }
 
