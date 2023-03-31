@@ -379,6 +379,7 @@ public class AllCards : MonoBehaviour
 
         if(level == "Farm")
         {
+            Debug.Log("Farm");
             // big round 1
             // small round 1
             CardRound cardRoundfarm_1 = new CardRound(0, 0, 1, 1);

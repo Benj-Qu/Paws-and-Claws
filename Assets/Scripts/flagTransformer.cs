@@ -30,7 +30,6 @@ public class flagTransformer : MonoBehaviour
     private void Update()
     {
         delta_time += Time.deltaTime;
-        // Show "+1"
         if (owner is not null && delta_time >= 0.3334f)
         {
             showAddScore.ShowScore();
@@ -39,6 +38,9 @@ public class flagTransformer : MonoBehaviour
         if (owner && !OwnerOn())
         {
             control_time += Time.deltaTime;
+            Color tmp = GetComponent<SpriteRenderer>().color;
+            tmp.a = (ControlPeriod - control_time) / ControlPeriod;
+            GetComponent<SpriteRenderer>().color = tmp;
             if (control_time > ControlPeriod)
             {
                 reset();
@@ -46,7 +48,7 @@ public class flagTransformer : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if(GameController.instance.stage == 2 && other.CompareTag("Player"))
         {
@@ -66,6 +68,9 @@ public class flagTransformer : MonoBehaviour
             }
             else if (other.name == "player_1")
             {
+                Color tmp = GetComponent<SpriteRenderer>().color;
+                tmp.a = 1f;
+                GetComponent<SpriteRenderer>().color = tmp;
                 spriteRenderer.sprite = flag_1;
                 AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
                 showAddScore.SetColor(1);
@@ -75,6 +80,9 @@ public class flagTransformer : MonoBehaviour
             }
             else if (other.name == "player_2")
             {
+                Color tmp = GetComponent<SpriteRenderer>().color;
+                tmp.a = 1f;
+                GetComponent<SpriteRenderer>().color = tmp;
                 spriteRenderer.sprite = flag_2;
                 AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
                 showAddScore.SetColor(2);

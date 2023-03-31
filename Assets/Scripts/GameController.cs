@@ -54,9 +54,12 @@ public class GameController : MonoBehaviour
     public GameObject ExitMenu;
     public int stage = 0;
 
-    public ProgressBar_Main progressBar;
-
+    // public ProgressBar_Main progressBar;
+    public TimeDisplayer progressBar;
+    
     public GameObject ScorePanel;
+
+    private TextMeshProUGUI RoundTextHint;
     // Start is called before the first frame update
 
     private void Awake()
@@ -99,10 +102,7 @@ public class GameController : MonoBehaviour
             player1_control.activate();
             player2_control.activate();
         } 
-        else
-        {
-            flagController = GameObject.Find("Flags").GetComponent<flagController>();
-        }
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         player1.transform.position = StartPoint1;
         player2.transform.position = StartPoint2;
         camera_ = Camera.main;
@@ -120,6 +120,7 @@ public class GameController : MonoBehaviour
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
         progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
+        RoundTextHint = GameObject.Find("RoundTextHint").GetComponent<TextMeshProUGUI>();
         if(level != "Farm")
         {
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
@@ -159,7 +160,7 @@ public class GameController : MonoBehaviour
                 player2_control.deactivate();
             }
         }
-
+        
         if(level == "Farm")
         {
             player1_control.activate();
@@ -186,7 +187,7 @@ public class GameController : MonoBehaviour
         }
 
     }
-
+    
     IEnumerator finishStageT1()
     {
         stage = -1; // attack tutorial
@@ -207,6 +208,7 @@ public class GameController : MonoBehaviour
         FarmStage2Texts.SetActive(false);
         FarmStage3Objects.SetActive(true);
         FarmStage3Texts.SetActive(true);
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         ResetPlayers();
         FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart. They can select suitable blocks!</b>");
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
@@ -235,6 +237,7 @@ public class GameController : MonoBehaviour
     {
         if (flagController) flagController.DestroyFlags();
         ScorePanel.SetActive(false);
+        if(FarmStoryText) FarmStoryText.updateText("");
         if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
         {
             int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
@@ -381,7 +384,7 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
-            if (level == "Trial Test")
+            if (level == "Farm")
             {
                 progressBar.gameObject.SetActive(true);
                 progressBar.StartGame();
@@ -415,6 +418,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator ShowScore()
     {
+        RoundTextHint.text = "";
         round_big++;
         stage = 0;
         int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
@@ -450,6 +454,7 @@ public class GameController : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         WinImage.SetActive(true);
         yield return new WaitForSeconds(2f);
+        RoundTextHint.text = "Round " + round_big + " / 3";
         WinImage.GetComponent<WinImage>().reset();
         WinImage.SetActive(false);
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));

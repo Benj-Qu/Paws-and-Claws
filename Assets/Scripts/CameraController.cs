@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public textController tc;
     public Vector3 target;
     public float distance = 1.0f;
     public float size_ = 1f;
@@ -43,6 +44,7 @@ public class CameraController : MonoBehaviour
         {
             posList.Add(child.position);
         }
+        if(tc) tc.updateText("");
         StartCoroutine(MoveCamera(0));
     }
 
@@ -73,6 +75,7 @@ public class CameraController : MonoBehaviour
         {
             transform.position = ori;
             GetComponent<Camera>().orthographicSize = ori_size;
+            if(tc) tc.updateText("[speed=0.08]<b>Guadians are well planned. They can build perfect path towards flags!</b>");
         }
     }
 
