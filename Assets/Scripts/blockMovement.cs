@@ -260,9 +260,16 @@ public class blockMovement : MonoBehaviour
             {
                 if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
                 {
-                    Color temp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
-                    temp.a = 1f;
-                    transform.GetChild(i).GetComponent<SpriteRenderer>().color = temp;
+                    if(transform.GetChild(i).name == "box")
+                    {
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                    }
+                    else
+                    {
+                        Color temp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
+                        temp.a = 1f;
+                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = temp;
+                    }
                 }
             }
         }
@@ -284,9 +291,16 @@ public class blockMovement : MonoBehaviour
                 {
                     if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
                     {
-                        Color temp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
-                        temp.a = 1f;
-                        transform.GetChild(i).GetComponent<SpriteRenderer>().color = temp;
+                        if (transform.GetChild(i).name == "box")
+                        {
+                            transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                        }
+                        else
+                        {
+                            Color temp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
+                            temp.a = 1f;
+                            transform.GetChild(i).GetComponent<SpriteRenderer>().color = temp;
+                        }
                     }
                 }
             }
