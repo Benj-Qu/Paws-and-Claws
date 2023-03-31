@@ -35,7 +35,10 @@ public class PlayerScore : MonoBehaviour
 
     public void loseFlag()
     {
-        flagNum--;
+        if (flagNum > 0)
+        {
+            flagNum--;
+        }
     }
 
     public void resetFlag()

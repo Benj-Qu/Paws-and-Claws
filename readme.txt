@@ -163,3 +163,61 @@ Mar 24:
 2. effect of the potion (on player), for example a shield for invisible potion.
 3. ask player about selection, make it not fly to another player?
 4. change the block in the winter land scene, use ice block.
+
+
+Mar 27:
+主要任务：
+1. tutorial
+	镜头给到旗帜，来表明要拿旗
+	tutorial 限制摆的目标位置 + attack
+	Tutorial 玩家&旗子的图没改
+	player 有颜色的衣服
+	tutorial场景改成农场
+
+2. attack 攻击其他player
+	knockback， cd
+
+3. controller
+	Intro Scene Controller Control
+	Controller Key for esc menu page
+	block selection 改成框选
+
+6. 对方在flag上时不能抢旗 一直在flag上时判断会有问题（需要出去再进来）
+
+8. Movement Animation
+9. 结算动画+transition （爪子伸出来）
+
+12. party time: 最后10秒巨大的倒计时 
+13. 左上角round， 时间改成数字在右上角 删掉progress bar; 显示领先的人的图片
+
+14. player碰撞 Player碰撞没加controller判断
+18. 旗子特判不能生成在前景后面
+19. 选block界面蒙版不够深 有时候看不清block和地图 （加一个mask遮住block）
+21. 放下block之后框改成白的
+22. 猫和狗放block的时候区别不明显
+
+23. block的介绍 框住的block放动画 如果致死放☠️
+28. 灯笼重量更大 蒸笼小一点 熊猫换掉一个 
+29. 背景颜色更深来表明哪些地方可以站
+30. 右边出左边进入，左边出右边进，
+31. 向下攻击block，制裁抢占高点 （火山喷发）
+33. 全局陷阱，参考鸡马海啸
+34. 2*1 block
+	浮冰 in northland
+	缆车 in winter land
+	火山 in 火山
+
+不知道怎么复现的bug: (需要测试）
+1. winter land 有时有奇怪的collider; 熊猫的collider好像不太对 可能是不会转
+2. 跳在其他player头上时有时跳不起来 player movement 跳不起来？
+	悬浮？可能竹子卡住？
+
+Small bugs / not now:
+1. 连续block有时会卡住
+2. 旗子周围可以空一圈？
+3. 夺旗的时候更juicy一点 不只是换个颜色 可以搞个动画
+4. 多个选项里选block
+5. 选择自己的技能
+6. 长按加速
+7. 单人level（地图难），自定义规则（几轮）
+8. block转方向

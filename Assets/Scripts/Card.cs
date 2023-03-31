@@ -14,6 +14,10 @@ public class Card : MonoBehaviour
     private Vector3 target;
     private Vector3 speed;
 
+    public Animator animator;
+
+    public bool playDescriptionAnimation = true;
+
     // public int amount = -1;
 
     private void Awake()
@@ -51,6 +55,8 @@ public class Card : MonoBehaviour
         // look for the corresponding image in the sprite folder
         _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[this.block_id] + "_");
         
+        // look for the corresponding animation for this card
+        // if (playDescriptionAnimation) animator.runtimeAnimatorController = 
     }
 
     public void StartSelectEffect(int leftOrRight, Vector3 pos)

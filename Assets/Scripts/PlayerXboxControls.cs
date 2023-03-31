@@ -46,9 +46,27 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Select"",
+                    ""name"": ""Switch"",
                     ""type"": ""Button"",
                     ""id"": ""6743d8b5-4296-4575-b7df-47661325f6ac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""32545aef-780e-453c-9f2d-af45bfb9fe2c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""7c9c0184-52bc-4ff1-9ace-ade617a8d7b0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -59,22 +77,11 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6c3d655b-4441-45c2-807e-8ba66b83e0a7"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f72a5864-8b8c-4c10-90fa-61da90c44340"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox"",
-                    ""action"": ""Move"",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -136,11 +143,33 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c5721477-fe33-4695-a573-0165221c2d3a"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox"",
-                    ""action"": ""Select"",
+                    ""action"": ""Switch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05b2ebfa-c8b5-4fb3-bbbe-702b60a6a278"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c43a0c3-a62e-4dc8-a8ed-e4bf917a5fd9"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -165,7 +194,9 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
-        m_Gameplay_Select = m_Gameplay.FindAction("Select", throwIfNotFound: true);
+        m_Gameplay_Switch = m_Gameplay.FindAction("Switch", throwIfNotFound: true);
+        m_Gameplay_Exit = m_Gameplay.FindAction("Exit", throwIfNotFound: true);
+        m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,14 +258,18 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Move;
-    private readonly InputAction m_Gameplay_Select;
+    private readonly InputAction m_Gameplay_Switch;
+    private readonly InputAction m_Gameplay_Exit;
+    private readonly InputAction m_Gameplay_Attack;
     public struct GameplayActions
     {
         private @PlayerXboxControls m_Wrapper;
         public GameplayActions(@PlayerXboxControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
-        public InputAction @Select => m_Wrapper.m_Gameplay_Select;
+        public InputAction @Switch => m_Wrapper.m_Gameplay_Switch;
+        public InputAction @Exit => m_Wrapper.m_Gameplay_Exit;
+        public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,9 +285,15 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Select.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSelect;
+                @Switch.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitch;
+                @Switch.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitch;
+                @Switch.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitch;
+                @Exit.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnExit;
+                @Attack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -263,9 +304,15 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
+                @Switch.started += instance.OnSwitch;
+                @Switch.performed += instance.OnSwitch;
+                @Switch.canceled += instance.OnSwitch;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -283,6 +330,8 @@ public partial class @PlayerXboxControls : IInputActionCollection2, IDisposable
     {
         void OnJump(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
+        void OnSwitch(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

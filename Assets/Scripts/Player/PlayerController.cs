@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public float AirKnockCoef;
     public float KnockBackPeriod;
     public float speedDecade = 4f;
+
+    public float LeftBorder = -8f;
+    public float RightBorder = 8f;
 
     public KeyCode LeftButton;
     public KeyCode RightButton;
@@ -42,31 +44,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private GameController gc;
-    private PlayerXboxControls controls;
+    private bool collectInvinciblePowerUp = false;
+    private AudioSource pas;
 
     public int joystickNumber;
-
-    // private void Awake() {
-    //     controls = new PlayerXboxControls();
-    //     controls.Gameplay.Jump.performed += ctx => XboxCheckAndJump();
-    //     controls.Gameplay.Move.performed += ctx => XboxCheckAndJump();
-    // }
-    //
-    // private void OnEnable() {
-    //     controls.Gameplay.Enable();
-    // }
-    //
-    // private void OnDisable() {
-    //     controls.Gameplay.Disable();
-    // }
-    //
-    // private void XboxCheckAndJump() {
-    //     if (jumpable())
-    //     {
-    //         jump();
-    //     }
-    // }
-    private AudioSource pas;
 
     private void Start()
     {
@@ -95,6 +76,29 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+        RoundWorld();
+    }
+
+    private void RoundWorld()
+    {
+        if (transform.position.x < LeftBorder - 0.1f)
+        {
+            transform.position = new Vector2(RightBorder - 0.1f, transform.position.y);
+            onFloor = false;
+            onLeftWall = false;
+            onRightWall = false;
+            onIce = false;
+            floorV = 0;
+        }
+        if (transform.position.x > RightBorder + 0.1f)
+        {
+            transform.position = new Vector2(LeftBorder + 0.1f, transform.position.y);
+            onFloor = false;
+            onLeftWall = false;
+            onRightWall = false;
+            onIce = false;
+            floorV = 0;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -110,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if ((hitpos.normal.y > 0) && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
+            if ((hitpos.normal.y > 0) && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
@@ -140,8 +144,10 @@ public class PlayerController : MonoBehaviour
         {
             ContactPoint2D hitpos = collision.GetContact(0);
             PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
+            string otherJoystickString = pc.joystickNumber.ToString();
+            float otherJoystickInput = Input.GetAxis("Horizontal" + otherJoystickString);
             // Knock On Below Player
-            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
             {
                 // If Other Player On Floor
                 if (!onFloor && pc.OnFloor())
@@ -168,7 +174,7 @@ public class PlayerController : MonoBehaviour
             // Knock On Left Player
             else if (hitpos.normal.x > 0)
             {
-                if (Input.GetKey(pc.RightButton))
+                if (Input.GetKey(pc.RightButton) || otherJoystickInput > 0)
                 {
                     float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
                     StartCoroutine(KnockBack(new Vector2(pc.Speed * coef, rb.velocity.y)));
@@ -181,7 +187,7 @@ public class PlayerController : MonoBehaviour
             // Knock On Right Player
             else if (hitpos.normal.x < 0)
             {
-                if (Input.GetKey(pc.LeftButton))
+                if (Input.GetKey(pc.LeftButton) || otherJoystickInput < 0)
                 {
                     float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
                     StartCoroutine(KnockBack(new Vector2(-pc.Speed * coef, rb.velocity.y)));
@@ -207,7 +213,7 @@ public class PlayerController : MonoBehaviour
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x)))
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
@@ -322,7 +328,8 @@ public class PlayerController : MonoBehaviour
             //rb.velocity = new Vector2(floorV, rb.velocity.y);
         }
         // Handle Jumping
-        if ((Input.GetKeyDown(JumpButton) || Input.GetButtonDown("A" + joystickString)) && jumpable())
+        // if ((Input.GetKeyDown(JumpButton) || Input.GetButtonDown("A" + joystickString)) && jumpable())
+        if ((Input.GetKeyDown(JumpButton)) && jumpable())
         {
             Debug.Log("A" + joystickString);
             jump();
@@ -345,7 +352,7 @@ public class PlayerController : MonoBehaviour
         return other.CompareTag("Player");
     }
 
-    private void jump()
+    public void jump()
     {
         if (onFloor)
         {
@@ -386,7 +393,7 @@ public class PlayerController : MonoBehaviour
         active = true;
     }
 
-    private bool jumpable()
+    public bool jumpable()
     {
         return (jumpTimes > 0);
     }
@@ -498,11 +505,29 @@ public class PlayerController : MonoBehaviour
         rb.mass *= SizeUp;
         gameObject.transform.localScale *= SizeUp;
         invincible = Invincible;
+        if (collectInvinciblePowerUp == false && Invincible)
+        {
+            collectInvinciblePowerUp = true;
+        }
         yield return new WaitForSeconds(period);
         Speed /= SpeedUp;
         JumpSpeed /= JumpUp;
         invincible = false;
         rb.mass /= SizeUp;
         gameObject.transform.localScale /= SizeUp;
+        if (collectInvinciblePowerUp && invincible == false)
+        {
+            collectInvinciblePowerUp = false;
+        }
+    }
+
+    // public bool GetFlip()
+    // {
+    //     return sr.flipX;
+    // }
+
+    public bool GetInvincible()
+    {
+        return collectInvinciblePowerUp;
     }
 }

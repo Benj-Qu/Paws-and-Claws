@@ -264,6 +264,8 @@ GameObject:
   - component: {fileID: 4138337599100129822}
   - component: {fileID: 4138337599100129809}
   - component: {fileID: 4138337599100129808}
+  - component: {fileID: 7985956624572172967}
+  - component: {fileID: 5336509314114257349}
   m_Layer: 3
   m_Name: player_2
   m_TagString: Player
@@ -357,7 +359,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.93, y: 4.9}
+    oldSize: {x: 3.16, y: 4.07}
     newSize: {x: 4.27, y: 4.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -405,10 +407,11 @@ MonoBehaviour:
   SlideSpeed: 0.1
   MaxJumpTimes: 1
   JumpDeactivePeriod: 0.15
-  DieAltitude: -6
   AirKnockCoef: 2.5
   KnockBackPeriod: 0.2
   speedDecade: 4
+  LeftBorder: -8
+  RightBorder: 8
   LeftButton: 276
   RightButton: 275
   JumpButton: 273
@@ -525,6 +528,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7985956624572172967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138337599100129823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da1798e79ce448b9918197bd76bea2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 4138337599100129822}
+  armor: {fileID: 21300000, guid: e3ffa81164e93430981ae8bbc49cdd75, type: 3}
+  sr: {fileID: 4138337599100129811}
+--- !u!114 &5336509314114257349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138337599100129823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842fd3cf9fffe6e4390cc4f0a7476eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickNumber: 2
+  FireButton: 32
 --- !u!1 &4138337599467028355
 GameObject:
   m_ObjectHideFlags: 0
