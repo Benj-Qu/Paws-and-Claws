@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 97308892}
   - component: {fileID: 97308894}
   m_Layer: 0
-  m_Name: winterland
+  m_Name: Winter Land
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 776436000}
   - component: {fileID: 776436002}
   m_Layer: 0
-  m_Name: panda
+  m_Name: Lantern Festival
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,6 +504,7 @@ MonoBehaviour:
   panda: {fileID: 776435999}
   scarecrow: {fileID: 1239976049}
   northland: {fileID: 1555522021}
+  currentMap: {fileID: 0}
 --- !u!1 &1193990538
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +703,7 @@ GameObject:
   - component: {fileID: 1239976050}
   - component: {fileID: 1239976052}
   m_Layer: 0
-  m_Name: scarecrowmap
+  m_Name: Farm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -934,7 +935,7 @@ GameObject:
   - component: {fileID: 1555522022}
   - component: {fileID: 1555522024}
   m_Layer: 0
-  m_Name: northland
+  m_Name: Northland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapController : MonoBehaviour
 {
@@ -41,6 +42,10 @@ public class MapController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Z))
+        {
+            SceneManager.LoadScene(currentMap.name);
+        }
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             // choose up
