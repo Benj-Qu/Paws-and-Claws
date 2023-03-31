@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public int joystickNumber;
     public KeyCode FireButton;
     public string EnemyName;
-    public float offset = 20f;
+    public float offset = 100f;
     public float AttackRange = 2f;
     public float AttackAngle = 45f;
     public float AttackFrequency = 2.5f;
@@ -29,8 +29,11 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Fire();
-        if (!attackable)
+        if (attackable && GetComponent<PlayerController>().isAttackable())
+        {
+            Fire();
+        }
+        else
         {
             timer += Time.deltaTime;
             if (timer > AttackFrequency)
@@ -85,9 +88,9 @@ public class PlayerAttack : MonoBehaviour
 
     private float getRatio()
     {
-        int score = gameObject.GetComponent<PlayerScore>().getScore();
+        int score = GetComponent<PlayerScore>().getScore();
         int other = enemy.GetComponent<PlayerScore>().getScore();
-        return (other + offset) / (score + offset);
+        return Mathf.Max((other + offset) / (score + offset), 1f);
     }
 
     private float getDistance()
@@ -112,5 +115,11 @@ public class PlayerAttack : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public void reset()
+    {
+        timer = 0f;
+        attackable = true;
     }
 }
