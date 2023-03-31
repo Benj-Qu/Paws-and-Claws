@@ -35,18 +35,19 @@ public class PartyTime : MonoBehaviour
     void Update()
     {
         //Debug.Log(_slider.value);
-        if (_changeColor == false && GameController.instance.stage == 2 && GameController.instance.level != "Tutorial" &&
-            GameController.instance.level != "Tutorial1" && GameController.instance.level != "Trial Level" && _slider.value <= 10)
+        if (_changeColor == false && GameController.instance.stage == 2 && _slider.value <= 10)
         {
             _changeColor = true;
             Color tempColor = _image.color;
             tempColor = Color.red;
             _image.color = tempColor;
-            partyTimeText.enabled = true;
-            fc.StartPartyTime();
+            if (GameController.instance.level != "Farm") {
+                partyTimeText.enabled = true;
+                fc.StartPartyTime();
+            }
             if (Mathf.Abs(_slider.value - 10) <= 0.5f)
             {
-                //Debug.Log("count == 10s");
+                Debug.Log("count == 10s");
                 AudioSource partyTimecountDown = GetComponent<AudioSource>();
                 if (partyTimecountDown) partyTimecountDown.PlayOneShot(count_down, 1f);
             }

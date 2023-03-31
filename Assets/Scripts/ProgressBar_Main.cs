@@ -80,7 +80,7 @@ public class ProgressBar_Main : MonoBehaviour
 
     public void StartGame()
     {
-        if (GameController.instance.level == "Farm")
+        if (GameController.instance.level == "Farm" && GameController.instance.stage == 2)
         {
             _slider.maxValue = 30;
         }

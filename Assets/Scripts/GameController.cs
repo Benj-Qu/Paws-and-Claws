@@ -99,10 +99,7 @@ public class GameController : MonoBehaviour
             player1_control.activate();
             player2_control.activate();
         } 
-        else
-        {
-            flagController = GameObject.Find("Flags").GetComponent<flagController>();
-        }
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         player1.transform.position = StartPoint1;
         player2.transform.position = StartPoint2;
         camera_ = Camera.main;
@@ -207,6 +204,7 @@ public class GameController : MonoBehaviour
         FarmStage2Texts.SetActive(false);
         FarmStage3Objects.SetActive(true);
         FarmStage3Texts.SetActive(true);
+        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         ResetPlayers();
         FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart. They can select suitable blocks!</b>");
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
@@ -235,6 +233,7 @@ public class GameController : MonoBehaviour
     {
         if (flagController) flagController.DestroyFlags();
         ScorePanel.SetActive(false);
+        if(FarmStoryText) FarmStoryText.updateText("");
         if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
         {
             int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
@@ -381,7 +380,7 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
-            if (level == "Trial Test")
+            if (level == "Farm")
             {
                 progressBar.gameObject.SetActive(true);
                 progressBar.StartGame();
