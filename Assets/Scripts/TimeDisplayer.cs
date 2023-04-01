@@ -56,11 +56,11 @@ public class TimeDisplayer : MonoBehaviour
             countdownTime -= Time.deltaTime;
         }
 
-        if (countdownTime <= 0)
-        {
-            gameController.GameOver();
-            countdownTime = 0;
-        }
+        // if (countdownTime <= 0)
+        // {
+        //     gameController.GameOver();
+        //     countdownTime = 0;
+        // }
         if (text)
         {
             text.text = "Time: " + Mathf.Floor(countdownTime).ToString() + " s";
@@ -77,7 +77,7 @@ public class TimeDisplayer : MonoBehaviour
         {
             maxTime = 45;
         }
-        gameStarted = true;
         countdownTime = maxTime;
+        gameStarted = true;
     }
 }

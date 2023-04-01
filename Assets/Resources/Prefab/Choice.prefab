@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 725405295516170664}
   - component: {fileID: 2230541970229262617}
   - component: {fileID: 2579786741776737143}
-  - component: {fileID: 3232922855276111797}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -60,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.65804875, g: 1, b: 0.6084906, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -77,22 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3232922855276111797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480252839001265946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0388151843a484cbf0c5a5cf2940e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonList:
-  - {fileID: 3661055069535686117}
-  - {fileID: 1529413628551545326}
-  joystickNum: 
 --- !u!1 &1529413628551545326
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529413628597542087}
   - component: {fileID: 1529413628597542084}
+  - component: {fileID: 3588804052118289017}
   m_Layer: 5
   m_Name: Choice
   m_TagString: Untagged
@@ -189,6 +173,25 @@ MonoBehaviour:
   progressBar: {fileID: 0}
   roundUp: 0
   BlockController: {fileID: 0}
+  image: {fileID: 1480252839001265946}
+--- !u!114 &3588804052118289017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529413628597542086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0388151843a484cbf0c5a5cf2940e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeButton: 0
+  ButtonList:
+  - {fileID: 3661055069535686117}
+  - {fileID: 1529413628551545326}
+  joystickNum: 
+  image: {fileID: 1480252839001265946}
 --- !u!1 &3661055069535686117
 GameObject:
   m_ObjectHideFlags: 0
