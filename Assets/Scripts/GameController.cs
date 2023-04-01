@@ -355,6 +355,8 @@ public class GameController : MonoBehaviour
         // TODO: Add coroutine for animation
         // SceneManager.LoadScene("Level" + level);
         progressBar.gameObject.SetActive(false);
+        // make the party time text disappear
+        EventBus.Publish<GameOverEvent>(new GameOverEvent());
         StartCoroutine(Win());
     }
 
@@ -377,7 +379,7 @@ public class GameController : MonoBehaviour
         // make tutorial1 finished
 
         progressBar.gameObject.SetActive(true);
-        progressBar.StartGame();
+        
 
         stage ++;
         Debug.Log("stage: " + stage);
@@ -385,6 +387,7 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
+            progressBar.StartFight();
             if (level == "Farm")
             {
                 progressBar.gameObject.SetActive(true);
@@ -408,6 +411,7 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
+            progressBar.StartGame();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
         }
@@ -518,5 +522,13 @@ public class BigRoundIncEvent
     public override string ToString()
     {
         return "Change to big round " + round_big;
+    }
+}
+
+public class GameOverEvent
+{
+    public GameOverEvent()
+    {
+        return;
     }
 }
