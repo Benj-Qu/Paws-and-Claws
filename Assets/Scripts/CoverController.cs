@@ -23,7 +23,7 @@ public class CoverController : MonoBehaviour
             var hit = Physics2D.Raycast(new Vector2(ray.origin.x, ray.origin.y), Vector2.zero, Mathf.Infinity);
             if (hit.transform != null)
             {
-                SceneManager.LoadScene("Intro");
+                SceneManager.LoadScene("Story");
             }
         }
     }
