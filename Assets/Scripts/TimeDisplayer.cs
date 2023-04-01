@@ -72,6 +72,7 @@ public class TimeDisplayer : MonoBehaviour
         if (GameController.instance.level == "Farm")
         {
             maxTime = 30;
+            // if (GameController.instance.stage == )
         }
         else
         {
