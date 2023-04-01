@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private bool alive = true;
     private bool active = false;
+    private bool attacked = false;
     private bool jumping = false;
     private bool invincible = false;
     private bool onFloor = true;
@@ -410,7 +411,9 @@ public class PlayerController : MonoBehaviour
     {
         if (alive)
         {
+            GetComponent<PlayerAttack>().reset();
             showAddScore.ShowScore();
+            GetComponent<PlayerScore>().updateScore(DeathPenalty);
             pas.PlayOneShot(player_die, 0.5f);
             StartCoroutine(KilledAnimation());
         }
@@ -419,7 +422,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator KilledAnimation()
     {
         // Die and Freeze
-        gameObject.GetComponent<PlayerScore>().updateScore(DeathPenalty);
         alive = false;
         rb.velocity = Vector2.zero;
         flash();
@@ -474,7 +476,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isActive()
     {
-        return alive && active && !jumping;
+        return alive && active && !jumping && !attacked;
     }
 
     public bool isAttackable()
@@ -513,10 +515,10 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator KnockBackCoroutine(Vector2 direction, float time)
     {
-        active = false;
+        attacked = true;
         rb.velocity = direction;
         yield return new WaitForSeconds(time);
-        active = true;
+        attacked = false;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
@@ -555,5 +557,10 @@ public class PlayerController : MonoBehaviour
     public bool GetInvincible()
     {
         return collectInvinciblePowerUp;
+    }
+
+    public bool isAttacked()
+    {
+        return attacked;
     }
 }
