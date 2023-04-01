@@ -17,6 +17,8 @@ public class CardSelectionController : MonoBehaviour
     private PlayerController pc;
 
     public string joystickNum;
+
+    public GameObject image;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class CardSelectionController : MonoBehaviour
             if (activeButton > 0)
             {
                 activeButton--;
-                gameObject.transform.position = ButtonList[activeButton].transform.position;
+                image.transform.position = ButtonList[activeButton].transform.position;
             }
         }
         if (Input.GetKeyDown(pc.RightButton) || joystickInputx > 0)
@@ -59,7 +61,7 @@ public class CardSelectionController : MonoBehaviour
             if (activeButton < numButton - 1)
             {
                 activeButton++;
-                gameObject.transform.position = ButtonList[activeButton].transform.position;
+                image.transform.position = ButtonList[activeButton].transform.position;
             }
         }
 
@@ -82,12 +84,12 @@ public class CardSelectionController : MonoBehaviour
     public void Reset()
     {
         activeButton = 0;
-        gameObject.transform.position = ButtonList[0].transform.position;
+        image.transform.position = ButtonList[0].transform.position;
     }
 
     public void Disappear()
     {
-        gameObject.SetActive(false);
+        image.SetActive(false);
     }
     
     // public void

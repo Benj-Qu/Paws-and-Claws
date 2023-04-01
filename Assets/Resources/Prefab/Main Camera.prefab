@@ -194,8 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394d54e8f13b745368ba82c92e3b7512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tc: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
   distance: 0.5
   size_: 1
-  changeInterval: 1
+  changeInterval: 0.6
   posList: []
