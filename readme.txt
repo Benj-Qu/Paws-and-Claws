@@ -227,7 +227,7 @@ Mar31
 3. 框选放动画zeyi
 4. 缆车 yibei
 5. intro xinyii controller
-6. bug round1 直接结算结束 xinyi
+6. bug round1 直接结算结束 xinyi ✅
 7. 到camera移动结束才开始stage1 zeyi
 8. partytime text final round don't disappear zeyi
 10.选卡框颜色 选到消失 黄色和粉色xinyi

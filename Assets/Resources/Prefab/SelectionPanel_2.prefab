@@ -3283,6 +3283,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2579786741776737143, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: m_Color.b
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579786741776737143, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579786741776737143, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
     - target: {fileID: 3232922855276111797, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
       propertyPath: joystickNum
       value: 1
@@ -3425,6 +3437,14 @@ PrefabInstance:
     - target: {fileID: 1529413628597542087, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579786741776737143, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579786741776737143, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: m_Color.g
+      value: 0.72156864
       objectReference: {fileID: 0}
     - target: {fileID: 3232922855276111797, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
       propertyPath: joystickNum
