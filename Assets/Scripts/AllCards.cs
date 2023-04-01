@@ -287,14 +287,14 @@ public class AllCards : MonoBehaviour
             return;
         }
 
-        if (level == "ForAnimation")
+        if (level == "hyb_anim")
         {
             // big round 1
             // small round 1
-            CardRound cardRounda1_1 = new CardRound(16, 0, 1, 1);
-            CardRound cardRounda1_2 = new CardRound(16, 1, 1, 2);
-            CardRound cardRounda1_3 = new CardRound(16, 2, 2, 1);
-            CardRound cardRounda1_4 = new CardRound(16, 3, 2, 2);
+            CardRound cardRounda1_1 = new CardRound(1, 0, 1, 1);
+            CardRound cardRounda1_2 = new CardRound(0, 1, 1, 2);
+            CardRound cardRounda1_3 = new CardRound(9, 2, 2, 1);
+            CardRound cardRounda1_4 = new CardRound(10, 3, 2, 2);
             List<CardRound> sa11 = new List<CardRound>();
             sa11.Add(cardRounda1_1);
             sa11.Add(cardRounda1_2);
@@ -468,9 +468,9 @@ public class AllCards : MonoBehaviour
             return;
         }
         // other scene, including tutorial and trail level use the same currently
-        
+
         // big round 1
-            // small round 1
+        // small round 1
         CardRound cardRound1_1 = new CardRound(0, 0,  1, 1);
         CardRound cardRound1_2 = new CardRound(1, 1,  1, 2);
         CardRound cardRound1_3 = new CardRound(4, 2,  2, 1);
