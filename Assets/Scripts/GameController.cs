@@ -93,6 +93,7 @@ public class GameController : MonoBehaviour
         player2_control = player2.GetComponent<PlayerController>();
         if (level == "Farm")
         {
+            progressBar.gameObject.SetActive(false);
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
             stage = -2; // -2: movement, -1: attack
