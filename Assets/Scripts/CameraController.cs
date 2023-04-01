@@ -45,6 +45,7 @@ public class CameraController : MonoBehaviour
             posList.Add(child.position);
         }
         if(tc) tc.updateText("");
+        EventBus.Publish<CameraEvent>(new CameraEvent(true));
         StartCoroutine(MoveCamera(0));
     }
 
@@ -76,6 +77,7 @@ public class CameraController : MonoBehaviour
             transform.position = ori;
             GetComponent<Camera>().orthographicSize = ori_size;
             if(tc) tc.updateText("[speed=0.08]<b>Guadians are well planned. They can build perfect path towards flags!</b>");
+            EventBus.Publish<CameraEvent>(new CameraEvent(false));
         }
     }
 
@@ -98,5 +100,15 @@ public class CameraController : MonoBehaviour
         {
             GetComponent<Camera>().orthographicSize += resizeSpeed * Time.deltaTime;
         }
+    }
+}
+
+public class CameraEvent
+{
+    public bool startOrFinish; // false means finish, true means start
+    public CameraEvent(bool _startOrFinish)
+    {
+        startOrFinish = _startOrFinish;
+        return;
     }
 }

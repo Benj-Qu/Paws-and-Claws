@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,21 @@ public class TimeDisplayer : MonoBehaviour
     private GameObject Player2;
 
     private GameController gameController;
+    private Subscription<CameraEvent> camera_event;
+
+    private void Awake()
+    {
+        camera_event = new Subscription<CameraEvent>(OnCameraEvent);
+    }
+
+    private void OnCameraEvent(CameraEvent e)
+    {
+        if (e.startOrFinish == false) // finished
+        {
+            gameStarted = true;
+        }
+    }
+
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
@@ -78,6 +94,11 @@ public class TimeDisplayer : MonoBehaviour
             maxTime = 45;
         }
         countdownTime = maxTime;
-        gameStarted = true;
+        // gameStarted = true;
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe(camera_event);
     }
 }
