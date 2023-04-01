@@ -222,11 +222,24 @@ Small bugs / not now:
 8. block转方向
 
 Mar31
-1. map 更大让camera不会出边界
+1. background figure 更大让camera不会出边界 改旗子范围
 2. bug xinyi
-3. 框选放动画
-4. 缆车
-5. intro xinyi
-6. bug round1 到newintro
-7.
+3. 框选放动画zeyi
+4. 缆车 yibei
+5. intro xinyii controller
+6. bug round1 直接结算结束 xinyi
+7. 到camera移动结束才开始stage1 zeyi
+8. partytime text final round don't disappear zeyi
+10.选卡框颜色 选到消失 黄色和粉色xinyi
+11.hanyibei push
+12. timedisplayer add to other scene. xinyi
+13. script yibei
+14.
+
+
+
+
+
+
+
 

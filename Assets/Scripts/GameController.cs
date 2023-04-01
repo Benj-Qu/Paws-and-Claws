@@ -345,7 +345,7 @@ public class GameController : MonoBehaviour
         }
         
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("NewIntro");
+        //SceneManager.LoadScene("NewIntro");
         // player.GetComponent<HasInventory>().Reset();
     }
 

@@ -1890,7 +1890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partyTimeText: {fileID: 1276861467}
   CountDownText: {fileID: 115541776}
-  progressBar: {fileID: 460385376}
+  TimeText: {fileID: 1193360278}
   fc: {fileID: 1185109323}
   count_down: {fileID: 8300000, guid: 374714fce91b947e180dbe3c453ba224, type: 3}
   _changeColor: 0

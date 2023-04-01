@@ -8,13 +8,13 @@ public class PartyTime : MonoBehaviour
 {
     public TextMeshProUGUI partyTimeText;
     public TextMeshProUGUI CountDownText;
-    public GameObject progressBar;
+    public GameObject TimeText;
     public flagController fc;
     public AudioClip count_down;
     public bool _changeColor = false;
-    private Slider _slider;
-    private GameObject _fill;
-    private Image _image;
+    private TimeDisplayer timeDisplayer;
+    // private GameObject _fill;
+    // private Image _image;
     private float cnt_down = 10f;
     public bool countdownPlayed = false;
     
@@ -24,29 +24,29 @@ public class PartyTime : MonoBehaviour
         partyTimeText.enabled = false;
         CountDownText.enabled = false;
         countdownPlayed = false;
-        _slider = progressBar.GetComponent<Slider>();
+        timeDisplayer = TimeText.GetComponent<TimeDisplayer>();
         cnt_down = 10;
-        foreach (Transform child in progressBar.transform)
-        {
-            if (child.gameObject.name == "Fill")
-            {
-                _fill = child.gameObject;
-                _image = _fill.GetComponent<Image>();
-                break;
-            }
-        }
+        // foreach (Transform child in progressBar.transform)
+        // {
+        //     if (child.gameObject.name == "Fill")
+        //     {
+        //         _fill = child.gameObject;
+        //         _image = _fill.GetComponent<Image>();
+        //         break;
+        //     }
+        // }
     }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(_slider.value);
-        if (GameController.instance.stage == 2 && _slider.value <= 11)
+        if (GameController.instance.stage == 2 && timeDisplayer.countdownTime <= 11)
         {
-            if(_slider.value <= 10)
+            if(timeDisplayer.countdownTime <= 10)
             {
                 _changeColor = true;
-                _image.color = Color.red;
+                // _image.color = Color.red;
                 if (GameController.instance.level != "Farm")
                 {
                     partyTimeText.enabled = true;
@@ -54,7 +54,7 @@ public class PartyTime : MonoBehaviour
                 }
             }
             Debug.Log(cnt_down);
-            if (Mathf.Abs(_slider.value - 11) <= 0.2f && !countdownPlayed)
+            if (Mathf.Abs(timeDisplayer.countdownTime - 11) <= 0.2f && !countdownPlayed)
             {
                 Debug.Log("count == 10s");
                 countdownPlayed = true;
@@ -64,7 +64,7 @@ public class PartyTime : MonoBehaviour
                 CountDownText.enabled = true;
                 cnt_down = 10;
             }
-            if(Mathf.Abs(_slider.value - cnt_down) <= 0.2f)
+            if(Mathf.Abs(timeDisplayer.countdownTime - cnt_down) <= 0.2f)
             {
                 CountDownText.text = (cnt_down - 1).ToString();
                 Debug.Log(cnt_down.ToString());
@@ -79,12 +79,12 @@ public class PartyTime : MonoBehaviour
             }
         }
 
-        if (_changeColor && _slider.value >= 50f)
+        if (_changeColor && timeDisplayer.countdownTime >= 44.5f)
         {
             _changeColor = false;
-            Color tempColor = _image.color;
-            tempColor = Color.blue;
-            _image.color = tempColor;
+            // Color tempColor = _image.color;
+            // tempColor = Color.blue;
+            // _image.color = tempColor;
             partyTimeText.enabled = false;
             fc.EndPartyTime();
             cnt_down = 10;
