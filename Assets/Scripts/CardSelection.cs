@@ -16,8 +16,9 @@ public class CardSelection : MonoBehaviour
     public GameObject progressBar;
     public bool roundUp = false;
     public blockController BlockController = null;
-    public CardSelectionController cardSelectionController;
-
+    public GameObject image;
+    
+    private CardSelectionController cardSelectionController;
     private GameObject _card1;
     private GameObject _card2;
     private Card _card1Script;
@@ -30,6 +31,7 @@ public class CardSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cardSelectionController = GetComponent<CardSelectionController>();
         if (BlockController == null)
         {
             GameObject block = GameObject.Find("Block");
@@ -98,6 +100,7 @@ public class CardSelection : MonoBehaviour
             // float joystickInput = Input.GetAxis("Horizontal1");
             if (Input.GetButtonDown("A1") || Keyboard.current.zKey.wasPressedThisFrame)
             {
+                image.SetActive(false);
                 // if (Keyboard.current.aKey.wasPressedThisFrame || joystickInput < 0)
                 if (cardSelectionController.activeButton == 0)
                 {
@@ -125,6 +128,7 @@ public class CardSelection : MonoBehaviour
             // float joystickInput = Input.GetAxis("Horizontal2");
             if (Input.GetButtonDown("A2") || Keyboard.current.mKey.wasPressedThisFrame)
             {
+                image.SetActive(false);
                 // if (Keyboard.current.leftArrowKey.wasPressedThisFrame || joystickInput < 0)
                 if (cardSelectionController.activeButton == 0)
                 {
@@ -215,6 +219,7 @@ public class CardSelection : MonoBehaviour
     private IEnumerator DrawCard()
     {
         yield return new WaitForSeconds(1f);
+        image.SetActive(true);
         
         // TODO: adjust how the card is drawn from the card pool
         List<CardRound> r = new List<CardRound>();

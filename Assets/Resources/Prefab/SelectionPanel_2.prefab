@@ -3194,7 +3194,7 @@ PrefabInstance:
     - target: {fileID: 1529413628597542084, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
       propertyPath: cardSelectionController
       value: 
-      objectReference: {fileID: 3992713958667640065}
+      objectReference: {fileID: 0}
     - target: {fileID: 1529413628597542086, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
       propertyPath: m_Name
       value: Choice
@@ -3287,6 +3287,14 @@ PrefabInstance:
       propertyPath: joystickNum
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3588804052118289017, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: joystickNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588804052118289017, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: activeButton
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
 --- !u!1 &1048441039878825586 stripped
@@ -3299,17 +3307,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1529413628597542087, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
   m_PrefabInstance: {fileID: 1996605388242926260}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3992713958667640065 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3232922855276111797, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
-  m_PrefabInstance: {fileID: 1996605388242926260}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0388151843a484cbf0c5a5cf2940e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2650295342536116751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3340,7 +3337,7 @@ PrefabInstance:
     - target: {fileID: 1529413628597542084, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
       propertyPath: cardSelectionController
       value: 
-      objectReference: {fileID: 583809506832919994}
+      objectReference: {fileID: 0}
     - target: {fileID: 1529413628597542086, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
       propertyPath: m_Name
       value: Choice (1)
@@ -3433,19 +3430,12 @@ PrefabInstance:
       propertyPath: joystickNum
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3588804052118289017, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
+      propertyPath: joystickNum
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
---- !u!114 &583809506832919994 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3232922855276111797, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}
-  m_PrefabInstance: {fileID: 2650295342536116751}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0388151843a484cbf0c5a5cf2940e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &3602365156065957576 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1529413628597542087, guid: 96a6fd9b9c0b24dac99b77579215dc71, type: 3}

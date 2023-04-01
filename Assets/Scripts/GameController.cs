@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
 
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
-        progressBar.gameObject.SetActive(false);
+        // progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
         RoundTextHint = GameObject.Find("RoundTextHint").GetComponent<TextMeshProUGUI>();
         if(level != "Farm")
