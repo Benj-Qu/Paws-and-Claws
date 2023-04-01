@@ -164,7 +164,6 @@ Mar 24:
 3. ask player about selection, make it not fly to another player?
 4. change the block in the winter land scene, use ice block.
 
-
 Mar 27:
 主要任务：
 1. tutorial
@@ -187,7 +186,7 @@ Mar 27:
 8. Movement Animation
 9. 结算动画+transition （爪子伸出来）
 
-12. party time: 最后10秒巨大的倒计时 
+12. party time: 最后10秒巨大的倒计时
 13. 左上角round， 时间改成数字在右上角 删掉progress bar; 显示领先的人的图片
 
 14. player碰撞 Player碰撞没加controller判断
@@ -197,7 +196,7 @@ Mar 27:
 22. 猫和狗放block的时候区别不明显
 
 23. block的介绍 框住的block放动画 如果致死放☠️
-28. 灯笼重量更大 蒸笼小一点 熊猫换掉一个 
+28. 灯笼重量更大 蒸笼小一点 熊猫换掉一个
 29. 背景颜色更深来表明哪些地方可以站
 30. 右边出左边进入，左边出右边进，
 31. 向下攻击block，制裁抢占高点 （火山喷发）
@@ -221,3 +220,13 @@ Small bugs / not now:
 6. 长按加速
 7. 单人level（地图难），自定义规则（几轮）
 8. block转方向
+
+Mar31
+1. map 更大让camera不会出边界
+2. bug xinyi
+3. 框选放动画
+4. 缆车
+5. intro xinyi
+6. bug round1 到newintro
+7.
+
