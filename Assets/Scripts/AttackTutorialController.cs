@@ -13,6 +13,8 @@ public class AttackTutorialController : MonoBehaviour
     bool first = true;
     float AttackTime = 10f;
     int TimeCntDown = 10;
+    bool p1_attacked = false;
+    bool p2_attacked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +27,11 @@ public class AttackTutorialController : MonoBehaviour
         if(Mathf.Abs(AttackTime) <= 0.2f)
         {
             GameController.instance.attackTutorialFinished = true;
+            CntDownText.enabled = false;
         }
-        if(p1.isAttacked() && p2.isAttacked())
+        if (p1.isAttacked()) p1_attacked = true;
+        if (p2.isAttacked()) p2_attacked = true;
+        if(p1_attacked && p2_attacked)
         {
             if (first)
             {
