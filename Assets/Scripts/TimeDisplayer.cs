@@ -42,7 +42,7 @@ public class TimeDisplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameStarted)
+        if (gameStarted && !(GameController.instance.level == "Farm" && GameController.instance.stage == 1))
         {
             // time up
             if (countdownTime <= 0)
@@ -71,16 +71,10 @@ public class TimeDisplayer : MonoBehaviour
                 Player1.GetComponent<PlayerScore>().Fierce();
                 Player2.GetComponent<PlayerScore>().Fierce();
             }
-        
+
             // decrement time
             countdownTime -= Time.deltaTime;
         }
-
-        // if (countdownTime <= 0)
-        // {
-        //     gameController.GameOver();
-        //     countdownTime = 0;
-        // }
         if (text)
         {
             text.text = "Time: " + Mathf.Floor(countdownTime).ToString() + " s";
@@ -89,7 +83,7 @@ public class TimeDisplayer : MonoBehaviour
     
     public void StartGame()
     {
-        if (GameController.instance.level == "Farm")
+        if (GameController.instance.level == "Farm" && GameController.instance.stage == 2)
         {
             maxTime = 30;
             // if (GameController.instance.stage == )
