@@ -604,7 +604,7 @@ MonoBehaviour:
   offset: 100
   AttackRange: 2
   AttackAngle: 45
-  AttackFrequency: 2
+  AttackFrequency: 5
   KnockSpeed: 10
   KnockPeriod: 1
   OriginalScale: 0.2

@@ -16,6 +16,9 @@ public class PlayerAttack : MonoBehaviour
     public float KnockPeriod = 2.5f;
     public float OriginalScale = 0.2f;
 
+    public float MaxRatio = 2f;
+    public float MinRatio = 1f;
+
     public GameObject Sword;
 
     private float timer = 0f;
@@ -129,7 +132,7 @@ public class PlayerAttack : MonoBehaviour
     {
         int score = GetComponent<PlayerScore>().getScore();
         int other = enemy.GetComponent<PlayerScore>().getScore();
-        return Mathf.Max((other + offset) / (score + offset), 1f);
+        return Mathf.Min(MaxRatio, Mathf.Max((other + offset) / (score + offset), MinRatio));
     }
 
     private float getDistance()
@@ -140,6 +143,10 @@ public class PlayerAttack : MonoBehaviour
     private Vector2 getDirection()
     {
         Vector2 distdiff = enemy.transform.position - transform.position;
+        if (distdiff.y > 0)
+        {
+            distdiff = new Vector2(distdiff.x, 2 * distdiff.y);
+        }
         return distdiff.normalized;
     }
 

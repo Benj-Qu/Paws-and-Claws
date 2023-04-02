@@ -114,7 +114,6 @@ public class PlayerController : MonoBehaviour
         if (isTerrain(other))
         {
             active = true;
-
             if (collision.gameObject.CompareTag("Ice"))
             {
                 onIce = true;
@@ -155,6 +154,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (isPlayer(other))
         {
+            active = true;
             ContactPoint2D hitpos = collision.GetContact(0);
             PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
             string otherJoystickString = pc.joystickNumber.ToString();
