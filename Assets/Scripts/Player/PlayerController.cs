@@ -85,8 +85,9 @@ public class PlayerController : MonoBehaviour
 
     private void RoundWorld()
     {
-        if (transform.position.x < LeftBorder - 0.1f)
+        if (transform.position.x < LeftBorder - 0.1f && onCable == false && transform.position.x > LeftBorder - 0.5f)
         {
+            Debug.Log("round");
             transform.position = new Vector2(RightBorder - 0.1f, transform.position.y);
             onFloor = false;
             onLeftWall = false;
@@ -95,8 +96,9 @@ public class PlayerController : MonoBehaviour
             onCable = false;
             floorV = 0;
         }
-        if (transform.position.x > RightBorder + 0.1f)
+        if (transform.position.x > RightBorder + 0.1f && onCable == false && transform.position.x < RightBorder + 0.5f)
         {
+            Debug.Log("round");
             transform.position = new Vector2(LeftBorder + 0.1f, transform.position.y);
             onFloor = false;
             onLeftWall = false;
@@ -277,6 +279,10 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!invincible && collision.gameObject.CompareTag("Spike"))
+        {
+            Die();
+        }
+        if (!invincible && collision.gameObject.CompareTag("trigger") && onCable == false)
         {
             Die();
         }
@@ -591,6 +597,14 @@ public class PlayerController : MonoBehaviour
         if (onCable == true)
         {
             this.gameObject.transform.position = new Vector3(2.4f, 5f, 0f);
+        }
+    }
+
+    public void cableTrans2()
+    {
+        if (onCable == true)
+        {
+            this.gameObject.transform.position = new Vector3(-11.3f, -0.2f, 0f);
         }
     }
 }
