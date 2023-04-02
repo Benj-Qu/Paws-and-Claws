@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class cableCar : MonoBehaviour
 {
+    public GameObject pl1;
+    public GameObject pl2;
     public float moveSpeed;
     public float waitTime;
     public Transform[] movePos;
@@ -12,6 +14,9 @@ public class cableCar : MonoBehaviour
     private int i;//定位现在的点
     private Transform playerDefTransform;
     private Rigidbody2D rb;
+
+    private bool playeron = false;
+    private bool enable = false;
 
 
     // Start is called before the first frame update
@@ -31,10 +36,13 @@ public class cableCar : MonoBehaviour
             rb.velocity = Vector2.zero;
             if (waitNow < 0.0f)
             {
+                Debug.Log(i);
                 if (i == 1)
                 {
                     this.transform.position = new Vector3(movePos[2].position.x, movePos[2].position.y, 0);
                     i = 3;
+                    pl1.GetComponent<PlayerController>().cableTrans();
+                    pl2.GetComponent<PlayerController>().cableTrans();
                 } else if (i == 3)
                 {
                     this.transform.position = new Vector3(movePos[0].position.x, movePos[0].position.y, 0);
@@ -57,11 +65,36 @@ public class cableCar : MonoBehaviour
         }
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        playeron = true;
+    //    }
+    //    if (collision.gameObject.CompareTag("trigger"))
+    //    {
+            
+    //    }
+    //}
+
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
     //    if (collision.gameObject.CompareTag("Player"))
     //    {
-    //        collision.gameObject.transform.parent = this.gameObject.transform;
+    //        playeron = true;
+    //    }
+    //    if (collision.gameObject.CompareTag("trigger"))
+    //    {
+    //        playeron = true;
+    //    }
+    //}
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        playeron = false;
+    //        collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
     //    }
     //}
 
@@ -69,7 +102,8 @@ public class cableCar : MonoBehaviour
     //{
     //    if (collision.gameObject.CompareTag("Player"))
     //    {
-    //        collision.gameObject.transform.parent = playerDefTransform;
+    //        playeron = false;
+    //        collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
     //    }
     //}
 }
