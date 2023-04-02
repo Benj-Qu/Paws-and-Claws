@@ -394,6 +394,13 @@ public class GameController : MonoBehaviour
                 progressBar.StartGame();
             }
 
+            // Remove Winter Land
+            if (level == "Winter Land" || level == "Volcano")
+            {
+                VolcanoController vc = GameObject.Find("Volcano").GetComponent<VolcanoController>();
+                vc.begin();
+            }
+
             if (mask)
             {
                 Color tmp = mask.GetComponent<SpriteRenderer>().color;

@@ -516,8 +516,14 @@ public class PlayerController : MonoBehaviour
     private IEnumerator KnockBackCoroutine(Vector2 direction, float time)
     {
         attacked = true;
+        active = false;
         rb.velocity = direction;
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(time/2);
+        if (!active)
+        {
+            yield return new WaitForSeconds(time / 2);
+            active = true;
+        }
         attacked = false;
     }
 
@@ -531,7 +537,7 @@ public class PlayerController : MonoBehaviour
         Speed *= SpeedUp;
         JumpSpeed *= JumpUp;
         rb.mass *= SizeUp;
-        gameObject.transform.localScale *= SizeUp;
+        transform.localScale *= SizeUp;
         invincible = Invincible;
         if (collectInvinciblePowerUp == false && Invincible)
         {
@@ -542,7 +548,7 @@ public class PlayerController : MonoBehaviour
         JumpSpeed /= JumpUp;
         invincible = false;
         rb.mass /= SizeUp;
-        gameObject.transform.localScale /= SizeUp;
+        transform.localScale /= SizeUp;
         if (collectInvinciblePowerUp && invincible == false)
         {
             collectInvinciblePowerUp = false;
