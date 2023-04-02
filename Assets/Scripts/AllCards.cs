@@ -656,10 +656,10 @@ public class AllCards : MonoBehaviour
             Debug.Log("Volcano");
             // big round 1
             // small round 1
-            CardRound cardRoundfarm_1 = new CardRound(0, 0, 1, 1);
+            CardRound cardRoundfarm_1 = new CardRound(23, 0, 1, 1);
             CardRound cardRoundfarm_2 = new CardRound(1, 1, 1, 2);
             CardRound cardRoundfarm_3 = new CardRound(4, 2, 2, 1);
-            CardRound cardRoundfarm_4 = new CardRound(0, 3, 2, 2);
+            CardRound cardRoundfarm_4 = new CardRound(1, 3, 2, 2);
             List<CardRound> sfarm11 = new List<CardRound>();
             sfarm11.Add(cardRoundfarm_1);
             sfarm11.Add(cardRoundfarm_2);
@@ -686,7 +686,7 @@ public class AllCards : MonoBehaviour
             CardRound cardRoundfarm2_1 = new CardRound(6, 8, 1, 1);
             CardRound cardRoundfarm2_2 = new CardRound(2, 9, 1, 2);
             CardRound cardRoundfarm2_3 = new CardRound(8, 10, 2, 1);
-            CardRound cardRoundfarm2_4 = new CardRound(1, 11, 2, 2);
+            CardRound cardRoundfarm2_4 = new CardRound(23, 11, 2, 2);
             List<CardRound> sfarm21 = new List<CardRound>();
             sfarm21.Add(cardRoundfarm2_1);
             sfarm21.Add(cardRoundfarm2_2);
