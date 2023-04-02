@@ -8981,6 +8981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4967276609031182668, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1880593028}
     - target: {fileID: 6658275035224939858, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -9049,6 +9053,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1b3aa342724604d79bb16cd31b05cc7b, type: 3}
+    - target: {fileID: 6658275035224939870, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658275035224939870, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658275035549475622, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
 --- !u!1 &252288278 stripped
@@ -12886,10 +12902,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 17e2025c7440c4b98b5f5a879b127a86, type: 3}
+    - target: {fileID: 4138337599100129820, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138337599100129820, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.19
+      objectReference: {fileID: 0}
     - target: {fileID: 4138337599100129823, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
       propertyPath: m_Name
       value: player_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8755498131058377637, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1880593028}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
 --- !u!1 &351540204 stripped
@@ -64181,8 +64209,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809949431}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39652216, y: -0.12604854, z: 1.8121672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67006,6 +67034,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!20 &1880593028 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2379834525067798281, guid: 3639e40ac347843efa83dc06a9cf9620, type: 3}
+  m_PrefabInstance: {fileID: 1952621338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1885088091
 GameObject:
   m_ObjectHideFlags: 0

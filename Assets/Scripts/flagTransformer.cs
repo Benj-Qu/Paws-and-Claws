@@ -30,7 +30,7 @@ public class flagTransformer : MonoBehaviour
     private void Update()
     {
         delta_time += Time.deltaTime;
-        if (owner is not null && delta_time >= 0.3334f)
+        if (owner is not null && delta_time >= (1f / 3f))
         {
             showAddScore.ShowScore();
             delta_time = 0f;
@@ -48,7 +48,7 @@ public class flagTransformer : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(GameController.instance.stage == 2 && other.CompareTag("Player"))
         {
@@ -62,7 +62,7 @@ public class flagTransformer : MonoBehaviour
                 player_2_on = true;
             }
             // Determine Ownership
-            if (OwnerOn() && (other != owner))
+            if (OwnerOn() && (other.gameObject != owner))
             {
                 return;
             }
@@ -75,7 +75,6 @@ public class flagTransformer : MonoBehaviour
                 AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
                 showAddScore.SetColor(1);
                 UpdateFlagNum(other.gameObject);
-                delta_time = 0f;
                 control_time = 0f;
             }
             else if (other.name == "player_2")
@@ -87,7 +86,6 @@ public class flagTransformer : MonoBehaviour
                 AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
                 showAddScore.SetColor(2);
                 UpdateFlagNum(other.gameObject);
-                delta_time = 0f;
                 control_time = 0f;
             }
         } 
@@ -105,7 +103,6 @@ public class flagTransformer : MonoBehaviour
                 AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
                 showAddScore.SetColor(2);
                 UpdateFlagNum(player2);
-                delta_time = 0f;
                 control_time = 0f;
             }
         }
@@ -119,7 +116,6 @@ public class flagTransformer : MonoBehaviour
                 AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
                 showAddScore.SetColor(1);
                 UpdateFlagNum(player1);
-                delta_time = 0f;
                 control_time = 0f;
             }
         }

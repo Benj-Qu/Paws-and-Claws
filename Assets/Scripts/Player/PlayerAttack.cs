@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public int joystickNumber;
     public KeyCode FireButton;
+    public KeyCode DownButton;
     public string EnemyName;
     public float offset = 100f;
     public float AttackRange = 2f;
@@ -13,25 +14,33 @@ public class PlayerAttack : MonoBehaviour
     public float AttackFrequency = 2.5f;
     public float KnockSpeed = 5f;
     public float KnockPeriod = 2.5f;
+    public float OriginalScale = 0.2f;
 
-    public KeyCode DownButton;
+    public GameObject Sword;
 
     private float timer = 0f;
     private bool attackable = true;
     private GameObject enemy;
 
+    private string joystickString;
+
     // Start is called before the first frame update
     void Start()
     {
         enemy = GameObject.Find(EnemyName);
+        joystickString = joystickNumber.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (attackable && GetComponent<PlayerController>().isAttackable())
+        if (attackable)
         {
-            Fire();
+            if (((Input.GetAxis("Fire" + joystickString) != 0) || Input.GetKey(FireButton)) 
+                && GetComponent<PlayerController>().isAttackable())
+            {
+                Fire();
+            }
         }
         else
         {
@@ -59,7 +68,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 attackDirection = new Vector2(horizontalInput, verticalInput);
             }
-            else
+            else if (Input.GetKey(GetComponent<PlayerController>().JumpButton) ||
+                     Input.GetKey(GetComponent<PlayerController>().LeftButton) ||
+                     Input.GetKey(GetComponent<PlayerController>().RightButton) ||
+                     Input.GetKey(DownButton))
             {
                 if (Input.GetKey(GetComponent<PlayerController>().JumpButton))
                 {
@@ -78,11 +90,38 @@ public class PlayerAttack : MonoBehaviour
                     attackDirection += new Vector2(1f, 0f);
                 }
             }
+            else
+            {
+                if (GetComponent<SpriteRenderer>().flipX)
+                {
+                    attackDirection = Vector2.left;
+                }
+                else
+                {
+                    attackDirection = Vector2.right;
+                }
+            }
             attackDirection = attackDirection.normalized;
+            GameObject sword = Instantiate(Sword, transform.position, Quaternion.identity);
+            sword.transform.eulerAngles = new Vector3(0f, 0f, swordDirection(attackDirection));
+            sword.transform.localScale *= (transform.localScale.x / OriginalScale);
+            sword.GetComponent<SwordController>().Attack(gameObject);
             if (inRange(attackDirection))
             {
                 enemy.GetComponent<PlayerController>().KnockBack(getDirection() * getRatio() * KnockSpeed, KnockPeriod);
             }
+        }
+    }
+
+    private float swordDirection(Vector2 attackDirection)
+    {
+        if (attackDirection.y >= 0)
+        {
+            return Vector2.Angle(attackDirection, Vector2.right);
+        }
+        else
+        {
+            return -Vector2.Angle(attackDirection, Vector2.right);
         }
     }
 
@@ -106,7 +145,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool inRange(Vector2 attackDirection)
     {
-        if (getDistance() > AttackRange)
+        if (getDistance() > AttackRange * (transform.localScale.x / OriginalScale))
         {
             return false;
         }
@@ -121,5 +160,14 @@ public class PlayerAttack : MonoBehaviour
     {
         timer = 0f;
         attackable = true;
+    }
+
+    public float getTimeRatio()
+    {
+        if (timer == 0)
+        {
+            return 0;
+        }
+        else return 1 - (timer / AttackFrequency);
     }
 }
