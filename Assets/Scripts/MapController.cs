@@ -16,7 +16,7 @@ public class MapController : MonoBehaviour
     public GameObject winterland;
     public GameObject panda;
     public GameObject scarecrow;
-    public GameObject northland;
+    public GameObject iceland;
 
     public GameObject currentMap;
 
@@ -32,17 +32,17 @@ public class MapController : MonoBehaviour
         winterland.SetActive(false);
         panda.SetActive(false);
         scarecrow.SetActive(true);
-        northland.SetActive(false);
+        iceland.SetActive(false);
         currentMap = scarecrow;
-        RightLand[northland.name] = scarecrow;
+        RightLand[iceland.name] = scarecrow;
         RightLand[volcano.name] = scarecrow;
         RightLand[scarecrow.name] = winterland;
         LeftLand[winterland.name] = scarecrow;
         LeftLand[panda.name] = scarecrow;
-        LeftLand[scarecrow.name] = northland;
-        UpLand[volcano.name] = northland;
+        LeftLand[scarecrow.name] = iceland;
+        UpLand[volcano.name] = iceland;
         UpLand[panda.name] = winterland;
-        DownLand[northland.name] = volcano;
+        DownLand[iceland.name] = volcano;
         DownLand[winterland.name] = panda;
     }
 
