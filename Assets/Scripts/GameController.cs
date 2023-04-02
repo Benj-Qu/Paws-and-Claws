@@ -395,7 +395,7 @@ public class GameController : MonoBehaviour
             }
 
             // Remove Winter Land
-            if (level == "Winter Land" || level == "Volcano")
+            if (level == "Volcano")
             {
                 VolcanoController vc = GameObject.Find("Volcano").GetComponent<VolcanoController>();
                 vc.begin();

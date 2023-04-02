@@ -276,9 +276,9 @@ MonoBehaviour:
   follower_distance: 2
   follower_distance_x: 0
   UpOffset: 0
-  DownOffset: 0
+  DownOffset: 1
   LeftOffset: 0
-  RightOffset: 0
+  RightOffset: -0.5
 --- !u!1 &228246536101817957
 GameObject:
   m_ObjectHideFlags: 0
