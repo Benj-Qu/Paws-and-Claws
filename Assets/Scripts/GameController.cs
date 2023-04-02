@@ -93,6 +93,7 @@ public class GameController : MonoBehaviour
         player2_control = player2.GetComponent<PlayerController>();
         if (level == "Farm")
         {
+            progressBar.gameObject.SetActive(false);
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
             stage = -2; // -2: movement, -1: attack
@@ -345,7 +346,7 @@ public class GameController : MonoBehaviour
         }
         
         yield return new WaitForSeconds(2);
-        //SceneManager.LoadScene("NewIntro");
+        SceneManager.LoadScene("NewIntro");
         // player.GetComponent<HasInventory>().Reset();
     }
 
@@ -354,6 +355,8 @@ public class GameController : MonoBehaviour
         // TODO: Add coroutine for animation
         // SceneManager.LoadScene("Level" + level);
         progressBar.gameObject.SetActive(false);
+        // make the party time text disappear
+        EventBus.Publish<GameOverEvent>(new GameOverEvent());
         StartCoroutine(Win());
     }
 
@@ -376,7 +379,7 @@ public class GameController : MonoBehaviour
         // make tutorial1 finished
 
         progressBar.gameObject.SetActive(true);
-        progressBar.StartGame();
+        
 
         stage ++;
         Debug.Log("stage: " + stage);
@@ -384,6 +387,7 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
+            progressBar.StartFight();
             if (level == "Farm")
             {
                 progressBar.gameObject.SetActive(true);
@@ -407,6 +411,7 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
+            progressBar.StartGame();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
         }
@@ -517,5 +522,13 @@ public class BigRoundIncEvent
     public override string ToString()
     {
         return "Change to big round " + round_big;
+    }
+}
+
+public class GameOverEvent
+{
+    public GameOverEvent()
+    {
+        return;
     }
 }
