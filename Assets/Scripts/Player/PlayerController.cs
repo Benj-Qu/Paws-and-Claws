@@ -352,8 +352,8 @@ public class PlayerController : MonoBehaviour
             //rb.velocity = new Vector2(floorV, rb.velocity.y);
         }
         // Handle Jumping
-        // if ((Input.GetKeyDown(JumpButton) || Input.GetButtonDown("A" + joystickString)) && jumpable())
-        if ((Input.GetKeyDown(JumpButton)) && jumpable())
+        if ((Input.GetKeyDown(JumpButton) || Input.GetButtonDown("A" + joystickString)) && jumpable())
+        // if ((Input.GetKeyDown(JumpButton)) && jumpable())
         {
             Debug.Log("A" + joystickString);
             jump();
