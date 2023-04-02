@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,22 @@ public class TimeDisplayer : MonoBehaviour
     private GameObject Player2;
 
     private GameController gameController;
+    private Subscription<CameraEvent> camera_event;
+
+    private void Awake()
+    {
+        Debug.Log("timedisplayer sub");
+        camera_event = EventBus.Subscribe<CameraEvent>(OnCameraEvent);
+    }
+
+    private void OnCameraEvent(CameraEvent e)
+    {
+        if (e.startOrFinish == false) // finished
+        {
+            gameStarted = true;
+        }
+    }
+
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
@@ -31,11 +48,14 @@ public class TimeDisplayer : MonoBehaviour
             if (countdownTime <= 0)
             {
                 countdownTime = 0;
+                gameStarted = false;
                 if (gameController.stage == 2 && (gameController.round_big == 3 || gameController.level == "Farm"))
                 {
                     gameController.GameOver();
                     // destroy itself
-                    Destroy(gameObject);
+                    text.text = "";
+                    countdownTime = 45;
+                    gameStarted = false;
                 }
                 else
                 {
@@ -79,6 +99,19 @@ public class TimeDisplayer : MonoBehaviour
             maxTime = 45;
         }
         countdownTime = maxTime;
+        Debug.Log(camera_event);
+        Debug.Log("gamestarted:" + gameStarted);
+        // gameStarted = true;
+    }
+
+    public void StartFight()
+    {
+        StartGame();
         gameStarted = true;
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe(camera_event);
     }
 }

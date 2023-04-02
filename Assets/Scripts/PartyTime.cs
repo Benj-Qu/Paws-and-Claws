@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,7 +18,20 @@ public class PartyTime : MonoBehaviour
     // private Image _image;
     private float cnt_down = 10f;
     public bool countdownPlayed = false;
-    
+    private Subscription<GameOverEvent> gameover_event;
+
+    private void Awake()
+    {
+        Debug.Log("party time canvas sub");
+        gameover_event = EventBus.Subscribe<GameOverEvent>(OnGameOver);
+    }
+
+    private void OnGameOver(GameOverEvent e)
+    {
+        Debug.Log("text disable");
+        partyTimeText.enabled = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,5 +104,10 @@ public class PartyTime : MonoBehaviour
             cnt_down = 10;
             countdownPlayed = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe(gameover_event);
     }
 }
