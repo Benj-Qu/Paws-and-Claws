@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private bool onFloor = true;
     private bool onLeftWall = false;
     private bool onRightWall = false;
+    private bool onCable = false;
     private float floorV = 0f;
     private int jumpTimes;
     private bool onIce = false;
@@ -74,7 +75,8 @@ public class PlayerController : MonoBehaviour
         {
             UpdateVelocity();
         }
-        if (gameObject.transform.position.y < DieAltitude)
+        // TODO: change for cable, need check
+        if (gameObject.transform.position.y < DieAltitude && onCable == false)
         {
             Die();
         }
@@ -90,6 +92,7 @@ public class PlayerController : MonoBehaviour
             onLeftWall = false;
             onRightWall = false;
             onIce = false;
+            onCable = false;
             floorV = 0;
         }
         if (transform.position.x > RightBorder + 0.1f)
@@ -99,6 +102,7 @@ public class PlayerController : MonoBehaviour
             onLeftWall = false;
             onRightWall = false;
             onIce = false;
+            onCable = false;
             floorV = 0;
         }
     }
@@ -114,6 +118,11 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.CompareTag("Ice"))
             {
                 onIce = true;
+            }
+
+            if (collision.gameObject.CompareTag("cable"))
+            {
+                onCable = true;
             }
 
             ContactPoint2D hitpos = collision.GetContact(0);
@@ -215,6 +224,11 @@ public class PlayerController : MonoBehaviour
                 onIce = true;
             }
 
+            if (collision.gameObject.CompareTag("cable"))
+            {
+                onCable = true;
+            }
+
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
             if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
@@ -256,6 +270,7 @@ public class PlayerController : MonoBehaviour
         onLeftWall = false;
         onRightWall = false;
         onIce = false;
+        onCable = false;
         floorV = 0;
     }
 
@@ -353,7 +368,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isTerrain(GameObject other)
     {
-        return other.CompareTag("Block") || other.CompareTag("Mountain") || other.CompareTag("Wall") || other.CompareTag("Ice");
+        return other.CompareTag("Block") || other.CompareTag("Mountain") || other.CompareTag("Wall") || other.CompareTag("Ice") || other.CompareTag("cable");
     }
 
     private bool isPlayer(GameObject other)
@@ -445,6 +460,7 @@ public class PlayerController : MonoBehaviour
         jumpTimes = MaxJumpTimes;
         floorV = 0f;
         onIce = false;
+        onCable = false;
         rb.velocity = Vector2.zero;
     }
 
@@ -568,5 +584,13 @@ public class PlayerController : MonoBehaviour
     public bool isAttacked()
     {
         return attacked;
+    }
+
+    public void cableTrans()
+    {
+        if (onCable == true)
+        {
+            this.gameObject.transform.position = new Vector3(2.4f, 5f, 0f);
+        }
     }
 }
