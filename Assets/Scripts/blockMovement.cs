@@ -36,7 +36,7 @@ public class blockMovement : MonoBehaviour
 
     private void Awake()
     {
-        camera_event = new Subscription<CameraEvent>(OnCameraDone);
+        camera_event = EventBus.Subscribe<CameraEvent>(OnCameraDone);
     }
 
     private void OnCameraDone(CameraEvent e)
