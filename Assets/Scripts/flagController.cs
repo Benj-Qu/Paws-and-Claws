@@ -64,7 +64,7 @@ public class flagController : MonoBehaviour
         }
         if (GameController.instance.level == "Farm")
         {
-            if(y < -10){
+            if(y < -7){
                 return false;
             }
         }
