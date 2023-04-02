@@ -48,6 +48,7 @@ public class Card : MonoBehaviour
 
     public void SetCard(int _block_id)
     {
+        Reset();
         if (block_id == -1)
         {
             block_id = 0;
@@ -58,6 +59,7 @@ public class Card : MonoBehaviour
         
         // look for the corresponding image in the sprite folder
         _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[this.block_id] + "_");
+        Debug.Log("image sprite:" + AllCards.cards[this.block_id]);
         
         // look for the corresponding animation for this card
         // if (playDescriptionAnimation) animator.runtimeAnimatorController = 
@@ -156,11 +158,22 @@ public class Card : MonoBehaviour
             playDescriptionAnimation = false;
             // set animator controller to None
             animator.runtimeAnimatorController = null;
+            animator.enabled = false;
         }
     }
 
     public void SetInSelectionParameter(bool inselection)
     {
         _inSelection = inselection;
+    }
+
+    // run this function before the SetCard is called
+    public void Reset()
+    {
+        _runtimeAnimatorController = null;
+        animator.runtimeAnimatorController = _runtimeAnimatorController;
+        _inSelection = true;
+        playDescriptionAnimation = false;
+        animator.Rebind();
     }
 }

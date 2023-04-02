@@ -75,7 +75,9 @@ public class ThrowPumpkin : MonoBehaviour
         }
         if (seed == 1)
         {
-            pump = Instantiate(Pumpkin, pos, Quaternion.identity);
+            Quaternion rotate = Quaternion.identity;
+            rotate.eulerAngles += new Vector3(0, 180, 0);
+            pump = Instantiate(Pumpkin, pos, rotate);
         }
         else
         {
