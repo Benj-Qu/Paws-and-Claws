@@ -385,7 +385,7 @@ public class AllCards : MonoBehaviour
             // big round 1
             // small round 1
             CardRound cardRounda1_1 = new CardRound(20, 0, 1, 1);
-            CardRound cardRounda1_2 = new CardRound(4, 1, 1, 2);
+            CardRound cardRounda1_2 = new CardRound(10, 1, 1, 2);
             CardRound cardRounda1_3 = new CardRound(2, 2, 2, 1);
             CardRound cardRounda1_4 = new CardRound(4, 3, 2, 2);
             List<CardRound> sa11 = new List<CardRound>();

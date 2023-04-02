@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block_id: -1
   index: -1
-  animator: {fileID: 0}
+  animator: {fileID: -3016335982202616821}
   playDescriptionAnimation: 0
 --- !u!95 &-3016335982202616821
 Animator:
