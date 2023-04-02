@@ -76,6 +76,7 @@ public class flagTransformer : MonoBehaviour
                 showAddScore.SetColor(1);
                 UpdateFlagNum(other.gameObject);
                 control_time = 0f;
+                delta_time = 0f;
             }
             else if (other.name == "player_2")
             {
@@ -87,6 +88,7 @@ public class flagTransformer : MonoBehaviour
                 showAddScore.SetColor(2);
                 UpdateFlagNum(other.gameObject);
                 control_time = 0f;
+                delta_time = 0f;
             }
         } 
     }
@@ -104,6 +106,7 @@ public class flagTransformer : MonoBehaviour
                 showAddScore.SetColor(2);
                 UpdateFlagNum(player2);
                 control_time = 0f;
+                delta_time = 0f;
             }
         }
         if (other.name == "player_2")
@@ -117,6 +120,7 @@ public class flagTransformer : MonoBehaviour
                 showAddScore.SetColor(1);
                 UpdateFlagNum(player1);
                 control_time = 0f;
+                delta_time = 0f;
             }
         }
     }
