@@ -31,7 +31,13 @@ public class FloatingIce : MonoBehaviour
             rb.velocity = Vector2.zero;
             if (waitNow < 0.0f)
             {
-                i = (i + 1) % movePos.Length;
+                if (i == 0)
+                {
+                    i = 1;
+                } else
+                {
+                    i = 0;
+                }
                 waitNow = waitTime;
             } else
             {

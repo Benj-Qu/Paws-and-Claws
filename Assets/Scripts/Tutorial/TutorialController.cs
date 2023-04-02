@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class TutorialController : MonoBehaviour
 {
+
     public GameObject ExitMenu;
     public PlayerController pc1;
     public PlayerController pc2;
@@ -62,12 +65,12 @@ public class TutorialController : MonoBehaviour
             flags = 0;
             StartCoroutine(finishStage1());
         }
-        if(stage == 2 && flags == 0)
+        if (stage == 2 && flags == 0)
         {
             flags = 0;
             StartCoroutine(finishStage2());
         }
-        if(stage == 3)
+        if (stage == 3)
         {
 
         }
@@ -98,6 +101,7 @@ public class TutorialController : MonoBehaviour
         stage = 3;
         tutorial_text.updateText("[speed=0.1]<b>Guadians are smart. They can select suitable blocks!</b>");
         round_big = 1;
+
     }
 
     IEnumerator finishStage3()

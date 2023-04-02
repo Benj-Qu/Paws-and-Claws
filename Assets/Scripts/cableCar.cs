@@ -39,12 +39,14 @@ public class cableCar : MonoBehaviour
                 Debug.Log(i);
                 if (i == 1)
                 {
-                    this.transform.position = new Vector3(movePos[2].position.x, movePos[2].position.y, 0);
-                    i = 3;
                     pl1.GetComponent<PlayerController>().cableTrans();
                     pl2.GetComponent<PlayerController>().cableTrans();
+                    this.transform.position = new Vector3(movePos[2].position.x, movePos[2].position.y, 0);
+                    i = 3;
                 } else if (i == 3)
                 {
+                    pl1.GetComponent<PlayerController>().cableTrans2();
+                    pl2.GetComponent<PlayerController>().cableTrans2();
                     this.transform.position = new Vector3(movePos[0].position.x, movePos[0].position.y, 0);
                     i = 1;
                 } else
