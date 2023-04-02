@@ -94,6 +94,9 @@ public class CardSelection : MonoBehaviour
             return;
         }
 
+        // play animation for the current select card
+        PlayAnimationForThisCard(cardSelectionController.activeButton);
+        
         // left player
         if (whichPlayer == 1)
         {
@@ -256,6 +259,7 @@ public class CardSelection : MonoBehaviour
                 inventory1.cards[inventory1.cardAddedFront].SetCard(blockID);
                 inventory1.cards[inventory1.cardAddedFront].index = cardIndex;
                 inventory1.cards[inventory1.cardAddedFront].CardAppear();
+                inventory1.cards[inventory1.cardAddedFront].SetInSelectionParameter(false);
                 // count the pair of card added, only count the one added at the front
                 inventory1.cardAddedFront += 1;
             }
@@ -265,6 +269,7 @@ public class CardSelection : MonoBehaviour
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].SetCard(blockID);
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].index = cardIndex;
                 inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].CardAppear();
+                inventory1.cards[inventory1.cards.Count - inventory1.cardAddedBack - 1].SetInSelectionParameter(false);
                 inventory1.cardAddedBack += 1;
             }
             
@@ -279,6 +284,7 @@ public class CardSelection : MonoBehaviour
                 inventory2.cards[inventory2.cardAddedFront].SetCard(blockID);
                 inventory2.cards[inventory2.cardAddedFront].index = cardIndex;
                 inventory2.cards[inventory2.cardAddedFront].CardAppear(); 
+                inventory2.cards[inventory2.cardAddedFront].SetInSelectionParameter(false);
                 inventory2.cardAddedFront += 1;
             }
             else
@@ -287,8 +293,24 @@ public class CardSelection : MonoBehaviour
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].SetCard(blockID);
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].index = cardIndex;
                 inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].CardAppear();
+                inventory2.cards[inventory2.cards.Count - inventory2.cardAddedBack - 1].SetInSelectionParameter(false);
                 inventory2.cardAddedBack += 1;
             }
+        }
+    }
+
+    private void PlayAnimationForThisCard(int leftOrRight) // 0 left 1 right
+    {
+        Debug.Log("run 1");
+        if (leftOrRight == 0)
+        {
+            _card2Script.StopPlayAnimationIfPlaying();
+            _card1Script.PlayAnimationIfNotPlaying();
+        }
+        else
+        {
+            _card1Script.StopPlayAnimationIfPlaying();
+            _card2Script.PlayAnimationIfNotPlaying();
         }
     }
 }

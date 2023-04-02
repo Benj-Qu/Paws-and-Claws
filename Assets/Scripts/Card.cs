@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +15,12 @@ public class Card : MonoBehaviour
     private Vector3 target;
     private Vector3 speed;
 
-    public Animator animator;
+    private bool _inSelection = true;
 
-    public bool playDescriptionAnimation = true;
+    public Animator animator;
+    private RuntimeAnimatorController _runtimeAnimatorController;
+
+    public bool playDescriptionAnimation = false;
 
     // public int amount = -1;
 
@@ -57,6 +61,9 @@ public class Card : MonoBehaviour
         
         // look for the corresponding animation for this card
         // if (playDescriptionAnimation) animator.runtimeAnimatorController = 
+        _runtimeAnimatorController =
+            Resources.Load<RuntimeAnimatorController>("Animations/DescriptionAnimation/" +
+                                                      AllCards.cards[this.block_id].ToString());
     }
 
     public void StartSelectEffect(int leftOrRight, Vector3 pos)
@@ -119,5 +126,41 @@ public class Card : MonoBehaviour
         Color c = _image.color;
         c.a = brightness;
         _image.color = c;
+    }
+
+    public void PlayAnimationIfNotPlaying()
+    {
+        if (_inSelection && playDescriptionAnimation == false)
+        {
+            playDescriptionAnimation = true;
+            Debug.Log("run 2");
+            // set up animator
+            StartCoroutine(WaitPlayAnimation());
+        }
+    }
+
+    private IEnumerator WaitPlayAnimation()
+    {
+        yield return new WaitForSeconds(0.75f);
+        if (playDescriptionAnimation)
+        {
+            animator.runtimeAnimatorController = _runtimeAnimatorController;
+            Debug.Log("run 3" + block_id.ToString() + _runtimeAnimatorController);
+        }
+    }
+
+    public void StopPlayAnimationIfPlaying()
+    {
+        if (_inSelection && playDescriptionAnimation)
+        {
+            playDescriptionAnimation = false;
+            // set animator controller to None
+            animator.runtimeAnimatorController = null;
+        }
+    }
+
+    public void SetInSelectionParameter(bool inselection)
+    {
+        _inSelection = inselection;
     }
 }
