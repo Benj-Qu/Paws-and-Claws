@@ -21,13 +21,13 @@ public class WinImage : MonoBehaviour
 
     public GameObject vs;
 
-    public TextMeshProUGUI text_;
+    public GameObject text_;
     // Start is called before the first frame update
     void Start()
     {
         _image = GetComponent<Image>();
         vs.SetActive(false);
-        text_.enabled = false;
+        text_.SetActive(false);
         _image.enabled = false;
         Dog.SetActive(false);
         Cat.SetActive(false);
@@ -45,7 +45,7 @@ public class WinImage : MonoBehaviour
     {
         _image.sprite = Resources.Load<Sprite>("Background/IMG_1945");
         _image.enabled = true;
-        text_.enabled = true;
+        text_.SetActive(true);
         Cat.SetActive(true);
         claw.SetActive(true);
     }
@@ -54,7 +54,7 @@ public class WinImage : MonoBehaviour
     {
         _image.sprite = Resources.Load<Sprite>("Background/IMG_1944");
         _image.enabled = true;
-        text_.enabled = true;
+        text_.SetActive(true);
         Dog.SetActive(true);
         paw.SetActive(true);
     }
@@ -68,7 +68,7 @@ public class WinImage : MonoBehaviour
     {
         _image.sprite = Resources.Load<Sprite>("Background/IMG_0060");
         _image.enabled = true;
-        text_.enabled = true;
+        text_.SetActive(true);
         vs.SetActive(true);
         Dog.SetActive(true);
         Cat.SetActive(true);
@@ -80,7 +80,7 @@ public class WinImage : MonoBehaviour
     {
         _image.enabled = false;
         Dog.SetActive(false);
-        text_.enabled = false;
+        text_.SetActive(false);
         vs.SetActive(false);
         Cat.SetActive(false);
         paw.SetActive(false);
