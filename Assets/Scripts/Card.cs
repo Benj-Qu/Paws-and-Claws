@@ -158,7 +158,7 @@ public class Card : MonoBehaviour
             playDescriptionAnimation = false;
             // set animator controller to None
             animator.runtimeAnimatorController = null;
-            animator.enabled = false;
+            // animator.enabled = false;
         }
     }
 
@@ -174,6 +174,6 @@ public class Card : MonoBehaviour
         animator.runtimeAnimatorController = _runtimeAnimatorController;
         _inSelection = true;
         playDescriptionAnimation = false;
-        animator.Rebind();
+        // animator.Rebind();
     }
 }

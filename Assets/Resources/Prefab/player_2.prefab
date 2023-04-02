@@ -608,4 +608,6 @@ MonoBehaviour:
   KnockSpeed: 10
   KnockPeriod: 1
   OriginalScale: 0.2
-  Sword: {fileID: 568348990006396674, guid: 0fe7fb601bb07214781d52b91447647f, type: 3}
+  MaxRatio: 2
+  MinRatio: 1
+  Sword: {fileID: 568348990006396674, guid: f9f94e4e865432648a7ef40d8a618b32, type: 3}
