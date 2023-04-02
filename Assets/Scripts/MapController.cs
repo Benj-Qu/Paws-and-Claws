@@ -83,7 +83,7 @@ public class MapController : MonoBehaviour
         {
             SceneManager.LoadScene(currentMap.name);
         }
-        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || joystickInputy > 0)
+        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || joystickInputy < 0)
         {
             // choose up
             if (UpLand.ContainsKey(currentMap.name))
@@ -93,7 +93,7 @@ public class MapController : MonoBehaviour
                 currentMap.SetActive(true);
             }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || joystickInputy < 0)
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || joystickInputy > 0)
         {
             // choose down
             if (DownLand.ContainsKey(currentMap.name))
