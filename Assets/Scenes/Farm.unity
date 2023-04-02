@@ -9065,6 +9065,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7836483670668928459, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
+      propertyPath: AttackAngle
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
 --- !u!1 &252288278 stripped
@@ -13065,6 +13069,10 @@ PrefabInstance:
     - target: {fileID: 4138337599100129823, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
       propertyPath: m_Name
       value: player_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336509314114257349, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
+      propertyPath: AttackAngle
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8755498131058377637, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
       propertyPath: m_Camera
