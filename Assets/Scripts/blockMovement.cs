@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,19 @@ public class blockMovement : MonoBehaviour
     public float DownOffset = 0f;
     public float LeftOffset = 0f;
     public float RightOffset = 0f;
-    
+    private Subscription<CameraEvent> camera_event;
+    private bool cameraIsMoving = false;
+
+    private void Awake()
+    {
+        camera_event = new Subscription<CameraEvent>(OnCameraDone);
+    }
+
+    private void OnCameraDone(CameraEvent e)
+    {
+        cameraIsMoving = e.startOrFinish;
+    }
+
 
     void Start()
     {
@@ -94,6 +107,13 @@ public class blockMovement : MonoBehaviour
                     }
                 }
             }
+            
+            // after the camera movement is done
+            if (cameraIsMoving)
+            {
+                return;
+            }
+            
             if (block_side == false & selected)
             {
                 // player_1 selected blocks
@@ -472,6 +492,11 @@ public class blockMovement : MonoBehaviour
             // if are unselected and not set then setActive false
             if (!set) gameObject.SetActive(false);
         }
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe(camera_event);
     }
 }
 

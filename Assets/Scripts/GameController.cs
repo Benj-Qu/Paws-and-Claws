@@ -93,6 +93,7 @@ public class GameController : MonoBehaviour
         player2_control = player2.GetComponent<PlayerController>();
         if (level == "Farm")
         {
+            progressBar.gameObject.SetActive(false);
             StartPoint1 = GameObject.Find("StartPoint").transform.position;
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
             stage = -2; // -2: movement, -1: attack
@@ -118,7 +119,7 @@ public class GameController : MonoBehaviour
 
         // added by zeyi
         explosionAes = Resources.Load<GameObject>("Prefab/Explosion");
-        progressBar.gameObject.SetActive(false);
+        // progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
         RoundTextHint = GameObject.Find("RoundTextHint").GetComponent<TextMeshProUGUI>();
         if(level != "Farm")
@@ -354,6 +355,8 @@ public class GameController : MonoBehaviour
         // TODO: Add coroutine for animation
         // SceneManager.LoadScene("Level" + level);
         progressBar.gameObject.SetActive(false);
+        // make the party time text disappear
+        EventBus.Publish<GameOverEvent>(new GameOverEvent());
         StartCoroutine(Win());
     }
 
@@ -376,7 +379,7 @@ public class GameController : MonoBehaviour
         // make tutorial1 finished
 
         progressBar.gameObject.SetActive(true);
-        progressBar.StartGame();
+        
 
         stage ++;
         Debug.Log("stage: " + stage);
@@ -384,10 +387,18 @@ public class GameController : MonoBehaviour
         // TODO: set player movement true
         if (stage == 2) // start fight
         {
+            progressBar.StartFight();
             if (level == "Farm")
             {
                 progressBar.gameObject.SetActive(true);
                 progressBar.StartGame();
+            }
+
+            // Remove Winter Land
+            if (level == "Winter Land" || level == "Volcano")
+            {
+                VolcanoController vc = GameObject.Find("Volcano").GetComponent<VolcanoController>();
+                vc.begin();
             }
 
             if (mask)
@@ -407,6 +418,7 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
+            progressBar.StartGame();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
         }
@@ -517,5 +529,13 @@ public class BigRoundIncEvent
     public override string ToString()
     {
         return "Change to big round " + round_big;
+    }
+}
+
+public class GameOverEvent
+{
+    public GameOverEvent()
+    {
+        return;
     }
 }
