@@ -9,7 +9,7 @@ public class ExitMenuSelection : MonoBehaviour
     private int numButton;
 
     private bool respond = true;
-    private float notRespondTime = 0.08f;
+    private float notRespondTime = 0.12f;
     private float notRespondTimer = 0f;
 
     public GameObject[] ButtonList;
@@ -27,12 +27,14 @@ public class ExitMenuSelection : MonoBehaviour
         if (respond)
         {
             respond = false;
+            /*Debug.Log("yesyesyes" + joystickInputy);*/
         }
         else
         {
             if (joystickInputy != 0)
             {
-                notRespondTimer += Time.deltaTime;
+                /*Debug.Log("nonono" + joystickInputy + "    " + notRespondTimer + "     " + Time.unscaledDeltaTime);*/
+                notRespondTimer += Time.unscaledDeltaTime;
                 if (notRespondTimer >= notRespondTime)
                 {
                     notRespondTimer = 0f;
@@ -44,6 +46,7 @@ public class ExitMenuSelection : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || joystickInputy < 0)
         {
+            /*Debug.Log("up" + joystickInputy);*/
             if (activeButton > 0)
             {
                 activeButton--;
@@ -52,6 +55,7 @@ public class ExitMenuSelection : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || joystickInputy > 0)
         {
+            /*Debug.Log("down" + joystickInputy);*/
             if (activeButton < numButton - 1)
             {
                 activeButton++;
