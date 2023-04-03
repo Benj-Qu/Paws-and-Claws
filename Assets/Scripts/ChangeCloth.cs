@@ -33,7 +33,7 @@ public class ChangeCloth : MonoBehaviour
         {
             invincible = false;
             armor.SetActive(false);
-            armor.SetActive(false);
+            shield.SetActive(false);
         }
     }
 }
