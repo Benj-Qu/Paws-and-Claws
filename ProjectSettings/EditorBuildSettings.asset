@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro.unity
     guid: d122ea5fa55fd406480ac832a2aeb732
+  - enabled: 1
+    path: Assets/Scenes/NewIntro.unity
+    guid: 213bfedc7d8654c6aaf702fb72383d6d
   - enabled: 1
     path: Assets/Scenes/Farm Test.unity
     guid: 05bf363765f6b46539958207cb779ada
@@ -32,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lantern Festival.unity
     guid: c6619386fdf9e4095a9bdecc93351329
-  - enabled: 1
-    path: Assets/Scenes/NewIntro.unity
-    guid: 213bfedc7d8654c6aaf702fb72383d6d
   - enabled: 1
     path: Assets/Scenes/Iceland.unity
     guid: 329f90e3f65384537a45e2732cfa22e3

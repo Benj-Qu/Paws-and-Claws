@@ -11533,7 +11533,7 @@ MonoBehaviour:
   Grid: {fileID: 2100524373}
   explosionAes: {fileID: 0}
   level: 
-  dist: 5
+  dist: 6.6
   WinImage: {fileID: 737044794}
   ScoreText: {fileID: 737044793}
   selectionPanel: {fileID: 0}
@@ -26259,6 +26259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Image
       objectReference: {fileID: 0}
+    - target: {fileID: 4246495517985191922, guid: 03af044a4d5a74ec38e16d316f70d49e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03af044a4d5a74ec38e16d316f70d49e, type: 3}
 --- !u!224 &737044792 stripped
@@ -40137,7 +40141,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -8.884552, y: 0.4156518}
@@ -54246,7 +54250,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 7.2739005, y: 0.58883977}
@@ -66319,7 +66323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918520898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -2.68, z: 1.7519907}
+  m_LocalPosition: {x: -0.25, y: -1.8, z: 1.7519907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
