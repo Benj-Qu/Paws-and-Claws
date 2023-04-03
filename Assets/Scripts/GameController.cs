@@ -256,21 +256,23 @@ public class GameController : MonoBehaviour
                 score2Big += 1;
             }
 
-            ScoreText.text = "DOG Wins!";
             if (score1Big > score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
                 WinImage.GetComponent<WinImage>().DogWin();
+                ScoreText.text = "DOG Wins!";
             }
             else if (score1Big < score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
                 WinImage.GetComponent<WinImage>().CatWin();
+                ScoreText.text = "CAT Wins!";
             }
             else
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
                 WinImage.GetComponent<WinImage>().VS();
+                ScoreText.text = "Tie!";
             }
             WinImage.SetActive(true);
             // winText.text = "DOG Wins!";
@@ -291,21 +293,23 @@ public class GameController : MonoBehaviour
                 score2Big += 1;
             }
 
-            ScoreText.text = "CAT Wins!";
             if (score1Big > score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
                 WinImage.GetComponent<WinImage>().DogWin();
+                ScoreText.text = "DOG Wins!";
             }
             else if (score1Big < score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
                 WinImage.GetComponent<WinImage>().CatWin();
+                ScoreText.text = "CAT Wins!";
             }
             else
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
                 WinImage.GetComponent<WinImage>().VS();
+                ScoreText.text = "Tie!";
             }
             WinImage.SetActive(true);
             // winText.text = "CAT Wins!";
@@ -326,21 +330,23 @@ public class GameController : MonoBehaviour
                 score2Big += 1;
             }
 
-            ScoreText.text = "Tie! Try again!";
             if (score1Big > score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
                 WinImage.GetComponent<WinImage>().DogWin();
+                ScoreText.text = "DOG Wins!";
             }
             else if (score1Big < score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
                 WinImage.GetComponent<WinImage>().CatWin();
+                ScoreText.text = "CAT Wins!";
             }
             else
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
                 WinImage.GetComponent<WinImage>().VS();
+                ScoreText.text = "Tie!";
             }
             WinImage.SetActive(true);
             // winText.text = "Tie! Try again!";
