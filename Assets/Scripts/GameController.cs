@@ -228,7 +228,7 @@ public class GameController : MonoBehaviour
     public void GameWin()
     {
         // TODO: Add coroutine for animation
-        Debug.Log("Win!");
+        // Debug.Log("Win!");
         player1.GetComponent<PlayerScore>().resetFlag();
         player2.GetComponent<PlayerScore>().resetFlag();
         StartCoroutine(Win());
@@ -236,6 +236,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator Win()
     {
+        RoundTextHint.enabled = false;
         if (flagController) flagController.DestroyFlags();
         ScorePanel.SetActive(false);
         if(FarmStoryText) FarmStoryText.updateText("");
