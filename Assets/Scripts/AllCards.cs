@@ -59,6 +59,7 @@ public class AllCards : MonoBehaviour
         cards.Add(21, "rectangle_ice");
         cards.Add(22, "square_ice");
         cards.Add(23, "Trap");
+        cards.Add(24, "rectangle2");
         // crow panda 0-9
         // spike bamboo 1 lantern 1-10 1-11
         // 3-13 2-14
@@ -658,7 +659,7 @@ public class AllCards : MonoBehaviour
             // small round 1
             CardRound cardRoundfarm_1 = new CardRound(23, 0, 1, 1);
             CardRound cardRoundfarm_2 = new CardRound(1, 1, 1, 2);
-            CardRound cardRoundfarm_3 = new CardRound(4, 2, 2, 1);
+            CardRound cardRoundfarm_3 = new CardRound(24, 2, 2, 1);
             CardRound cardRoundfarm_4 = new CardRound(1, 3, 2, 2);
             List<CardRound> sfarm11 = new List<CardRound>();
             sfarm11.Add(cardRoundfarm_1);
@@ -713,7 +714,7 @@ public class AllCards : MonoBehaviour
             CardRound cardRoundfarm3_1 = new CardRound(5, 16, 1, 1);
             CardRound cardRoundfarm3_2 = new CardRound(4, 17, 1, 2);
             CardRound cardRoundfarm3_3 = new CardRound(7, 18, 2, 1);
-            CardRound cardRoundfarm3_4 = new CardRound(4, 19, 2, 2);
+            CardRound cardRoundfarm3_4 = new CardRound(8, 19, 2, 2);
             List<CardRound> sfarm31 = new List<CardRound>();
             sfarm31.Add(cardRoundfarm3_1);
             sfarm31.Add(cardRoundfarm3_2);
