@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private GameController gc;
     private bool collectInvinciblePowerUp = false;
     private AudioSource pas;
+    private Animator anim;
 
     public int joystickNumber;
 
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         pas = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -302,6 +304,7 @@ public class PlayerController : MonoBehaviour
         // Update Horizontal Velocity
         if (Input.GetKey(LeftButton) || joystickInput < 0)
         {
+            anim.SetBool("walk", true);
             if (joystickInput < 0)
             {
                 rb.velocity = new Vector2(floorV + joystickInput, rb.velocity.y);
@@ -318,6 +321,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(RightButton) || joystickInput > 0)
         {
+            anim.SetBool("walk", true);
             if (joystickInput < 0)
             {
                 rb.velocity = new Vector2(floorV + joystickInput, rb.velocity.y);
@@ -334,6 +338,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            anim.SetBool("walk", false);
             if (!onIce)
             {
                 rb.velocity = new Vector2(floorV, rb.velocity.y);
@@ -391,12 +396,14 @@ public class PlayerController : MonoBehaviour
     {
         if (onFloor)
         {
+            anim.SetTrigger("jump");
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
             jumpTimes--;
             onFloor = false;
         }
         else if (onLeftWall)
         {
+            anim.SetTrigger("jump");
             onLeftWall = false;
             rb.velocity = new Vector2(Speed, JumpSpeed);
             sr.flipX = false;
@@ -405,6 +412,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (onRightWall)
         {
+            anim.SetTrigger("jump");
             onRightWall = false;
             rb.velocity = new Vector2(-Speed, JumpSpeed);
             sr.flipX = true;
