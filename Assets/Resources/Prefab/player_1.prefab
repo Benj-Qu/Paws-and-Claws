@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 8649230981783621502}
   - component: {fileID: 5972522944824699718}
   - component: {fileID: 7836483670668928459}
+  - component: {fileID: 9156442992198385527}
   m_Layer: 3
   m_Name: player_1
   m_TagString: Player
@@ -602,6 +603,18 @@ MonoBehaviour:
   MaxRatio: 2
   MinRatio: 1
   Sword: {fileID: 568348990006396674, guid: a23d0eb9c04c9104e928d043e2d9bb51, type: 3}
+--- !u!114 &9156442992198385527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658275035224939865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdbb70dc7df94f07b04753a7ac7fce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6658275036396007919
 GameObject:
   m_ObjectHideFlags: 0
