@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2009575799542506405}
   m_Layer: 0
   m_Name: rectangle2
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,11 +188,11 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 0
-  follower_distance_x: 0
-  UpOffset: 0
+  follower_distance: 1
+  follower_distance_x: 0.5
+  UpOffset: 0.5
   DownOffset: 0
-  LeftOffset: 0
+  LeftOffset: 1
   RightOffset: 0
 --- !u!1 &2009575799793052124
 GameObject:
