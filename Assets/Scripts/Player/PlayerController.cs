@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,12 +53,16 @@ public class PlayerController : MonoBehaviour
 
     public int joystickNumber;
 
-    private void Start()
+    private void Awake()
     {
-        jumpTimes = MaxJumpTimes;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         pas = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        jumpTimes = MaxJumpTimes;
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         if (gc.stage == 2)
         {
