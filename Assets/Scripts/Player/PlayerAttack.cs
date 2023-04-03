@@ -64,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("Fire" + joystickString);
             attackable = false;
             float horizontalInput = Input.GetAxis("Horizontal" + joystickString);
-            float verticalInput = Input.GetAxis("Vertical" + joystickString);
+            float verticalInput = - Input.GetAxis("Vertical" + joystickString);
             // Get Attack Direction
             Vector2 attackDirection = Vector2.zero;
             if (horizontalInput != 0 || verticalInput != 0)
