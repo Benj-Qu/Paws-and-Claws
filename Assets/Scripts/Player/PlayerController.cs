@@ -268,8 +268,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (isPlayer(other))
         {
-            onFloor = true;
-            jumpTimes = MaxJumpTimes;
+            ContactPoint2D hitpos = collision.GetContact(0);
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
+            {
+                onFloor = true;
+                jumpTimes = MaxJumpTimes;
+            }
         }
     }
 
