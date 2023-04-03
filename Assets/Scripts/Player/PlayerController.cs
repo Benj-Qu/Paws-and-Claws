@@ -521,8 +521,8 @@ public class PlayerController : MonoBehaviour
 
     public void activate()
     {
-        active = true;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        active = true;
     }
 
     public void deactivate()
