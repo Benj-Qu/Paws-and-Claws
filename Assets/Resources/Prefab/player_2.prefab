@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 4138337599100129808}
   - component: {fileID: 7985956624572172967}
   - component: {fileID: 5336509314114257349}
+  - component: {fileID: 5686969975016896771}
   m_Layer: 3
   m_Name: player_2
   m_TagString: Player
@@ -698,6 +699,26 @@ MonoBehaviour:
   MaxRatio: 2
   MinRatio: 1
   Sword: {fileID: 568348990006396674, guid: f9f94e4e865432648a7ef40d8a618b32, type: 3}
+--- !u!95 &5686969975016896771
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138337599100129823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3df540fe6aad8a479c3747aa5acf6ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8369096552896372553
 GameObject:
   m_ObjectHideFlags: 0
