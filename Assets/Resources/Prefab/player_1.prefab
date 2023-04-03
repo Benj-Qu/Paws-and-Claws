@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 8649230981783621502}
   - component: {fileID: 5972522944824699718}
   - component: {fileID: 7836483670668928459}
+  - component: {fileID: 5431763877549546731}
   m_Layer: 3
   m_Name: player_1
   m_TagString: Player
@@ -281,7 +282,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.38, y: 4.34}
+  m_Size: {x: 3.16, y: 3.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -305,7 +306,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.16, y: 3.66}
-    newSize: {x: 4.38, y: 4.34}
+    newSize: {x: 3.16, y: 3.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -602,6 +603,26 @@ MonoBehaviour:
   MaxRatio: 2
   MinRatio: 1
   Sword: {fileID: 568348990006396674, guid: a23d0eb9c04c9104e928d043e2d9bb51, type: 3}
+--- !u!95 &5431763877549546731
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658275035224939865}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0377208a570d934488e4dee8df207650, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6658275036396007919
 GameObject:
   m_ObjectHideFlags: 0
