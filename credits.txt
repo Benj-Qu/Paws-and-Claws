@@ -2,6 +2,7 @@ Thanks to CAINOS for the asset https://assetstore.unity.com/publishers/40001
 PowerUp and Coin Sound Effect https://pixabay.com/sound-effects/search/power-up/
 Some Sprite from Lovepik
 Some Sprite from FAVPNG
+Icicle sprite from Super Mario Maker 2
 2D ice World asset from RAFMANIX
 SnowFlake asset from Little Sweet Daemon
 
