@@ -620,4 +620,9 @@ public class PlayerController : MonoBehaviour
             this.gameObject.transform.position = new Vector3(-11.3f, -0.2f, 0f);
         }
     }
+
+    public bool GetFlip()
+    {
+        return sr.flipX;
+    }
 }

@@ -6,7 +6,8 @@ public class ChangeCloth : MonoBehaviour
 {
     public PlayerController playerController;
 
-    public Sprite armor;
+    public GameObject armor;
+    public GameObject shield;
 
     private bool invincible = false;
 
@@ -16,7 +17,6 @@ public class ChangeCloth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,12 +26,14 @@ public class ChangeCloth : MonoBehaviour
         {
             invincible = true;
             ori = sr.sprite;
-            sr.sprite = armor;
+            armor.SetActive(true);
+            shield.SetActive(true);
         }
         else if (invincible && !playerController.GetInvincible())
         {
             invincible = false;
-            sr.sprite = ori;
+            armor.SetActive(false);
+            shield.SetActive(false);
         }
     }
 }
