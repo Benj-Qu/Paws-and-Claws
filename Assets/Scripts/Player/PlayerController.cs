@@ -373,7 +373,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("A" + joystickString);
             jump();
-            anim.SetTrigger("jump");
         }
         // Wall Sliding
         if (onWall() && rb.velocity.y < 0)
@@ -397,12 +396,14 @@ public class PlayerController : MonoBehaviour
     {
         if (onFloor)
         {
+            anim.SetTrigger("jump");
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
             jumpTimes--;
             onFloor = false;
         }
         else if (onLeftWall)
         {
+            anim.SetTrigger("jump");
             onLeftWall = false;
             rb.velocity = new Vector2(Speed, JumpSpeed);
             sr.flipX = false;
@@ -411,6 +412,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (onRightWall)
         {
+            anim.SetTrigger("jump");
             onRightWall = false;
             rb.velocity = new Vector2(-Speed, JumpSpeed);
             sr.flipX = true;
