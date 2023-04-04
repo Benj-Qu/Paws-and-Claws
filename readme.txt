@@ -241,6 +241,45 @@ Mar31
 16. Volcano block
 
 
+Apr3
+1. winterland 不要 invincible 随机pool block zy 第一轮伪随机
+2. 给austin写邮件 
+3. 旗子在block前面 hidespike会挡在旗子前 
+4. intro 选择的键 A to select hint
+6. 包子屉的indicator位置不对
+7. flag generation的位置
+9. block碰撞箱 看上去可以跳上去的 有时候会被挡住 精确度要高 还有player collider更精确。
+10. tutorial“两个人都被打到”进下一阶段 you did it. Free attack time 54321
+11. 镜头切太近 有点晃眼睛 稍微远一点
+12. indicator不太明显（？ 用框的颜色更好 猫头狗头颜色更明显区分 外面一圈颜色明显 亮黄亮红
+13. tutorial结束的时候出现了time
+14. 部分地图不应该有round world 如iceland 搭墙
+15. ice block切掉下半部分 尝试改poly collider 33. powerup可以放进ice的地方 box collider改
+16. 攻击可以被move抵消 移动飞不出去。角度大一点
+18. 旗子时间可以调一下 调成6s
+19 墙的判定更严格一点
+20. partytime +1 改成+2
+21. 1x1block的大小不对
+22. 摆放block的时候 以为是要移动player 更明显一点（把player弄浅一些）mask调一下放在player上面
+23. intro里面tutorial更显眼一些 （一定要玩tutorial才能解锁别的？星级
+24. 2:0之后结束游戏
+26. -15还是看不见（从分数条扒下来一块变成复活币），大一点，调整height， 调整scorepanel位置
+28. 移动平台如果被卡住 就永远卡住了 改成会回来
+29. powerup也可以炸掉
+30. 企鹅的collider不是trigger
+31. 两个人都没什么分的话 选卡出bomb 第二轮第三轮必出一个bomb
+32. 火山的攻击从火山口出来更intuitive 
+34. 攻击击中indicator 红一红
+35. 选中播放漫画有延迟 0.2f
+36. 手柄上冰不够滑 冰更滑一点
+
+cooldown attack 4s
+block catch on fire,火山basic block改成石头
+china 火山 iceland winterland 2*1 block 画
+esc误触 如果可以换成中间的键
+guardian not obvious are the players， cover and story added
+
+
 
 
 
