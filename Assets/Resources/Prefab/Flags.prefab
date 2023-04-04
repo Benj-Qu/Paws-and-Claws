@@ -15236,11 +15236,11 @@ GameObject:
   - component: {fileID: 3566844923214173485}
   m_Layer: 0
   m_Name: Flag (2)
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3884649206151815869
 Transform:
   m_ObjectHideFlags: 0
@@ -15250,7 +15250,7 @@ Transform:
   m_GameObject: {fileID: 3884649206151815868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4986676507355331401}
@@ -15332,7 +15332,7 @@ MonoBehaviour:
   player_1_audio: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
   player_2_audio: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
   showAddScore: {fileID: 6070350633266711485}
-  ControlPeriod: 5
+  ControlPeriod: 6
 --- !u!61 &3566844923214173485
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15373,11 +15373,11 @@ GameObject:
   - component: {fileID: 6605174224897850622}
   m_Layer: 0
   m_Name: Flag (1)
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3884649207309446499
 Transform:
   m_ObjectHideFlags: 0
@@ -15387,7 +15387,7 @@ Transform:
   m_GameObject: {fileID: 3884649207309446498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3438548881557433460}
@@ -15469,7 +15469,7 @@ MonoBehaviour:
   player_1_audio: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
   player_2_audio: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
   showAddScore: {fileID: 8725423578550241011}
-  ControlPeriod: 5
+  ControlPeriod: 6
 --- !u!61 &6605174224897850622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15508,7 +15508,7 @@ GameObject:
   - component: {fileID: 3884649207738965784}
   m_Layer: 0
   m_Name: Flags
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15522,7 +15522,7 @@ Transform:
   m_GameObject: {fileID: 3884649207738965783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.28, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3884649207998440991}
@@ -15546,7 +15546,7 @@ MonoBehaviour:
   x_min: f9fffffffcffffff03000000
   x_max: fcffffff0300000007000000
   y_min: -4
-  y_max: 4
+  y_max: 2
 --- !u!1 &3884649207998440989
 GameObject:
   m_ObjectHideFlags: 0
@@ -15561,11 +15561,11 @@ GameObject:
   - component: {fileID: 6855990352016724355}
   m_Layer: 0
   m_Name: Flag
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3884649207998440991
 Transform:
   m_ObjectHideFlags: 0
@@ -15575,7 +15575,7 @@ Transform:
   m_GameObject: {fileID: 3884649207998440989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2140607423846209855}
@@ -15657,7 +15657,7 @@ MonoBehaviour:
   player_1_audio: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
   player_2_audio: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
   showAddScore: {fileID: 2218025576968466405}
-  ControlPeriod: 5
+  ControlPeriod: 6
 --- !u!61 &6855990352016724355
 BoxCollider2D:
   m_ObjectHideFlags: 0

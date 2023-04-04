@@ -4,45 +4,64 @@ using UnityEngine;
 
 public class FireballController : MonoBehaviour
 {
-    public Vector2 LeftRange = new Vector2(-8f, 1f);
-    public Vector2 RightRange = new Vector2(8f, 1f);
+    public float BornTime = 2f;
+    public float LifeTime = 10f;
+    public float LeftLimit = -30f;
+    public float RightLimit = 30f;
+    public float LowerLimit = 10f;
+    public float UpperLimit = 20f;
 
-    public float Speed = 5f;
+    private bool destroyable = false;
 
-    void Start()
+    private void Start()
     {
-        float angle = Random.Range(lowerLimit(transform.position), upperLimit(transform.position));
+        float angle = Random.Range(LeftLimit - 90f, RightLimit - 90f);
+        float Speed = Random.Range(LowerLimit, UpperLimit);
         Vector2 direction = Quaternion.Euler(0f, 0f, angle) * Vector3.left;
-        transform.eulerAngles = new Vector3(0f, 0f, angle);
         GetComponent<Rigidbody2D>().velocity = direction * Speed;
-        StartCoroutine(DestroyCoroutine(5f));
+        StartCoroutine(DestroyCoroutine(LifeTime, true));
+    }
+
+    private void Update()
+    {
+        Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+        if (velocity.magnitude == 0)
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 90f);
+        }
+        else
+        {
+            float angle = Vector2.Angle(GetComponent<Rigidbody2D>().velocity, Vector2.left);
+            if (velocity.y <= 0)
+            {
+                destroyable = true;
+                transform.eulerAngles = new Vector3(0f, 0f, angle);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0f, 0f, -angle);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isTerrain(other.gameObject))
         {
-            StartCoroutine(DestroyCoroutine(0.1f));
+            StartCoroutine(DestroyCoroutine(0.1f, false));
         }
     }
 
-    private IEnumerator DestroyCoroutine(float time)
+    private IEnumerator DestroyCoroutine(float time, bool force)
     {
-        yield return new WaitForSeconds(time);
-        if (gameObject)
+        if (force || destroyable)
         {
-            Destroy(gameObject);
+            yield return new WaitForSeconds(time);
+            if (gameObject)
+            {
+                Destroy(gameObject);
+            }
         }
-    }
-
-    private float lowerLimit(Vector2 position)
-    {
-        return Vector2.Angle(Vector2.left, LeftRange - position);
-    }
-
-    private float upperLimit(Vector2 position)
-    {
-        return Vector2.Angle(Vector2.left, RightRange - position);
     }
 
     private bool isTerrain(GameObject other)

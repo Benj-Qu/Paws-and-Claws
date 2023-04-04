@@ -7,30 +7,22 @@ public class PlayerAttack : MonoBehaviour
     public int joystickNumber;
     public KeyCode FireButton;
     public KeyCode DownButton;
-    public string EnemyName;
-    public float offset = 100f;
-    public float AttackRange = 2f;
+
     public float AttackAngle = 45f;
     public float AttackFrequency = 2.5f;
-    public float KnockSpeed = 5f;
-    public float KnockPeriod = 2.5f;
-    public float OriginalScale = 0.2f;
 
-    public float MaxRatio = 2f;
-    public float MinRatio = 1f;
+    public float OriginalScale = 0.2f;
 
     public GameObject Sword;
 
     private float timer = 0f;
     private bool attackable = true;
-    private GameObject enemy;
 
     private string joystickString;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GameObject.Find(EnemyName);
         joystickString = joystickNumber.ToString();
     }
 
@@ -109,10 +101,6 @@ public class PlayerAttack : MonoBehaviour
             sword.transform.eulerAngles = new Vector3(0f, 0f, swordDirection(attackDirection));
             sword.transform.localScale *= (transform.localScale.x / OriginalScale);
             sword.GetComponent<SwordController>().Attack(gameObject);
-            if (inRange(attackDirection))
-            {
-                enemy.GetComponent<PlayerController>().KnockBack(getDirection() * getRatio() * KnockSpeed, KnockPeriod);
-            }
         }
     }
 
@@ -126,41 +114,6 @@ public class PlayerAttack : MonoBehaviour
         {
             return -Vector2.Angle(attackDirection, Vector2.right);
         }
-    }
-
-    private float getRatio()
-    {
-        int score = GetComponent<PlayerScore>().getScore();
-        int other = enemy.GetComponent<PlayerScore>().getScore();
-        return Mathf.Min(MaxRatio, Mathf.Max((other + offset) / (score + offset), MinRatio));
-    }
-
-    private float getDistance()
-    {
-        return Vector2.Distance(transform.position, enemy.transform.position);
-    }
-
-    private Vector2 getDirection()
-    {
-        Vector2 distdiff = enemy.transform.position - transform.position;
-        if (distdiff.y > 0)
-        {
-            distdiff = new Vector2(distdiff.x, 2 * distdiff.y);
-        }
-        return distdiff.normalized;
-    }
-
-    private bool inRange(Vector2 attackDirection)
-    {
-        if (getDistance() > AttackRange * (transform.localScale.x / OriginalScale))
-        {
-            return false;
-        }
-        if (Vector2.Angle(getDirection(), attackDirection) > AttackAngle)
-        {
-            return false;
-        }
-        return true;
     }
 
     public void reset()

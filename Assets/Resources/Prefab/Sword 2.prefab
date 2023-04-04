@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 568348990006396675}
   - component: {fileID: 568348990006396734}
   - component: {fileID: 568348990006396673}
+  - component: {fileID: 1118885119897588565}
   m_Layer: 0
   m_Name: Sword 2
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,5 +120,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2306f4a5d1f3ec748aa680044f02b511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Angular: 1000
-  Range: 90
+  owner: {fileID: 0}
+  Angular: 800
+  Range: 120
+--- !u!61 &1118885119897588565
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568348990006396674}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 11.625, y: -0.6}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0.52}
+    oldSize: {x: 23.5, y: 23.5}
+    newSize: {x: 23.5, y: 23.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 21.75, y: 1.26}
+  m_EdgeRadius: 0
