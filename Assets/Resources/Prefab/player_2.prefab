@@ -548,7 +548,15 @@ MonoBehaviour:
   player_die: {fileID: 8300000, guid: b5a3125316a3d41c8bb291273cd78df7, type: 3}
   showAddScore: {fileID: 4138337598705732243}
   DeathPenalty: -5
+  WallRatio: 4
   joystickNumber: 2
+  offset: 100
+  AttackedSpeed: 10
+  AttackedPeriod: 1.2
+  OriginalScale: 0.2
+  MaxRatio: 2
+  MinRatio: 1
+  EnemyName: player_1
 --- !u!114 &4138337599100129809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,16 +697,9 @@ MonoBehaviour:
   joystickNumber: 2
   FireButton: 32
   DownButton: 274
-  EnemyName: player_1
-  offset: 100
-  AttackRange: 2
   AttackAngle: 50
-  AttackFrequency: 5
-  KnockSpeed: 10
-  KnockPeriod: 1
+  AttackFrequency: 4
   OriginalScale: 0.2
-  MaxRatio: 2
-  MinRatio: 1
   Sword: {fileID: 568348990006396674, guid: f9f94e4e865432648a7ef40d8a618b32, type: 3}
 --- !u!95 &5686969975016896771
 Animator:

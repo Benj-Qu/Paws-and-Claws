@@ -6,10 +6,10 @@ public class SwordController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sp;
-    private GameObject owner;
+    public GameObject owner;
 
     public float Angular = 1000f;
-    public float Range = 90f;
+    public float Range = 180f;
 
     void Start()
     {

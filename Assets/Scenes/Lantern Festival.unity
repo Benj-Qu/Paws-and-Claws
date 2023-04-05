@@ -28675,14 +28675,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
-      propertyPath: m_Name
-      value: ScorePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6658275035224939865, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
       propertyPath: m_Name
       value: player_1
@@ -28730,6 +28722,14 @@ PrefabInstance:
     - target: {fileID: 6658275035224939868, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
+      propertyPath: m_Name
+      value: ScorePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
@@ -37836,6 +37836,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4225822519937873636, guid: 56c9e3f55bd9547efa863945a6398cd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225822519937873637, guid: 56c9e3f55bd9547efa863945a6398cd9, type: 3}
+      propertyPath: staticOrRandom
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4225822519937873642, guid: 56c9e3f55bd9547efa863945a6398cd9, type: 3}
@@ -68973,85 +68977,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2478045443295247836, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: textObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_UM
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_Ohio
-      value: 
-      objectReference: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_white
-      value: 
-      objectReference: {fileID: 21300000, guid: 956cb95a8c0e242d290cf0c317942224, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_1_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_2_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
-    - target: {fileID: 3884649206151815868, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815868, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815871, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815871, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -558665
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446501, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446501, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -558665
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_UM
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_Ohio
-      value: 
-      objectReference: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_1_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_2_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
     - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_Name
       value: Flags
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965784, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: y_max
@@ -69103,42 +69031,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_UM
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_Ohio
-      value: 
-      objectReference: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_1_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_2_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
-    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440990, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440990, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -558665
-      objectReference: {fileID: 0}
-    - target: {fileID: 7969556496923619951, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -13,9 +13,9 @@ TagManager:
   - Box
   - Collectable
   - Ice
-  - ice
   - trigger
   - cable
+  - Sword
   layers:
   - Default
   - TransparentFX

@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class VolcanoController : MonoBehaviour
 {
-    public float CeilHeight = 6f;
+    public float InitPeriod = 5f;
 
-    public int RoundNum = 3;
     public float Delay = 1f;
     public float Interval = 10f;
     public float FireballDist = 0.05f;
 
-    public float InitPeriod = 5f;
-
+    public int RoundNum = 3;
     public int FireballRound = 15;
     public int FireballNum = 3;
-    public float LeftBorder = -7f;
-    public float RightBorder = 7f;
 
     public GameObject Fireball;
     public AudioClip Burst;
     public AudioSource vas;
 
     public float volume = 1f;
+
+    public Vector2 InitPos = new Vector2(0f, -2f);
 
     public void begin()
     {
@@ -41,7 +39,7 @@ public class VolcanoController : MonoBehaviour
                 int num = Random.Range(1, FireballNum);
                 for (int k = 0; k < FireballNum; k++)
                 {
-                    Instantiate(Fireball, new Vector2(Random.Range(LeftBorder, RightBorder), CeilHeight), Quaternion.identity);
+                    Instantiate(Fireball, InitPos, Quaternion.identity);
                 }
                 yield return new WaitForSeconds(FireballDist);
             }

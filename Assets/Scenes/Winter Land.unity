@@ -61260,56 +61260,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4138337599100129823, guid: d89362e81d0db4bb28806f61a0a083e8, type: 3}
   m_PrefabInstance: {fileID: 4138337598450688267}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1826832209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826832208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 436613fe0f18a0f4689f0824865647ff, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Xbox
-  m_DefaultActionMap: Gameplay
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!95 &1826832210
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826832208}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c3df540fe6aad8a479c3747aa5acf6ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1828604360
 GameObject:
   m_ObjectHideFlags: 0
@@ -72457,89 +72407,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2478045443295247836, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: textObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_UM
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_Ohio
-      value: 
-      objectReference: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_white
-      value: 
-      objectReference: {fileID: 21300000, guid: 956cb95a8c0e242d290cf0c317942224, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_1_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
-    - target: {fileID: 3884649206151815841, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_2_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
-    - target: {fileID: 3884649206151815868, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815868, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815871, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649206151815871, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -558665
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446498, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446501, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446501, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -558665
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_UM
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_Ohio
-      value: 
-      objectReference: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_1_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
-    - target: {fileID: 3884649207309446503, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_2_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
     - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_Name
       value: Flags
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207738965783, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207738965784, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: y_max
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_RootOrder
@@ -72584,38 +72454,6 @@ PrefabInstance:
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_UM
-      value: 
-      objectReference: {fileID: 21300000, guid: 1ab1a8469ec63455cafe8b9c336986d6, type: 3}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: flag_Ohio
-      value: 
-      objectReference: {fileID: 21300000, guid: 0fc7f6dc9c74544d9848292413427ae9, type: 3}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_1_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0219e3eaefc334b018e921cd87baa8dc, type: 3}
-    - target: {fileID: 3884649207998440960, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: player_2_audio
-      value: 
-      objectReference: {fileID: 8300000, guid: fe6110abf2d6846578f2878b8f3ec781, type: 3}
-    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_TagString
-      value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440990, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884649207998440990, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -558665
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}

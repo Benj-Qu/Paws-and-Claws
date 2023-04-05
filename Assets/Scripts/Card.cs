@@ -6,22 +6,19 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    public int block_id = -1; // indicate card category
+    // indicate card category
+    public int block_id = -1; 
     public int index = -1;
-
+    public Animator animator;
+    public bool playDescriptionAnimation = false;
+    public float timeBeforeCardStaticBecomeAnimation = 0.35f;
+    
     private Image _image;
     private bool move = false;
     private Vector3 target;
     private Vector3 speed;
-
     private bool _inSelection = true;
-
-    public Animator animator;
     private RuntimeAnimatorController _runtimeAnimatorController;
-
-    public bool playDescriptionAnimation = false;
-
-    // public int amount = -1;
 
     private void Awake()
     {
@@ -29,19 +26,19 @@ public class Card : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         SetCard(block_id);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (move)
         {
-            Vector3 temp = _image.transform.position;
-            temp += speed * Time.deltaTime;
-            _image.transform.position = temp;
+            Vector3 currentCameraPos = _image.transform.position;
+            currentCameraPos += speed * Time.deltaTime;
+            _image.transform.position = currentCameraPos;
         }
     }
 
@@ -57,14 +54,12 @@ public class Card : MonoBehaviour
         this.block_id = _block_id;
         
         // look for the corresponding image in the sprite folder
-        _image.sprite = Resources.Load<Sprite>("Sprite/" + AllCards.cards[this.block_id] + "_");
-        Debug.Log("image sprite:" + AllCards.cards[this.block_id]);
-        
+        var spritePath = "Sprite/" + AllCards.cards[this.block_id] + "_";
+        _image.sprite = Resources.Load<Sprite>(spritePath);
+
         // look for the corresponding animation for this card
-        // if (playDescriptionAnimation) animator.runtimeAnimatorController = 
-        _runtimeAnimatorController =
-            Resources.Load<RuntimeAnimatorController>("Animations/DescriptionAnimation/" +
-                                                      AllCards.cards[this.block_id].ToString());
+        var animatorPath = "Animations/DescriptionAnimation/" + AllCards.cards[this.block_id];
+        _runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(animatorPath);
     }
 
     public void StartSelectEffect(int leftOrRight, Vector3 pos)
@@ -80,18 +75,10 @@ public class Card : MonoBehaviour
     {
         move = true;
         target = img_pos;
-        // if (leftOrRight == 1)
-        // {
-        //     target.x += 50f;
-        // }
-        // else
-        // {
-        //     target.x -= 50f;
-        // }
-
         speed = (target - _image.transform.position) / 0.75f;
         
         yield return new WaitForSeconds(0.75f);
+        
         move = false;
         _image.transform.localScale /= 2;
         _image.transform.position = img_pos;
@@ -134,7 +121,6 @@ public class Card : MonoBehaviour
         if (_inSelection && playDescriptionAnimation == false)
         {
             playDescriptionAnimation = true;
-            Debug.Log("run 2");
             // set up animator
             StartCoroutine(WaitPlayAnimation());
         }
@@ -142,11 +128,10 @@ public class Card : MonoBehaviour
 
     private IEnumerator WaitPlayAnimation()
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(timeBeforeCardStaticBecomeAnimation);
         if (playDescriptionAnimation)
         {
             animator.runtimeAnimatorController = _runtimeAnimatorController;
-            Debug.Log("run 3" + block_id.ToString() + _runtimeAnimatorController);
         }
     }
 
@@ -157,7 +142,6 @@ public class Card : MonoBehaviour
             playDescriptionAnimation = false;
             // set animator controller to None
             animator.runtimeAnimatorController = null;
-            // animator.enabled = false;
         }
     }
 
@@ -173,6 +157,5 @@ public class Card : MonoBehaviour
         animator.runtimeAnimatorController = _runtimeAnimatorController;
         _inSelection = true;
         playDescriptionAnimation = false;
-        // animator.Rebind();
     }
 }

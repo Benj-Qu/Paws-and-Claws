@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
     public float DeathPenalty = -5f;
 
+    public float WallRatio = 3f;
+
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private GameController gc;
@@ -54,12 +56,24 @@ public class PlayerController : MonoBehaviour
 
     public int joystickNumber;
 
+    // For attack
+    public float offset = 100f;
+    public float AttackedSpeed = 5f;
+    public float AttackedPeriod = 1.2f;
+    public float OriginalScale = 0.2f;
+    public float MaxRatio = 2f;
+    public float MinRatio = 1f;
+    public string EnemyName;
+
+    private GameObject enemy;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         pas = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        enemy = GameObject.Find(EnemyName);
     }
 
     private void Start()
@@ -135,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if ((hitpos.normal.y > 0) && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
+            if ((hitpos.normal.y > 0) && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x) / WallRatio))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
@@ -169,7 +183,7 @@ public class PlayerController : MonoBehaviour
             string otherJoystickString = pc.joystickNumber.ToString();
             float otherJoystickInput = Input.GetAxis("Horizontal" + otherJoystickString);
             // Knock On Below Player
-            if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x) / WallRatio))
             {
                 // If Other Player On Floor
                 if (!onFloor && pc.OnFloor())
@@ -182,13 +196,6 @@ public class PlayerController : MonoBehaviour
                     {
                         floorV = 0f;
                     }
-                }
-                // If Other Player Jumping / Flying
-                else if (onFloor)
-                {
-                    float coef = collision.transform.localScale.x / gameObject.transform.localScale.x;
-                    float distdiff = transform.position.x - other.transform.position.x;
-                    StartCoroutine(KnockBack(new Vector2(AirKnockCoef * pc.Speed * coef * distdiff, rb.velocity.y)));
                 }
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
@@ -240,7 +247,7 @@ public class PlayerController : MonoBehaviour
 
             ContactPoint2D hitpos = collision.GetContact(0);
             // Touch Floor
-            if (hitpos.normal.y > 0 && (hitpos.normal.y > 0.5 * Mathf.Abs(hitpos.normal.x)))
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x) / WallRatio))
             {
                 onFloor = true;
                 jumpTimes = MaxJumpTimes;
@@ -253,23 +260,43 @@ public class PlayerController : MonoBehaviour
                     floorV = 0f;
                 }
             }
-            // Touch Left Floor
+            // Touch Left Wall
             else if (hitpos.normal.x > 0)
             {
                 onLeftWall = true;
                 jumpTimes = MaxJumpTimes;
+                if (collision.rigidbody && floorV == 0f)
+                {
+                    floorV = collision.rigidbody.velocity.x;
+                }
+                else
+                {
+                    floorV = 0f;
+                }
             }
-            // Touch Right Floor
+            // Touch Right Wall
             else if (hitpos.normal.x < 0)
             {
                 onRightWall = true;
                 jumpTimes = MaxJumpTimes;
+                if (collision.rigidbody && floorV == 0f)
+                {
+                    floorV = collision.rigidbody.velocity.x;
+                }
+                else
+                {
+                    floorV = 0f;
+                }
             }
         }
         else if (isPlayer(other))
         {
-            onFloor = true;
-            jumpTimes = MaxJumpTimes;
+            ContactPoint2D hitpos = collision.GetContact(0);
+            if (hitpos.normal.y > 0 && (hitpos.normal.y > Mathf.Abs(hitpos.normal.x) / WallRatio))
+            {
+                onFloor = true;
+                jumpTimes = MaxJumpTimes;
+            }
         }
     }
 
@@ -292,6 +319,15 @@ public class PlayerController : MonoBehaviour
         if (!invincible && collision.gameObject.CompareTag("trigger") && onCable == false)
         {
             Die();
+        }
+        // Attacked by Player
+        if (!invincible && collision.gameObject.CompareTag("Sword"))
+        {
+            SwordController sword = collision.gameObject.GetComponent<SwordController>();
+            if (sword.owner != gameObject)
+            {
+                Attacked();
+            }
         }
     }
 
@@ -543,23 +579,43 @@ public class PlayerController : MonoBehaviour
         return !(onFloor || onLeftWall || onRightWall);
     }
 
-    public void KnockBack(Vector2 direction, float time)
+    public void Attacked()
     {
-        StartCoroutine(KnockBackCoroutine(direction, time));
+        Vector2 direction = getDirection() * getRatio() * AttackedSpeed;
+        StartCoroutine(AttackedCoroutine(direction, AttackedPeriod));
     }
 
-    private IEnumerator KnockBackCoroutine(Vector2 direction, float time)
+    private IEnumerator AttackedCoroutine(Vector2 direction, float time)
     {
         attacked = true;
         active = false;
         rb.velocity = direction;
+        redflash(time/2);
         yield return new WaitForSeconds(time/2);
         if (!active)
         {
+            redflash(time / 2);
             yield return new WaitForSeconds(time / 2);
             active = true;
         }
         attacked = false;
+    }
+
+    private void redflash(float time)
+    {
+        int times = Mathf.FloorToInt(time * 5 + 0.1f);
+        StartCoroutine(RedFlashCoroutine(times));
+    }
+
+    private IEnumerator RedFlashCoroutine(int times)
+    {
+        for (int i = 0; i < times; i++)
+        {
+            sr.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            sr.color = Color.white;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
@@ -590,10 +646,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // public bool GetFlip()
-    // {
-    //     return sr.flipX;
-    // }
+    private float getRatio()
+    {
+        int score = GetComponent<PlayerScore>().getScore();
+        int other = enemy.GetComponent<PlayerScore>().getScore();
+        float ratio = Mathf.Min(MaxRatio, Mathf.Max((score + offset) / (other + offset), MinRatio));
+        return ratio * (enemy.transform.localScale.x / transform.localScale.x);
+    }
+
+    private Vector2 getDirection()
+    {
+        Vector2 distdiff = transform.position - enemy.transform.position;
+        if (distdiff.y > 0)
+        {
+            distdiff = new Vector2(distdiff.x, 2 * distdiff.y);
+        }
+        return distdiff.normalized;
+    }
 
     public bool GetInvincible()
     {

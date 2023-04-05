@@ -88,6 +88,6 @@ public class BombController : MonoBehaviour
 
     private bool isBlock(GameObject obj)
     {
-        return obj.CompareTag("Block") || obj.CompareTag("Ice");
+        return obj.CompareTag("Block") || obj.CompareTag("Ice") || obj.CompareTag("Collectable");
     }
 }
