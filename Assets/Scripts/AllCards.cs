@@ -24,6 +24,9 @@ public class AllCards : MonoBehaviour
     private GameObject _selectionPanel;
     private GameObject _selectionPanel_2;
 
+    public bool staticOrRandom = true;
+    private Dictionary<string, RandomCardDraw> selectionPool;
+
     private void Awake()
     {
   
@@ -59,6 +62,18 @@ public class AllCards : MonoBehaviour
         cards.Add(23, "Trap");
         cards.Add(24, "rectangle2");
 
+        selectionPool = new Dictionary<string, RandomCardDraw>();
+        RandomCardDraw pool = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
+        RandomCardDraw pool1 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
+        RandomCardDraw pool2 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
+        RandomCardDraw pool3 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
+        RandomCardDraw pool4 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
+        selectionPool.Add("Lantern Festival", pool);
+        selectionPool.Add("Winter Land", pool1);
+        selectionPool.Add("Iceland", pool2);
+        selectionPool.Add("Farm", pool3);
+        selectionPool.Add("Volcano", pool4);
+
         // instantiate the blocks as the child of the block
         block = GameObject.Find("Block");
         if (block)
@@ -91,10 +106,27 @@ public class AllCards : MonoBehaviour
         // Instantiate(_selectionPanel, transform.position, Quaternion.identity);
         EventBus.Publish<BlockInstantiateEvent>(new BlockInstantiateEvent());
     }
+
+    private void RandomSetRound()
+    {
+        string level = SceneManager.GetActiveScene().name;
+        List<int> round_ = new List<int>();
+        round_.Add(2);
+        round_.Add(1);
+        round_.Add(1);
+        cardRoundSetting = CardRoundGenerate(round_, level);
+    }
     
     private void SetRound()
     {
         string level = SceneManager.GetActiveScene().name;
+
+        if (!staticOrRandom)
+        {
+            RandomSetRound();
+            return;
+        }
+        
         if (level == "Lantern Festival")
         {
             // big round 1
@@ -726,46 +758,49 @@ public class AllCards : MonoBehaviour
             cardRoundSetting.Add(bfarm3);
             return;
         }
-        // other scene, including tutorial and trail level use the same currently
 
-        // big round 1
-        // small round 1
-        CardRound cardRound1_1 = new CardRound(0, 0,  1, 1);
-        CardRound cardRound1_2 = new CardRound(1, 1,  1, 2);
-        CardRound cardRound1_3 = new CardRound(4, 2,  2, 1);
-        CardRound cardRound1_4 = new CardRound(0, 3,  2, 2);
-        List<CardRound> s11 = new List<CardRound>();
-        s11.Add(cardRound1_1);
-        s11.Add(cardRound1_2);
-        s11.Add(cardRound1_3);
-        s11.Add(cardRound1_4);
-        
-        // small round 2
-        CardRound cardRound1_5 = new CardRound(2, 4,  1, 1);
-        CardRound cardRound1_6 = new CardRound(3, 5,  1, 2);
-        CardRound cardRound1_7 = new CardRound(2, 6,  2, 1);
-        CardRound cardRound1_8 = new CardRound(3, 7,  2, 2);
-        List<CardRound> s12 = new List<CardRound>();
-        s12.Add(cardRound1_5);
-        s12.Add(cardRound1_6);
-        s12.Add(cardRound1_7);
-        s12.Add(cardRound1_8);
+        else
+        {
+            // other scene, including tutorial and trail level use the same currently
 
-        List<List<CardRound>> b1 = new List<List<CardRound>>();
-        b1.Add(s11);
-        b1.Add(s12);
-        
-        // big round 2
+            // big round 1
             // small round 1
-        CardRound cardRound2_1 = new CardRound(6, 8,  1, 1);
-        CardRound cardRound2_2 = new CardRound(2, 9,  1, 2);
-        CardRound cardRound2_3 = new CardRound(8, 10,  2, 1);
-        CardRound cardRound2_4 = new CardRound(1, 11,  2, 2);
-        List<CardRound> s21 = new List<CardRound>();
-        s21.Add(cardRound2_1);
-        s21.Add(cardRound2_2);
-        s21.Add(cardRound2_3);
-        s21.Add(cardRound2_4);
+            CardRound cardRound1_1 = new CardRound(0, 0,  1, 1);
+            CardRound cardRound1_2 = new CardRound(1, 1,  1, 2);
+            CardRound cardRound1_3 = new CardRound(4, 2,  2, 1);
+            CardRound cardRound1_4 = new CardRound(0, 3,  2, 2);
+            List<CardRound> s11 = new List<CardRound>();
+            s11.Add(cardRound1_1);
+            s11.Add(cardRound1_2);
+            s11.Add(cardRound1_3);
+            s11.Add(cardRound1_4);
+        
+            // small round 2
+            CardRound cardRound1_5 = new CardRound(2, 4,  1, 1);
+            CardRound cardRound1_6 = new CardRound(3, 5,  1, 2);
+            CardRound cardRound1_7 = new CardRound(2, 6,  2, 1);
+            CardRound cardRound1_8 = new CardRound(3, 7,  2, 2);
+            List<CardRound> s12 = new List<CardRound>();
+            s12.Add(cardRound1_5);
+            s12.Add(cardRound1_6);
+            s12.Add(cardRound1_7);
+            s12.Add(cardRound1_8);
+
+            List<List<CardRound>> b1 = new List<List<CardRound>>();
+            b1.Add(s11);
+            b1.Add(s12);
+        
+            // big round 2
+                // small round 1
+            CardRound cardRound2_1 = new CardRound(6, 8,  1, 1);
+            CardRound cardRound2_2 = new CardRound(2, 9,  1, 2);
+            CardRound cardRound2_3 = new CardRound(8, 10,  2, 1);
+            CardRound cardRound2_4 = new CardRound(1, 11,  2, 2);
+            List<CardRound> s21 = new List<CardRound>();
+            s21.Add(cardRound2_1);
+            s21.Add(cardRound2_2);
+            s21.Add(cardRound2_3);
+            s21.Add(cardRound2_4);
         
         //     // small round 2
         // CardRound cardRound2_5 = new CardRound(2, 12, 1, 1);
@@ -778,41 +813,42 @@ public class AllCards : MonoBehaviour
         // s22.Add(cardRound2_7);
         // s22.Add(cardRound2_8);
         
-        List<List<CardRound>> b2 = new List<List<CardRound>>();
-        b2.Add(s21);
-        // b2.Add(s22);
+            List<List<CardRound>> b2 = new List<List<CardRound>>();
+            b2.Add(s21);
+            // b2.Add(s22);
         
-        // big round 3
-        // small round 1
-        CardRound cardRound3_1 = new CardRound(5, 16,  1, 1);
-        CardRound cardRound3_2 = new CardRound(4, 17,  1, 2);
-        CardRound cardRound3_3 = new CardRound(7, 18,  2, 1);
-        CardRound cardRound3_4 = new CardRound(4, 19,  2, 2);
-        List<CardRound> s31 = new List<CardRound>();
-        s31.Add(cardRound3_1);
-        s31.Add(cardRound3_2);
-        s31.Add(cardRound3_3);
-        s31.Add(cardRound3_4);
+            // big round 3
+            // small round 1
+            CardRound cardRound3_1 = new CardRound(5, 16,  1, 1);
+            CardRound cardRound3_2 = new CardRound(4, 17,  1, 2);
+            CardRound cardRound3_3 = new CardRound(7, 18,  2, 1);
+            CardRound cardRound3_4 = new CardRound(4, 19,  2, 2);
+            List<CardRound> s31 = new List<CardRound>();
+            s31.Add(cardRound3_1);
+            s31.Add(cardRound3_2);
+            s31.Add(cardRound3_3);
+            s31.Add(cardRound3_4);
         
-        // // small round 2
-        // CardRound cardRound3_5 = new CardRound(2, 20, 1, 1);
-        // CardRound cardRound3_6 = new CardRound(3, 21, 1, 2);
-        // CardRound cardRound3_7 = new CardRound(4, 22, 2, 1);
-        // CardRound cardRound3_8 = new CardRound(0, 23, 2, 2);
-        // List<CardRound> s32 = new List<CardRound>();
-        // s32.Add(cardRound3_5);
-        // s32.Add(cardRound3_6);
-        // s32.Add(cardRound3_7);
-        // s32.Add(cardRound3_8);
+            // // small round 2
+            // CardRound cardRound3_5 = new CardRound(2, 20, 1, 1);
+            // CardRound cardRound3_6 = new CardRound(3, 21, 1, 2);
+            // CardRound cardRound3_7 = new CardRound(4, 22, 2, 1);
+            // CardRound cardRound3_8 = new CardRound(0, 23, 2, 2);
+            // List<CardRound> s32 = new List<CardRound>();
+            // s32.Add(cardRound3_5);
+            // s32.Add(cardRound3_6);
+            // s32.Add(cardRound3_7);
+            // s32.Add(cardRound3_8);
         
-        List<List<CardRound>> b3 = new List<List<CardRound>>();
-        b3.Add(s31);
-        // b3.Add(s32);
+            List<List<CardRound>> b3 = new List<List<CardRound>>();
+            b3.Add(s31);
+            // b3.Add(s32);
 
-        cardRoundSetting = new List<List<List<CardRound>>>();
-        cardRoundSetting.Add(b1);
-        cardRoundSetting.Add(b2);
-        cardRoundSetting.Add(b3);
+            cardRoundSetting = new List<List<List<CardRound>>>();
+            cardRoundSetting.Add(b1);
+            cardRoundSetting.Add(b2);
+            cardRoundSetting.Add(b3);
+        }
     }
 
     private void SetEachCardUnderBlock(int _whichCard, int _index)
@@ -829,6 +865,40 @@ public class AllCards : MonoBehaviour
     private void OnDestroy()
     {
         EventBus.Unsubscribe(big_round_inc_event_subscription);
+    }
+
+    public List<List<List<CardRound>>> CardRoundGenerate(List<int> roundSetting, string whichLevel)
+    {
+        int k = 0;
+        List<List<List<CardRound>>> cardRoundResult = new List<List<List<CardRound>>>();
+        RandomCardDraw rd = selectionPool[whichLevel];
+        
+        // big round
+        foreach (int i in roundSetting)
+        {
+            List<List<CardRound>> bf1 = new List<List<CardRound>>();
+            // small round
+            for (int j = 0; j < i; j++)
+            {
+                CardRound cardRoundf1_1 = new CardRound(rd.GetRandomCard(), k,  1, 1);
+                k++;
+                CardRound cardRoundf1_2 = new CardRound(rd.GetRandomCard(), k,  1, 2);
+                k++;
+                CardRound cardRoundf1_3 = new CardRound(rd.GetRandomCard(), k,  2, 1);
+                k++;
+                CardRound cardRoundf1_4 = new CardRound(rd.GetRandomCard(), k,  2, 2);
+                k++;
+                List<CardRound> sf11 = new List<CardRound>();
+                sf11.Add(cardRoundf1_1);
+                sf11.Add(cardRoundf1_2);
+                sf11.Add(cardRoundf1_3);
+                sf11.Add(cardRoundf1_4);
+                bf1.Add(sf11);
+            }
+            cardRoundResult.Add(bf1);
+        }
+
+        return cardRoundResult;
     }
 }
 
@@ -858,5 +928,25 @@ public class BlockInstantiateEvent
     public override string ToString()
     {
         return "Blocks instantiate as the child of Block";
+    }
+}
+
+public class RandomCardDraw
+{
+    private List<int> pool;
+    public RandomCardDraw(List<int> _pool)
+    {
+        pool = _pool;
+    }
+
+    public int GetRandomCard()
+    {
+        // Create a random number generator with a seed based on a new GUID
+        System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+
+        // Generate a random integer between 0 and 5 (inclusive)
+        int randomNumber = random.Next(0, pool.Count);
+        
+        return pool[randomNumber];
     }
 }
