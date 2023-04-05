@@ -47,15 +47,16 @@ public class TimeDisplayer : MonoBehaviour
             // time up
             if (countdownTime <= 0)
             {
+                text.text = "";
                 countdownTime = 0;
                 gameStarted = false;
                 if (gameController.stage == 2 && (gameController.round_big == 3 || gameController.level == "Farm"))
                 {
-                    gameController.GameOver();
+                    Debug.Log("Time displayer Gameover");
                     // destroy itself
-                    text.text = "";
-                    countdownTime = 45;
+                    // countdownTime = 45;
                     gameStarted = false;
+                    gameController.GameOver();
                 }
                 else
                 {
@@ -75,7 +76,7 @@ public class TimeDisplayer : MonoBehaviour
             // decrement time
             countdownTime -= Time.deltaTime;
         }
-        if (text)
+        if (countdownTime > 0 && text)
         {
             text.text = "Time: " + Mathf.Floor(countdownTime).ToString() + " s";
         }

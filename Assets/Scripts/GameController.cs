@@ -361,6 +361,7 @@ public class GameController : MonoBehaviour
     {
         // TODO: Add coroutine for animation
         // SceneManager.LoadScene("Level" + level);
+        Debug.Log("Level" + level);
         progressBar.gameObject.SetActive(false);
         // make the party time text disappear
         EventBus.Publish<GameOverEvent>(new GameOverEvent());
@@ -395,11 +396,11 @@ public class GameController : MonoBehaviour
         if (stage == 2) // start fight
         {
             progressBar.StartFight();
-            if (level == "Farm")
-            {
-                progressBar.gameObject.SetActive(true);
-                progressBar.StartGame();
-            }
+            // if (level == "Farm")
+            // {
+            //     progressBar.gameObject.SetActive(true);
+            //     progressBar.StartGame();
+            // }
 
             // Remove Winter Land
             if (level == "Volcano")
