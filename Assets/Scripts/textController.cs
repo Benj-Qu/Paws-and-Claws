@@ -33,7 +33,7 @@ public class textController : MonoBehaviour
             Debug.Log("TypeText Complete");
             if (level == "Story" && scripts.Count == 0)
             {
-                SceneManager.LoadScene("NewIntro");
+                // SceneManager.LoadScene("NewIntro");
             }
         });
         

@@ -418,7 +418,7 @@ public class GameController : MonoBehaviour
             
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
-            selectionPanel.GetComponent<Selection>().DoneWithPlacement();
+            selectionPanel.GetComponent<PlaySelection>().DoneWithPlacement();
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
