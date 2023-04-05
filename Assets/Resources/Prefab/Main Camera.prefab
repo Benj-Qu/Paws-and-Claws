@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tc: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  distance: 0.5
+  distance: 5
   size_: 1
   changeInterval: 0.6
   posList: []
