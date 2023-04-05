@@ -15,7 +15,6 @@ public class AllCards : MonoBehaviour
     
     // big round
     // small round 
-    
     // whichcard
     // left or right
     // index assigned to uniquely find each of the card each big round
@@ -33,7 +32,6 @@ public class AllCards : MonoBehaviour
         _selectionPanel = Resources.Load<GameObject>("Prefab/SelectionPanel");
         _selectionPanel_2 = Resources.Load<GameObject>("Prefab/SelectionPanel_2");
         
-        // GameController.instance.selectionPanel = Instantiate(_selectionPanel, transform.position, Quaternion.identity);
         cards = new Dictionary<int, string>();
         
         cards.Add(0, "crowAttack"); // TODO: only works for single sprite (not a split sprite inside a large sprite)
@@ -60,27 +58,14 @@ public class AllCards : MonoBehaviour
         cards.Add(22, "square_ice");
         cards.Add(23, "Trap");
         cards.Add(24, "rectangle2");
-        // crow panda 0-9
-        // spike bamboo 1 lantern 1-10 1-11
-        // 3-13 2-14
-
-
 
         // instantiate the blocks as the child of the block
         block = GameObject.Find("Block");
         if (block)
         {
             SetRound();
-            // // set the first round block as the child of block
-            // foreach (List<CardRound> s in cardRoundSetting[0])
-            // {
-            //     foreach (CardRound i in s)
-            //     {
-            //         SetEachCardUnderBlock(i.whichCard, i.index);
-            //     }
-            // }
         }
-    } // after that the start func of blockcontroller will be called and load all the blocks.
+    } // after that the start func of block controller will be called and load all the blocks.
 
     private void OnRoundInc(RoundTextDoneEvent e)
     {
@@ -94,7 +79,6 @@ public class AllCards : MonoBehaviour
         }
 
         int numSmallRound = cardRoundSetting[e.round_big - 1].Count;
-        Debug.Log("allcards: " + numSmallRound);
         if (numSmallRound == 2)
         {
             GameController.instance.selectionPanel = Instantiate(_selectionPanel, transform.position, Quaternion.identity);
@@ -111,7 +95,6 @@ public class AllCards : MonoBehaviour
     private void SetRound()
     {
         string level = SceneManager.GetActiveScene().name;
-        Debug.Log("allcards: " + level);
         if (level == "Lantern Festival")
         {
             // big round 1
@@ -387,7 +370,7 @@ public class AllCards : MonoBehaviour
             // big round 1
             // small round 1
             CardRound cardRounda1_1 = new CardRound(20, 0, 1, 1);
-            CardRound cardRounda1_2 = new CardRound(10, 1, 1, 2);
+            CardRound cardRounda1_2 = new CardRound(5, 1, 1, 2);
             CardRound cardRounda1_3 = new CardRound(1, 2, 2, 1);
             CardRound cardRounda1_4 = new CardRound(4, 3, 2, 2);
             List<CardRound> sa11 = new List<CardRound>();
@@ -471,6 +454,7 @@ public class AllCards : MonoBehaviour
             // cardRoundSetting.Add(bf3);
             return;
         }
+        
         if (level == "hyb_anim")
         {
             // big round 1
