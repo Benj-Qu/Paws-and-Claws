@@ -401,7 +401,7 @@ MonoBehaviour:
   texts: []
   cardAddedFront: 0
   cardAddedBack: 0
-  selection: {fileID: 2440277720884465061}
+  selection: {fileID: 558994510549181428}
   whichPlayer: 2
   BlockController: {fileID: 0}
 --- !u!1 &2440277720525326089
@@ -529,7 +529,7 @@ MonoBehaviour:
   texts: []
   cardAddedFront: 0
   cardAddedBack: 0
-  selection: {fileID: 2440277720884465061}
+  selection: {fileID: 558994510549181428}
   whichPlayer: 1
   BlockController: {fileID: 0}
 --- !u!1 &2440277720884465118
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 2440277720884465059}
   - component: {fileID: 2440277720884465056}
   - component: {fileID: 2440277720884465057}
-  - component: {fileID: 2440277720884465061}
+  - component: {fileID: 558994510549181428}
   m_Layer: 5
   m_Name: SelectionPanel
   m_TagString: Untagged
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2440277720884465061
+--- !u!114 &558994510549181428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2440277720884465118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b81d8f7674e8495a9398d9d83991339, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a5f3cf73d1744e31aa41606cc311115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Choice1: {fileID: 2440277720461811773}
