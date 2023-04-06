@@ -374,6 +374,7 @@ public class GameController : MonoBehaviour
 
             if (mask)
             {
+                mask.GetComponent<SpriteRenderer>().color = Color.white;
                 Color tmp = mask.GetComponent<SpriteRenderer>().color;
                 tmp.a = 0.14f;
                 mask.GetComponent<SpriteRenderer>().color = tmp;
@@ -392,6 +393,13 @@ public class GameController : MonoBehaviour
             progressBar.StartGame();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
+            if (mask)
+            {
+                mask.GetComponent<SpriteRenderer>().color = Color.white;
+                Color tmp = mask.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0.27f;
+                mask.GetComponent<SpriteRenderer>().color = tmp;
+            }
         }
         else // stage == 3 means the previous round is over
         {
@@ -463,6 +471,7 @@ public class GameController : MonoBehaviour
             // StartCoroutine()
             if (mask)
             {
+                mask.GetComponent<SpriteRenderer>().color = Color.white;
                 Color tmp = mask.GetComponent<SpriteRenderer>().color;
                 tmp.a = 0.27f;
                 mask.GetComponent<SpriteRenderer>().color = tmp;

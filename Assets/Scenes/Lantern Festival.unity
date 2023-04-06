@@ -39641,6 +39641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490a59f84fcb74e63b3dbea51889c499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask: {fileID: 137484084}
   bm: []
   count: 0
 --- !u!4 &1156322392

@@ -301,7 +301,7 @@ public class CardSelection : MonoBehaviour
 
     private void PlayAnimationForThisCard(int leftOrRight) // 0 left 1 right
     {
-        Debug.Log("run 1");
+        // Debug.Log("run 1");
         if (leftOrRight == 0)
         {
             _card2Script.StopPlayAnimationIfPlaying();
