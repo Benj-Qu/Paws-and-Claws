@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Selection : MonoBehaviour
+public class PlaySelection : MonoBehaviour
 {
     public GameObject Choice1;
     public GameObject Choice2;

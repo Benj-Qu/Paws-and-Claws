@@ -41,5 +41,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Volcano.unity
     guid: 579c93c5a0a124669b029fe2454bdfe6
+  - enabled: 1
+    path: Assets/Loading Screen Studio/Scenes/Demo.unity
+    guid: a0c7c2db1dc9801459e5236db993a808
+  - enabled: 1
+    path: Assets/Loading Screen Studio/Scenes/Spinners.unity
+    guid: e3ddba749f973b148942e390009a0337
+  - enabled: 1
+    path: Assets/Loading Screen Studio/Scenes/Test.unity
+    guid: 0b52bbbd706aede42abed82b6422f8a7
+  - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 4b68dfcea18ca41e5a5a7ea28744642c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bb1009897c0f740f1a1b7c23fb84fcd0, type: 2}
