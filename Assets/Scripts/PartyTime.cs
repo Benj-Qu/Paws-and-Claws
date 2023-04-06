@@ -90,6 +90,7 @@ public class PartyTime : MonoBehaviour
                     CountDownText.text = "10";
                     CountDownText.enabled = false;
                     partyTimeText.enabled = false;
+                    EventBus.Publish<StartPartyTime>(new StartPartyTime(false));
                 }
             }
         }
@@ -123,6 +124,7 @@ public class StartPartyTime
 
     public override string ToString()
     {
-        return "Started " + started;
+        if (started) return "Yes";
+        return "No";
     }
 }
