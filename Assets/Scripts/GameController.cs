@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     private int score2Big = 0;
     public GameObject selectionPanel;
     public GameObject mask;
+    public GameObject blockSelectionMask;
     public GameObject follower;
 
     public GameObject FarmStage1Objects;
@@ -390,6 +391,13 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
+            if (blockSelectionMask)
+            {
+                Color tmp = blockSelectionMask.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0f;
+                blockSelectionMask.GetComponent<SpriteRenderer>().color = tmp;
+            }
+            mask.SetActive(true);
             progressBar.StartGame();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);

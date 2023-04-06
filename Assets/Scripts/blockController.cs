@@ -8,6 +8,7 @@ public class blockController : MonoBehaviour
     // added by zeyi
     Subscription<BlockInstantiateEvent> block_instantiate_event_subscription;
 
+    public GameObject bgmask;
     public GameObject mask;
 
     public List<blockMovement> bm;
@@ -24,6 +25,7 @@ public class blockController : MonoBehaviour
     {
         Debug.Log("Instantiate");
         ReloadBlock();
+        bgmask.SetActive(false);
         if (mask)
         {
             mask.GetComponent<SpriteRenderer>().color = Color.black;
