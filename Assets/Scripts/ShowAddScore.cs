@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,13 @@ public class ShowAddScore : MonoBehaviour
     // private RectTransform textTransform;
     public GameObject textObject;
     // Start is called before the first frame update
+    private Subscription<StartPartyTime> startPartyTimeEvent;
+
+    private void Awake()
+    {
+        startPartyTimeEvent = EventBus.Subscribe<StartPartyTime>(onStartPartyTime);
+    }
+
     void Start()
     {
         textObject.SetActive(false);
@@ -21,6 +29,11 @@ public class ShowAddScore : MonoBehaviour
     // {
     //     
     // }
+
+    private void onStartPartyTime(StartPartyTime e)
+    {
+        textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/minus");
+    }
 
     public void ShowScore()
     {
