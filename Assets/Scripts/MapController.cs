@@ -20,10 +20,17 @@ public class MapController : MonoBehaviour
 
     public GameObject currentMap;
 
+    public GameObject FarmManager;
+    public GameObject IceLandManager;
+    public GameObject WinterLandManager;
+    public GameObject VolcanoManager;
+    public GameObject LanternManager;
+
     public Dictionary<string, GameObject> RightLand = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> LeftLand = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> UpLand = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> DownLand = new Dictionary<string, GameObject>();
+    public Dictionary<string, GameObject> SceneManagers = new Dictionary<string, GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +51,11 @@ public class MapController : MonoBehaviour
         UpLand[panda.name] = winterland;
         DownLand[iceland.name] = volcano;
         DownLand[winterland.name] = panda;
+        SceneManagers[iceland.name] = IceLandManager;
+        SceneManagers[scarecrow.name] = FarmManager;
+        SceneManagers[panda.name] = LanternManager;
+        SceneManagers[volcano.name] = VolcanoManager;
+        SceneManagers[winterland.name] = WinterLandManager;
     }
 
     // Update is called once per frame
@@ -81,7 +93,7 @@ public class MapController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("A1") || Input.GetButtonDown("A2"))
         {
-            SceneManager.LoadScene(currentMap.name);
+            SceneManagers[currentMap.name].GetComponent<Michsky.LSS.LoadingScreenManager>().LoadScene(currentMap.name);
         }
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || joystickInputy < 0)
         {
