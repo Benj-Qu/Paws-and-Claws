@@ -61,6 +61,8 @@ public class AllCards : MonoBehaviour
         cards.Add(22, "square_ice");
         cards.Add(23, "Trap");
         cards.Add(24, "rectangle2");
+        cards.Add(25, "rectangle_volcano");
+        cards.Add(26, "square_volcano");
 
         selectionPool = new Dictionary<string, RandomCardDraw>();
         RandomCardDraw pool = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
@@ -684,10 +686,10 @@ public class AllCards : MonoBehaviour
             sfarm11.Add(cardRoundfarm_4);
 
             // small round 2
-            CardRound cardRoundfarm_5 = new CardRound(2, 4, 1, 1);
-            CardRound cardRoundfarm_6 = new CardRound(3, 5, 1, 2);
-            CardRound cardRoundfarm_7 = new CardRound(2, 6, 2, 1);
-            CardRound cardRoundfarm_8 = new CardRound(3, 7, 2, 2);
+            CardRound cardRoundfarm_5 = new CardRound(25, 4, 1, 1);
+            CardRound cardRoundfarm_6 = new CardRound(26, 5, 1, 2);
+            CardRound cardRoundfarm_7 = new CardRound(25, 6, 2, 1);
+            CardRound cardRoundfarm_8 = new CardRound(26, 7, 2, 2);
             List<CardRound> sfarm12 = new List<CardRound>();
             sfarm12.Add(cardRoundfarm_5);
             sfarm12.Add(cardRoundfarm_6);
