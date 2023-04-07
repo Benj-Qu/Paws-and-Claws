@@ -7,5 +7,5 @@ public class BlockInfo : MonoBehaviour
     // Start is called before the first frame update
     public int Length = 1;
     public int Width = 1;
-    public Vector2 BornShift = Vector2.zero;
+    public Vector3 BornShift = Vector3.zero;
 }
