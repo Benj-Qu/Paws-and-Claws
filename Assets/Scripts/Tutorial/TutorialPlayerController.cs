@@ -40,7 +40,7 @@ public class TutorialPlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
-    private TutorialController tc;
+    private GameController tc;
     private bool collectInvinciblePowerUp = false;
     private AudioSource pas;
 
@@ -51,7 +51,7 @@ public class TutorialPlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         pas = GetComponent<AudioSource>();
-        tc = GameObject.Find("TutorialController").GetComponent<TutorialController>();
+        tc = GameObject.Find("GameController").GetComponent<GameController>();
         if (tc.stage == 2)
         {
             active = true;

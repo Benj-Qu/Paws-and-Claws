@@ -50,6 +50,7 @@ public class blockMovement : MonoBehaviour
         // initially set to inactive
         Collider2d = GetComponent<BoxCollider2D>();
         gameObject.SetActive(false);
+        gameObject.transform.position += GetComponent<BlockInfo>().BornShift;
 
         // change the block to be half transparent
         if(GetComponent<SpriteRenderer>() != null)

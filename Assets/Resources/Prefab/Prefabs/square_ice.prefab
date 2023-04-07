@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3114804165586328971}
   - component: {fileID: 2472499931075211775}
   - component: {fileID: 7448856431834093573}
+  - component: {fileID: -6806444080359459459}
   m_Layer: 0
   m_Name: square_ice
   m_TagString: Block
@@ -246,6 +247,21 @@ MonoBehaviour:
   DownOffset: 1
   LeftOffset: 0.5
   RightOffset: 1
+--- !u!114 &-6806444080359459459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298973419941660479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Length: 1
+  Width: 1
+  BornShift: {x: 0, y: 0}
 --- !u!1 &8501207156858186419
 GameObject:
   m_ObjectHideFlags: 0

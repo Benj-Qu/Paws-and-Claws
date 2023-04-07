@@ -9,7 +9,9 @@ public class AttackTutorialController : MonoBehaviour
     public PlayerController p1;
     public PlayerController p2;
     public TextMeshProUGUI CntDownText;
-    public GameObject blocks;
+    public GameObject player1_win_text;
+    public GameObject player2_win_text;
+    public TextMeshProUGUI FreeAttackText;
     bool first = true;
     float AttackTime = 10f;
     int TimeCntDown = 10;
@@ -19,6 +21,7 @@ public class AttackTutorialController : MonoBehaviour
     void Start()
     {
         CntDownText.enabled = false;
+        FreeAttackText.enabled = false;
     }
 
     // Update is called once per frame
@@ -29,12 +32,21 @@ public class AttackTutorialController : MonoBehaviour
             GameController.instance.attackTutorialFinished = true;
             CntDownText.enabled = false;
         }
-        if (p1.isAttacked()) p1_attacked = true;
-        if (p2.isAttacked()) p2_attacked = true;
+        if (p1.isAttacked()) {
+            p1_attacked = true;
+            player2_win_text.SetActive(true);
+        }
+
+        if (p2.isAttacked())
+        {
+            p2_attacked = true;
+            player1_win_text.SetActive(true);
+        }
         if(p1_attacked && p2_attacked)
         {
             if (first)
             {
+                FreeAttackText.enabled = true;
                 first = false;
                 CntDownText.enabled = true;
                 for(int i = 0; i < transform.childCount; i++)
