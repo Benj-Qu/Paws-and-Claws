@@ -10,8 +10,11 @@ public class ShowAddScore : MonoBehaviour
     // public TextMeshProUGUI textObject;
     // private RectTransform textTransform;
     public GameObject textObject;
+
+    public bool isMinus = false;
     // Start is called before the first frame update
     private Subscription<StartPartyTime> startPartyTimeEvent;
+    
 
     private void Awake()
     {
@@ -20,7 +23,7 @@ public class ShowAddScore : MonoBehaviour
 
     void Start()
     {
-        textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Plus");
+        if (!isMinus) textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Plus");
         textObject.SetActive(false);
         // textTransform = textObject.GetComponent<RectTransform>();
     }
@@ -33,6 +36,7 @@ public class ShowAddScore : MonoBehaviour
 
     private void onStartPartyTime(StartPartyTime e)
     {
+        if (isMinus) return;
         if (e.ToString() == "Yes")
         {
             textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Plus2");

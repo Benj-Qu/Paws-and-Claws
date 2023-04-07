@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5855748212200507749}
   - component: {fileID: 3909842302045974508}
   - component: {fileID: 5864395344430572828}
+  - component: {fileID: -2558563510737235105}
   m_Layer: 0
   m_Name: Speed Potion
   m_TagString: Collectable
@@ -138,7 +139,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.14, y: 2.83}
+    oldSize: {x: 4.43, y: 5.17}
     newSize: {x: 2.14, y: 2.83}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -264,3 +265,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2558563510737235105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775346725135115414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Length: 1
+  Width: 1
+  BornShift: {x: 0, y: 0}

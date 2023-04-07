@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             UpdateVelocity();
         }
-        else
+        else if (!alive)
         {
             rb.velocity = Vector2.zero;
         }
@@ -269,13 +269,9 @@ public class PlayerController : MonoBehaviour
             {
                 onLeftWall = true;
                 jumpTimes = MaxJumpTimes;
-                if (collision.rigidbody && floorV == 0f)
+                if (collision.rigidbody)
                 {
                     floorV = collision.rigidbody.velocity.x;
-                }
-                else
-                {
-                    floorV = 0f;
                 }
             }
             // Touch Right Wall
@@ -283,13 +279,9 @@ public class PlayerController : MonoBehaviour
             {
                 onRightWall = true;
                 jumpTimes = MaxJumpTimes;
-                if (collision.rigidbody && floorV == 0f)
+                if (collision.rigidbody)
                 {
                     floorV = collision.rigidbody.velocity.x;
-                }
-                else
-                {
-                    floorV = 0f;
                 }
             }
         }

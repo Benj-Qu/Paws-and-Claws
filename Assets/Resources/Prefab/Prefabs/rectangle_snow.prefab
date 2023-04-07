@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 7194992016409796770}
   - component: {fileID: 462163141759623653}
   - component: {fileID: 890994156982665260}
+  - component: {fileID: -6543499226966058787}
   m_Layer: 0
   m_Name: rectangle_snow
   m_TagString: Block
@@ -277,3 +278,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.25, y: 1.1}
   m_EdgeRadius: 0
+--- !u!114 &-6543499226966058787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814977498323679294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Length: 1
+  Width: 1
+  BornShift: {x: 0, y: 0}

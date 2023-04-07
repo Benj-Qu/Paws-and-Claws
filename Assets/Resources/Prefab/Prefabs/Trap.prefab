@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2875252912847401541}
   - component: {fileID: 2938400966513711331}
   - component: {fileID: 6392802198347688280}
+  - component: {fileID: -3831379688806513915}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Block
@@ -306,3 +307,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3831379688806513915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875252912847401537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Length: 1
+  Width: 1
+  BornShift: {x: 0, y: 0}
