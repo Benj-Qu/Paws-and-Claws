@@ -7,7 +7,10 @@ public class blockController : MonoBehaviour
 {
     // added by zeyi
     Subscription<BlockInstantiateEvent> block_instantiate_event_subscription;
-    
+
+    public GameObject bgmask;
+    public GameObject mask;
+
     public List<blockMovement> bm;
     public int count;
 
@@ -22,6 +25,14 @@ public class blockController : MonoBehaviour
     {
         Debug.Log("Instantiate");
         ReloadBlock();
+        bgmask.SetActive(false);
+        if (mask)
+        {
+            mask.GetComponent<SpriteRenderer>().color = Color.black;
+            Color tmp = mask.GetComponent<SpriteRenderer>().color;
+            tmp.a = 0.78f;
+            mask.GetComponent<SpriteRenderer>().color = tmp;
+        }
     }
 
     // Added by zeyi

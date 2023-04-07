@@ -15,7 +15,7 @@ public class TutorialInventory : MonoBehaviour
     public List<TextMeshProUGUI> texts;
     public int cardAddedFront = 0;
     public int cardAddedBack = 0;
-    public Selection selection;
+    public PlaySelection selection;
     public int whichPlayer;
     public blockController BlockController;
 

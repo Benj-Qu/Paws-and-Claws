@@ -10158,7 +10158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: {fileID: 3884649206151815868}
-  textObject: {fileID: 0}
+  textObject: {fileID: 9205130448388184696}
 --- !u!1 &2665404653164139707
 GameObject:
   m_ObjectHideFlags: 0
@@ -15120,7 +15120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: {fileID: 3884649207998440989}
-  textObject: {fileID: 0}
+  textObject: {fileID: 943054791875090096}
 --- !u!1 &2866816384925924471
 GameObject:
   m_ObjectHideFlags: 0
@@ -35081,7 +35081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: {fileID: 3884649207309446498}
-  textObject: {fileID: 0}
+  textObject: {fileID: 241593073442221589}
 --- !u!1 &6458039149560359288
 GameObject:
   m_ObjectHideFlags: 0
