@@ -309,12 +309,12 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 0
-  follower_distance_x: 0
-  UpOffset: 0
-  DownOffset: 0
-  LeftOffset: 0
-  RightOffset: 0
+  follower_distance: 1
+  follower_distance_x: 0.25
+  UpOffset: 0.75
+  DownOffset: 1
+  LeftOffset: 0.25
+  RightOffset: 0.125
 --- !u!61 &5909582981434565067
 BoxCollider2D:
   m_ObjectHideFlags: 0
