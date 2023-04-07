@@ -7,7 +7,9 @@ public class FloatingIce : MonoBehaviour
     public float moveSpeed;
     public float waitTime;
     public Transform[] movePos;
+    public float wholetime = 6f;
 
+    private float currtime = 0;
     private float waitNow;
     private int i;//定位现在的点
     private Transform playerDefTransform;
@@ -19,6 +21,7 @@ public class FloatingIce : MonoBehaviour
     {
         i = 1;
         waitNow = waitTime;
+        currtime = wholetime;
         playerDefTransform = GameObject.FindGameObjectWithTag("Player").transform.parent;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -26,10 +29,11 @@ public class FloatingIce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, movePos[i].position) < 0.1f)
+        currtime += Time.deltaTime;
+        if (Vector2.Distance(transform.position, movePos[i].position) < 0.1f || currtime > wholetime)
         {
             rb.velocity = Vector2.zero;
-            if (waitNow < 0.0f)
+            if (waitNow < 0.0f || currtime > wholetime)
             {
                 if (i == 0)
                 {
@@ -38,6 +42,7 @@ public class FloatingIce : MonoBehaviour
                 {
                     i = 0;
                 }
+                currtime = 0;
                 waitNow = waitTime;
             } else
             {

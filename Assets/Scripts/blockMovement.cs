@@ -370,8 +370,8 @@ public class blockMovement : MonoBehaviour
         }
         else
         {
-            // if current block is normal block, can't be placed on mountain, box, block
-            if(!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player")))
+            // if current block is normal block, can't be placed on mountain, box, block && ice
+            if(!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player") || other.CompareTag("Ice")))
             {
                 block_status++;
                 collisionDetected = true;
@@ -407,8 +407,8 @@ public class blockMovement : MonoBehaviour
         }
         else
         {
-            // if current block is normal block, can't be placed on mountain, box, block
-            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player")))
+            // if current block is normal block, can't be placed on mountain, box, block && ice
+            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player") || other.CompareTag("Ice")))
             {
                 collisionDetected = true;
                 for (var i = transform.childCount - 1; i >= 0; i--)
@@ -444,8 +444,8 @@ public class blockMovement : MonoBehaviour
         }
         else
         {
-            // if current block is normal block, can't be placed on mountain, box, block
-            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player")))
+            // if current block is normal block, can't be placed on mountain, box, block && ice
+            if (!set && (other.CompareTag("Block") || other.CompareTag("Box") || other.CompareTag("Mountain") || other.CompareTag("Collectable") || other.CompareTag("Player") || other.CompareTag("Ice")))
             {
                 block_status--;
                 collisionDetected = false;
