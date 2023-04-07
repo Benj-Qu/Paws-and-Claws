@@ -243,8 +243,8 @@ Mar31
 
 Apr3
 1. winterland 不要 invincible 随机pool block zy 第一轮伪随机
-2. 给austin写邮件 
-3. 旗子在block前面 hidespike会挡在旗子前 
+2. 给austin写邮件
+3. 旗子在block前面 hidespike会挡在旗子前
 4. intro 选择的键 A to select hint
 6. 包子屉的indicator位置不对
 7. flag generation的位置
@@ -268,7 +268,7 @@ Apr3
 29. powerup也可以炸掉
 30. 企鹅的collider不是trigger
 31. 两个人都没什么分的话 选卡出bomb 第二轮第三轮必出一个bomb
-32. 火山的攻击从火山口出来更intuitive 
+32. 火山的攻击从火山口出来更intuitive
 34. 攻击击中indicator 红一红
 35. 选中播放漫画有延迟 0.2f
 36. 手柄上冰不够滑 冰更滑一点
@@ -281,7 +281,9 @@ guardian not obvious are the players， cover and story added
 
 
 
-
+4.7
+1. random pool differetn type 地形 powerup ... zeyi
+2.
 
 
 
