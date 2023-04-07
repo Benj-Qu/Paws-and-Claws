@@ -375,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flag: {fileID: 0}
   textObject: {fileID: 4138337598705732254}
+  isMinus: 1
 --- !u!1 &4138337599100129823
 GameObject:
   m_ObjectHideFlags: 0

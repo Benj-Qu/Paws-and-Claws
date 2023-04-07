@@ -1064,3 +1064,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flag: {fileID: 0}
   textObject: {fileID: 6658275036396007919}
+  isMinus: 1
