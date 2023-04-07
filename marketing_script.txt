@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Do you know what your pets do when you are not home?
 [猫猫转身冲向某个地方 -> magical land]
 
@@ -39,3 +40,45 @@ So join the battle and fight for your claws or paws
 Footage: Cover page
 猫猫走出来回到房间 yzy
 
+=======
+Do you know what your pets do when you are not home?
+[猫猫转身冲向某个地方 -> magical land]
+
+Welcome to the magical land! 
+Footage: the new intro scene
+
+Every year a new Guardian is chosen to protect its inhabitants. 
+A guardian image 就那种小黑然后那一个权杖那种
+
+This year, the competition is fierce as two candidates stand out - a dog and a cat. 
+Cat dog image
+
+They must prove their worth and showcase their unique abilities to win the support of the various area.
+new intro的某一块插上旗子
+或者比如说这块插着猫的旗子然后狗的旗子把它推倒换成猫的
+
+Will you help the dog or the cat become the next Guardian？ 
+那种battle图？就那种左右各一个人中间一个滋滋滋闪电那种
+
+Choose your champion and Fight in a thrilling multiplayer battle across various maps. 
+不同场景闪一下就那种有人在玩的不同场景 分屏
+
+Unlock the full potential of different magic blocks
+选block
+
+and create your own unique battlefield
+放置block
+
+To gain the support of the various terrains.
+抢旗子
+
+You can distract your opponent with your power and wit,
+攻击 和 trap 我觉得可以放左右那种分屏
+
+But watch out - they'll be doing the same to you.
+互相攻击？
+
+So join the battle and fight for your claws or paws
+Footage: Cover page
+猫猫走出来回到房间
+>>>>>>> be8bb08c1f60d6658ae0905923617c0141a4f3d8

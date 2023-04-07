@@ -96,6 +96,10 @@ public class PlayerController : MonoBehaviour
         {
             UpdateVelocity();
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
         // TODO: change for cable, need check
         if (gameObject.transform.position.y < DieAltitude && onCable == false)
         {

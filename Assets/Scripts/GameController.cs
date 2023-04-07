@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     private int score2Big = 0;
     public GameObject selectionPanel;
     public GameObject mask;
+    public GameObject blockSelectionMask;
     public GameObject follower;
 
     public GameObject FarmStage1Objects;
@@ -225,111 +226,61 @@ public class GameController : MonoBehaviour
         player2.transform.position = GameObject.Find("StartPoint2").transform.position;
     }
 
-    public void GameWin()
-    {
-        // TODO: Add coroutine for animation
-        // Debug.Log("Win!");
-        player1.GetComponent<PlayerScore>().resetFlag();
-        player2.GetComponent<PlayerScore>().resetFlag();
-        StartCoroutine(Win());
-    }
-
     private IEnumerator Win()
     {
         RoundTextHint.enabled = false;
         if (flagController) flagController.DestroyFlags();
         ScorePanel.SetActive(false);
         if(FarmStoryText) FarmStoryText.updateText("");
-        if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
-        {
-            int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
-            if (score == 1)
-            {
-                score1Big += 1;
-            } else if (score == -1)
-            {
-                score2Big += 1;
-            }
-            else
-            {
-                score1Big += 1;
-                score2Big += 1;
-            }
-
-            if (score1Big > score2Big)
-            {
-                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
-                WinImage.GetComponent<WinImage>().DogWin();
-                ScoreText.text = "DOG Wins!";
-            }
-            else if (score1Big < score2Big)
-            {
-                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
-                WinImage.GetComponent<WinImage>().CatWin();
-                ScoreText.text = "CAT Wins!";
-            }
-            else
-            {
-                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
-                WinImage.GetComponent<WinImage>().VS();
-                ScoreText.text = "Tie!";
-            }
-            WinImage.SetActive(true);
-            // winText.text = "DOG Wins!";
-        }
-        else if (player1.GetComponent<PlayerScore>().getScore() < player2.GetComponent<PlayerScore>().getScore())
-        {
-            int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
-            if (score == 1)
-            {
-                score1Big += 1;
-            } else if (score == -1)
-            {
-                score2Big += 1;
-            }
-            else
-            {
-                score1Big += 1;
-                score2Big += 1;
-            }
-
-            if (score1Big > score2Big)
-            {
-                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
-                WinImage.GetComponent<WinImage>().DogWin();
-                ScoreText.text = "DOG Wins!";
-            }
-            else if (score1Big < score2Big)
-            {
-                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
-                WinImage.GetComponent<WinImage>().CatWin();
-                ScoreText.text = "CAT Wins!";
-            }
-            else
-            {
-                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
-                WinImage.GetComponent<WinImage>().VS();
-                ScoreText.text = "Tie!";
-            }
-            WinImage.SetActive(true);
-            // winText.text = "CAT Wins!";
-        }
-        else
-        {
-            int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
-            if (score == 1)
-            {
-                score1Big += 1;
-            } else if (score == -1)
-            {
-                score2Big += 1;
-            }
-            else
-            {
-                score1Big += 1;
-                score2Big += 1;
-            }
-
+        // if (player1.GetComponent<PlayerScore>().getScore() > player2.GetComponent<PlayerScore>().getScore())
+        // {
+        //     if (score1Big > score2Big)
+        //     {
+        //         // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+        //         WinImage.GetComponent<WinImage>().DogWin();
+        //         ScoreText.text = "DOG Wins!";
+        //     }
+        //     else if (score1Big < score2Big)
+        //     {
+        //         // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+        //         WinImage.GetComponent<WinImage>().CatWin();
+        //         ScoreText.text = "CAT Wins!";
+        //     }
+        //     else
+        //     {
+        //         // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+        //         WinImage.GetComponent<WinImage>().VS();
+        //         ScoreText.text = "Tie!";
+        //     }
+        //     WinImage.SetActive(true);
+        //     // winText.text = "DOG Wins!";
+        // }
+        // else if (player1.GetComponent<PlayerScore>().getScore() < player2.GetComponent<PlayerScore>().getScore())
+        // {
+        //     
+        //     if (score1Big > score2Big)
+        //     {
+        //         // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+        //         WinImage.GetComponent<WinImage>().DogWin();
+        //         ScoreText.text = "DOG Wins!";
+        //     }
+        //     else if (score1Big < score2Big)
+        //     {
+        //         // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+        //         WinImage.GetComponent<WinImage>().CatWin();
+        //         ScoreText.text = "CAT Wins!";
+        //     }
+        //     else
+        //     {
+        //         // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+        //         WinImage.GetComponent<WinImage>().VS();
+        //         ScoreText.text = "Tie!";
+        //     }
+        //     WinImage.SetActive(true);
+        //     // winText.text = "CAT Wins!";
+        // }
+        // else
+        // {
             if (score1Big > score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
@@ -350,7 +301,7 @@ public class GameController : MonoBehaviour
             }
             WinImage.SetActive(true);
             // winText.text = "Tie! Try again!";
-        }
+        // }
         
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("NewIntro");
@@ -361,9 +312,23 @@ public class GameController : MonoBehaviour
     {
         // TODO: Add coroutine for animation
         // SceneManager.LoadScene("Level" + level);
+        Debug.Log("Level" + level);
         progressBar.gameObject.SetActive(false);
         // make the party time text disappear
         EventBus.Publish<GameOverEvent>(new GameOverEvent());
+        int score = ScorePanel.GetComponent<ScorePanel>().GetWinner();
+        if (score == 1)
+        {
+            score1Big += 1;
+        } else if (score == -1)
+        {
+            score2Big += 1;
+        }
+        else
+        {
+            score1Big += 1;
+            score2Big += 1;
+        }
         StartCoroutine(Win());
     }
 
@@ -395,11 +360,11 @@ public class GameController : MonoBehaviour
         if (stage == 2) // start fight
         {
             progressBar.StartFight();
-            if (level == "Farm")
-            {
-                progressBar.gameObject.SetActive(true);
-                progressBar.StartGame();
-            }
+            // if (level == "Farm")
+            // {
+            //     progressBar.gameObject.SetActive(true);
+            //     progressBar.StartGame();
+            // }
 
             // Remove Winter Land
             if (level == "Volcano")
@@ -410,6 +375,7 @@ public class GameController : MonoBehaviour
 
             if (mask)
             {
+                mask.GetComponent<SpriteRenderer>().color = Color.white;
                 Color tmp = mask.GetComponent<SpriteRenderer>().color;
                 tmp.a = 0.14f;
                 mask.GetComponent<SpriteRenderer>().color = tmp;
@@ -417,7 +383,7 @@ public class GameController : MonoBehaviour
             
             player1.GetComponent<PlayerController>().activate();
             player2.GetComponent<PlayerController>().activate();
-            selectionPanel.GetComponent<Selection>().DoneWithPlacement();
+            selectionPanel.GetComponent<PlaySelection>().DoneWithPlacement();
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
@@ -425,9 +391,23 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
+            if (blockSelectionMask)
+            {
+                Color tmp = blockSelectionMask.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0f;
+                blockSelectionMask.GetComponent<SpriteRenderer>().color = tmp;
+            }
+            mask.SetActive(true);
             progressBar.StartGame();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
+            if (mask)
+            {
+                mask.GetComponent<SpriteRenderer>().color = Color.white;
+                Color tmp = mask.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0.27f;
+                mask.GetComponent<SpriteRenderer>().color = tmp;
+            }
         }
         else // stage == 3 means the previous round is over
         {
@@ -454,50 +434,58 @@ public class GameController : MonoBehaviour
             score2Big += 1;
         }
 
-        ScoreText.text = score1Big.ToString() + " : " + score2Big.ToString();
-        if (score1Big > score2Big)
+        if (score1Big - score2Big == 2 || score2Big - score1Big == 2)
         {
-            // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
-            WinImage.GetComponent<WinImage>().DogWin();
-        }
-        else if (score1Big < score2Big)
-        {
-            // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
-            WinImage.GetComponent<WinImage>().CatWin();
+            GameOver();
         }
         else
         {
-            // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
-            WinImage.GetComponent<WinImage>().VS();
+            ScoreText.text = score1Big.ToString() + " : " + score2Big.ToString();
+            if (score1Big > score2Big)
+            {
+                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
+                WinImage.GetComponent<WinImage>().DogWin();
+            }
+            else if (score1Big < score2Big)
+            {
+                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
+                WinImage.GetComponent<WinImage>().CatWin();
+            }
+            else
+            {
+                // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
+                WinImage.GetComponent<WinImage>().VS();
+            }
+            progressBar.gameObject.SetActive(false);
+            WinImage.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            RoundTextHint.text = "Round " + round_big + " / 3";
+            WinImage.GetComponent<WinImage>().reset();
+            WinImage.SetActive(false);
+            EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
+            // Reset the players
+            player1.GetComponent<PlayerController>().reset();
+            player2.GetComponent<PlayerController>().reset();
+            player1.GetComponent<PlayerController>().deactivate();
+            player2.GetComponent<PlayerController>().deactivate();
+            player1.transform.position = StartPoint1;
+            player2.transform.position = StartPoint2;
+            // Disable the flags and clear the color
+            if (flagController) flagController.DestroyFlags();
+            player1.GetComponent<PlayerScore>().resetFlag();
+            player2.GetComponent<PlayerScore>().resetFlag();
+            ScorePanel.GetComponent<ScorePanel>().reset();
+            // Show animation of next round
+            // StartCoroutine()
+            if (mask)
+            {
+                mask.GetComponent<SpriteRenderer>().color = Color.white;
+                Color tmp = mask.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0.27f;
+                mask.GetComponent<SpriteRenderer>().color = tmp;
+            }
+            Grid.SetActive(true);
         }
-        progressBar.gameObject.SetActive(false);
-        WinImage.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        RoundTextHint.text = "Round " + round_big + " / 3";
-        WinImage.GetComponent<WinImage>().reset();
-        WinImage.SetActive(false);
-        EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        // Reset the players
-        player1.GetComponent<PlayerController>().reset();
-        player2.GetComponent<PlayerController>().reset();
-        player1.GetComponent<PlayerController>().deactivate();
-        player2.GetComponent<PlayerController>().deactivate();
-        player1.transform.position = StartPoint1;
-        player2.transform.position = StartPoint2;
-        // Disable the flags and clear the color
-        if (flagController) flagController.DestroyFlags();
-        player1.GetComponent<PlayerScore>().resetFlag();
-        player2.GetComponent<PlayerScore>().resetFlag();
-        ScorePanel.GetComponent<ScorePanel>().reset();
-        // Show animation of next round
-        // StartCoroutine()
-        if (mask)
-        {
-            Color tmp = mask.GetComponent<SpriteRenderer>().color;
-            tmp.a = 0.27f;
-            mask.GetComponent<SpriteRenderer>().color = tmp;
-        }
-        Grid.SetActive(true);
     }
     
     private IEnumerator FinishTutorial()

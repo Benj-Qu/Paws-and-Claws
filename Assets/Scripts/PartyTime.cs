@@ -77,6 +77,7 @@ public class PartyTime : MonoBehaviour
                 CountDownText.text = "10";
                 CountDownText.enabled = true;
                 cnt_down = 10;
+                EventBus.Publish<StartPartyTime>(new StartPartyTime(true));
             }
             if(Mathf.Abs(timeDisplayer.countdownTime - cnt_down) <= 0.2f)
             {
@@ -89,6 +90,7 @@ public class PartyTime : MonoBehaviour
                     CountDownText.text = "10";
                     CountDownText.enabled = false;
                     partyTimeText.enabled = false;
+                    EventBus.Publish<StartPartyTime>(new StartPartyTime(false));
                 }
             }
         }
@@ -109,5 +111,20 @@ public class PartyTime : MonoBehaviour
     private void OnDestroy()
     {
         EventBus.Unsubscribe(gameover_event);
+    }
+}
+
+public class StartPartyTime
+{
+    private bool started = false;
+    public StartPartyTime(bool _started)
+    {
+        started = _started;
+    }
+
+    public override string ToString()
+    {
+        if (started) return "Yes";
+        return "No";
     }
 }
