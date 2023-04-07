@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6282301, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6282301, b: 1, a: 0.08}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.08}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6282301, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3530,8 +3530,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hint text here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  m_sharedMaterial: {fileID: 21038787605864166, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  m_sharedMaterial: {fileID: -6905796261327922759, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3668,15 +3668,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press <b><color=#FFFFFF>ANY KEY</color></b> to continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  m_sharedMaterial: {fileID: 21038787605864166, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  m_sharedMaterial: {fileID: -6905796261327922759, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291886907
-  m_fontColor: {r: 0.23113209, g: 1, b: 0.81531537, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3810,8 +3810,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291886907
-  m_fontColor: {r: 0.23113209, g: 1, b: 0.81531537, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4511,7 +4511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6282301, b: 1, a: 0.08}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.08}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4605,8 +4605,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294928128
-  m_fontColor: {r: 0, g: 0.4047594, b: 1, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5183,16 +5183,16 @@ MonoBehaviour:
   statusSize: 24
   pakSize: 35
   titleFont: {fileID: 11400000, guid: 42a7c1671260247ebba0c15d78a42ba1, type: 2}
-  descriptionFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  hintFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  descriptionFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  hintFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   statusFont: {fileID: 11400000, guid: dd5dd1ac72c726244a3a06735fdc5ed1, type: 2}
-  pakFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  titleColor: {r: 0, g: 0.4047594, b: 1, a: 1}
+  pakFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  titleColor: {r: 1, g: 1, b: 1, a: 1}
   descriptionColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.78431374}
-  hintColor: {r: 0.5931827, g: 0.8113208, b: 0.66705835, a: 1}
-  spinnerColor: {r: 0, g: 0.6282301, b: 1, a: 1}
+  hintColor: {r: 1, g: 1, b: 1, a: 1}
+  spinnerColor: {r: 1, g: 1, b: 1, a: 1}
   statusColor: {r: 1, g: 1, b: 1, a: 1}
-  pakColor: {r: 0.23113209, g: 1, b: 0.81531537, a: 1}
+  pakColor: {r: 1, g: 1, b: 1, a: 1}
   titleObjText: '<bounce>Entering magic land...</bounce> '
   titleObjDescText: Welcome home,  cats and dogs
   pakText: Press <b><color=#FFFFFF>ANY KEY</color></b> to continue
@@ -5503,8 +5503,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Welcome home,  cats and dogs
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  m_sharedMaterial: {fileID: 21038787605864166, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  m_sharedMaterial: {fileID: -6905796261327922759, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5629,7 +5629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6282301, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

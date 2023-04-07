@@ -25,7 +25,6 @@ public class StoryController : MonoBehaviour
     private Queue<string> scripts = new Queue<string>();
     public int story_stage = 1;
     private bool skip = false;
-    private Coroutine lastroutine = null;
 
     // Start is called before the first frame update
     void Start()

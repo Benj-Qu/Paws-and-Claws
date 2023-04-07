@@ -3530,15 +3530,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hint text here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  m_sharedMaterial: {fileID: 21038787605864166, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  m_sharedMaterial: {fileID: -6905796261327922759, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282138739
-  m_fontColor: {r: 0.4528302, g: 0.25110385, b: 0.23709506, a: 1}
+    rgba: 4279638873
+  m_fontColor: {r: 0.3490566, g: 0.106303625, b: 0.08726415, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5183,10 +5183,10 @@ MonoBehaviour:
   statusSize: 24
   pakSize: 35
   titleFont: {fileID: 11400000, guid: 42a7c1671260247ebba0c15d78a42ba1, type: 2}
-  descriptionFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  hintFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  descriptionFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  hintFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   statusFont: {fileID: 11400000, guid: dd5dd1ac72c726244a3a06735fdc5ed1, type: 2}
-  pakFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  pakFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   titleColor: {r: 0.7264151, g: 0.10420552, b: 0.0788092, a: 1}
   descriptionColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.78431374}
   hintColor: {r: 0.3490566, g: 0.106303625, b: 0.08726415, a: 1}
@@ -5503,8 +5503,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Welcome home,  cats and dogs
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  m_sharedMaterial: {fileID: 21038787605864166, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  m_sharedMaterial: {fileID: -6905796261327922759, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

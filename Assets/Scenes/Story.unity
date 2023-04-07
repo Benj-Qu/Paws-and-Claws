@@ -924,11 +924,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114774413241324656, guid: e3347c3761db7fc4aad3e902393032b6, type: 3}
       propertyPath: prefabHelper
-      value: PawsAndClaws
+      value: PawsAndClawsStory
       objectReference: {fileID: 0}
     - target: {fileID: 114774413241324656, guid: e3347c3761db7fc4aad3e902393032b6, type: 3}
       propertyPath: selectedLoadingIndex
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114774413241324656, guid: e3347c3761db7fc4aad3e902393032b6, type: 3}
       propertyPath: loadingScreens.Array.size
@@ -1608,6 +1608,7 @@ MonoBehaviour:
   loadingManager: {fileID: 1124567769}
   story1_animator: {fileID: 894706755}
   text: {fileID: 354221118}
+  story_stage: 1
 --- !u!4 &1620770410
 Transform:
   m_ObjectHideFlags: 0

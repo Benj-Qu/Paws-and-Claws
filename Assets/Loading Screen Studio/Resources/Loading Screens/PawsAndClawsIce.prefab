@@ -3530,8 +3530,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hint text here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  m_sharedMaterial: {fileID: 21038787605864166, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  m_sharedMaterial: {fileID: -6905796261327922759, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5183,13 +5183,13 @@ MonoBehaviour:
   statusSize: 24
   pakSize: 35
   titleFont: {fileID: 11400000, guid: 42a7c1671260247ebba0c15d78a42ba1, type: 2}
-  descriptionFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  hintFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  descriptionFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  hintFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   statusFont: {fileID: 11400000, guid: dd5dd1ac72c726244a3a06735fdc5ed1, type: 2}
-  pakFont: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  pakFont: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   titleColor: {r: 0.4764151, g: 0.69611543, b: 1, a: 1}
   descriptionColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.78431374}
-  hintColor: {r: 0.049928807, g: 0.42119125, b: 0.6226415, a: 1}
+  hintColor: {r: 0.08050018, g: 0.4356239, b: 0.6320754, a: 1}
   spinnerColor: {r: 0.2198736, g: 0.23509827, b: 0.764151, a: 1}
   statusColor: {r: 1, g: 1, b: 1, a: 1}
   pakColor: {r: 0.11525454, g: 0.32722893, b: 0.6603774, a: 1}
@@ -5503,8 +5503,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Welcome home,  cats and dogs
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
-  m_sharedMaterial: {fileID: 21038787605864166, guid: 56a30d7b28f44c04ab4ce5ec9c5ae233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
+  m_sharedMaterial: {fileID: -6905796261327922759, guid: be0129c452b274c70b8fd0cd840dbcea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
