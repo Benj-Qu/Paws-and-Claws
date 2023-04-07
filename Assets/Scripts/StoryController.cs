@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class StoryController : MonoBehaviour
 {
@@ -15,11 +16,16 @@ public class StoryController : MonoBehaviour
     public GameObject mask;
     public GameObject story5;
     public GameObject scarecrow;
+    public TextMeshProUGUI hint;
+    public GameObject A;
+    public GameObject loadingManager;
 
     public Animator story1_animator;
     public Text text;
     private Queue<string> scripts = new Queue<string>();
-    int story_stage = 1;
+    public int story_stage = 1;
+    private bool skip = false;
+    private Coroutine lastroutine = null;
 
     // Start is called before the first frame update
     void Start()
@@ -36,54 +42,77 @@ public class StoryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("A1") || Input.GetButtonDown("A2"))
+        {
+            if(story_stage < 5)
+            {
+                skip = true;
+                Debug.Log("Stop coroutine 1");
+                StopCoroutine("Story1Coroutine");
+                Debug.Log("Stop coroutine 2");
+                StopCoroutine("Story2Coroutine");
+                Debug.Log("Stop coroutine 3");
+                StopCoroutine("Story3Coroutine");
+                Debug.Log("Stop coroutine 4");
+                StopCoroutine("Story4Coroutine");
+                text.SkipTypeText();
+                Debug.Log("Inactive storys");
+                story1.SetActive(false);
+                story2.SetActive(false);
+                story3.SetActive(false);
+                story4.SetActive(false);
+                story_stage = 5;
+                while (scripts.Count > 1)
+                {
+                    scripts.Dequeue();
+                }
+                StartCoroutine(Story5Coroutine());
+            }
+            if(story_stage == 6)
+            {
+                loadingManager.GetComponent<Michsky.LSS.LoadingScreenManager>().LoadScene("NewIntro");
+            }
+        }
     }
 
     private void ShowScript()
     {
+        Debug.Log(scripts.Count);
         if (scripts.Count <= 0)
         {
             return;
         }
         text.TypeText(scripts.Dequeue(), onComplete: () => {
-            Debug.Log("TypeText Complete");
-            story_stage++;
-            if(story_stage == 2)
-            {
-                StartCoroutine(Story2Coroutine());
-            }
-            if(story_stage == 3)
-            {
-                StartCoroutine(Story3Coroutine());
-            }
-            if(story_stage == 4)
-            {
-                StartCoroutine(Story4Coroutine());
-            }
             if (story_stage == 5)
             {
-                StartCoroutine(Story5Coroutine());
+                story_stage++;
+            }
+            if (!skip && story_stage < 5)
+            {
+                story_stage++;
+                if (story_stage == 2)
+                {
+                    Debug.Log("Start coroutine 2");
+                    StartCoroutine("Story2Coroutine");
+                }
+                if (story_stage == 3)
+                {
+                    Debug.Log("Start coroutine 3");
+                    StartCoroutine("Story3Coroutine");
+                }
+                if (story_stage == 4)
+                {
+                    Debug.Log("Start coroutine 4");
+                    StartCoroutine("Story4Coroutine");
+                }
+                if (story_stage == 5)
+                {
+                    Debug.Log("Start coroutine 5");
+                    StartCoroutine("Story5Coroutine");
+                }
             }
         });
 
-    }
-
-    public void updateText(string text)
-    {
-        scripts.Enqueue(text);
-        ShowScript();
-    }
-
-    public void OnClickWindow()
-    {
-        if (text.IsSkippable())
-        {
-            text.SkipTypeText();
-        }
-        else
-        {
-            ShowScript();
-        }
     }
 
     private IEnumerator Story1Coroutine()
@@ -91,6 +120,7 @@ public class StoryController : MonoBehaviour
         yield return new WaitForSeconds(5.0f);
         ShowScript();
         story1_animator.speed = 1.0f;
+        Debug.Log("coroutine1 end");
     }
 
     private IEnumerator Story2Coroutine()
@@ -98,7 +128,9 @@ public class StoryController : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         ShowScript();
         yield return new WaitForSeconds(2f);
+        Debug.Log("active story2");
         story2.SetActive(true);
+        Debug.Log("coroutine2 end");
     }
 
     private IEnumerator Story3Coroutine()
@@ -111,6 +143,7 @@ public class StoryController : MonoBehaviour
         temp.y = -200;
         text.rectTransform.anchoredPosition = temp;
         ShowScript();
+        Debug.Log("coroutine3 end");
     }
 
     private IEnumerator Story4Coroutine()
@@ -132,19 +165,32 @@ public class StoryController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         story_cat.SetActive(true);
         story_cat.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 3f, 0);
+        Debug.Log("coroutine4 end");
     }
 
     private IEnumerator Story5Coroutine()
     {
-        yield return new WaitForSeconds(2f);
+        if (!skip) {
+            yield return new WaitForSeconds(2f);
+        }
+        hint.enabled = false;
+        A.SetActive(false);
         story4.SetActive(false);
         story5.SetActive(true);
+        Color tmp = Color.black;
+        tmp.a = 0.7f;
+        mask.GetComponent<SpriteRenderer>().color = tmp;
         Vector3 temp = text.rectTransform.anchoredPosition;
         temp.y = 0;
         text.rectTransform.anchoredPosition = temp;
+        text.color = Color.white;
         ShowScript();
         yield return new WaitForSeconds(10.5f);
         scarecrow.SetActive(true);
+        hint.text = "Press       to load map....";
+        hint.enabled = true;
+        A.SetActive(true);
+        Debug.Log("coroutine5 end");
     }
 
 }

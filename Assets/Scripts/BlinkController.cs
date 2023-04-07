@@ -16,7 +16,6 @@ public class BlinkController : MonoBehaviour
     void Update()
     {
         Color tmp = GetComponent<SpriteRenderer>().color;
-        Debug.Log(tmp.a);
         time += Time.deltaTime;
         if(Mathf.Abs(time - 0.6f) <= 0.1f)
         {
