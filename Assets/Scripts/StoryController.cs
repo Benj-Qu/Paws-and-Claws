@@ -20,6 +20,10 @@ public class StoryController : MonoBehaviour
     public GameObject A;
     public GameObject loadingManager;
 
+    public AudioSource storyAS;
+    public AudioClip storyClip;
+    public float volume = 1f;
+
     public Animator story1_animator;
     public Text text;
     private Queue<string> scripts = new Queue<string>();
@@ -81,7 +85,9 @@ public class StoryController : MonoBehaviour
         {
             return;
         }
+        storyAS.Play();
         text.TypeText(scripts.Dequeue(), onComplete: () => {
+            storyAS.Stop();
             if (story_stage == 5)
             {
                 story_stage++;
