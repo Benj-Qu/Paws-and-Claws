@@ -286,12 +286,12 @@ guardian not obvious are the players， cover and story added
 2. iceland  出生能堵上 mindy
 3. flag generation cannot in 地形。mindy
 4. 刚开始load所有prefab和sprite zeyi
-5. cover 字大小 resize with canvas mindy
 6. 2*1 加进pool zeyi
 7. 按钮调灵敏跳不起来 xinyi
 8. 结算人物动画 xinyi
 9. Baozi indiccator hanyibei
-10. 企鹅indicator Xinyi
+10. 企鹅indicator quzhemin
+11. Indicator placement 的位置更近一点 quzhemin
 
 
 
