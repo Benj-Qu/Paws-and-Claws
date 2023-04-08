@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: -558665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 57a47251397ef2e4baffd324de53797b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83792870ce1e28f408388bf0927e45b9, type: 3}
   m_Color: {r: 0.6156863, g: 0.8705883, b: 0.95294124, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 228246535528635958}
   - component: {fileID: 228246535528635952}
   - component: {fileID: 7875342206147514199}
-  - component: {fileID: 739666442979271501}
   m_Layer: 0
   m_Name: Ice
   m_TagString: Ice
@@ -280,21 +279,6 @@ MonoBehaviour:
   DownOffset: 1
   LeftOffset: 0
   RightOffset: -0.5
---- !u!114 &739666442979271501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228246535528635956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Length: 1
-  Width: 1
-  BornShift: {x: 0, y: 0}
 --- !u!1 &228246536101817957
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +352,7 @@ SpriteRenderer:
   m_SortingLayerID: -558665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bcbf49dfe057f134fa04e8ac89f1aa7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1403be4901e3e4f4eadf879a58635b91, type: 3}
   m_Color: {r: 0.6156863, g: 0.8705883, b: 0.95294124, a: 1}
   m_FlipX: 0
   m_FlipY: 0
