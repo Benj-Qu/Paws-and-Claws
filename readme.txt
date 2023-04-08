@@ -292,6 +292,7 @@ guardian not obvious are the players， cover and story added
 9. Baozi indiccator hanyibei
 10. 企鹅indicator quzhemin
 11. Indicator placement 的位置更近一点 quzhemin
+12. 联系做音乐的人。mindy
 
 
 
