@@ -294,6 +294,6 @@ guardian not obvious are the players， cover and story added
 11. Indicator placement 的位置更近一点 quzhemin
 12. 联系做音乐的人。mindy
 13. 僵一下时间变长。qu
-
+14. Anim magic appear hanyibei
 
 
