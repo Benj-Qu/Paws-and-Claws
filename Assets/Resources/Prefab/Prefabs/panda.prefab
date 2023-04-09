@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4404146626948587046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.25, z: 0}
   m_LocalScale: {x: 0.42, y: 0.4425, z: 0.56}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -131,6 +131,9 @@ MonoBehaviour:
   Pumpkin: {fileID: 874668575125315256, guid: 51f9c186cc2684f3a9ae3d4fcc4e2f80, type: 3}
   Fork: {fileID: 874668575125315256, guid: 51f9c186cc2684f3a9ae3d4fcc4e2f80, type: 3}
   left: 1
+  RepeatRate: 1.5
+  AttackDist: 1.5
+  isPenguin: 0
 --- !u!114 &7521389949625615103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,9 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 1
-  Width: 1
-  BornShift: {x: 0, y: 0}
+  Height: 3
+  Width: 3
+  BornShift: {x: 0.25, y: 0.25, z: 0}
 --- !u!1 &7857471338443132132
 GameObject:
   m_ObjectHideFlags: 0

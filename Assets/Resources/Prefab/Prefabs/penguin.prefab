@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2919822011775412493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 0.43, y: 0.43, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8687652788215970754}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15181434}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.8, y: 7.5}
+  m_Size: {x: 7.8, y: 7.196371}
   m_EdgeRadius: 0
 --- !u!1 &8687652788215970767
 GameObject:
@@ -142,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8687652788215970767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.2447, y: 2.0542, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.15, z: 0}
   m_LocalScale: {x: 0.41428798, y: 0.373824, z: 0.56}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -240,12 +240,12 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 1.6
+  follower_distance: 0.65
   follower_distance_x: 0
-  UpOffset: 0
-  DownOffset: 0
-  LeftOffset: 0
-  RightOffset: 0
+  UpOffset: 1
+  DownOffset: 0.5
+  LeftOffset: 0.5
+  RightOffset: 0.5
 --- !u!50 &2688959641655248162
 Rigidbody2D:
   serializedVersion: 4
@@ -305,9 +305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 1
-  Width: 1
-  BornShift: {x: 0, y: 0, z: 0}
+  Height: 2
+  Width: 2
+  BornShift: {x: 0, y: -0.15, z: 0}
 --- !u!95 &8622499500778664228
 Animator:
   serializedVersion: 5

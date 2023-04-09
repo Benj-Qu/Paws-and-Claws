@@ -290,10 +290,10 @@ guardian not obvious are the players， cover and story added
 7. 按钮调灵敏跳不起来 xinyi
 8. 结算人物动画 xinyi
 9. Baozi indiccator hanyibei
-10. 企鹅indicator quzhemin
+10. 企鹅indicator quzhemin done
 11. Indicator placement 的位置更近一点 quzhemin
 12. 联系做音乐的人。mindy
-13. 僵一下时间变长。qu
+13. 僵一下时间变长。qu done
 14. Anim magic appear hanyibei
 
 
