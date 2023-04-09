@@ -65,6 +65,8 @@ public class PartyTime : MonoBehaviour
                 {
                     partyTimeText.enabled = true;
                     fc.StartPartyTime();
+                    if (!countdownPlayed) 
+                        EventBus.Publish<StartPartyTime>(new StartPartyTime(true));
                 }
             }
             Debug.Log(cnt_down);
@@ -77,7 +79,6 @@ public class PartyTime : MonoBehaviour
                 CountDownText.text = "10";
                 CountDownText.enabled = true;
                 cnt_down = 10;
-                EventBus.Publish<StartPartyTime>(new StartPartyTime(true));
             }
             if(Mathf.Abs(timeDisplayer.countdownTime - cnt_down) <= 0.2f)
             {
