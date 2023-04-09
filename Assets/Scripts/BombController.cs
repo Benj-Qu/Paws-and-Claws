@@ -70,9 +70,15 @@ public class BombController : MonoBehaviour
         //Debug.Log("start1" + start);
         if (isBlock(collision.gameObject) && start)
         {
-            Debug.Log("collide1 in" );
+            Debug.Log("collide1 in" + collision.name );
             blockMovement bm1 = collision.gameObject.GetComponent<blockMovement>();
             blockMovement bm2 = gameObject.GetComponent<blockMovement>();
+            Debug.Log(collision.gameObject.transform.parent.gameObject.name);
+            if (collision.gameObject.transform.parent.gameObject.name != "Block")
+            {
+                bm1 = collision.gameObject.transform.parent.gameObject.GetComponent<blockMovement>();
+                Debug.Log("collide" + bm1);
+            }
             if (bm1 && bm2 && bm1.set && bm2.set) 
             {
                 if (explosion == false)
@@ -80,7 +86,16 @@ public class BombController : MonoBehaviour
                     Instantiate(GameController.instance.explosionAes, gameObject.transform.position, Quaternion.identity);
                     explosion = true;
                 }
-                Destroy(collision.gameObject);
+
+                if (collision.gameObject.transform.parent.gameObject.name != "Block")
+                {
+                    Debug.Log("collide with "+ collision.gameObject.transform.parent.gameObject.name);
+                    Destroy(collision.gameObject.transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(collision.gameObject);
+                }
                 Destroy(this.gameObject);
             }
         }
