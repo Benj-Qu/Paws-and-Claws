@@ -481,6 +481,7 @@ public class PlayerController : MonoBehaviour
             showAddScore.ShowScore();
             GetComponent<PlayerScore>().updateScore(DeathPenalty);
             pas.PlayOneShot(player_die, 0.5f);
+            StopAllCoroutines();
             StartCoroutine(KilledAnimation());
         }
     }
@@ -501,7 +502,6 @@ public class PlayerController : MonoBehaviour
         // Rebirth and Freeze
         gc.Killed(gameObject);
         //yield return new WaitForSeconds(0.3f);
-
     }
 
     public void animReset()
@@ -515,7 +515,8 @@ public class PlayerController : MonoBehaviour
         reset();
         // Rebirth Invincible
         invincible = true;
-        yield return new WaitForSeconds(0.5f);
+        flash();
+        yield return new WaitForSeconds(0.8f);
         invincible = false;
     }
 
@@ -544,13 +545,15 @@ public class PlayerController : MonoBehaviour
 
     private void flash()
     {
+        Debug.Log("BeginFlashing");
         StartCoroutine(FlashCoroutine());
     }
 
     private IEnumerator FlashCoroutine()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
+            Debug.Log("FlashingFlashingFlashing");
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
             yield return new WaitForSeconds(0.1f);
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
