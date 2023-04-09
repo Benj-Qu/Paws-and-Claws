@@ -22,6 +22,12 @@ public class StoryController : MonoBehaviour
 
     public AudioSource storyAS;
     public AudioClip storyClip;
+    public AudioSource birdAS;
+    public AudioClip birdClip;
+    public AudioSource thunderAS;
+    public AudioClip thunderClip;
+    public AudioSource bgmAS;
+    public AudioClip bgmClip;
     public float volume = 1f;
 
     public Animator story1_animator;
@@ -59,6 +65,8 @@ public class StoryController : MonoBehaviour
                 Debug.Log("Stop coroutine 4");
                 StopCoroutine("Story4Coroutine");
                 text.SkipTypeText();
+                storyAS.Stop();
+                birdAS.Stop();
                 Debug.Log("Inactive storys");
                 story1.SetActive(false);
                 story2.SetActive(false);
@@ -68,6 +76,10 @@ public class StoryController : MonoBehaviour
                 while (scripts.Count > 1)
                 {
                     scripts.Dequeue();
+                }
+                if(story_stage < 3)
+                {
+                    bgmAS.Play();
                 }
                 StartCoroutine(Story5Coroutine());
             }
@@ -122,6 +134,7 @@ public class StoryController : MonoBehaviour
 
     private IEnumerator Story1Coroutine()
     {
+        birdAS.Play();
         yield return new WaitForSeconds(5.0f);
         ShowScript();
         story1_animator.speed = 1.0f;
@@ -131,10 +144,12 @@ public class StoryController : MonoBehaviour
     private IEnumerator Story2Coroutine()
     {
         yield return new WaitForSeconds(1.5f);
+        birdAS.Stop();
         ShowScript();
         yield return new WaitForSeconds(2f);
         Debug.Log("active story2");
         story2.SetActive(true);
+        thunderAS.Play();
         Debug.Log("coroutine2 end");
     }
 
@@ -144,6 +159,7 @@ public class StoryController : MonoBehaviour
         story1.SetActive(false);
         story2.SetActive(false);
         story3.SetActive(true);
+        bgmAS.Play();
         Vector3 temp = text.rectTransform.anchoredPosition;
         temp.y = -150;
         text.rectTransform.anchoredPosition = temp;
