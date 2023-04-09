@@ -28555,6 +28555,7 @@ MonoBehaviour:
   mask: {fileID: 137484084}
   blockSelectionMask: {fileID: 1651113397}
   follower: {fileID: 346991972}
+  IceInvalidPositions: {fileID: 0}
   FarmStage1Objects: {fileID: 0}
   FarmStage1Texts: {fileID: 0}
   FarmStoryText: {fileID: 0}
@@ -28676,6 +28677,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
+      propertyPath: m_Name
+      value: ScorePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6658275035224939865, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
       propertyPath: m_Name
       value: player_1
@@ -28723,14 +28732,6 @@ PrefabInstance:
     - target: {fileID: 6658275035224939868, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
-      propertyPath: m_Name
-      value: ScorePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4428402047140362522, guid: 0469a56cc6eeeb245a75941c7ef44e9d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64aa78f18371248d080aeb62e0850b7f, type: 3}
@@ -57737,6 +57738,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1659101608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2195930674752632067, guid: 03af044a4d5a74ec38e16d316f70d49e, type: 3}
+  m_PrefabInstance: {fileID: 4246495517527517763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1659101613
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659101608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a19fbad03cd35433f8e38e1146422db8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1659158612
 GameObject:
   m_ObjectHideFlags: 0
@@ -70280,6 +70306,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1998172585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6419718948906317401, guid: 03af044a4d5a74ec38e16d316f70d49e, type: 3}
+  m_PrefabInstance: {fileID: 4246495517527517763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1998172590
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998172585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af38a1ecdcb754e68af4ea697142ea80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1999256867
 GameObject:
   m_ObjectHideFlags: 0
@@ -74724,6 +74775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48923875}
     m_Modifications:
+    - target: {fileID: 1034365235000696599, guid: 03af044a4d5a74ec38e16d316f70d49e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d74ffadc0a24423593782c36fda9369, type: 3}
     - target: {fileID: 4246495517240932636, guid: 03af044a4d5a74ec38e16d316f70d49e, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
