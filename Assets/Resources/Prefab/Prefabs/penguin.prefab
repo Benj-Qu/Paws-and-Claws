@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2688959641655248162}
   - component: {fileID: 7976280189224983769}
   - component: {fileID: -1407897496707895989}
+  - component: {fileID: 8622499500778664228}
   m_Layer: 0
   m_Name: penguin
   m_TagString: Block
@@ -216,6 +217,9 @@ MonoBehaviour:
   Pumpkin: {fileID: 2457961888353766691, guid: 3becf25d8bb6a4c48b8389ab89b3e9f0, type: 3}
   Fork: {fileID: 2457961888353766691, guid: 3becf25d8bb6a4c48b8389ab89b3e9f0, type: 3}
   left: 1
+  RepeatRate: 1.5
+  AttackDist: 1
+  isPenguin: 1
 --- !u!114 &3309946045691782934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +277,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.8}
@@ -303,4 +307,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Length: 1
   Width: 1
-  BornShift: {x: 0, y: 0}
+  BornShift: {x: 0, y: 0, z: 0}
+--- !u!95 &8622499500778664228
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687652788215970767}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1b942df815ffc749861d2fa054a0e5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
