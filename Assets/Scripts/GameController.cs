@@ -19,7 +19,9 @@ public class GameController : MonoBehaviour
     public float dist = 0.4f;
     public GameObject WinImage;
     public TextMeshProUGUI ScoreText;
-    
+
+    public GameObject loadingManager;
+
     private TextMeshProUGUI winText;
     private GameObject player1;
     private GameObject player2;
@@ -306,8 +308,8 @@ public class GameController : MonoBehaviour
         // }
         
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("NewIntro");
-        // player.GetComponent<HasInventory>().Reset();
+        //SceneManager.LoadScene("NewIntro");
+        loadingManager.GetComponent<Michsky.LSS.LoadingScreenManager>().LoadScene("NewIntro");
     }
 
     public void GameOver()
@@ -497,24 +499,24 @@ public class GameController : MonoBehaviour
         }
     }
     
-    private IEnumerator FinishTutorial()
-    {
-        winText.text = "You got it!";
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Trial Level");
-        winText.text = "";
-    }
+    //private IEnumerator FinishTutorial()
+    //{
+    //    winText.text = "You got it!";
+    //    yield return new WaitForSeconds(2f);
+    //    SceneManager.LoadScene("Trial Level");
+    //    winText.text = "";
+    //}
     
-    // private IEnumeratorr 
+    //// private IEnumeratorr 
 
-    private IEnumerator Lose()
-    {
-        winText.text = "Try again!";
-        yield return new WaitForSeconds(1);
-        // SceneManager.LoadScene("Level" + level);
-        SceneManager.LoadScene("gold_spike_level");
-        // player.GetComponent<HasInventory>().Reset();
-    }
+    //private IEnumerator Lose()
+    //{
+    //    winText.text = "Try again!";
+    //    yield return new WaitForSeconds(1);
+    //    // SceneManager.LoadScene("Level" + level);
+    //    SceneManager.LoadScene("gold_spike_level");
+    //    // player.GetComponent<HasInventory>().Reset();
+    //}
 
     public string GetLevelName()
     {

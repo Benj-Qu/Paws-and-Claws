@@ -9,3 +9,10 @@ SnowFlake asset from Little Sweet Daemon
 Music from #Uppbeat (free for Creators!):
 https://uppbeat.io/t/qube/play
 License code: EBSICLDMZXQXJYY4
+Music from tunetank: 
+https://tunetank.com/track/452-country-story/
+https://tunetank.com/track/5630-ready-to-play/
+Sound Effect from free sound:
+https://freesound.org
+Package text animator febucci
+Packge loading scene manager from michsky

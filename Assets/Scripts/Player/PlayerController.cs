@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -481,6 +482,7 @@ public class PlayerController : MonoBehaviour
             showAddScore.ShowScore();
             GetComponent<PlayerScore>().updateScore(DeathPenalty);
             pas.PlayOneShot(player_die, 0.5f);
+            StopAllCoroutines();
             StartCoroutine(KilledAnimation());
         }
     }
@@ -498,10 +500,25 @@ public class PlayerController : MonoBehaviour
         //yield return new WaitForSeconds(0.5f);
         //this.GetComponent<Animator>().runtimeAnimatorController = controllerCurr;
         anim.SetTrigger("die");
+        this.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+        StartCoroutine(Large());
+        if (this.name == "player_2")
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        }
         // Rebirth and Freeze
         gc.Killed(gameObject);
         //yield return new WaitForSeconds(0.3f);
+    }
 
+    IEnumerator Large()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Debug.Log("Turning big");
+            yield return new WaitForSeconds(0.09f);
+            this.transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
+        }
     }
 
     public void animReset()
@@ -515,7 +532,8 @@ public class PlayerController : MonoBehaviour
         reset();
         // Rebirth Invincible
         invincible = true;
-        yield return new WaitForSeconds(0.5f);
+        flash();
+        yield return new WaitForSeconds(0.8f);
         invincible = false;
     }
 
@@ -526,10 +544,12 @@ public class PlayerController : MonoBehaviour
         onLeftWall = false;
         onRightWall = false;
         jumpTimes = MaxJumpTimes;
+        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         floorV = 0f;
         onIce = false;
         onCable = false;
         rb.velocity = Vector2.zero;
+        this.transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale);
     }
 
     public bool OnFloor()
@@ -544,13 +564,15 @@ public class PlayerController : MonoBehaviour
 
     private void flash()
     {
+        Debug.Log("BeginFlashing");
         StartCoroutine(FlashCoroutine());
     }
 
     private IEnumerator FlashCoroutine()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
+            Debug.Log("FlashingFlashingFlashing");
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
             yield return new WaitForSeconds(0.1f);
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
