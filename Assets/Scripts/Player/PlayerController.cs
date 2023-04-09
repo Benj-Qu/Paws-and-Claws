@@ -506,7 +506,7 @@ public class PlayerController : MonoBehaviour
 
     public void animReset()
     {
-        Debug.Log("------");
+        Debug.Log("--+++++====----");
         StartCoroutine(animreset2());
     }
 
