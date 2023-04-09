@@ -490,15 +490,32 @@ public class PlayerController : MonoBehaviour
         // Die and Freeze
         alive = false;
         rb.velocity = Vector2.zero;
-        flash();
-        yield return new WaitForSeconds(0.5f);
+        //flash();
+        yield return new WaitForSeconds(0.2f);
+        //var pathname = "Animations/magic_circle";
+        //var controllerCurr = this.GetComponent<Animator>().runtimeAnimatorController;
+        //this.GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(pathname);
+        //yield return new WaitForSeconds(0.5f);
+        //this.GetComponent<Animator>().runtimeAnimatorController = controllerCurr;
+        anim.SetTrigger("die");
         // Rebirth and Freeze
         gc.Killed(gameObject);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.3f);
+
+    }
+
+    public void animReset()
+    {
+        Debug.Log("------");
+        StartCoroutine(animreset2());
+    }
+
+    IEnumerator animreset2()
+    {
         reset();
         // Rebirth Invincible
         invincible = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         invincible = false;
     }
 

@@ -114,8 +114,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5366429486305918711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.045, y: 0.045, z: 0.022498155}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.089999996, y: 0.09062315, z: 0.02257604}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6708256845181382221}
@@ -211,12 +211,12 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 1.6
+  follower_distance: 1
   follower_distance_x: 0
-  UpOffset: 0
-  DownOffset: 0
-  LeftOffset: 0
-  RightOffset: 0
+  UpOffset: 0.5
+  DownOffset: 0.5
+  LeftOffset: 0.5
+  RightOffset: 0.5
 --- !u!50 &5394741538799912873
 Rigidbody2D:
   serializedVersion: 4

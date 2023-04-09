@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3122358247565540229}
   m_Layer: 0
   m_Name: Lantern
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -87,10 +87,10 @@ MonoBehaviour:
   block_status: 0
   follower_distance: 1
   follower_distance_x: 0
-  UpOffset: 0
-  DownOffset: 0
-  LeftOffset: 0
-  RightOffset: 0
+  UpOffset: 1
+  DownOffset: -0.5
+  LeftOffset: 0.5
+  RightOffset: 0.5
 --- !u!50 &2012394706697297216
 Rigidbody2D:
   serializedVersion: 4
@@ -236,7 +236,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.051499844, y: -0.56647223}
