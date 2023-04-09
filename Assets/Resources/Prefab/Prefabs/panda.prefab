@@ -154,12 +154,12 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 1.6
+  follower_distance: 1.25
   follower_distance_x: 0
-  UpOffset: 0
-  DownOffset: 0
-  LeftOffset: 0
-  RightOffset: 0
+  UpOffset: 0.5
+  DownOffset: 0.5
+  LeftOffset: 0.5
+  RightOffset: 0.5
 --- !u!50 &6980307461935931595
 Rigidbody2D:
   serializedVersion: 4

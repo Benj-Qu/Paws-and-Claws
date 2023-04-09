@@ -310,6 +310,10 @@ public class blockMovement : MonoBehaviour
                 }
                 for (var i = transform.childCount - 1; i >= 0; i--)
                 {
+                    if (transform.GetChild(i).CompareTag("Block") && transform.GetChild(i).GetComponent<BoxCollider2D>() != null)
+                    {
+                        transform.GetChild(i).GetComponent<BoxCollider2D>().isTrigger = false;
+                    }
                     if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
                     {
                         if (transform.GetChild(i).name == "box")
