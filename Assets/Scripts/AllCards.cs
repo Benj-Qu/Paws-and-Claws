@@ -114,7 +114,7 @@ public class AllCards : MonoBehaviour
         powerupPool.Add("Farm", powerupPool_);
         powerupPool.Add("Volcano", powerupPool_);
         
-        RandomCardDraw pool_china = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 7, 4, 27});
+        RandomCardDraw pool_china = new RandomCardDraw(new List<int> {10, 13, 14, 9, 11, 27, 5, 6, 7, 8, 4});
         RandomCardDraw pool_winterland = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30, 6, 8, 5, 7, 4});
         RandomCardDraw pool_iceland = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28, 6, 8, 5, 7, 4});
         RandomCardDraw pool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24, 6, 8, 5, 7, 4});
