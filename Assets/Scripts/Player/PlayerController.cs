@@ -491,14 +491,14 @@ public class PlayerController : MonoBehaviour
         alive = false;
         rb.velocity = Vector2.zero;
         flash();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         // Rebirth and Freeze
         gc.Killed(gameObject);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         reset();
         // Rebirth Invincible
         invincible = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         invincible = false;
     }
 
@@ -532,7 +532,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
             yield return new WaitForSeconds(0.1f);

@@ -246,7 +246,7 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 1.2
+  follower_distance: 1
   follower_distance_x: 0
   UpOffset: 0.5
   DownOffset: 1
@@ -290,6 +290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 1
+  Height: 1
   Width: 1
-  BornShift: {x: 0, y: 0}
+  BornShift: {x: 0, y: 0, z: 0}
