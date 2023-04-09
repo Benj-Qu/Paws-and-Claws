@@ -55,6 +55,7 @@ public class AllCards : MonoBehaviour
         cards.Add(11, "Lantern");
         cards.Add(13, "square_china");
         cards.Add(14, "rectangle_china");
+        cards.Add(27, "rectangle2_china");
         //24
         
         // winterland
@@ -62,6 +63,7 @@ public class AllCards : MonoBehaviour
         cards.Add(16, "Snowman");
         cards.Add(18, "rectangle_snow");
         cards.Add(19, "square_snow");
+        cards.Add(30, "rectangle2_snow");
         // also has ice
         //24
         
@@ -70,6 +72,7 @@ public class AllCards : MonoBehaviour
         cards.Add(20, "penguin");
         cards.Add(21, "rectangle_ice");
         cards.Add(22, "square_ice");
+        cards.Add(28, "rectangle2_ice");
         // also has 15
         //24
         
@@ -77,6 +80,7 @@ public class AllCards : MonoBehaviour
         cards.Add(23, "Trap");
         cards.Add(25, "rectangle_volcano");
         cards.Add(26, "square_volcano");
+        cards.Add(29, "rectangle2_volcano");
         // also has spike 1
         // also has 2*1 24
         
@@ -88,8 +92,7 @@ public class AllCards : MonoBehaviour
         cards.Add(8, "Invincible Potion");
         
         // TODO: add 2*1 block to the pool
-        // cards.Add(27, );
-        // cards.Add(28, );
+        // cards.Add(31, );
 
         selectionPool = new Dictionary<string, RandomCardDraw>();
         terrainPool = new Dictionary<string, RandomCardDraw>();
@@ -97,10 +100,10 @@ public class AllCards : MonoBehaviour
         
         bombPool = new RandomCardDraw(new List<int> {4});
         RandomCardDraw terrainPool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24});
-        RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {9, 10, 11, 13, 14, 24});
-        RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 24});
-        RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 24});
-        RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {23, 25, 26, 1, 24});
+        RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {9, 10, 11, 13, 14, 27});
+        RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30});
+        RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28});
+        RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {23, 25, 26, 1, 29});
         
         terrainPool.Add("Lantern Festival", terrainPool_china);
         terrainPool.Add("Winter Land", terrainPool_winterland);
@@ -115,11 +118,11 @@ public class AllCards : MonoBehaviour
         powerupPool.Add("Farm", powerupPool_);
         powerupPool.Add("Volcano", powerupPool_);
         
-        RandomCardDraw pool = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7, 4});
-        RandomCardDraw pool1 = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 24, 6, 8, 5, 7, 4, 4});
-        RandomCardDraw pool2 = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 24, 6, 8, 5, 7, 4, 4});
+        RandomCardDraw pool = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7, 4, 27});
+        RandomCardDraw pool1 = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30, 6, 8, 5, 7, 4, 4});
+        RandomCardDraw pool2 = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28, 6, 8, 5, 7, 4, 4});
         RandomCardDraw pool3 = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24, 6, 8, 5, 7});
-        RandomCardDraw pool4 = new RandomCardDraw(new List<int> {23, 25, 26, 1, 24, 6, 8, 5, 7});
+        RandomCardDraw pool4 = new RandomCardDraw(new List<int> {23, 25, 26, 1, 29, 6, 8, 5, 7});
         selectionPool.Add("Lantern Festival", pool);
         selectionPool.Add("Winter Land", pool1);
         selectionPool.Add("Iceland", pool2);
