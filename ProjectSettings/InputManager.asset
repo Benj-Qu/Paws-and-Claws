@@ -90,16 +90,16 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: joystick 1 button 2
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0.1
-    dead: 0.2
-    sensitivity: 1
+    gravity: 1
+    dead: 0.001
+    sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 2
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: Mouse X
@@ -138,16 +138,16 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: joystick 2 button 2
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0.1
-    dead: 0.2
-    sensitivity: 1
+    gravity: 1
+    dead: 0.001
+    sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 2
+    type: 0
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: Horizontal1
