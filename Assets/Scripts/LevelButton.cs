@@ -9,6 +9,7 @@ public class LevelButton : MonoBehaviour
 {
     private TextMeshProUGUI messageText;
     public GameObject panel;
+    public GameObject loadingManager;
     void Start()
     {
         messageText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
@@ -18,12 +19,14 @@ public class LevelButton : MonoBehaviour
     {
         // Debug.Log(messageText.text);
         // HasInventory.Reset_static();
-        SceneManager.LoadScene(messageText.text);
+        //SceneManager.LoadScene(messageText.text);
+        loadingManager.GetComponent<Michsky.LSS.LoadingScreenManager>().LoadScene(messageText.text);
     }
     
     public void ExitGame()
     {
-        SceneManager.LoadScene("NewIntro");
+        // SceneManager.LoadScene("NewIntro");
+        loadingManager.GetComponent<Michsky.LSS.LoadingScreenManager>().LoadScene("NewIntro");
         GameController.instance.pause = false;
         Time.timeScale = 1f;
     }
