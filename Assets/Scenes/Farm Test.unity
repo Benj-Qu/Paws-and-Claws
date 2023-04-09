@@ -481,7 +481,15 @@ MonoBehaviour:
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
+  WallRatio: 3
   joystickNumber: 2
+  offset: 100
+  AttackedSpeed: 5
+  AttackedPeriod: 1.2
+  OriginalScale: 0.2
+  MaxRatio: 2
+  MinRatio: 1
+  EnemyName: 
 --- !u!50 &265125346
 Rigidbody2D:
   serializedVersion: 4
@@ -1871,7 +1879,7 @@ MonoBehaviour:
   texts: []
   cardAddedFront: 0
   cardAddedBack: 0
-  selection: {fileID: 1932930184}
+  selection: {fileID: 0}
   whichPlayer: 1
   BlockController: {fileID: 0}
 --- !u!1 &703418870
@@ -2200,6 +2208,7 @@ GameObject:
   - component: {fileID: 973521907}
   - component: {fileID: 973521906}
   - component: {fileID: 973521905}
+  - component: {fileID: 973521908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2273,6 +2282,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973521908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973521904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482ac50f7abb63845ad280d808ac54ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1003027256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4064,7 +4085,15 @@ MonoBehaviour:
   player_die: {fileID: 0}
   showAddScore: {fileID: 0}
   DeathPenalty: -5
+  WallRatio: 3
   joystickNumber: 1
+  offset: 100
+  AttackedSpeed: 5
+  AttackedPeriod: 1.2
+  OriginalScale: 0.2
+  MaxRatio: 2
+  MinRatio: 1
+  EnemyName: 
 --- !u!50 &1551339301
 Rigidbody2D:
   serializedVersion: 4
@@ -4846,17 +4875,6 @@ Transform:
   m_Father: {fileID: 402845922}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1932930184 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2440277720884465061, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
-  m_PrefabInstance: {fileID: 1144161215}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b81d8f7674e8495a9398d9d83991339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1932930188 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2440277720884465058, guid: 469b49f8a85a048d7b4b67f53698b39f, type: 3}
@@ -5053,6 +5071,6 @@ MonoBehaviour:
   texts: []
   cardAddedFront: 0
   cardAddedBack: 0
-  selection: {fileID: 1932930184}
+  selection: {fileID: 0}
   whichPlayer: 2
   BlockController: {fileID: 0}

@@ -18,7 +18,7 @@ public class PartyTime : MonoBehaviour
     // private Image _image;
     private float cnt_down = 10f;
     public bool countdownPlayed = false;
-    private Subscription<GameOverEvent> gameover_event;
+    Subscription<GameOverEvent> gameover_event;
 
     private void Awake()
     {
@@ -30,6 +30,7 @@ public class PartyTime : MonoBehaviour
     {
         Debug.Log("text disable");
         partyTimeText.enabled = false;
+        partyTimeText.text = "";
     }
 
     // Start is called before the first frame update
