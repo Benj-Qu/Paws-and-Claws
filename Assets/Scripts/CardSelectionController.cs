@@ -91,6 +91,11 @@ public class CardSelectionController : MonoBehaviour
     {
         image.SetActive(false);
     }
+
+    public void Appear()
+    {
+        image.SetActive(true);
+    }
     
     // public void
 }

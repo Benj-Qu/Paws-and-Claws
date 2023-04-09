@@ -3160,6 +3160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4225822519937873637, guid: 56c9e3f55bd9547efa863945a6398cd9, type: 3}
+      propertyPath: staticOrRandom
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4225822519937873642, guid: 56c9e3f55bd9547efa863945a6398cd9, type: 3}
       propertyPath: m_Name
       value: AllCards
@@ -17698,6 +17702,7 @@ MonoBehaviour:
   mask: {fileID: 577392819}
   blockSelectionMask: {fileID: 808694761}
   follower: {fileID: 1655251917}
+  IceInvalidPositions: {fileID: 0}
   FarmStage1Objects: {fileID: 0}
   FarmStage1Texts: {fileID: 0}
   FarmStoryText: {fileID: 0}

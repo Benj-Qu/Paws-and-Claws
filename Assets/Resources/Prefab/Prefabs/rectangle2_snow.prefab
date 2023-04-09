@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2009575799542506405}
   - component: {fileID: 7078475269059930876}
   m_Layer: 0
-  m_Name: rectangle2 1
+  m_Name: rectangle2_snow
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

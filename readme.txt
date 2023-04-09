@@ -285,7 +285,7 @@ guardian not obvious are the players， cover and story added
 1. random pool differetn type 地形 powerup ... zeyi
 2. iceland  出生能堵上 mindy
 3. flag generation cannot in 地形。mindy
-4. 刚开始load所有prefab和sprite zeyi
+4. 刚开始load所有prefab和sprite zeyi 发现delay不是这个问题，换一种方法解决了。✅
 6. 2*1 加进pool zeyi
 7. 按钮调灵敏跳不起来 xinyi
 8. 结算人物动画 xinyi

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class AllCards : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class AllCards : MonoBehaviour
     public bool staticOrRandom = true;
     private Dictionary<string, RandomCardDraw> selectionPool;
 
+    public Dictionary<string, RandomCardDraw> terrainPool;
+    public Dictionary<string, RandomCardDraw> powerupPool;
+    public RandomCardDraw bombPool;
+
     private void Awake()
     {
   
@@ -37,39 +42,87 @@ public class AllCards : MonoBehaviour
         
         cards = new Dictionary<int, string>();
         
+        // farm
         cards.Add(0, "crowAttack"); // TODO: only works for single sprite (not a split sprite inside a large sprite)
         cards.Add(1, "hideSpikeBlock");
         cards.Add(2, "rectangle");
         cards.Add(3, "square");
-        cards.Add(4, "bomb");
-        cards.Add(5, "Coin");
-        cards.Add(6, "Power Potion");
-        cards.Add(7, "Speed Potion");
-        cards.Add(8, "Invincible Potion");
+        cards.Add(24, "rectangle2");
+        
+        // china
         cards.Add(9, "panda");
         cards.Add(10, "bamboo_steamer");
         cards.Add(11, "Lantern");
         cards.Add(13, "square_china");
         cards.Add(14, "rectangle_china");
+        cards.Add(27, "rectangle2_china");
+        //24
+        
+        // winterland
         cards.Add(15, "TrapIce");
         cards.Add(16, "Snowman");
-        cards.Add(17, "Ice");
         cards.Add(18, "rectangle_snow");
         cards.Add(19, "square_snow");
+        cards.Add(30, "rectangle2_snow");
+        // also has ice
+        //24
+        
+        // iceland
+        cards.Add(17, "Ice");
         cards.Add(20, "penguin");
         cards.Add(21, "rectangle_ice");
         cards.Add(22, "square_ice");
+        cards.Add(28, "rectangle2_ice");
+        // also has 15
+        //24
+        
+        // volcano
         cards.Add(23, "Trap");
-        cards.Add(24, "rectangle2");
         cards.Add(25, "rectangle_volcano");
         cards.Add(26, "square_volcano");
+        cards.Add(29, "rectangle2_volcano");
+        // also has spike 1
+        // also has 2*1 24
+        
+        cards.Add(4, "bomb");
+        
+        cards.Add(5, "Coin");
+        cards.Add(6, "Power Potion");
+        cards.Add(7, "Speed Potion");
+        cards.Add(8, "Invincible Potion");
+        
+        // TODO: add 2*1 block to the pool
+        // cards.Add(31, );
 
         selectionPool = new Dictionary<string, RandomCardDraw>();
-        RandomCardDraw pool = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
-        RandomCardDraw pool1 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
-        RandomCardDraw pool2 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
-        RandomCardDraw pool3 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
-        RandomCardDraw pool4 = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7});
+        terrainPool = new Dictionary<string, RandomCardDraw>();
+        powerupPool = new Dictionary<string, RandomCardDraw>();
+        
+        bombPool = new RandomCardDraw(new List<int> {4});
+        RandomCardDraw terrainPool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24});
+        RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {9, 10, 11, 13, 14, 27});
+        RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30});
+        RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28});
+        RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {23, 25, 26, 1, 29});
+        
+        terrainPool.Add("Lantern Festival", terrainPool_china);
+        terrainPool.Add("Winter Land", terrainPool_winterland);
+        terrainPool.Add("Iceland", terrainPool_iceland);
+        terrainPool.Add("Farm", terrainPool_farm);
+        terrainPool.Add("Volcano", terrainPool_volcano);
+        
+        RandomCardDraw powerupPool_ = new RandomCardDraw(new List<int> {5, 6, 7, 8});
+        powerupPool.Add("Lantern Festival", powerupPool_);
+        powerupPool.Add("Winter Land", powerupPool_);
+        powerupPool.Add("Iceland", powerupPool_);
+        powerupPool.Add("Farm", powerupPool_);
+        powerupPool.Add("Volcano", powerupPool_);
+        
+        RandomCardDraw pool = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7, 4, 27});
+        RandomCardDraw pool1 = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30, 6, 8, 5, 7, 4, 4});
+        RandomCardDraw pool2 = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28, 6, 8, 5, 7, 4, 4});
+        RandomCardDraw pool3 = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24, 6, 8, 5, 7});
+        RandomCardDraw pool4 = new RandomCardDraw(new List<int> {23, 25, 26, 1, 29, 6, 8, 5, 7});
         selectionPool.Add("Lantern Festival", pool);
         selectionPool.Add("Winter Land", pool1);
         selectionPool.Add("Iceland", pool2);
@@ -873,12 +926,29 @@ public class AllCards : MonoBehaviour
     {
         int k = 0;
         List<List<List<CardRound>>> cardRoundResult = new List<List<List<CardRound>>>();
+        
         RandomCardDraw rd = selectionPool[whichLevel];
+        RandomCardDraw allrd = selectionPool[whichLevel];
+        RandomCardDraw terrianRd = terrainPool[whichLevel];
+        RandomCardDraw powerupRd = powerupPool[whichLevel];
         
         // big round
+        int whichRound = 0;
         foreach (int i in roundSetting)
         {
             List<List<CardRound>> bf1 = new List<List<CardRound>>();
+            if (whichRound == 0)
+            {
+                rd = terrianRd;
+            }
+            else if (whichRound == 1)
+            {
+                rd = allrd;
+            }
+            else
+            {
+                rd = powerupRd;
+            }
             // small round
             for (int j = 0; j < i; j++)
             {
@@ -898,6 +968,7 @@ public class AllCards : MonoBehaviour
                 bf1.Add(sf11);
             }
             cardRoundResult.Add(bf1);
+            whichRound++;
         }
 
         return cardRoundResult;
@@ -943,6 +1014,11 @@ public class RandomCardDraw
 
     public int GetRandomCard()
     {
+        if (pool.Count == 1)
+        {
+            return pool[0];
+        }
+        
         // Create a random number generator with a seed based on a new GUID
         System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
 

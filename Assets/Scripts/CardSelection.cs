@@ -27,6 +27,8 @@ public class CardSelection : MonoBehaviour
     private int _currentRound = 0;
     private bool _timeUp = false;
     private bool _beginTimeUpSelection = false;
+    private float _timeForWaitCardAppear = 0.8f;
+    private bool _isFirst = true;
 
     // Start is called before the first frame update
     void Start()
@@ -160,7 +162,7 @@ public class CardSelection : MonoBehaviour
     {
         while (_currentRound <= round)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(_timeForWaitCardAppear);// 1f
         
             Debug.Log("time up random draw");
             int seed = Random.Range(0, 2);
@@ -192,7 +194,7 @@ public class CardSelection : MonoBehaviour
             }
             
             Round();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(_timeForWaitCardAppear); // 1f
         }
     }
 
@@ -200,6 +202,7 @@ public class CardSelection : MonoBehaviour
     {
         _card1Script.CardDisappear();
         _card2Script.CardDisappear();
+        cardSelectionController.Disappear();
         _cardAppear = false;
         _currentRound += 1;
         
@@ -214,14 +217,22 @@ public class CardSelection : MonoBehaviour
 
     private IEnumerator DelayRoundUp()
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(_timeForWaitCardAppear); // 0.75f
         roundUp = true;
     }
 
     // Use index to identify each card (even the id is the same, indicating the same kind of card)
     private IEnumerator DrawCard()
     {
-        yield return new WaitForSeconds(1f);
+        if (_isFirst)
+        {
+            yield return null; // do not wait any time for the fly animation at the fist round since no previous selection is made
+            _isFirst = false;
+        }
+        else 
+        {
+            yield return new WaitForSeconds(_timeForWaitCardAppear);//1f
+        }
         image.SetActive(true);
         
         // TODO: adjust how the card is drawn from the card pool
