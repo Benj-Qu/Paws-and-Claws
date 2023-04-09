@@ -72,14 +72,14 @@ public class StoryController : MonoBehaviour
                 story2.SetActive(false);
                 story3.SetActive(false);
                 story4.SetActive(false);
+                if (!bgmAS.isPlaying)
+                {
+                    bgmAS.Play();
+                }
                 story_stage = 5;
                 while (scripts.Count > 1)
                 {
                     scripts.Dequeue();
-                }
-                if(story_stage < 3)
-                {
-                    bgmAS.Play();
                 }
                 StartCoroutine(Story5Coroutine());
             }
@@ -159,7 +159,10 @@ public class StoryController : MonoBehaviour
         story1.SetActive(false);
         story2.SetActive(false);
         story3.SetActive(true);
-        bgmAS.Play();
+        if (!bgmAS.isPlaying)
+        {
+            bgmAS.Play();
+        }
         Vector3 temp = text.rectTransform.anchoredPosition;
         temp.y = -150;
         text.rectTransform.anchoredPosition = temp;
