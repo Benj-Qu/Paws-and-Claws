@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 142261979066203912}
   - component: {fileID: 4835841079598797756}
   - component: {fileID: 8732702095305639785}
+  - component: {fileID: -8063685121000413403}
   m_Layer: 0
   m_Name: crowAttack
   m_TagString: Block
@@ -111,6 +112,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &-8063685121000413403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584127486849517330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Length: 1
+  Width: 1
+  BornShift: {x: 0, y: 0}
 --- !u!1 &2584127486932664190
 GameObject:
   m_ObjectHideFlags: 0

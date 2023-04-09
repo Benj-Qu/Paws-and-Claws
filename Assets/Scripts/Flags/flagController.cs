@@ -31,6 +31,7 @@ public class flagController : MonoBehaviour
             int y = Random.Range(y_min, y_max + 1);
             while (invalidPosition(x, y))
             {
+                Debug.Log("invalid");
                 x = Random.Range(x_min[i], x_max[i]);
                 y = Random.Range(y_min, y_max + 1);
             }
@@ -43,29 +44,47 @@ public class flagController : MonoBehaviour
         Debug.Log(GameController.instance.level + " " + x + " " + y);
         if(GameController.instance.level == "Winter Land")
         {
-            if (x >= -3 && x <= 4 && y <= -1)
+            if (x > -3 && x < 4 && y < -1)
             {
                 return true;
             }
         }
         if (GameController.instance.level == "Lantern Festival")
         {
-            if (x > -25 && x < -13 && y < -3)
+            if (x > -7 && x < -3 && y < -1)
             {
                 return true;
             }
-            if (x > -8 && x < 26 && y < -7){
+            if (x > -2 && x < 8 && y < -2){
                 return true;
             }
-            if(x > 17 && x < 26 && y < 1)
+            if(x > 5 && x < 8 && y < 0)
             {
                 return true;
             }
         }
         if (GameController.instance.level == "Farm")
         {
-            if(y < -7){
-                return false;
+            if(y < -3){
+                return true;
+            }
+        }
+        if(GameController.instance.level == "Volcano")
+        {
+            if(x > -2 && x < 2 && y >= -2 && y < 1)
+            {
+                return true;
+            }
+            if(x > -4 && x < 4 && y < -2)
+            {
+                return true;
+            }
+        }
+        if(GameController.instance.level == "Iceland")
+        {
+            if((x > 2 || x < -2) && y < -1)
+            {
+                return true;
             }
         }
         Debug.Log("valid");
