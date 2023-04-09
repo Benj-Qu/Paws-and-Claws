@@ -13,9 +13,12 @@ public class ThrowBaozi : MonoBehaviour
     public float SpeedUp = 3f;
     public float MaxHorizontalSpeed = 2f;
     public float MinHorizontalSpeed = 1f;
+    public GameObject smoke;
+    Animator anim;
 
     void Start()
     {
+        anim = smoke.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,11 @@ public class ThrowBaozi : MonoBehaviour
 
     void baoziThrow()
     {
+        anim.SetTrigger("pop");
+
+    }
+
+    public void baothrow() {
         Vector3 pos = this.transform.position;
         pos += new Vector3(0, 1f, 0);
         Debug.Log("HIIII");
