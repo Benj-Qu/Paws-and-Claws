@@ -338,6 +338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideSpike (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4217611111692647482, guid: 0626f850e6212401c9d275c589d18ed1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4217611111692647483, guid: 0626f850e6212401c9d275c589d18ed1, type: 3}
       propertyPath: m_RootOrder
       value: 1

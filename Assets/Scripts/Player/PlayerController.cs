@@ -543,6 +543,8 @@ public class PlayerController : MonoBehaviour
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;
+        attacked = false;
+        jumping = false;
         jumpTimes = MaxJumpTimes;
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         floorV = 0f;
