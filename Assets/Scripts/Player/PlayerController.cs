@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -530,6 +531,7 @@ public class PlayerController : MonoBehaviour
         onIce = false;
         onCable = false;
         rb.velocity = Vector2.zero;
+        this.transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale);
     }
 
     public bool OnFloor()
