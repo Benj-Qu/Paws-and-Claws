@@ -316,7 +316,7 @@ public class AllCards : MonoBehaviour
             CardRound cardRoundf1_1 = new CardRound(20, 0, 1, 1);
             CardRound cardRoundf1_2 = new CardRound(17, 1, 1, 2);
             CardRound cardRoundf1_3 = new CardRound(17, 2, 2, 1);
-            CardRound cardRoundf1_4 = new CardRound(26, 3, 2, 2);
+            CardRound cardRoundf1_4 = new CardRound(20, 3, 2, 2);
             List<CardRound> sf11 = new List<CardRound>();
             sf11.Add(cardRoundf1_1);
             sf11.Add(cardRoundf1_2);
