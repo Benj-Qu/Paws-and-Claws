@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     public GameObject mask;
     public GameObject blockSelectionMask;
     public GameObject follower;
+    public GameObject IceInvalidPositions;
 
     public GameObject FarmStage1Objects;
     public GameObject FarmStage1Texts;
@@ -361,14 +362,13 @@ public class GameController : MonoBehaviour
         if (stage == 2) // start fight
         {
             progressBar.StartFight();
-            // if (level == "Farm")
-            // {
-            //     progressBar.gameObject.SetActive(true);
-            //     progressBar.StartGame();
-            // }
+            if (IceInvalidPositions)
+            {
+                IceInvalidPositions.SetActive(false);
+            }
 
             // Remove Winter Land
-            if(level == "Farm")
+            if (level == "Farm")
             {
                 FarmStoryText.updateText("[speed=0.08]<b>Game Start!\n MORE FLAGS MORE SCORE!</b>");
             }
@@ -396,6 +396,10 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
+            if (IceInvalidPositions)
+            {
+                IceInvalidPositions.SetActive(true);
+            }
             if (blockSelectionMask)
             {
                 Color tmp = blockSelectionMask.GetComponent<SpriteRenderer>().color;

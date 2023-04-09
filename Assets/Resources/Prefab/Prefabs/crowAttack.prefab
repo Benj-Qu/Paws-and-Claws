@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 1
-  Width: 1
-  BornShift: {x: 0, y: 0}
+  Height: 4
+  Width: 4
+  BornShift: {x: 0, y: 0, z: 0}
 --- !u!1 &2584127486932664190
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +227,9 @@ MonoBehaviour:
   Pumpkin: {fileID: 4263843740587977990, guid: ef0028f07396b444baddab2083464ec8, type: 3}
   Fork: {fileID: 6879271774402062636, guid: 0758e030376c149dc90a93d95f472f71, type: 3}
   left: 1
+  RepeatRate: 1.5
+  AttackDist: 1.5
+  isPenguin: 0
 --- !u!1 &2584127487106174510
 GameObject:
   m_ObjectHideFlags: 0

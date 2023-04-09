@@ -549,7 +549,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
             yield return new WaitForSeconds(0.1f);

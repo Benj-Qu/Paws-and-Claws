@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2919822011775412493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 0.43, y: 0.43, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8687652788215970754}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15181434}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.8, y: 7.5}
+  m_Size: {x: 7.8, y: 7.196371}
   m_EdgeRadius: 0
 --- !u!1 &8687652788215970767
 GameObject:
@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2688959641655248162}
   - component: {fileID: 7976280189224983769}
   - component: {fileID: -1407897496707895989}
+  - component: {fileID: 8622499500778664228}
   m_Layer: 0
   m_Name: penguin
   m_TagString: Block
@@ -141,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8687652788215970767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.2447, y: 2.0542, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.15, z: 0}
   m_LocalScale: {x: 0.41428798, y: 0.373824, z: 0.56}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -216,6 +217,9 @@ MonoBehaviour:
   Pumpkin: {fileID: 2457961888353766691, guid: 3becf25d8bb6a4c48b8389ab89b3e9f0, type: 3}
   Fork: {fileID: 2457961888353766691, guid: 3becf25d8bb6a4c48b8389ab89b3e9f0, type: 3}
   left: 1
+  RepeatRate: 1.5
+  AttackDist: 1
+  isPenguin: 1
 --- !u!114 &3309946045691782934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,12 +240,12 @@ MonoBehaviour:
   isBomb: 0
   alpha: 0.5
   block_status: 0
-  follower_distance: 1.6
+  follower_distance: 0.65
   follower_distance_x: 0
-  UpOffset: 0
-  DownOffset: 0
-  LeftOffset: 0
-  RightOffset: 0
+  UpOffset: 1
+  DownOffset: 0.5
+  LeftOffset: 0.5
+  RightOffset: 0.5
 --- !u!50 &2688959641655248162
 Rigidbody2D:
   serializedVersion: 4
@@ -273,7 +277,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.8}
@@ -301,6 +305,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd18fa9020b8e445a80f3201b851ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 1
-  Width: 1
-  BornShift: {x: 0, y: 0}
+  Height: 2
+  Width: 2
+  BornShift: {x: 0, y: -0.15, z: 0}
+--- !u!95 &8622499500778664228
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687652788215970767}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1b942df815ffc749861d2fa054a0e5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
