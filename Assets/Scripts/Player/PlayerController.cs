@@ -545,7 +545,6 @@ public class PlayerController : MonoBehaviour
 
     private void flash()
     {
-        Debug.Log("BeginFlashing");
         StartCoroutine(FlashCoroutine());
     }
 
@@ -553,7 +552,6 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log("FlashingFlashingFlashing");
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
             yield return new WaitForSeconds(0.1f);
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
