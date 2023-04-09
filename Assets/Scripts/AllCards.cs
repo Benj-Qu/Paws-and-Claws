@@ -13,7 +13,6 @@ public class AllCards : MonoBehaviour
     // id, name
     public static Dictionary<int, string> cards;
     
-    
     // big round
     // small round 
     // whichcard
@@ -56,17 +55,15 @@ public class AllCards : MonoBehaviour
         cards.Add(13, "square_china");
         cards.Add(14, "rectangle_china");
         cards.Add(27, "rectangle2_china");
-        //24
-        
+
         // winterland
         cards.Add(15, "TrapIce");
         cards.Add(16, "Snowman");
         cards.Add(18, "rectangle_snow");
         cards.Add(19, "square_snow");
         cards.Add(30, "rectangle2_snow");
-        // also has ice
-        //24
-        
+        // also has ice 17
+
         // iceland
         cards.Add(17, "Ice");
         cards.Add(20, "penguin");
@@ -74,16 +71,14 @@ public class AllCards : MonoBehaviour
         cards.Add(22, "square_ice");
         cards.Add(28, "rectangle2_ice");
         // also has 15
-        //24
-        
+
         // volcano
         cards.Add(23, "Trap");
         cards.Add(25, "rectangle_volcano");
         cards.Add(26, "square_volcano");
         cards.Add(29, "rectangle2_volcano");
         // also has spike 1
-        // also has 2*1 24
-        
+
         cards.Add(4, "bomb");
         
         cards.Add(5, "Coin");
@@ -99,11 +94,12 @@ public class AllCards : MonoBehaviour
         powerupPool = new Dictionary<string, RandomCardDraw>();
         
         bombPool = new RandomCardDraw(new List<int> {4});
+        
         RandomCardDraw terrainPool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24});
         RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {9, 10, 11, 13, 14, 27});
-        RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30});
-        RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28});
-        RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {23, 25, 26, 1, 29});
+        RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 16, 17, 18, 19, 30});
+        RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {15, 17, 20, 21, 22, 28});
+        RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {1, 23, 25, 26, 29});
         
         terrainPool.Add("Lantern Festival", terrainPool_china);
         terrainPool.Add("Winter Land", terrainPool_winterland);
@@ -118,16 +114,16 @@ public class AllCards : MonoBehaviour
         powerupPool.Add("Farm", powerupPool_);
         powerupPool.Add("Volcano", powerupPool_);
         
-        RandomCardDraw pool = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 4, 7, 4, 27});
-        RandomCardDraw pool1 = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30, 6, 8, 5, 7, 4, 4});
-        RandomCardDraw pool2 = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28, 6, 8, 5, 7, 4, 4});
-        RandomCardDraw pool3 = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24, 6, 8, 5, 7});
-        RandomCardDraw pool4 = new RandomCardDraw(new List<int> {23, 25, 26, 1, 29, 6, 8, 5, 7});
-        selectionPool.Add("Lantern Festival", pool);
-        selectionPool.Add("Winter Land", pool1);
-        selectionPool.Add("Iceland", pool2);
-        selectionPool.Add("Farm", pool3);
-        selectionPool.Add("Volcano", pool4);
+        RandomCardDraw pool_china = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 7, 4, 4, 27});
+        RandomCardDraw pool_winterland = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30, 6, 8, 5, 7, 4, 4});
+        RandomCardDraw pool_iceland = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28, 6, 8, 5, 7, 4, 4});
+        RandomCardDraw pool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24, 6, 8, 5, 7, 4, 4});
+        RandomCardDraw pool_volcano = new RandomCardDraw(new List<int> {23, 25, 26, 1, 29, 6, 8, 5, 7, 4, 4});
+        selectionPool.Add("Lantern Festival", pool_china);
+        selectionPool.Add("Winter Land", pool_winterland);
+        selectionPool.Add("Iceland", pool_iceland);
+        selectionPool.Add("Farm", pool_farm);
+        selectionPool.Add("Volcano", pool_volcano);
 
         // instantiate the blocks as the child of the block
         block = GameObject.Find("Block");
@@ -932,6 +928,17 @@ public class AllCards : MonoBehaviour
         RandomCardDraw terrianRd = terrainPool[whichLevel];
         RandomCardDraw powerupRd = powerupPool[whichLevel];
         
+        int randomNumber = -1;
+        if (whichLevel == "Iceland")
+        {
+            // if is iceland level, must generate at least one bomb
+            // Create a random number generator with a seed based on a new GUID
+            System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+
+            // Generate a random integer between 0 and 3 (inclusive)
+            randomNumber = random.Next(0, 4);
+        }
+        
         // big round
         int whichRound = 0;
         foreach (int i in roundSetting)
@@ -949,24 +956,54 @@ public class AllCards : MonoBehaviour
             {
                 rd = powerupRd;
             }
-            // small round
-            for (int j = 0; j < i; j++)
+
+            if (whichLevel != "Iceland" || (whichLevel == "Iceland" && whichRound != 1))
             {
-                CardRound cardRoundf1_1 = new CardRound(rd.GetRandomCard(), k,  1, 1);
-                k++;
-                CardRound cardRoundf1_2 = new CardRound(rd.GetRandomCard(), k,  1, 2);
-                k++;
-                CardRound cardRoundf1_3 = new CardRound(rd.GetRandomCard(), k,  2, 1);
-                k++;
-                CardRound cardRoundf1_4 = new CardRound(rd.GetRandomCard(), k,  2, 2);
-                k++;
-                List<CardRound> sf11 = new List<CardRound>();
-                sf11.Add(cardRoundf1_1);
-                sf11.Add(cardRoundf1_2);
-                sf11.Add(cardRoundf1_3);
-                sf11.Add(cardRoundf1_4);
-                bf1.Add(sf11);
+                // small round
+                for (int j = 0; j < i; j++)
+                {
+                    CardRound cardRoundf1_1 = new CardRound(rd.GetRandomCard(), k,  1, 1);
+                    k++;
+                    CardRound cardRoundf1_2 = new CardRound(rd.GetRandomCard(), k,  1, 2);
+                    k++;
+                    CardRound cardRoundf1_3 = new CardRound(rd.GetRandomCard(), k,  2, 1);
+                    k++;
+                    CardRound cardRoundf1_4 = new CardRound(rd.GetRandomCard(), k,  2, 2);
+                    k++;
+                    List<CardRound> sf11 = new List<CardRound>();
+                    sf11.Add(cardRoundf1_1);
+                    sf11.Add(cardRoundf1_2);
+                    sf11.Add(cardRoundf1_3);
+                    sf11.Add(cardRoundf1_4);
+                    bf1.Add(sf11);
+                }
             }
+            else
+            {
+                // small round
+                for (int j = 0; j < i; j++)
+                {
+                    CardRound cardRoundf1_1 = new CardRound(rd.GetRandomCard(), k,  1, 1);
+                    if (randomNumber == 0) cardRoundf1_1 = new CardRound(4, k, 1, 1);
+                    k++;
+                    CardRound cardRoundf1_2 = new CardRound(rd.GetRandomCard(), k,  1, 2);
+                    if (randomNumber == 1) cardRoundf1_1 = new CardRound(4, k, 1, 2);
+                    k++;
+                    CardRound cardRoundf1_3 = new CardRound(rd.GetRandomCard(), k,  2, 1);
+                    if (randomNumber == 2) cardRoundf1_3 = new CardRound(4, k, 2, 1);
+                    k++;
+                    CardRound cardRoundf1_4 = new CardRound(rd.GetRandomCard(), k,  2, 2);
+                    if (randomNumber == 3) cardRoundf1_4 = new CardRound(4, k, 2, 2);
+                    k++;
+                    List<CardRound> sf11 = new List<CardRound>();
+                    sf11.Add(cardRoundf1_1);
+                    sf11.Add(cardRoundf1_2);
+                    sf11.Add(cardRoundf1_3);
+                    sf11.Add(cardRoundf1_4);
+                    bf1.Add(sf11);
+                }
+            }
+            
             cardRoundResult.Add(bf1);
             whichRound++;
         }
