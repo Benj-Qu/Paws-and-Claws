@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     public GameObject mask;
     public GameObject blockSelectionMask;
     public GameObject follower;
+    public GameObject IceInvalidPositions;
 
     public GameObject FarmStage1Objects;
     public GameObject FarmStage1Texts;
@@ -100,7 +101,7 @@ public class GameController : MonoBehaviour
             stage = -2; // -2: movement, -1: attack
             FarmStage1Objects.SetActive(true);
             FarmStage1Texts.SetActive(true);
-            FarmStoryText.updateText("[speed=0.08]<b>Guadians are strong. They can climb high walls!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Guadians are strong.\n They can climb high walls!</b>");
             player1_control.activate();
             player2_control.activate();
         } 
@@ -194,25 +195,26 @@ public class GameController : MonoBehaviour
     {
         stage = -1; // attack tutorial
         yield return new WaitForSeconds(2f);
+
         FarmStage1Objects.SetActive(false);
         FarmStage1Texts.SetActive(false);
         FarmStage2Objects.SetActive(true);
         FarmStage2Texts.SetActive(true);
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.08]<b>Guadians are skilled. They can attack enemies!</b>");
+        FarmStoryText.updateText("[speed=0.08]<b>Guardians possess exceptional combat skills.\n They can attack opponents!</b>");
     }
 
     IEnumerator finishStageT2()
     {
         stage = 0; // start game
-        yield return new WaitForSeconds(2f);
+        yield return null;
         FarmStage2Objects.SetActive(false);
         FarmStage2Texts.SetActive(false);
         FarmStage3Objects.SetActive(true);
         FarmStage3Texts.SetActive(true);
         flagController = GameObject.Find("Flags").GetComponent<flagController>();
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart. They can select suitable blocks!</b>");
+        FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart.\n They can select suitable blocks for themselves!</b>");
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
         ScorePanel = GameObject.Find("ScorePanel");
         if (ScorePanel) ScorePanel.SetActive(false);
@@ -360,13 +362,16 @@ public class GameController : MonoBehaviour
         if (stage == 2) // start fight
         {
             progressBar.StartFight();
-            // if (level == "Farm")
-            // {
-            //     progressBar.gameObject.SetActive(true);
-            //     progressBar.StartGame();
-            // }
+            if (IceInvalidPositions)
+            {
+                IceInvalidPositions.SetActive(false);
+            }
 
             // Remove Winter Land
+            if (level == "Farm")
+            {
+                FarmStoryText.updateText("[speed=0.08]<b>Game Start!\n MORE FLAGS MORE SCORE!</b>");
+            }
             if (level == "Volcano")
             {
                 VolcanoController vc = GameObject.Find("Volcano").GetComponent<VolcanoController>();
@@ -391,6 +396,10 @@ public class GameController : MonoBehaviour
         }
         else if (stage == 1) // start place block
         {
+            if (IceInvalidPositions)
+            {
+                IceInvalidPositions.SetActive(true);
+            }
             if (blockSelectionMask)
             {
                 Color tmp = blockSelectionMask.GetComponent<SpriteRenderer>().color;

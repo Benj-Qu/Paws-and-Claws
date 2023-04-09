@@ -20,6 +20,10 @@ public class StoryController : MonoBehaviour
     public GameObject A;
     public GameObject loadingManager;
 
+    public AudioSource storyAS;
+    public AudioClip storyClip;
+    public float volume = 1f;
+
     public Animator story1_animator;
     public Text text;
     private Queue<string> scripts = new Queue<string>();
@@ -34,7 +38,7 @@ public class StoryController : MonoBehaviour
         scripts.Enqueue("[speed=0.12]Once upon a time, there was a magic land,\nwhere cats and dogs lived together happily.");
         scripts.Enqueue("[speed=0.1]However, one day, a dark shadow loomed over the land,\n threatening to destroy their peaceful existence.");
         scripts.Enqueue("[speed=0.12]Ever since then, a Guardian would be selected\nevery year to protect the magic land.");
-        scripts.Enqueue("[speed=0.12]This year, the competition is fierce between\n<size=45>DOGS</size> and <size=45>CATS</size>!");
+        scripts.Enqueue("[speed=0.12]This year, the competition is fierce between\n<size=30>DOGS</size> and <size=30>CATS</size>!");
         scripts.Enqueue("[speed=0.12]Ready to help DOGS or CATS become the next guardian?\n Start from the center of magic land!");
     }
 
@@ -81,7 +85,9 @@ public class StoryController : MonoBehaviour
         {
             return;
         }
+        storyAS.Play();
         text.TypeText(scripts.Dequeue(), onComplete: () => {
+            storyAS.Stop();
             if (story_stage == 5)
             {
                 story_stage++;
@@ -139,7 +145,7 @@ public class StoryController : MonoBehaviour
         story2.SetActive(false);
         story3.SetActive(true);
         Vector3 temp = text.rectTransform.anchoredPosition;
-        temp.y = -200;
+        temp.y = -150;
         text.rectTransform.anchoredPosition = temp;
         ShowScript();
         Debug.Log("coroutine3 end");
@@ -154,7 +160,7 @@ public class StoryController : MonoBehaviour
         mask.GetComponent<SpriteRenderer>().color = tmp;
         story4.SetActive(true);
         Vector3 temp = text.rectTransform.anchoredPosition;
-        temp.y = 200;
+        temp.y = 150;
         text.rectTransform.anchoredPosition = temp;
         text.color = Color.white;
         ShowScript();
@@ -186,7 +192,7 @@ public class StoryController : MonoBehaviour
         ShowScript();
         yield return new WaitForSeconds(10.5f);
         scarecrow.SetActive(true);
-        hint.text = "Press       to load map....";
+        hint.text = "Press         to load map....";
         hint.enabled = true;
         A.SetActive(true);
         Debug.Log("coroutine5 end");

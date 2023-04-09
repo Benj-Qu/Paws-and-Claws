@@ -243,8 +243,8 @@ Mar31
 
 Apr3
 1. winterland 不要 invincible 随机pool block zy 第一轮伪随机
-2. 给austin写邮件 
-3. 旗子在block前面 hidespike会挡在旗子前 
+2. 给austin写邮件
+3. 旗子在block前面 hidespike会挡在旗子前
 4. intro 选择的键 A to select hint
 6. 包子屉的indicator位置不对
 7. flag generation的位置
@@ -268,7 +268,7 @@ Apr3
 29. powerup也可以炸掉
 30. 企鹅的collider不是trigger
 31. 两个人都没什么分的话 选卡出bomb 第二轮第三轮必出一个bomb
-32. 火山的攻击从火山口出来更intuitive 
+32. 火山的攻击从火山口出来更intuitive
 34. 攻击击中indicator 红一红
 35. 选中播放漫画有延迟 0.2f
 36. 手柄上冰不够滑 冰更滑一点
@@ -281,9 +281,19 @@ guardian not obvious are the players， cover and story added
 
 
 
-
-
-
-
+4.7
+1. random pool differetn type 地形 powerup ... zeyi
+2. iceland  出生能堵上 mindy
+3. flag generation cannot in 地形。mindy
+4. 刚开始load所有prefab和sprite zeyi
+6. 2*1 加进pool zeyi
+7. 按钮调灵敏跳不起来 xinyi
+8. 结算人物动画 xinyi
+9. Baozi indiccator hanyibei
+10. 企鹅indicator quzhemin
+11. Indicator placement 的位置更近一点 quzhemin
+12. 联系做音乐的人。mindy
+13. 僵一下时间变长。qu
+14. Anim magic appear hanyibei
 
 
