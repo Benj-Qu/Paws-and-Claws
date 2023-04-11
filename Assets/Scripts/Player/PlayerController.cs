@@ -464,6 +464,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator KnockBack(Vector2 direction)
     {
         active = false;
+        redflash(KnockBackPeriod);
         rb.velocity = direction;
         yield return new WaitForSeconds(KnockBackPeriod);
         active = true;
@@ -651,6 +652,7 @@ public class PlayerController : MonoBehaviour
             sr.color = Color.white;
             yield return new WaitForSeconds(0.1f);
         }
+        sr.color = Color.white;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
