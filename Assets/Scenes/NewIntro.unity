@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6849aa4e277489ca87ed4acef74d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &117813756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -620,6 +621,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 138385016, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Farm
+      objectReference: {fileID: 0}
+    - target: {fileID: 571700562, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Iceland
+      objectReference: {fileID: 0}
+    - target: {fileID: 601549106, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Iceland
+      objectReference: {fileID: 0}
+    - target: {fileID: 783923401, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Farm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094824195, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: volcano
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153105499, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Winter Land
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481301522, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: volcano
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526435835, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Lantern Festival
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671977898, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Lantern Festival
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950480940, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
+      propertyPath: IconName
+      value: Winter Land
+      objectReference: {fileID: 0}
     - target: {fileID: 4333855603172863337, guid: da31f10cd68582d4db85c10c8ad261e4, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1732,6 +1773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6849aa4e277489ca87ed4acef74d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1008832308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,6 +2437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6849aa4e277489ca87ed4acef74d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1241072492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,6 +2863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6849aa4e277489ca87ed4acef74d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1571979332
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,6 +3130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6849aa4e277489ca87ed4acef74d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1645491450
 GameObject:
   m_ObjectHideFlags: 0

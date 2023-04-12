@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class IntroFlagController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string IconName;
+
+    private GameObject icon;
+
+    private void OnEnable()
     {
-        
+        icon = GameObject.Find(IconName);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (icon)
+        {
+            if (icon.activeSelf)
+            {
+                float alpha = icon.GetComponent<SpriteRenderer>().color.a;
+                Color color = Color.white;
+                color.a = alpha / 2 + 0.5f;
+                GetComponent<SpriteRenderer>().color = color;
+            }
+            else
+            {
+                Color color = Color.white;
+                color.a = 0.5f;
+                GetComponent<SpriteRenderer>().color = color;
+            }
+        }
     }
 }
