@@ -64,6 +64,8 @@ public class GameController : MonoBehaviour
     public GameObject ScorePanel;
 
     private TextMeshProUGUI RoundTextHint;
+
+    private WinRecord winRecord;
     // Start is called before the first frame update
 
     private void Awake()
@@ -88,6 +90,11 @@ public class GameController : MonoBehaviour
         // scene = 0;
         Debug.Log("Level: "+ level);
         StartPoint1 = GameObject.Find("StartPoint").transform.position;
+        GameObject wrgb = GameObject.Find("WinRecord");
+        if (wrgb)
+        {
+            winRecord = wrgb.GetComponent<WinRecord>();
+        }
         StartPoint2 = StartPoint1;
         StartPoint1.x -= dist;
         StartPoint2.x += dist;
@@ -290,18 +297,30 @@ public class GameController : MonoBehaviour
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/DogWin");
                 WinImage.GetComponent<WinImage>().DogWin();
                 ScoreText.text = "DOG Wins!";
+                if (winRecord) 
+                {
+                    winRecord.UpdateWinning(WinRecord.Status.Dog);
+                }
             }
             else if (score1Big < score2Big)
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/CatWin");
                 WinImage.GetComponent<WinImage>().CatWin();
                 ScoreText.text = "CAT Wins!";
+                if (winRecord)
+                {
+                    winRecord.UpdateWinning(WinRecord.Status.Cat);
+                }
             }
             else
             {
                 // WinImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Background/VSS");
                 WinImage.GetComponent<WinImage>().VS();
                 ScoreText.text = "Tie!";
+                if (winRecord)
+                {
+                    winRecord.UpdateWinning(WinRecord.Status.Tie);
+                }
             }
             WinImage.SetActive(true);
             // winText.text = "Tie! Try again!";
