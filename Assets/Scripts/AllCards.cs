@@ -178,6 +178,8 @@ public class AllCards : MonoBehaviour
             return;
         }
         
+        Debug.LogWarning("using static loading of the card, might have problem if real_pool is ran out");
+        
         if (level == "Lantern Festival")
         {
             // big round 1
@@ -929,15 +931,16 @@ public class AllCards : MonoBehaviour
         RandomCardDraw powerupRd = powerupPool[whichLevel];
         
         int randomNumber = -1;
-        if (whichLevel == "Iceland")
-        {
-            // if is iceland level, must generate at least one bomb
-            // Create a random number generator with a seed based on a new GUID
-            System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+        // for all levels, second round must appear bomb
+        // if (whichLevel == "Iceland")
+        // {
+        // if is iceland level, must generate at least one bomb
+        // Create a random number generator with a seed based on a new GUID
+        System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
 
-            // Generate a random integer between 0 and 3 (inclusive)
-            randomNumber = random.Next(0, 4);
-        }
+        // Generate a random integer between 0 and 3 (inclusive)
+        randomNumber = random.Next(0, 4);
+        // }
         
         // big round
         int whichRound = 0;
@@ -957,7 +960,7 @@ public class AllCards : MonoBehaviour
                 rd = powerupRd;
             }
 
-            if (whichLevel != "Iceland" || (whichLevel == "Iceland" && whichRound != 1))
+            if (whichRound != 1)
             {
                 // small round
                 for (int j = 0; j < i; j++)
@@ -1006,6 +1009,11 @@ public class AllCards : MonoBehaviour
             
             cardRoundResult.Add(bf1);
             whichRound++;
+            
+            // reset to make the real_pool equal to pool
+            terrianRd.reset();
+            allrd.reset();
+            powerupRd.reset();
         }
 
         return cardRoundResult;
@@ -1044,24 +1052,31 @@ public class BlockInstantiateEvent
 public class RandomCardDraw
 {
     private List<int> pool;
+    private List<int> real_pool;
     public RandomCardDraw(List<int> _pool)
     {
         pool = _pool;
+        reset();
     }
 
+    public void reset()
+    {
+        real_pool = pool;
+    }
+    
     public int GetRandomCard()
     {
-        if (pool.Count == 1)
+        if (real_pool.Count == 1)
         {
-            return pool[0];
+            return real_pool[0];
         }
         
         // Create a random number generator with a seed based on a new GUID
         System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
 
         // Generate a random integer between 0 and 5 (inclusive)
-        int randomNumber = random.Next(0, pool.Count);
+        int randomNumber = random.Next(0, real_pool.Count);
         
-        return pool[randomNumber];
+        return real_pool[randomNumber];
     }
 }
