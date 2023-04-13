@@ -671,7 +671,9 @@ public class PlayerController : MonoBehaviour
         {
             collectInvinciblePowerUp = true;
         }
+        Debug.Log("Powerup!!");
         yield return new WaitForSeconds(period);
+        Debug.Log("Powerup Time Up.");
         Speed /= SpeedUp;
         JumpSpeed /= JumpUp;
         invincible = false;
