@@ -41,11 +41,11 @@ public class StoryController : MonoBehaviour
     {
         story1_animator.speed = 0.0f;
         StartCoroutine(Story1Coroutine());
-        scripts.Enqueue("[speed=0.12]Once upon a time, there was a magic land,\nwhere cats and dogs lived together happily.");
-        scripts.Enqueue("[speed=0.1]However, one day, a dark shadow loomed over the land,\n threatening to destroy their peaceful existence.");
-        scripts.Enqueue("[speed=0.12]Ever since then, a Guardian would be selected\nevery year to protect the magic land.");
-        scripts.Enqueue("[speed=0.12]This year, the competition is fierce between\n<size=30>DOGS</size> and <size=30>CATS</size>!");
-        scripts.Enqueue("[speed=0.12]Ready to help DOGS or CATS become the next guardian?\n Start from the center of magic land!");
+        scripts.Enqueue("[speed=0.08]Once upon a time, there was a magic land,\nwhere cats and dogs lived together happily.");
+        scripts.Enqueue("[speed=0.08]However, one day, a dark shadow loomed over the land,\n threatening to destroy their peaceful existence.");
+        scripts.Enqueue("[speed=0.08]Ever since then, a Guardian would be selected\nevery year to protect the magic land.");
+        scripts.Enqueue("[speed=0.08]This year, the competition is fierce between\n<size=30>DOGS</size> and <size=30>CATS</size>!");
+        scripts.Enqueue("[speed=0.08]Ready to help DOGS or CATS become the next guardian?\n Start from the center of magic land!");
     }
 
     // Update is called once per frame
@@ -164,8 +164,9 @@ public class StoryController : MonoBehaviour
             bgmAS.Play();
         }
         Vector3 temp = text.rectTransform.anchoredPosition;
-        temp.y = -150;
+        temp.y = -600;
         text.rectTransform.anchoredPosition = temp;
+        text.color = Color.white;
         ShowScript();
         Debug.Log("coroutine3 end");
     }
@@ -179,11 +180,11 @@ public class StoryController : MonoBehaviour
         mask.GetComponent<SpriteRenderer>().color = tmp;
         story4.SetActive(true);
         Vector3 temp = text.rectTransform.anchoredPosition;
-        temp.y = 150;
+        temp.y = -300;
         text.rectTransform.anchoredPosition = temp;
         text.color = Color.white;
         ShowScript();
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(3f);
         story_dog.SetActive(true);
         story_dog.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 3f, 0);
         yield return new WaitForSeconds(1f);
@@ -205,11 +206,11 @@ public class StoryController : MonoBehaviour
         tmp.a = 0.7f;
         mask.GetComponent<SpriteRenderer>().color = tmp;
         Vector3 temp = text.rectTransform.anchoredPosition;
-        temp.y = 0;
+        temp.y = -450;
         text.rectTransform.anchoredPosition = temp;
         text.color = Color.white;
         ShowScript();
-        yield return new WaitForSeconds(10.5f);
+        yield return new WaitForSeconds(6.5f);
         scarecrow.SetActive(true);
         hint.text = "Press         to load map....";
         hint.enabled = true;
