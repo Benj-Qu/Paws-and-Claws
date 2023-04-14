@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 436613fe0f18a0f4689f0824865647ff, type: 3}
+  m_Actions: {fileID: 0}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -797,6 +797,7 @@ MonoBehaviour:
   AttackFrequency: 4
   OriginalScale: 0.2
   Sword: {fileID: 568348990006396674, guid: a23d0eb9c04c9104e928d043e2d9bb51, type: 3}
+  attackAudio: {fileID: 8300000, guid: 4e60b784d26fb4b41b56c04a3bc08101, type: 3}
 --- !u!114 &18104151
 MonoBehaviour:
   m_ObjectHideFlags: 0
