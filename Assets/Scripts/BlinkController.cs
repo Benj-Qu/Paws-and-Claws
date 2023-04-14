@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BlinkController : MonoBehaviour
 {
+    public Color color = Color.white;
     float time = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        color = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class BlinkController : MonoBehaviour
             {
                 tmp.a = 1f;
             }
+            color = tmp;
             GetComponent<SpriteRenderer>().color = tmp;
             time = 0f;
         }

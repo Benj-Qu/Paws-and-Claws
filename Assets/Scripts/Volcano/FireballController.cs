@@ -48,6 +48,10 @@ public class FireballController : MonoBehaviour
     {
         if (isTerrain(other.gameObject))
         {
+            StartCoroutine(DestroyCoroutine(0f, false));
+        }
+        else if (isPlayer(other.gameObject))
+        {
             StartCoroutine(DestroyCoroutine(0.1f, false));
         }
     }
@@ -67,6 +71,11 @@ public class FireballController : MonoBehaviour
     private bool isTerrain(GameObject other)
     {
         return other.CompareTag("Block") || other.CompareTag("Mountain") ||
-               other.CompareTag("Wall") || other.CompareTag("Ice") || other.CompareTag("Player");
+               other.CompareTag("Wall") || other.CompareTag("Ice");
+    }
+
+    private bool isPlayer(GameObject other)
+    {
+        return other.CompareTag("Player");
     }
 }

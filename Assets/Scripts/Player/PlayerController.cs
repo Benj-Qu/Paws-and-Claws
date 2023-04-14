@@ -464,6 +464,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator KnockBack(Vector2 direction)
     {
         active = false;
+        redflash(KnockBackPeriod);
         rb.velocity = direction;
         yield return new WaitForSeconds(KnockBackPeriod);
         active = true;
@@ -543,6 +544,8 @@ public class PlayerController : MonoBehaviour
         onFloor = true;
         onLeftWall = false;
         onRightWall = false;
+        attacked = false;
+        jumping = false;
         jumpTimes = MaxJumpTimes;
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         floorV = 0f;
@@ -649,6 +652,7 @@ public class PlayerController : MonoBehaviour
             sr.color = Color.white;
             yield return new WaitForSeconds(0.1f);
         }
+        sr.color = Color.white;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
@@ -667,7 +671,9 @@ public class PlayerController : MonoBehaviour
         {
             collectInvinciblePowerUp = true;
         }
+        Debug.Log("Powerup!!");
         yield return new WaitForSeconds(period);
+        Debug.Log("Powerup Time Up.");
         Speed /= SpeedUp;
         JumpSpeed /= JumpUp;
         invincible = false;

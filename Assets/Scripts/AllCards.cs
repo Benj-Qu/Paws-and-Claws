@@ -97,7 +97,6 @@ public class AllCards : MonoBehaviour
         
         RandomCardDraw terrainPool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24});
         RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {9, 10, 11, 13, 14, 27});
-        //RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {1, 4});
         RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 16, 17, 18, 19, 30});
         RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {15, 17, 20, 21, 22, 28});
         RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {1, 23, 25, 26, 29});
@@ -115,8 +114,7 @@ public class AllCards : MonoBehaviour
         powerupPool.Add("Farm", powerupPool_);
         powerupPool.Add("Volcano", powerupPool_);
         
-        RandomCardDraw pool_china = new RandomCardDraw(new List<int> {10, 13, 14, 9, 6, 8, 11, 5, 7, 4, 27});
-        //RandomCardDraw pool_china = new RandomCardDraw(new List<int> {1, 4});
+        RandomCardDraw pool_china = new RandomCardDraw(new List<int> {10, 13, 14, 9, 11, 27, 5, 6, 7, 8, 4});
         RandomCardDraw pool_winterland = new RandomCardDraw(new List<int> {15, 16, 18, 19, 17, 30, 6, 8, 5, 7, 4});
         RandomCardDraw pool_iceland = new RandomCardDraw(new List<int> {17, 20, 21, 22, 15, 28, 6, 8, 5, 7, 4});
         RandomCardDraw pool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24, 6, 8, 5, 7, 4});
@@ -179,6 +177,8 @@ public class AllCards : MonoBehaviour
             RandomSetRound();
             return;
         }
+        
+        Debug.LogWarning("using static loading of the card, might have problem if real_pool is ran out");
         
         if (level == "Lantern Festival")
         {
@@ -931,15 +931,16 @@ public class AllCards : MonoBehaviour
         RandomCardDraw powerupRd = powerupPool[whichLevel];
         
         int randomNumber = -1;
-        if (whichLevel == "Iceland")
-        {
-            // if is iceland level, must generate at least one bomb
-            // Create a random number generator with a seed based on a new GUID
-            System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+        // for all levels, second round must appear bomb
+        // if (whichLevel == "Iceland")
+        // {
+        // if is iceland level, must generate at least one bomb
+        // Create a random number generator with a seed based on a new GUID
+        System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
 
-            // Generate a random integer between 0 and 3 (inclusive)
-            randomNumber = random.Next(0, 4);
-        }
+        // Generate a random integer between 0 and 3 (inclusive)
+        randomNumber = random.Next(0, 4);
+        // }
         
         // big round
         int whichRound = 0;
@@ -959,7 +960,7 @@ public class AllCards : MonoBehaviour
                 rd = powerupRd;
             }
 
-            if (whichLevel != "Iceland" || (whichLevel == "Iceland" && whichRound != 1))
+            if (whichRound != 1)
             {
                 // small round
                 for (int j = 0; j < i; j++)
@@ -1008,6 +1009,11 @@ public class AllCards : MonoBehaviour
             
             cardRoundResult.Add(bf1);
             whichRound++;
+            
+            // reset to make the real_pool equal to pool
+            terrianRd.reset();
+            allrd.reset();
+            powerupRd.reset();
         }
 
         return cardRoundResult;
@@ -1046,24 +1052,31 @@ public class BlockInstantiateEvent
 public class RandomCardDraw
 {
     private List<int> pool;
+    private List<int> real_pool;
     public RandomCardDraw(List<int> _pool)
     {
         pool = _pool;
+        reset();
     }
 
+    public void reset()
+    {
+        real_pool = pool;
+    }
+    
     public int GetRandomCard()
     {
-        if (pool.Count == 1)
+        if (real_pool.Count == 1)
         {
-            return pool[0];
+            return real_pool[0];
         }
         
         // Create a random number generator with a seed based on a new GUID
         System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
 
         // Generate a random integer between 0 and 5 (inclusive)
-        int randomNumber = random.Next(0, pool.Count);
+        int randomNumber = random.Next(0, real_pool.Count);
         
-        return pool[randomNumber];
+        return real_pool[randomNumber];
     }
 }
