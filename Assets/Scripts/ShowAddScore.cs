@@ -23,7 +23,7 @@ public class ShowAddScore : MonoBehaviour
 
     void Start()
     {
-        if (!isMinus) textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Plus");
+        if (!isMinus) textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/plus");
         textObject.SetActive(false);
         // textTransform = textObject.GetComponent<RectTransform>();
     }
@@ -37,13 +37,14 @@ public class ShowAddScore : MonoBehaviour
     private void onStartPartyTime(StartPartyTime e)
     {
         if (isMinus) return;
+        Debug.Log("Party Time: " + e.ToString());
         if (e.ToString() == "Yes")
         {
             textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Plus2");
         }
         else
         {
-            textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Plus");
+            textObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/plus");
         }
     }
 
