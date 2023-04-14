@@ -483,7 +483,8 @@ public class PlayerController : MonoBehaviour
             showAddScore.ShowScore();
             GetComponent<PlayerScore>().updateScore(DeathPenalty);
             pas.PlayOneShot(player_die, 0.5f);
-            StopAllCoroutines();
+            GetComponent<RedFlash>().stop();
+            GetComponent<RedFlash>().enabled = false;
             StartCoroutine(KilledAnimation());
         }
     }
@@ -552,7 +553,8 @@ public class PlayerController : MonoBehaviour
         onIce = false;
         onCable = false;
         rb.velocity = Vector2.zero;
-        this.transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale);
+        this.transform.localScale =
+            new Vector3(OriginalScale, OriginalScale, OriginalScale);
     }
 
     public bool OnFloor()
@@ -639,20 +641,14 @@ public class PlayerController : MonoBehaviour
 
     private void redflash(float time)
     {
-        int times = Mathf.FloorToInt(time * 5 + 0.1f);
-        StartCoroutine(RedFlashCoroutine(times));
+        StartCoroutine(RedFlashCoroutine(time));
     }
 
-    private IEnumerator RedFlashCoroutine(int times)
+    private IEnumerator RedFlashCoroutine(float time)
     {
-        for (int i = 0; i < times; i++)
-        {
-            sr.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
-            sr.color = Color.white;
-            yield return new WaitForSeconds(0.1f);
-        }
-        sr.color = Color.white;
+        GetComponent<RedFlash>().enabled = true;
+        yield return new WaitForSeconds(time);
+        GetComponent<RedFlash>().enabled = false;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
