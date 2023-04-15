@@ -40841,6 +40841,9 @@ MonoBehaviour:
   FarmStage1Texts: {fileID: 0}
   FarmStage2Texts: {fileID: 0}
   FarmStage3Texts: {fileID: 0}
+  SelectionPanel: {fileID: 0}
+  Follower: {fileID: 0}
+  ScorePanel: {fileID: 0}
 --- !u!1 &1103003267
 GameObject:
   m_ObjectHideFlags: 0
@@ -55399,6 +55402,9 @@ MonoBehaviour:
   FarmStage1Texts: {fileID: 944105290}
   FarmStage2Texts: {fileID: 1375790217}
   FarmStage3Texts: {fileID: 1799836220}
+  SelectionPanel: {fileID: 0}
+  Follower: {fileID: 0}
+  ScorePanel: {fileID: 0}
 --- !u!50 &1539727203
 Rigidbody2D:
   serializedVersion: 4
@@ -62545,6 +62551,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3884649207738965785, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207998440989, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884649207998440991, guid: 30e57707431a84e20ad8d0b5ebb9ef5f, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

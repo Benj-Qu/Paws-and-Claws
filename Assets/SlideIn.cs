@@ -17,6 +17,7 @@ public class SlideIn : MonoBehaviour
     public GameObject FarmStage3Texts;
     public GameObject SelectionPanel;
     public GameObject Follower;
+    public GameObject ScorePanel;
 
 
     private bool updatedText = false;
@@ -83,7 +84,7 @@ public class SlideIn : MonoBehaviour
                 {
                     GameController.instance.tutorialCall();
                     FarmStage3Texts.SetActive(true);
-                    GameObject ScorePanel = GameObject.Find("ScorePanel");
+                    ScorePanel = GameObject.Find("ScorePanel");
                     if (ScorePanel) ScorePanel.SetActive(false);
                 }
                 if (GameController.instance.stage == -2)
@@ -97,6 +98,10 @@ public class SlideIn : MonoBehaviour
                 else
                 {
                     FarmStage3Texts.SetActive(true);
+                    if(GameController.instance.stage == 2)
+                    {
+                        if(ScorePanel) ScorePanel.SetActive(true);
+                    }
                 }
             }
             if (name == "DialogueBox")

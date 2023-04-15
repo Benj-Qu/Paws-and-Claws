@@ -444,7 +444,15 @@ public class GameController : MonoBehaviour
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
-            if (ScorePanel) ScorePanel.SetActive(true);
+            if (level == "Farm")
+            {
+                FarmStage3Texts.SetActive(false);
+                Guardian_Speak();
+            }
+            else
+            {
+                if (ScorePanel) ScorePanel.SetActive(true);
+            }
         }
         else if (stage == 1) // start place block
         {
