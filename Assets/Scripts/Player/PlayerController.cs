@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
 
     private GameObject enemy;
 
+    private RedFlash rf;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -75,6 +77,7 @@ public class PlayerController : MonoBehaviour
         pas = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         enemy = GameObject.Find(EnemyName);
+        rf = GetComponent<RedFlash>();
     }
 
     private void Start()
@@ -483,14 +486,16 @@ public class PlayerController : MonoBehaviour
             showAddScore.ShowScore();
             GetComponent<PlayerScore>().updateScore(DeathPenalty);
             pas.PlayOneShot(player_die, 0.5f);
-            GetComponent<RedFlash>().stop();
-            GetComponent<RedFlash>().enabled = false;
+            Debug.Log("Trying to Deactivate RedFlash");
             StartCoroutine(KilledAnimation());
         }
     }
 
     private IEnumerator KilledAnimation()
     {
+        // Stop Red Flashing
+        rf.stop();
+        rf.enabled = false;
         // Die and Freeze
         alive = false;
         rb.velocity = Vector2.zero;
@@ -645,9 +650,10 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator RedFlashCoroutine(float time)
     {
-        GetComponent<RedFlash>().enabled = true;
+        rf.enabled = true;
         yield return new WaitForSeconds(time);
-        GetComponent<RedFlash>().enabled = false;
+        rf.stop();
+        rf.enabled = false;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)

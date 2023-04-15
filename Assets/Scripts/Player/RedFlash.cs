@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RedFlash : MonoBehaviour
 {
-    private SpriteRenderer sr;
+    public SpriteRenderer sr;
     public bool flashing;
 
     private void OnEnable()
@@ -13,16 +13,12 @@ public class RedFlash : MonoBehaviour
         StartCoroutine(flash());
     }
 
-    private void OnDisable()
-    {
-        stop();
-    }
-
     private IEnumerator flash()
     {
         bool red = true;
-        while (flashing)
+        while (flashing && sr)
         {
+            Debug.Log("Flashing");
             if (red)
             {
                 sr.color = Color.red;
@@ -34,17 +30,16 @@ public class RedFlash : MonoBehaviour
             red = !red;
             yield return new WaitForSeconds(0.1f);
         }
-        sr.color = Color.white;
     }
 
     public void stop()
     {
+        Debug.Log("Stopping rf");
         if (sr)
         {
             flashing = false;
             sr.color = Color.white;
             StopAllCoroutines();
-            sr.color = Color.white;
         }
     }
 }

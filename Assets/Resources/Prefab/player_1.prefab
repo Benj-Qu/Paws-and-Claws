@@ -974,11 +974,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6658275035224939865}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8138756e7c9bf3146a6d191ba5b573fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  flashing: 0
 --- !u!1 &6658275036396007919
 GameObject:
   m_ObjectHideFlags: 0
