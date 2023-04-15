@@ -40838,6 +40838,9 @@ MonoBehaviour:
   FarmStoryText: {fileID: 1980918654}
   speed: 4
   storyHint: {fileID: 0}
+  FarmStage1Texts: {fileID: 0}
+  FarmStage2Texts: {fileID: 0}
+  FarmStage3Texts: {fileID: 0}
 --- !u!1 &1103003267
 GameObject:
   m_ObjectHideFlags: 0
@@ -55393,6 +55396,9 @@ MonoBehaviour:
   FarmStoryText: {fileID: 1980918654}
   speed: 20
   storyHint: {fileID: 784412179}
+  FarmStage1Texts: {fileID: 944105290}
+  FarmStage2Texts: {fileID: 1375790217}
+  FarmStage3Texts: {fileID: 1799836220}
 --- !u!50 &1539727203
 Rigidbody2D:
   serializedVersion: 4

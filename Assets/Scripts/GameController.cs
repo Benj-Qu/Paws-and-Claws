@@ -113,7 +113,7 @@ public class GameController : MonoBehaviour
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
             stage = -2; // -2: movement, -1: attack
             FarmStage1Objects.SetActive(true);
-            FarmStage1Texts.SetActive(true);
+            // FarmStage1Texts.SetActive(true);
             player1_control.activate();
             player2_control.activate();
         } 
@@ -242,7 +242,7 @@ public class GameController : MonoBehaviour
         FarmStage1Objects.SetActive(false);
         FarmStage1Texts.SetActive(false);
         FarmStage2Objects.SetActive(true);
-        FarmStage2Texts.SetActive(true);
+        // FarmStage2Texts.SetActive(true);
         ResetPlayers();
     }
 
@@ -254,11 +254,9 @@ public class GameController : MonoBehaviour
         FarmStage2Objects.SetActive(false);
         FarmStage2Texts.SetActive(false);
         FarmStage3Objects.SetActive(true);
-        FarmStage3Texts.SetActive(true);
+        // FarmStage3Texts.SetActive(true);
         flagController = GameObject.Find("Flags").GetComponent<flagController>();
         ResetPlayers();
-        ScorePanel = GameObject.Find("ScorePanel");
-        if (ScorePanel) ScorePanel.SetActive(false);
     }
 
     public void tutorialCall()

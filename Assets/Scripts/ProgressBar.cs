@@ -42,6 +42,6 @@ public class ProgressBar : MonoBehaviour
     private void OnDestroy()
     {
         // TODO: upon destroy, send a signal to the GameController
-        _cardSelection.SetTimeUp();
+        if(_cardSelection) _cardSelection.SetTimeUp();
     }
 }

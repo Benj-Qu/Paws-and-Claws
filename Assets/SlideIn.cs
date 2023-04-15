@@ -12,6 +12,11 @@ public class SlideIn : MonoBehaviour
     public textController FarmStoryText;
     public float speed = 100f;
     public TextMeshProUGUI storyHint;
+    public GameObject FarmStage1Texts;
+    public GameObject FarmStage2Texts;
+    public GameObject FarmStage3Texts;
+
+
 
     private bool updatedText = false;
     private int current_speaking = -1;
@@ -61,6 +66,17 @@ public class SlideIn : MonoBehaviour
                 if(GameController.instance.stage == 0)
                 {
                     GameController.instance.tutorialCall();
+                    FarmStage3Texts.SetActive(true);
+                    GameObject ScorePanel = GameObject.Find("ScorePanel");
+                    if (ScorePanel) ScorePanel.SetActive(false);
+                }
+                if(GameController.instance.stage == -2)
+                {
+                    FarmStage1Texts.SetActive(true);
+                }
+                if (GameController.instance.stage == -1)
+                {
+                    FarmStage2Texts.SetActive(true);
                 }
             }
             if (name == "DialogueBox")
