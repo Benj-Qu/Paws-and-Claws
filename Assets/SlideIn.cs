@@ -15,7 +15,8 @@ public class SlideIn : MonoBehaviour
     public GameObject FarmStage1Texts;
     public GameObject FarmStage2Texts;
     public GameObject FarmStage3Texts;
-
+    public GameObject SelectionPanel;
+    public GameObject Follower;
 
 
     private bool updatedText = false;
@@ -42,6 +43,21 @@ public class SlideIn : MonoBehaviour
             Debug.Log("guardian speaking: " + GameController.instance.guardian_speaking);
             if(name == "DialogueBox")
             {
+                if (GameController.instance.stage == 1 && SelectionPanel == null)
+                {
+                    // deactivate SelectionPanel when guardian is speaking
+                    SelectionPanel = GameObject.Find("SelectionPanel(Clone)");
+                    if (SelectionPanel)
+                    {
+                        SelectionPanel.SetActive(false);
+                    }
+                    // deactivate follower when guardian is speaking
+                    Follower = GameObject.Find("Follower");
+                    if (Follower)
+                    {
+                        Follower.SetActive(false);
+                    }
+                }
                 transform.position = Vector3.MoveTowards(transform.position, dialogue_end_pos, speed * Time.deltaTime);
             }
             if(name == "guardian")
@@ -70,13 +86,17 @@ public class SlideIn : MonoBehaviour
                     GameObject ScorePanel = GameObject.Find("ScorePanel");
                     if (ScorePanel) ScorePanel.SetActive(false);
                 }
-                if(GameController.instance.stage == -2)
+                if (GameController.instance.stage == -2)
                 {
                     FarmStage1Texts.SetActive(true);
                 }
-                if (GameController.instance.stage == -1)
+                else if (GameController.instance.stage == -1)
                 {
                     FarmStage2Texts.SetActive(true);
+                }
+                else
+                {
+                    FarmStage3Texts.SetActive(true);
                 }
             }
             if (name == "DialogueBox")
@@ -103,6 +123,11 @@ public class SlideIn : MonoBehaviour
         {
             FarmStoryText.updateText("");
             storyHint.enabled = false;
+            if(GameController.instance.stage == 1)
+            {
+                SelectionPanel.SetActive(true);
+                Follower.SetActive(true);
+            }
         }
         yield return new WaitForSeconds(0.6f);
         if (stage == -2)

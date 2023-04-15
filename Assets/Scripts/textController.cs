@@ -15,11 +15,6 @@ public class textController : MonoBehaviour
     {
         level = SceneManager.GetActiveScene().name;
         StoryHint.enabled = false;
-        //if (level == "Story")
-        //{
-        //    scripts.Enqueue("[speed=0.1]<b>Guadians are strong. They can climb high walls!</b>");
-        //    ShowScript();
-        //}
     }
 
     private void ShowScript()

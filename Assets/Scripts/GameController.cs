@@ -469,6 +469,11 @@ public class GameController : MonoBehaviour
                 tmp.a = 0.27f;
                 mask.GetComponent<SpriteRenderer>().color = tmp;
             }
+            if (level == "Farm")
+            {
+                FarmStage3Texts.SetActive(false);
+                Guardian_Speak();
+            }
         }
         else // stage == 3 means the previous round is over
         {
