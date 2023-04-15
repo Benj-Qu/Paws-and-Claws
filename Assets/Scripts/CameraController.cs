@@ -76,7 +76,6 @@ public class CameraController : MonoBehaviour
         {
             transform.position = ori;
             GetComponent<Camera>().orthographicSize = ori_size;
-            if(tc) tc.updateText("[speed=0.08]<b>Guardians are excellent planners.\n They can build perfect path towards flags!</b>");
             EventBus.Publish<CameraEvent>(new CameraEvent(false));
         }
     }

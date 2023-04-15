@@ -9,7 +9,7 @@ public class ProgressBar : MonoBehaviour
 {
     public TextMeshProUGUI countTime;
     public GameObject choice;
-    
+    public string level;
     private Slider _slider;
     private CardSelection _cardSelection;
 
@@ -31,10 +31,10 @@ public class ProgressBar : MonoBehaviour
             // destroy itself
             Destroy(gameObject);
         }
-        
+
         // decrement time
         _slider.value -= Time.deltaTime;
-        
+
         // modify text
         countTime.text = Mathf.Floor(_slider.value).ToString();
     }
