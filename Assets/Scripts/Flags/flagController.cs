@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class flagController : MonoBehaviour
 {
-    public List<int> x_min = new List<int>(){-7, -4, 3};
+    public List<int> x_min = new List<int>(){-7, -3, 4};
     public List<int> x_max = new List<int>(){-4, 3, 7};
     public int y_min = -4;
     public int y_max = 4;
