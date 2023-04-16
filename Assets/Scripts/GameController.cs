@@ -195,6 +195,8 @@ public class GameController : MonoBehaviour
                 player2_control.deactivate();
                 player2_control.resetAnim();
             }
+            player1_control.resetAnim();
+            player2_control.resetAnim();
         }
         
         if(level == "Farm")
@@ -251,6 +253,8 @@ public class GameController : MonoBehaviour
                     player2_control.deactivate();
                     player2_control.resetAnim();
                 }
+                player1_control.resetAnim();
+                player2_control.resetAnim();
             }
         }
     }

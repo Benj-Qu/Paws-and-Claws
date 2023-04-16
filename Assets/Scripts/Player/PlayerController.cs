@@ -104,6 +104,11 @@ public class PlayerController : MonoBehaviour
         else if (!alive)
         {
             rb.velocity = Vector2.zero;
+            resetAnim();
+        }
+        else
+        {
+            resetAnim();
         }
         // TODO: change for cable, need check
         if (gameObject.transform.position.y < DieAltitude && onCable == false)
@@ -376,6 +381,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool("walk", false);
+            resetAnim();
             if (!onIce)
             {
                 rb.velocity = new Vector2(floorV, rb.velocity.y);
