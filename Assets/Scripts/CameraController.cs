@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CameraController : MonoBehaviour
 {
@@ -46,7 +48,18 @@ public class CameraController : MonoBehaviour
         }
         if(tc) tc.updateText("");
         EventBus.Publish<CameraEvent>(new CameraEvent(true));
-        StartCoroutine(MoveCamera(0));
+
+        string level = SceneManager.GetActiveScene().name;
+        if (level == "Farm")
+        {
+            transform.position = ori;
+            GetComponent<Camera>().orthographicSize = ori_size;
+            EventBus.Publish<CameraEvent>(new CameraEvent(false));
+        }
+        else
+        {
+            StartCoroutine(MoveCamera(0));
+        }
     }
 
     private IEnumerator MoveCamera(int index)
@@ -76,7 +89,6 @@ public class CameraController : MonoBehaviour
         {
             transform.position = ori;
             GetComponent<Camera>().orthographicSize = ori_size;
-            if(tc) tc.updateText("[speed=0.08]<b>Guardians are excellent planners.\n They can build perfect path towards flags!</b>");
             EventBus.Publish<CameraEvent>(new CameraEvent(false));
         }
     }

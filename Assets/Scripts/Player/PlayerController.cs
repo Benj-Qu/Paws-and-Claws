@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     private bool collectInvinciblePowerUp = false;
     private AudioSource pas;
     private Animator anim;
+    private float sizeup = 1;
 
     public int joystickNumber;
 
@@ -507,13 +508,18 @@ public class PlayerController : MonoBehaviour
         //this.GetComponent<Animator>().runtimeAnimatorController = controllerCurr;
         anim.SetTrigger("die");
         this.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+        StopCoroutine(FlashCoroutine());
         StartCoroutine(Large());
         if (this.name == "player_2")
         {
             this.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        } else
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
         // Rebirth and Freeze
         gc.Killed(gameObject);
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         //yield return new WaitForSeconds(0.3f);
     }
 
@@ -537,6 +543,8 @@ public class PlayerController : MonoBehaviour
     {
         reset();
         // Rebirth Invincible
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         invincible = true;
         flash();
         yield return new WaitForSeconds(0.8f);
@@ -557,8 +565,8 @@ public class PlayerController : MonoBehaviour
         onIce = false;
         onCable = false;
         rb.velocity = Vector2.zero;
-        this.transform.localScale =
-            new Vector3(OriginalScale, OriginalScale, OriginalScale);
+        this.transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale);
+        this.transform.localScale *= sizeup;
     }
 
     public bool OnFloor()
@@ -605,7 +613,6 @@ public class PlayerController : MonoBehaviour
 
     public void deactivate()
     {
-        Debug.Log("Deactivate");
         active = false;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
@@ -662,6 +669,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PowerUpCoroutine(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
     {
+        sizeup *= SizeUp;
         Speed *= SpeedUp;
         JumpSpeed *= JumpUp;
         rb.mass *= SizeUp;
@@ -679,6 +687,7 @@ public class PlayerController : MonoBehaviour
         invincible = false;
         rb.mass /= SizeUp;
         transform.localScale /= SizeUp;
+        sizeup /= SizeUp;
         if (collectInvinciblePowerUp && invincible == false)
         {
             collectInvinciblePowerUp = false;

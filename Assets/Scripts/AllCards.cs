@@ -1076,7 +1076,11 @@ public class RandomCardDraw
 
         // Generate a random integer between 0 and 5 (inclusive)
         int randomNumber = random.Next(0, real_pool.Count);
+
+        int result = real_pool[randomNumber];
+
+        real_pool.Remove(result);
         
-        return real_pool[randomNumber];
+        return result;
     }
 }

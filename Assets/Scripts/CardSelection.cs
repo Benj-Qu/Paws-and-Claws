@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Switch;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+
 
 public class CardSelection : MonoBehaviour
 {
@@ -65,6 +67,11 @@ public class CardSelection : MonoBehaviour
         }
         
         Round();
+        string level = SceneManager.GetActiveScene().name;
+        if(level == "Farm")
+        {
+            progressBar.SetActive(false);
+        }
     }
 
     // Update is called once per frame

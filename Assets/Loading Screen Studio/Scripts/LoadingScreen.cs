@@ -382,8 +382,17 @@ namespace Michsky.LSS
 
         IEnumerator DestroyLoadingScreen()
         {
+            EventBus.Publish<LoadSceneEvent>(new LoadSceneEvent());
             while (canvasGroup.alpha != 0) { yield return new WaitForSecondsRealtime(0.5f); }
             if (canvasGroup.alpha == 0) { Destroy(gameObject); }
         }
+    }
+}
+
+public class LoadSceneEvent
+{
+    public LoadSceneEvent()
+    {
+        return;
     }
 }
