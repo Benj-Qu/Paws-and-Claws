@@ -34,8 +34,9 @@ public class LevelButton : MonoBehaviour
     public void RestartGame()
     {
         // HasInventory.Reset_static();
-        EventBus.Publish<LoadSceneEvent>(new LoadSceneEvent());
-        SceneManager.LoadScene(GameController.instance.level);
+        // EventBus.Publish<LoadSceneEvent>(new LoadSceneEvent());
+        // SceneManager.LoadScene(GameController.instance.level);
+        loadingManager.GetComponent<Michsky.LSS.LoadingScreenManager>().LoadScene(GameController.instance.level);
         GameController.instance.pause = false;
         Time.timeScale = 1f;
     }

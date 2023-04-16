@@ -135,6 +135,7 @@ public class AllCards : MonoBehaviour
 
     private void OnRoundInc(RoundTextDoneEvent e)
     {
+        Debug.Log("hello from all card ");
         // set the round block as the child of block
         foreach (List<CardRound> s in cardRoundSetting[e.round_big - 1])
         {
