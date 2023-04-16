@@ -742,4 +742,9 @@ public class PlayerController : MonoBehaviour
     {
         return sr.flipX;
     }
+
+    public void resetAnim()
+    {
+        anim.SetTrigger("idle");
+    }
 }
