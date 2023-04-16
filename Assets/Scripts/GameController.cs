@@ -515,6 +515,7 @@ public class GameController : MonoBehaviour
             flagController = GameObject.Find("Flags").GetComponent<flagController>();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
+            follower.transform.position = new Vector3(1000, 1000);
             if (mask)
             {
                 mask.GetComponent<SpriteRenderer>().color = Color.white;
