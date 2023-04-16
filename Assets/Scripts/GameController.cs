@@ -298,6 +298,8 @@ public class GameController : MonoBehaviour
     {
         player1.transform.position = GameObject.Find("StartPoint").transform.position;
         player2.transform.position = GameObject.Find("StartPoint2").transform.position;
+        player1_control.resetAnim();
+        player2_control.resetAnim();
     }
 
     private IEnumerator Win()
@@ -576,6 +578,8 @@ public class GameController : MonoBehaviour
             player2.GetComponent<PlayerController>().reset();
             player1.GetComponent<PlayerController>().deactivate();
             player2.GetComponent<PlayerController>().deactivate();
+            player1_control.resetAnim();
+            player2_control.resetAnim();
             player1.transform.position = StartPoint1;
             player2.transform.position = StartPoint2;
             // Disable the flags and clear the color
