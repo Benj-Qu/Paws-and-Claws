@@ -164,6 +164,7 @@ public class GameController : MonoBehaviour
         {
             // Todo: delete record flags
             SceneManager.LoadScene("Cover");
+            winRecord.reset();
         }
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("X1") || Input.GetButtonDown("X2"))
         {
