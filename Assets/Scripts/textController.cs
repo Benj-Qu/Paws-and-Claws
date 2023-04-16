@@ -10,6 +10,7 @@ public class textController : MonoBehaviour
     public TextMeshProUGUI StoryHint;
     private Queue<string> scripts = new Queue<string>();
     string level = "";
+    int cnt = 0;
 
     public void Start()
     {
@@ -25,7 +26,7 @@ public class textController : MonoBehaviour
         }
         text.TypeText(scripts.Dequeue(), onComplete: () => {
             Debug.Log("TypeText Complete");
-            if(level == "Farm" && text.text != "")
+            if (level == "Farm" && text.text != "")
             {
                 GameController.instance.guardian_speaking = 1; // finish speaking
                 StoryHint.enabled = true;

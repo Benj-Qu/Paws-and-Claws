@@ -12,6 +12,7 @@ public class AttackTutorialController : MonoBehaviour
     public GameObject player1_win_text;
     public GameObject player2_win_text;
     public TextMeshProUGUI FreeAttackText;
+    public GameObject flag;
     bool first = true;
     float AttackTime = 10f;
     int TimeCntDown = 10;
@@ -49,10 +50,11 @@ public class AttackTutorialController : MonoBehaviour
                 FreeAttackText.enabled = true;
                 first = false;
                 CntDownText.enabled = true;
-                for(int i = 0; i < transform.childCount; i++)
-                {
-                    transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                }
+                flag.SetActive(true);
+                //for(int i = 0; i < transform.childCount; i++)
+                //{
+                //    transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                //}
             }
             AttackTime -= Time.deltaTime;
             if(Mathf.Abs(AttackTime - TimeCntDown) <= 0.5f)

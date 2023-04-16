@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour
     public GameObject GuardianSpeaking;
     public GameObject GuardianMask;
     public textController FarmStoryText;
+    private int stage0_cnt = 0;
 
     // public ProgressBar_Main progressBar;
     public TimeDisplayer progressBar;
@@ -191,10 +192,19 @@ public class GameController : MonoBehaviour
             if(guardian_speaking == 1 && (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("A1") || Input.GetButtonDown("A2")))
             {
                 // if guardian finishes speaking and player pressed A, activate players
-                guardian_speaking = 2;
-                GuardianMask.SetActive(false);
-                player1_control.activate();
-                player2_control.activate();
+                if(stage == -2 && stage0_cnt < 2)
+                {
+                    if (stage0_cnt == 0) FarmStoryText.updateText("[speed=0.08]<b>Your goal is to seize the FLAG!</b>");
+                    if (stage0_cnt == 1) FarmStoryText.updateText("[speed=0.08]<b>Now, I will teach you several skills\n needed to win the competition!</b>");
+                    stage0_cnt++;
+                }
+                else
+                {
+                    guardian_speaking = 2;
+                    GuardianMask.SetActive(false);
+                    player1_control.activate();
+                    player2_control.activate();
+                }
             }
             if(stage == -2 && flags == 2)
             {
@@ -255,7 +265,6 @@ public class GameController : MonoBehaviour
         FarmStage2Texts.SetActive(false);
         FarmStage3Objects.SetActive(true);
         // FarmStage3Texts.SetActive(true);
-        flagController = GameObject.Find("Flags").GetComponent<flagController>();
         ResetPlayers();
     }
 
@@ -468,6 +477,7 @@ public class GameController : MonoBehaviour
             }
             mask.SetActive(true);
             progressBar.StartGame();
+            flagController = GameObject.Find("Flags").GetComponent<flagController>();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
             if (mask)

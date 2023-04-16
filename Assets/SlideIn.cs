@@ -18,6 +18,7 @@ public class SlideIn : MonoBehaviour
     public GameObject SelectionPanel;
     public GameObject Follower;
     public GameObject ScorePanel;
+    public GameObject flagFollower;
 
 
     private bool updatedText = false;
@@ -36,12 +37,10 @@ public class SlideIn : MonoBehaviour
         {
             current_speaking = GameController.instance.guardian_speaking;
             updatedText = false;
-            Debug.Log("current_speaking: " + current_speaking);
         }
         if (GameController.instance.guardian_speaking == 0)
         {
             // slide in
-            Debug.Log("guardian speaking: " + GameController.instance.guardian_speaking);
             if(name == "DialogueBox")
             {
                 if (GameController.instance.stage == 1 && SelectionPanel == null)
@@ -53,7 +52,6 @@ public class SlideIn : MonoBehaviour
                         SelectionPanel.SetActive(false);
                     }
                     // deactivate follower when guardian is speaking
-                    Follower = GameObject.Find("Follower");
                     if (Follower)
                     {
                         Follower.SetActive(false);
@@ -75,7 +73,6 @@ public class SlideIn : MonoBehaviour
         if (GameController.instance.guardian_speaking == 2)
         {
             // slide out
-            Debug.Log("guardian speaking: " + GameController.instance.guardian_speaking);
             if (name == "DialogueBox" && Mathf.Abs(transform.position.x - dialogue_start_pos.x) < 16 && updatedText == false)
             {
                 updatedText = true;
@@ -98,9 +95,13 @@ public class SlideIn : MonoBehaviour
                 else
                 {
                     FarmStage3Texts.SetActive(true);
-                    if(GameController.instance.stage == 2)
+                    if (GameController.instance.stage == 2)
                     {
                         if(ScorePanel) ScorePanel.SetActive(true);
+                    }
+                    if(GameController.instance.stage == 1)
+                    {
+                        flagFollower.SetActive(true);
                     }
                 }
             }
@@ -137,11 +138,11 @@ public class SlideIn : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         if (stage == -2)
         {
-            FarmStoryText.updateText("[speed=0.08]<b>Guadians are strong.\n They can climb high walls!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Hello candidates! Welcome to the\n first trial to become a guardian!</b>");
         }
         if (stage == -1)
         {
-            FarmStoryText.updateText("[speed=0.08]<b>Guardians possess exceptional combat skills.\n They can attack opponents!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Well done! Next, you can ATTACK your opponent to\n gain an advantage.</b>");
         }
         if (stage == 0)
         {
