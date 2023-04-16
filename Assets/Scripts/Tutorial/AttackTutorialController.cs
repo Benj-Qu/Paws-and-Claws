@@ -28,40 +28,44 @@ public class AttackTutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Mathf.Abs(AttackTime) <= 0.2f)
+        if(GameController.instance.guardian_speaking == 2)
         {
-            GameController.instance.attackTutorialFinished = true;
-            CntDownText.enabled = false;
-        }
-        if (p1.isAttacked()) {
-            p1_attacked = true;
-            player2_win_text.SetActive(true);
-        }
+            if (Mathf.Abs(AttackTime) <= 0.2f)
+            {
+                GameController.instance.attackTutorialFinished = true;
+                CntDownText.enabled = false;
+            }
+            if (p1.isAttacked())
+            {
+                p1_attacked = true;
+                player2_win_text.SetActive(true);
+            }
 
-        if (p2.isAttacked())
-        {
-            p2_attacked = true;
-            player1_win_text.SetActive(true);
-        }
-        if(p1_attacked && p2_attacked)
-        {
-            if (first)
+            if (p2.isAttacked())
             {
-                FreeAttackText.enabled = true;
-                first = false;
-                CntDownText.enabled = true;
-                flag.SetActive(true);
-                //for(int i = 0; i < transform.childCount; i++)
-                //{
-                //    transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                //}
+                p2_attacked = true;
+                player1_win_text.SetActive(true);
             }
-            AttackTime -= Time.deltaTime;
-            if(Mathf.Abs(AttackTime - TimeCntDown) <= 0.5f)
+            if (p1_attacked && p2_attacked)
             {
-                CntDownText.text = TimeCntDown.ToString();
-                TimeCntDown -= 1;
+                if (first)
+                {
+                    FreeAttackText.enabled = true;
+                    first = false;
+                    CntDownText.enabled = true;
+                    flag.SetActive(true);
+                    //for(int i = 0; i < transform.childCount; i++)
+                    //{
+                    //    transform.GetChild(i).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                    //}
+                }
+                AttackTime -= Time.deltaTime;
+                if (Mathf.Abs(AttackTime - TimeCntDown) <= 0.5f)
+                {
+                    CntDownText.text = TimeCntDown.ToString();
+                    TimeCntDown -= 1;
+                }
             }
-        }
+        }  
     }
 }
