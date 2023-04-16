@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class flagController : MonoBehaviour
 {
@@ -28,11 +29,13 @@ public class flagController : MonoBehaviour
             GameObject flag = transform.GetChild(i).gameObject;
             flag.SetActive(true);
             int x = Random.Range(x_min[i], x_max[i]);
+            if(SceneManager.GetActiveScene().name == "Iceland"){x = 0;}
             int y = Random.Range(y_min, y_max + 1);
             while (invalidPosition(x, y))
             {
                 Debug.Log("invalid");
                 x = Random.Range(x_min[i], x_max[i]);
+                if (SceneManager.GetActiveScene().name == "Iceland") { x = 0; }
                 y = Random.Range(y_min, y_max + 1);
             }
             flag.transform.position = new Vector3(x, y, -1);

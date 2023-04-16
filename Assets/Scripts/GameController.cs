@@ -188,10 +188,12 @@ public class GameController : MonoBehaviour
             if (player1_control.isActive())
             {
                 player1_control.deactivate();
+                player1_control.resetAnim();
             }
             if (player2_control.isActive())
             {
                 player2_control.deactivate();
+                player2_control.resetAnim();
             }
         }
         
