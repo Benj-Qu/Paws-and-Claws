@@ -62,6 +62,7 @@ public class GameController : MonoBehaviour
     public GameObject GuardianMask;
     public textController FarmStoryText;
     private int stage0_cnt = 0;
+    public int finished_stage0_cnt = -1;
 
     // public ProgressBar_Main progressBar;
     public TimeDisplayer progressBar;
@@ -194,12 +195,16 @@ public class GameController : MonoBehaviour
                 // if guardian finishes speaking and player pressed A, activate players
                 if(stage == -2 && stage0_cnt < 2)
                 {
-                    if (stage0_cnt == 0) FarmStoryText.updateText("[speed=0.08]<b>Your goal is to seize the FLAG!</b>");
-                    if (stage0_cnt == 1) FarmStoryText.updateText("[speed=0.08]<b>Now, I will teach you several skills\n needed to win the competition!</b>");
-                    stage0_cnt++;
+                    if(finished_stage0_cnt == stage0_cnt)
+                    {
+                        if (stage0_cnt == 0) FarmStoryText.updateText("[speed=0.08]<b>The rule is simple:\n Seize the FLAGS and outscore your opponent!</b>");
+                        if (stage0_cnt == 1) FarmStoryText.updateText("[speed=0.08]<b>First skill you should master:\n WALL JUMPING!</b>");
+                        stage0_cnt++;
+                    }
                 }
                 else
                 {
+                    if (stage == -2 && finished_stage0_cnt < stage0_cnt) return;
                     guardian_speaking = 2;
                     GuardianMask.SetActive(false);
                     player1_control.activate();

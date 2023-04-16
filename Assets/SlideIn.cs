@@ -138,23 +138,23 @@ public class SlideIn : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         if (stage == -2)
         {
-            FarmStoryText.updateText("[speed=0.08]<b>Hello candidates! Welcome to the\n first trial to become a guardian!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Welcome candidates!\n You'll learn skills to help you win the game.</b>");
         }
         if (stage == -1)
         {
-            FarmStoryText.updateText("[speed=0.08]<b>Well done! Next, you can ATTACK your opponent to\n gain an advantage.</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Well done! Next thing:\n ATTACKING!</b>");
         }
         if (stage == 0)
         {
-            FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart.\n They can select suitable blocks for themselves!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>BLOCKS can help you seize more FLAGS:\n Choose wisely!</b>");
         }
         if (stage == 1)
         {
-            FarmStoryText.updateText("[speed=0.08]<b>Guardians are excellent planners.\n They can build perfect path towards flags!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Build your path towards the FLAGS!</b>");
         }
         if (stage == 2)
         {
-            FarmStoryText.updateText("[speed=0.08]<b>Game Start!\n MORE FLAGS MORE SCORE!</b>");
+            FarmStoryText.updateText("[speed=0.08]<b>Good job! MORE FLAGS MORE SCORE!</b>");
         }
     }
 

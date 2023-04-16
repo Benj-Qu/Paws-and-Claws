@@ -30,6 +30,10 @@ public class textController : MonoBehaviour
             {
                 GameController.instance.guardian_speaking = 1; // finish speaking
                 StoryHint.enabled = true;
+                if(GameController.instance.stage == -2)
+                {
+                    GameController.instance.finished_stage0_cnt++;
+                }
             }
         });
     }
