@@ -204,6 +204,8 @@ public class GameController : MonoBehaviour
                 // if guardian is speaking, deactivate playerss
                 player1_control.deactivate();
                 player2_control.deactivate();
+                player1_control.resetAnim();
+                player2_control.resetAnim();
             }
             if(guardian_speaking == 1 && (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("A1") || Input.GetButtonDown("A2")))
             {
@@ -242,10 +244,12 @@ public class GameController : MonoBehaviour
                 if (player1_control.isActive())
                 {
                     player1_control.deactivate();
+                    player1_control.resetAnim();
                 }
                 if (player2_control.isActive())
                 {
                     player2_control.deactivate();
+                    player2_control.resetAnim();
                 }
             }
         }
@@ -299,6 +303,8 @@ public class GameController : MonoBehaviour
     {
         player1.transform.position = GameObject.Find("StartPoint").transform.position;
         player2.transform.position = GameObject.Find("StartPoint2").transform.position;
+        player1_control.resetAnim();
+        player2_control.resetAnim();
     }
 
     private IEnumerator Win()
@@ -577,6 +583,8 @@ public class GameController : MonoBehaviour
             player2.GetComponent<PlayerController>().reset();
             player1.GetComponent<PlayerController>().deactivate();
             player2.GetComponent<PlayerController>().deactivate();
+            player1_control.resetAnim();
+            player2_control.resetAnim();
             player1.transform.position = StartPoint1;
             player2.transform.position = StartPoint2;
             // Disable the flags and clear the color
