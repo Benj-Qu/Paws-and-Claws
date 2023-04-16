@@ -671,7 +671,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PowerUpCoroutine(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
     {
-        sizeup = SizeUp;
+        sizeup *= SizeUp;
         Speed *= SpeedUp;
         JumpSpeed *= JumpUp;
         rb.mass *= SizeUp;
@@ -689,7 +689,7 @@ public class PlayerController : MonoBehaviour
         invincible = false;
         rb.mass /= SizeUp;
         transform.localScale /= SizeUp;
-        sizeup = 1;
+        sizeup /= SizeUp;
         if (collectInvinciblePowerUp && invincible == false)
         {
             collectInvinciblePowerUp = false;
