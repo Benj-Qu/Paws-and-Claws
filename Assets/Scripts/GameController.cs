@@ -238,7 +238,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator GuardianCoroutine()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         Guardian_Speak();
     }
 
