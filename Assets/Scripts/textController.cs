@@ -2,21 +2,20 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class textController : MonoBehaviour
 {
     public Text text;
+    public TextMeshProUGUI StoryHint;
     private Queue<string> scripts = new Queue<string>();
     string level = "";
+    int cnt = 0;
 
     public void Start()
     {
         level = SceneManager.GetActiveScene().name;
-        if (level == "Story")
-        {
-            scripts.Enqueue("[speed=0.1]<b>Guadians are strong. They can climb high walls!</b>");
-            ShowScript();
-        }
+        StoryHint.enabled = false;
     }
 
     private void ShowScript()
@@ -27,12 +26,16 @@ public class textController : MonoBehaviour
         }
         text.TypeText(scripts.Dequeue(), onComplete: () => {
             Debug.Log("TypeText Complete");
-            if (level == "Story" && scripts.Count == 0)
+            if (level == "Farm" && text.text != "")
             {
-                // SceneManager.LoadScene("NewIntro");
+                GameController.instance.guardian_speaking = 1; // finish speaking
+                StoryHint.enabled = true;
+                if(GameController.instance.stage == -2)
+                {
+                    GameController.instance.finished_stage0_cnt++;
+                }
             }
         });
-        
     }
 
     public void updateText(string text)

@@ -114,7 +114,7 @@ public class blockMovement : MonoBehaviour
             {
                 return;
             }
-            
+
             if (block_side == false & selected)
             {
                 // player_1 selected blocks

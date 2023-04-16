@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class flagTransformer : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class flagTransformer : MonoBehaviour
         delta_time += Time.deltaTime;
         if (owner is not null && delta_time >= (1f / 3f))
         {
-            showAddScore.ShowScore();
+            if(showAddScore) showAddScore.ShowScore();
             delta_time = 0f;
         }
         if (owner && !OwnerOn())
@@ -50,7 +51,7 @@ public class flagTransformer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(GameController.instance.stage == 2 && other.CompareTag("Player"))
+        if((GameController.instance.stage == 2 || (GameController.instance.stage == -1 && SceneManager.GetActiveScene().name == "Farm")) && other.CompareTag("Player"))
         {
             // Update player_on
             if (other.name == "player_1")
@@ -73,7 +74,7 @@ public class flagTransformer : MonoBehaviour
                 GetComponent<SpriteRenderer>().color = tmp;
                 spriteRenderer.sprite = flag_1;
                 AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
-                showAddScore.SetColor(1);
+                if(showAddScore) showAddScore.SetColor(1);
                 UpdateFlagNum(other.gameObject);
                 control_time = 0f;
                 delta_time = 0f;
@@ -85,7 +86,7 @@ public class flagTransformer : MonoBehaviour
                 GetComponent<SpriteRenderer>().color = tmp;
                 spriteRenderer.sprite = flag_2;
                 AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
-                showAddScore.SetColor(2);
+                if(showAddScore) showAddScore.SetColor(2);
                 UpdateFlagNum(other.gameObject);
                 control_time = 0f;
                 delta_time = 0f;
@@ -103,7 +104,7 @@ public class flagTransformer : MonoBehaviour
                 GameObject player2 = GameObject.Find("player_2");
                 spriteRenderer.sprite = flag_2;
                 AudioSource.PlayClipAtPoint(player_2_audio, Camera.main.transform.position);
-                showAddScore.SetColor(2);
+                if(showAddScore) showAddScore.SetColor(2);
                 UpdateFlagNum(player2);
                 control_time = 0f;
                 delta_time = 0f;
@@ -117,7 +118,7 @@ public class flagTransformer : MonoBehaviour
                 GameObject player1 = GameObject.Find("player_1");
                 spriteRenderer.sprite = flag_1;
                 AudioSource.PlayClipAtPoint(player_1_audio, Camera.main.transform.position);
-                showAddScore.SetColor(1);
+                if(showAddScore) showAddScore.SetColor(1);
                 UpdateFlagNum(player1);
                 control_time = 0f;
                 delta_time = 0f;
