@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
     private TextMeshProUGUI RoundTextHint;
 
     private WinRecord winRecord;
+    Subscription<LoadSceneEvent> LoadSceneEvent_subscription;
     // Start is called before the first frame update
 
     private void Awake()
@@ -86,6 +87,7 @@ public class GameController : MonoBehaviour
             // destroy game object this script attached to, not the script itself. In this situation, the gameController
             Destroy(gameObject);
         }
+        LoadSceneEvent_subscription = EventBus.Subscribe<LoadSceneEvent>(WaitAndStart);
     }
 
     void Start()
@@ -138,6 +140,11 @@ public class GameController : MonoBehaviour
         // progressBar.gameObject.SetActive(false);
         // call this with the local attribute round_big when the round increment
         RoundTextHint = GameObject.Find("RoundTextHint").GetComponent<TextMeshProUGUI>();
+    }
+
+    private void WaitAndStart (LoadSceneEvent e)
+    {
+        Debug.Log("Wait");
         if(level != "Farm")
         {
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
@@ -154,6 +161,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Todo: delete record flags
+            SceneManager.LoadScene("Cover");
+            winRecord.reset();
+        }
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("X1") || Input.GetButtonDown("X2"))
         {
             if (!pause)
@@ -175,10 +188,12 @@ public class GameController : MonoBehaviour
             if (player1_control.isActive())
             {
                 player1_control.deactivate();
+                player1_control.resetAnim();
             }
             if (player2_control.isActive())
             {
                 player2_control.deactivate();
+                player2_control.resetAnim();
             }
         }
         
@@ -189,6 +204,8 @@ public class GameController : MonoBehaviour
                 // if guardian is speaking, deactivate playerss
                 player1_control.deactivate();
                 player2_control.deactivate();
+                player1_control.resetAnim();
+                player2_control.resetAnim();
             }
             if(guardian_speaking == 1 && (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("A1") || Input.GetButtonDown("A2")))
             {
@@ -227,10 +244,12 @@ public class GameController : MonoBehaviour
                 if (player1_control.isActive())
                 {
                     player1_control.deactivate();
+                    player1_control.resetAnim();
                 }
                 if (player2_control.isActive())
                 {
                     player2_control.deactivate();
+                    player2_control.resetAnim();
                 }
             }
         }
@@ -284,6 +303,8 @@ public class GameController : MonoBehaviour
     {
         player1.transform.position = GameObject.Find("StartPoint").transform.position;
         player2.transform.position = GameObject.Find("StartPoint2").transform.position;
+        player1_control.resetAnim();
+        player2_control.resetAnim();
     }
 
     private IEnumerator Win()
@@ -378,6 +399,11 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
         //SceneManager.LoadScene("NewIntro");
         loadingManager.GetComponent<Michsky.LSS.LoadingScreenManager>().LoadScene("NewIntro");
+        player1.GetComponent<PlayerController>().deactivate();
+        player2.GetComponent<PlayerController>().deactivate();
+        yield return new WaitForSeconds(6);
+        player1.GetComponent<PlayerController>().activate();
+        player2.GetComponent<PlayerController>().activate();
     }
 
     public void GameOver()
@@ -557,6 +583,8 @@ public class GameController : MonoBehaviour
             player2.GetComponent<PlayerController>().reset();
             player1.GetComponent<PlayerController>().deactivate();
             player2.GetComponent<PlayerController>().deactivate();
+            player1_control.resetAnim();
+            player2_control.resetAnim();
             player1.transform.position = StartPoint1;
             player2.transform.position = StartPoint2;
             // Disable the flags and clear the color

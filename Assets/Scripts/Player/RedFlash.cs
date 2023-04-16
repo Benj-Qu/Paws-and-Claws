@@ -5,16 +5,23 @@ public class RedFlash : MonoBehaviour
 {
     public SpriteRenderer sr;
     public bool flashing;
+    public IEnumerator coroutine;
 
     private void OnEnable()
     {
         sr = GetComponent<SpriteRenderer>();
-        flashing = true;
-        StartCoroutine(flash());
+        coroutine = flash();
+        StartCoroutine(coroutine);
+    }
+
+    private void OnDisable()
+    {
+        stop();
     }
 
     private IEnumerator flash()
     {
+        flashing = true;
         bool red = true;
         while (flashing && sr)
         {
@@ -34,12 +41,12 @@ public class RedFlash : MonoBehaviour
 
     public void stop()
     {
-        Debug.Log("Stopping rf");
-        if (sr)
+        if (sr && flashing)
         {
+            Debug.Log("Stopping rf " + gameObject.name);
             flashing = false;
             sr.color = Color.white;
-            StopAllCoroutines();
+            StopCoroutine(coroutine);
         }
     }
 }

@@ -95,11 +95,11 @@ public class AllCards : MonoBehaviour
         
         bombPool = new RandomCardDraw(new List<int> {4});
         
-        RandomCardDraw terrainPool_farm = new RandomCardDraw(new List<int> {0, 1, 2, 3, 24});
-        RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {9, 10, 11, 13, 14, 27});
-        RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 16, 17, 18, 19, 30});
-        RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {15, 17, 20, 21, 22, 28});
-        RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {1, 23, 25, 26, 29});
+        RandomCardDraw terrainPool_farm = new RandomCardDraw(new List<int> {0, 0, 1, 1, 2, 2, 3, 3, 24, 24});
+        RandomCardDraw terrainPool_china = new RandomCardDraw(new List<int> {9, 9, 10, 10, 11, 11, 13, 13, 14, 14, 27, 27});
+        RandomCardDraw terrainPool_winterland = new RandomCardDraw(new List<int> {15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 30, 30});
+        RandomCardDraw terrainPool_iceland = new RandomCardDraw(new List<int> {15, 15, 17, 17, 20, 20, 21, 21, 22, 22, 28, 28});
+        RandomCardDraw terrainPool_volcano = new RandomCardDraw(new List<int> {1, 1, 23, 23, 25, 25, 26, 26, 29, 29});
         
         terrainPool.Add("Lantern Festival", terrainPool_china);
         terrainPool.Add("Winter Land", terrainPool_winterland);
@@ -965,13 +965,17 @@ public class AllCards : MonoBehaviour
                 // small round
                 for (int j = 0; j < i; j++)
                 {
-                    CardRound cardRoundf1_1 = new CardRound(rd.GetRandomCard(), k,  1, 1);
+                    int temp = rd.GetRandomCardWithout(-1);
+                    CardRound cardRoundf1_1 = new CardRound(temp, k,  1, 1);
                     k++;
-                    CardRound cardRoundf1_2 = new CardRound(rd.GetRandomCard(), k,  1, 2);
+                    int temp1 = rd.GetRandomCardWithout(temp);
+                    CardRound cardRoundf1_2 = new CardRound(temp1, k,  1, 2);
                     k++;
-                    CardRound cardRoundf1_3 = new CardRound(rd.GetRandomCard(), k,  2, 1);
+                    temp = rd.GetRandomCardWithout(-1);
+                    CardRound cardRoundf1_3 = new CardRound(temp, k,  2, 1);
                     k++;
-                    CardRound cardRoundf1_4 = new CardRound(rd.GetRandomCard(), k,  2, 2);
+                    temp1 = rd.GetRandomCardWithout(temp);
+                    CardRound cardRoundf1_4 = new CardRound(temp1, k,  2, 2);
                     k++;
                     List<CardRound> sf11 = new List<CardRound>();
                     sf11.Add(cardRoundf1_1);
@@ -986,16 +990,20 @@ public class AllCards : MonoBehaviour
                 // small round
                 for (int j = 0; j < i; j++)
                 {
-                    CardRound cardRoundf1_1 = new CardRound(rd.GetRandomCard(), k,  1, 1);
+                    int temp = rd.GetRandomCardWithout(-1);
+                    CardRound cardRoundf1_1 = new CardRound(temp, k,  1, 1);
                     if (randomNumber == 0) cardRoundf1_1 = new CardRound(4, k, 1, 1);
                     k++;
-                    CardRound cardRoundf1_2 = new CardRound(rd.GetRandomCard(), k,  1, 2);
+                    int temp1 = rd.GetRandomCardWithout(temp);
+                    CardRound cardRoundf1_2 = new CardRound(temp1, k,  1, 2);
                     if (randomNumber == 1) cardRoundf1_2 = new CardRound(4, k, 1, 2);
                     k++;
-                    CardRound cardRoundf1_3 = new CardRound(rd.GetRandomCard(), k,  2, 1);
+                    temp = rd.GetRandomCardWithout(-1);
+                    CardRound cardRoundf1_3 = new CardRound(temp, k,  2, 1);
                     if (randomNumber == 2) cardRoundf1_3 = new CardRound(4, k, 2, 1);
                     k++;
-                    CardRound cardRoundf1_4 = new CardRound(rd.GetRandomCard(), k,  2, 2);
+                    temp1 = rd.GetRandomCardWithout(temp);
+                    CardRound cardRoundf1_4 = new CardRound(temp1, k,  2, 2);
                     if (randomNumber == 3) cardRoundf1_4 = new CardRound(4, k, 2, 2);
                     k++;
                     List<CardRound> sf11 = new List<CardRound>();
@@ -1080,6 +1088,34 @@ public class RandomCardDraw
         int result = real_pool[randomNumber];
 
         real_pool.Remove(result);
+        
+        return result;
+    }
+
+    public int GetRandomCardWithout(int cdIndex)
+    {
+        if (real_pool.Count == 1)
+        {
+            return real_pool[0];
+        }
+        
+        // Create a random number generator with a seed based on a new GUID
+        System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+
+        // Generate a random integer between 0 and 5 (inclusive)
+        int randomNumber = random.Next(0, real_pool.Count);
+
+        int result = real_pool[randomNumber];
+
+        while (result == cdIndex)
+        {
+            // Generate a random integer between 0 and 5 (inclusive)
+            randomNumber = random.Next(0, real_pool.Count);
+
+            result = real_pool[randomNumber];
+        }
+
+        // real_pool.Remove(result);
         
         return result;
     }

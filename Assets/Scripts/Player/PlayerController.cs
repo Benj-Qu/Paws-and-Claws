@@ -495,7 +495,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator KilledAnimation()
     {
         // Stop Red Flashing
-        rf.stop();
         rf.enabled = false;
         // Die and Freeze
         alive = false;
@@ -642,7 +641,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = direction;
         redflash(time/2);
         yield return new WaitForSeconds(time/2);
-        if (!active)
+        if (!active && alive)
         {
             redflash(time / 2);
             yield return new WaitForSeconds(time / 2);
@@ -660,7 +659,6 @@ public class PlayerController : MonoBehaviour
     {
         rf.enabled = true;
         yield return new WaitForSeconds(time);
-        rf.stop();
         rf.enabled = false;
     }
 
@@ -743,5 +741,10 @@ public class PlayerController : MonoBehaviour
     public bool GetFlip()
     {
         return sr.flipX;
+    }
+
+    public void resetAnim()
+    {
+        anim.SetTrigger("idle");
     }
 }

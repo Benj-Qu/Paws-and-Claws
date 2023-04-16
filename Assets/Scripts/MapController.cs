@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,26 @@ public class MapController : MonoBehaviour
     public Dictionary<string, GameObject> DownLand = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> SceneManagers = new Dictionary<string, GameObject>();
 
+    public bool active = false;
+    
+    Subscription<LoadSceneEvent> LoadSceneEvent_subscription;
+
+    private void Awake()
+    {
+        LoadSceneEvent_subscription = EventBus.Subscribe<LoadSceneEvent>(WaitAndStart);
+    }
+
+    private void WaitAndStart(LoadSceneEvent e)
+    {
+        StartCoroutine(wait());
+    }
+
+    private IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1f);
+        active = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +82,7 @@ public class MapController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!active) return;
         joystickInputy = Input.GetAxis("Vertical1") + Input.GetAxis("Vertical2");
         joystickInputx = Input.GetAxis("Horizontal1") + Input.GetAxis("Horizontal2");
         if (respond)
