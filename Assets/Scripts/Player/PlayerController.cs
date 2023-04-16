@@ -104,6 +104,11 @@ public class PlayerController : MonoBehaviour
         else if (!alive)
         {
             rb.velocity = Vector2.zero;
+            resetAnim();
+        }
+        else
+        {
+            resetAnim();
         }
         // TODO: change for cable, need check
         if (gameObject.transform.position.y < DieAltitude && onCable == false)
