@@ -144,6 +144,7 @@ public class GameController : MonoBehaviour
 
     private void WaitAndStart (LoadSceneEvent e)
     {
+        Debug.Log("Wait");
         if(level != "Farm")
         {
             EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
