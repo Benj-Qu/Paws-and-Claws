@@ -381,6 +381,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool("walk", false);
+            resetAnim();
             if (!onIce)
             {
                 rb.velocity = new Vector2(floorV, rb.velocity.y);
