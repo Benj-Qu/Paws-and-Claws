@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
 
     private GameObject enemy;
 
+    private RedFlash rf;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,6 +78,7 @@ public class PlayerController : MonoBehaviour
         pas = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         enemy = GameObject.Find(EnemyName);
+        rf = GetComponent<RedFlash>();
     }
 
     private void Start()
@@ -484,13 +487,16 @@ public class PlayerController : MonoBehaviour
             showAddScore.ShowScore();
             GetComponent<PlayerScore>().updateScore(DeathPenalty);
             pas.PlayOneShot(player_die, 0.5f);
-            StopAllCoroutines();
+            Debug.Log("Trying to Deactivate RedFlash");
             StartCoroutine(KilledAnimation());
         }
     }
 
     private IEnumerator KilledAnimation()
     {
+        // Stop Red Flashing
+        rf.stop();
+        rf.enabled = false;
         // Die and Freeze
         alive = false;
         rb.velocity = Vector2.zero;
@@ -605,7 +611,6 @@ public class PlayerController : MonoBehaviour
 
     public void deactivate()
     {
-        Debug.Log("Deactivate");
         active = false;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
@@ -645,20 +650,15 @@ public class PlayerController : MonoBehaviour
 
     private void redflash(float time)
     {
-        int times = Mathf.FloorToInt(time * 5 + 0.1f);
-        StartCoroutine(RedFlashCoroutine(times));
+        StartCoroutine(RedFlashCoroutine(time));
     }
 
-    private IEnumerator RedFlashCoroutine(int times)
+    private IEnumerator RedFlashCoroutine(float time)
     {
-        for (int i = 0; i < times; i++)
-        {
-            sr.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
-            sr.color = Color.white;
-            yield return new WaitForSeconds(0.1f);
-        }
-        sr.color = Color.white;
+        rf.enabled = true;
+        yield return new WaitForSeconds(time);
+        rf.stop();
+        rf.enabled = false;
     }
 
     public void PowerUp(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)

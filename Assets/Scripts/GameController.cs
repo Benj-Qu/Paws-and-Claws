@@ -38,7 +38,6 @@ public class GameController : MonoBehaviour
 
     public GameObject FarmStage1Objects;
     public GameObject FarmStage1Texts;
-    public textController FarmStoryText;
     public GameObject FarmStage2Objects;
     public GameObject FarmStage2Texts;
     public GameObject FarmStage3Objects;
@@ -57,6 +56,13 @@ public class GameController : MonoBehaviour
     // public Vector3[] StartPoint;
     public GameObject ExitMenu;
     public int stage = 0;
+
+    public int guardian_speaking = 0; //0: speaking, 1: finish speaking, 2: finish speaking & player pressed A
+    public GameObject GuardianSpeaking;
+    public GameObject GuardianMask;
+    public textController FarmStoryText;
+    private int stage0_cnt = 0;
+    public int finished_stage0_cnt = -1;
 
     // public ProgressBar_Main progressBar;
     public TimeDisplayer progressBar;
@@ -109,8 +115,7 @@ public class GameController : MonoBehaviour
             StartPoint2 = GameObject.Find("StartPoint2").transform.position;
             stage = -2; // -2: movement, -1: attack
             FarmStage1Objects.SetActive(true);
-            FarmStage1Texts.SetActive(true);
-            FarmStoryText.updateText("[speed=0.08]<b>Guadians are strong.\n They can climb high walls!</b>");
+            // FarmStage1Texts.SetActive(true);
             player1_control.activate();
             player2_control.activate();
         } 
@@ -139,6 +144,10 @@ public class GameController : MonoBehaviour
             ScorePanel = GameObject.Find("ScorePanel");
             if (ScorePanel) ScorePanel.SetActive(false);
             if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
+        }
+        else
+        {
+            StartCoroutine(GuardianCoroutine());
         }
     }
 
@@ -175,18 +184,46 @@ public class GameController : MonoBehaviour
         
         if(level == "Farm")
         {
-            player1_control.activate();
-            player2_control.activate();
+            if (guardian_speaking == 0)
+            {
+                // if guardian is speaking, deactivate playerss
+                player1_control.deactivate();
+                player2_control.deactivate();
+            }
+            if(guardian_speaking == 1 && (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("A1") || Input.GetButtonDown("A2")))
+            {
+                // if guardian finishes speaking and player pressed A, activate players
+                if(stage == -2 && stage0_cnt < 2)
+                {
+                    if(finished_stage0_cnt == stage0_cnt)
+                    {
+                        if (stage0_cnt == 0) FarmStoryText.updateText("[speed=0.08]<b>The rule is simple:\n Seize the FLAGS and outscore your opponent!</b>");
+                        if (stage0_cnt == 1) FarmStoryText.updateText("[speed=0.08]<b>First skill you should master:\n WALL JUMPING!</b>");
+                        stage0_cnt++;
+                    }
+                }
+                else
+                {
+                    if (stage == -2 && finished_stage0_cnt < stage0_cnt) return;
+                    guardian_speaking = 2;
+                    GuardianMask.SetActive(false);
+                    player1_control.activate();
+                    player2_control.activate();
+                }
+            }
             if(stage == -2 && flags == 2)
             {
+                // if two flags are all obtained by players, start attack tutorial
                 StartCoroutine(finishStageT1());
             }
             if(stage == -1 && attackTutorialFinished == true)
             {
+                // if players successfully attacked each other, start game tutorial
                 StartCoroutine(finishStageT2());
             }
             if(stage != -2 && stage != -1 && stage != 2)
             {
+                // deactivate players during block selection and placement
                 if (player1_control.isActive())
                 {
                     player1_control.deactivate();
@@ -197,36 +234,48 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+    }
 
+    IEnumerator GuardianCoroutine()
+    {
+        yield return new WaitForSeconds(4f);
+        Guardian_Speak();
+    }
+
+    void Guardian_Speak()
+    {
+        guardian_speaking = 0;
+        GuardianSpeaking.SetActive(true);
+        GuardianMask.SetActive(true);
     }
     
     IEnumerator finishStageT1()
     {
         stage = -1; // attack tutorial
         yield return new WaitForSeconds(2f);
-
+        Guardian_Speak();
         FarmStage1Objects.SetActive(false);
         FarmStage1Texts.SetActive(false);
         FarmStage2Objects.SetActive(true);
-        FarmStage2Texts.SetActive(true);
+        // FarmStage2Texts.SetActive(true);
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.08]<b>Guardians possess exceptional combat skills.\n They can attack opponents!</b>");
     }
 
     IEnumerator finishStageT2()
     {
         stage = 0; // start game
         yield return null;
+        Guardian_Speak();
         FarmStage2Objects.SetActive(false);
         FarmStage2Texts.SetActive(false);
         FarmStage3Objects.SetActive(true);
-        FarmStage3Texts.SetActive(true);
-        flagController = GameObject.Find("Flags").GetComponent<flagController>();
+        // FarmStage3Texts.SetActive(true);
         ResetPlayers();
-        FarmStoryText.updateText("[speed=0.08]<b>Guadians are smart.\n They can select suitable blocks for themselves!</b>");
+    }
+
+    public void tutorialCall()
+    {
         EventBus.Publish<BigRoundIncEvent>(new BigRoundIncEvent(round_big));
-        ScorePanel = GameObject.Find("ScorePanel");
-        if (ScorePanel) ScorePanel.SetActive(false);
         if (WinImage && WinImage.activeSelf == false) WinImage.SetActive(true);
     }
 
@@ -389,10 +438,6 @@ public class GameController : MonoBehaviour
             }
 
             // Remove Winter Land
-            if (level == "Farm")
-            {
-                FarmStoryText.updateText("[speed=0.08]<b>Game Start!\n MORE FLAGS MORE SCORE!</b>");
-            }
             if (level == "Volcano")
             {
                 VolcanoController vc = GameObject.Find("Volcano").GetComponent<VolcanoController>();
@@ -413,7 +458,15 @@ public class GameController : MonoBehaviour
             Grid.SetActive(false);
             bc.RemoveBox();
             follower.SetActive(false);
-            if (ScorePanel) ScorePanel.SetActive(true);
+            if (level == "Farm")
+            {
+                FarmStage3Texts.SetActive(false);
+                Guardian_Speak();
+            }
+            else
+            {
+                if (ScorePanel) ScorePanel.SetActive(true);
+            }
         }
         else if (stage == 1) // start place block
         {
@@ -429,6 +482,7 @@ public class GameController : MonoBehaviour
             }
             mask.SetActive(true);
             progressBar.StartGame();
+            flagController = GameObject.Find("Flags").GetComponent<flagController>();
             if (flagController) flagController.FlagGeneration();
             follower.SetActive(true);
             if (mask)
@@ -437,6 +491,11 @@ public class GameController : MonoBehaviour
                 Color tmp = mask.GetComponent<SpriteRenderer>().color;
                 tmp.a = 0.27f;
                 mask.GetComponent<SpriteRenderer>().color = tmp;
+            }
+            if (level == "Farm")
+            {
+                FarmStage3Texts.SetActive(false);
+                Guardian_Speak();
             }
         }
         else // stage == 3 means the previous round is over

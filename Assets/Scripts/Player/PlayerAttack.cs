@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     public float OriginalScale = 0.2f;
 
     public GameObject Sword;
+    public AudioClip attackAudio;
 
     private float timer = 0f;
     private bool attackable = true;
@@ -54,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
         if ((Input.GetAxis("Fire" + joystickString) != 0) || Input.GetKey(FireButton))
         {
             Debug.Log("Fire" + joystickString);
+            AudioSource.PlayClipAtPoint(attackAudio, Camera.main.transform.position);
             attackable = false;
             float horizontalInput = Input.GetAxis("Horizontal" + joystickString);
             float verticalInput = - Input.GetAxis("Vertical" + joystickString);

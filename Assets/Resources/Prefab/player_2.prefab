@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 5336509314114257349}
   - component: {fileID: 5686969975016896771}
   - component: {fileID: 1403440927}
+  - component: {fileID: 8059186804864053146}
   m_Layer: 3
   m_Name: player_2
   m_TagString: Player
@@ -702,6 +703,7 @@ MonoBehaviour:
   AttackFrequency: 4
   OriginalScale: 0.2
   Sword: {fileID: 568348990006396674, guid: f9f94e4e865432648a7ef40d8a618b32, type: 3}
+  attackAudio: {fileID: 8300000, guid: 4e60b784d26fb4b41b56c04a3bc08101, type: 3}
 --- !u!95 &5686969975016896771
 Animator:
   serializedVersion: 5
@@ -752,6 +754,20 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8059186804864053146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138337599100129823}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8138756e7c9bf3146a6d191ba5b573fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  flashing: 0
 --- !u!1 &8369096552896372553
 GameObject:
   m_ObjectHideFlags: 0
