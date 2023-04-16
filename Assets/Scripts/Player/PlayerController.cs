@@ -520,6 +520,7 @@ public class PlayerController : MonoBehaviour
         }
         // Rebirth and Freeze
         gc.Killed(gameObject);
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         //yield return new WaitForSeconds(0.3f);
     }
 
@@ -543,6 +544,8 @@ public class PlayerController : MonoBehaviour
     {
         reset();
         // Rebirth Invincible
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         invincible = true;
         flash();
         yield return new WaitForSeconds(0.8f);
