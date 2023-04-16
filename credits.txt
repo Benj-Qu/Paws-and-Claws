@@ -20,3 +20,5 @@ Packge loading scene manager from michsky
 Music part from Yi Liang
 
 Voice for Marketing Video: Marco Kuis
+
+Dog and Cat Sprites drawn by Mindy and Zhiying Zhang
