@@ -495,7 +495,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator KilledAnimation()
     {
         // Stop Red Flashing
-        rf.stop();
         rf.enabled = false;
         // Die and Freeze
         alive = false;
@@ -520,6 +519,7 @@ public class PlayerController : MonoBehaviour
         }
         // Rebirth and Freeze
         gc.Killed(gameObject);
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         //yield return new WaitForSeconds(0.3f);
     }
 
@@ -543,6 +543,8 @@ public class PlayerController : MonoBehaviour
     {
         reset();
         // Rebirth Invincible
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         invincible = true;
         flash();
         yield return new WaitForSeconds(0.8f);
@@ -639,7 +641,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = direction;
         redflash(time/2);
         yield return new WaitForSeconds(time/2);
-        if (!active)
+        if (!active && alive)
         {
             redflash(time / 2);
             yield return new WaitForSeconds(time / 2);
@@ -657,7 +659,6 @@ public class PlayerController : MonoBehaviour
     {
         rf.enabled = true;
         yield return new WaitForSeconds(time);
-        rf.stop();
         rf.enabled = false;
     }
 
@@ -668,7 +669,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PowerUpCoroutine(float period, float SpeedUp, float JumpUp, float SizeUp, bool Invincible)
     {
-        sizeup = SizeUp;
+        sizeup *= SizeUp;
         Speed *= SpeedUp;
         JumpSpeed *= JumpUp;
         rb.mass *= SizeUp;
@@ -686,7 +687,7 @@ public class PlayerController : MonoBehaviour
         invincible = false;
         rb.mass /= SizeUp;
         transform.localScale /= SizeUp;
-        sizeup = 1;
+        sizeup /= SizeUp;
         if (collectInvinciblePowerUp && invincible == false)
         {
             collectInvinciblePowerUp = false;

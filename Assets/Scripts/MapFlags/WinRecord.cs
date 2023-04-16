@@ -83,4 +83,9 @@ public class WinRecord : MonoBehaviour
             statuses[scenes[current]] = winner;
         }
     }
+
+    public void reset()
+    {
+        statuses = new Status[] { Status.Tie, Status.Tie, Status.Tie, Status.Tie, Status.Tie };
+    }
 }
