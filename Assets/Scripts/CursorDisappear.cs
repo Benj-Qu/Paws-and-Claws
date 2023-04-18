@@ -6,7 +6,7 @@ public class CursorDisappear : MonoBehaviour
 {
     void Awake()
     {
-        Cursor.visible = false;
+        // Cursor.visible = false;
     }
     // Start is called before the first frame update
     void Start()

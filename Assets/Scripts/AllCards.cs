@@ -993,19 +993,19 @@ public class AllCards : MonoBehaviour
                 {
                     int temp = rd.GetRandomCardWithout(-1);
                     CardRound cardRoundf1_1 = new CardRound(temp, k,  1, 1);
-                    if (randomNumber == 0) cardRoundf1_1 = new CardRound(4, k, 1, 1);
                     k++;
                     int temp1 = rd.GetRandomCardWithout(temp);
                     CardRound cardRoundf1_2 = new CardRound(temp1, k,  1, 2);
-                    if (randomNumber == 1) cardRoundf1_2 = new CardRound(4, k, 1, 2);
+                    if (randomNumber == 0 && temp1 != 4) cardRoundf1_1 = new CardRound(4, k-1, 1, 1);
+                    if (randomNumber == 1 && temp != 4) cardRoundf1_2 = new CardRound(4, k, 1, 2);
                     k++;
                     temp = rd.GetRandomCardWithout(-1);
                     CardRound cardRoundf1_3 = new CardRound(temp, k,  2, 1);
-                    if (randomNumber == 2) cardRoundf1_3 = new CardRound(4, k, 2, 1);
                     k++;
                     temp1 = rd.GetRandomCardWithout(temp);
                     CardRound cardRoundf1_4 = new CardRound(temp1, k,  2, 2);
-                    if (randomNumber == 3) cardRoundf1_4 = new CardRound(4, k, 2, 2);
+                    if (randomNumber == 2 && temp1 != 4) cardRoundf1_3 = new CardRound(4, k-1, 2, 1);
+                    if (randomNumber == 3 && temp != 4) cardRoundf1_4 = new CardRound(4, k, 2, 2);
                     k++;
                     List<CardRound> sf11 = new List<CardRound>();
                     sf11.Add(cardRoundf1_1);
