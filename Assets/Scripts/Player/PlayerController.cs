@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (collision.rigidbody)
                     {
-                        floorV = collision.rigidbody.velocity.x;
+                        floorV = pc.getFloorV();
                     }
                     else
                     {
@@ -753,4 +753,10 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetTrigger("idle");
     }
+
+    public float getFloorV()
+    {
+        return floorV;
+    }
+
 }
