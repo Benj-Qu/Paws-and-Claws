@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
                 jumpTimes = MaxJumpTimes;
             }
             // Knock On Left Player
-            else if (hitpos.normal.x > 0)
+            else if (hitpos.normal.x > 0 && !invincible)
             {
                 if (Input.GetKey(pc.RightButton) || otherJoystickInput > 0)
                 {
@@ -228,7 +228,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             // Knock On Right Player
-            else if (hitpos.normal.x < 0)
+            else if (hitpos.normal.x < 0 && !invincible)
             {
                 if (Input.GetKey(pc.LeftButton) || otherJoystickInput < 0)
                 {
@@ -500,6 +500,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator KilledAnimation()
     {
+        invincible = true;
         // Stop Red Flashing
         rf.enabled = false;
         // Die and Freeze
@@ -507,6 +508,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.zero;
         //flash();
         yield return new WaitForSeconds(0.2f);
+        GetComponent<Collider2D>().isTrigger = true;
         //var pathname = "Animations/magic_circle";
         //var controllerCurr = this.GetComponent<Animator>().runtimeAnimatorController;
         //this.GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(pathname);
@@ -531,7 +533,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Large()
     {
-        invincible = true;
         for (int i = 0; i < 4; i++)
         {
             Debug.Log("Turning big");
@@ -548,6 +549,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator animreset2()
     {
+        GetComponent<Collider2D>().isTrigger = false;
         reset();
         // Rebirth Invincible
         this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
