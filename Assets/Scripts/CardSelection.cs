@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Switch;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
 
