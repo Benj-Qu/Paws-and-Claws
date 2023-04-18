@@ -216,8 +216,8 @@ public class GameController : MonoBehaviour
                 {
                     if(finished_stage0_cnt == stage0_cnt)
                     {
-                        if (stage0_cnt == 0) FarmStoryText.updateText("[speed=0.08]<b>The rule is simple:\n Seize the FLAGS and outscore your opponent!</b>");
-                        if (stage0_cnt == 1) FarmStoryText.updateText("[speed=0.08]<b>First skill you should master:\n WALL JUMPING!</b>");
+                        if (stage0_cnt == 0) FarmStoryText.updateText("[speed=0.06]<b>The rule is simple:\n Seize the FLAGS and outscore your opponent!</b>");
+                        if (stage0_cnt == 1) FarmStoryText.updateText("[speed=0.06]<b>First skill you should master:\n WALL JUMPING!</b>");
                         stage0_cnt++;
                     }
                 }
